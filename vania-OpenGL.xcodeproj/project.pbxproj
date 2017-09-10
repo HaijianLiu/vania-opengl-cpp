@@ -14,6 +14,7 @@
 		60B425501F64D8B600BEE84C /* libGLEW.2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 60B4254F1F64D8B600BEE84C /* libGLEW.2.0.0.dylib */; };
 		60B425531F64DC8B00BEE84C /* Engine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60B425511F64DC8B00BEE84C /* Engine.cpp */; };
 		60F0259E1F64E3AC0022EC73 /* Window.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60F0259C1F64E3AC0022EC73 /* Window.cpp */; };
+		60F025A11F64E7A70022EC73 /* Shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60F0259F1F64E7A70022EC73 /* Shader.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,6 +40,8 @@
 		60B425521F64DC8B00BEE84C /* Engine.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Engine.hpp; path = Engine/Engine.hpp; sourceTree = "<group>"; };
 		60F0259C1F64E3AC0022EC73 /* Window.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Window.cpp; path = Engine/Window.cpp; sourceTree = "<group>"; };
 		60F0259D1F64E3AC0022EC73 /* Window.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Window.hpp; path = Engine/Window.hpp; sourceTree = "<group>"; };
+		60F0259F1F64E7A70022EC73 /* Shader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Shader.cpp; path = Engine/Shader.cpp; sourceTree = "<group>"; };
+		60F025A01F64E7A70022EC73 /* Shader.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Shader.hpp; path = Engine/Shader.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +103,8 @@
 				60B425521F64DC8B00BEE84C /* Engine.hpp */,
 				60F0259C1F64E3AC0022EC73 /* Window.cpp */,
 				60F0259D1F64E3AC0022EC73 /* Window.hpp */,
+				60F0259F1F64E7A70022EC73 /* Shader.cpp */,
+				60F025A01F64E7A70022EC73 /* Shader.hpp */,
 			);
 			name = Engine;
 			sourceTree = "<group>";
@@ -164,6 +169,7 @@
 			files = (
 				60B425421F64D7E600BEE84C /* main.cpp in Sources */,
 				60F0259E1F64E3AC0022EC73 /* Window.cpp in Sources */,
+				60F025A11F64E7A70022EC73 /* Shader.cpp in Sources */,
 				60B425531F64DC8B00BEE84C /* Engine.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
