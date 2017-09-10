@@ -12,6 +12,7 @@
 		60B4254C1F64D88700BEE84C /* libassimp.3.3.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 60B4254B1F64D88700BEE84C /* libassimp.3.3.1.dylib */; };
 		60B4254E1F64D8AB00BEE84C /* libglfw.3.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 60B4254D1F64D8AB00BEE84C /* libglfw.3.2.dylib */; };
 		60B425501F64D8B600BEE84C /* libGLEW.2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 60B4254F1F64D8B600BEE84C /* libGLEW.2.0.0.dylib */; };
+		60B425531F64DC8B00BEE84C /* Engine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60B425511F64DC8B00BEE84C /* Engine.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,6 +34,8 @@
 		60B4254B1F64D88700BEE84C /* libassimp.3.3.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libassimp.3.3.1.dylib; path = ../../../../../usr/local/Cellar/assimp/3.3.1/lib/libassimp.3.3.1.dylib; sourceTree = "<group>"; };
 		60B4254D1F64D8AB00BEE84C /* libglfw.3.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.2.dylib; path = ../../../../../usr/local/Cellar/glfw/3.2.1/lib/libglfw.3.2.dylib; sourceTree = "<group>"; };
 		60B4254F1F64D8B600BEE84C /* libGLEW.2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.2.0.0.dylib; path = ../../../../../usr/local/Cellar/glew/2.0.0/lib/libGLEW.2.0.0.dylib; sourceTree = "<group>"; };
+		60B425511F64DC8B00BEE84C /* Engine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Engine.cpp; path = Engine/Engine.cpp; sourceTree = "<group>"; };
+		60B425521F64DC8B00BEE84C /* Engine.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Engine.hpp; path = Engine/Engine.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,8 +44,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				60B4254A1F64D7F800BEE84C /* OpenGL.framework in Frameworks */,
-				60B4254E1F64D8AB00BEE84C /* libglfw.3.2.dylib in Frameworks */,
 				60B425501F64D8B600BEE84C /* libGLEW.2.0.0.dylib in Frameworks */,
+				60B4254E1F64D8AB00BEE84C /* libglfw.3.2.dylib in Frameworks */,
 				60B4254C1F64D88700BEE84C /* libassimp.3.3.1.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -70,6 +73,7 @@
 		60B425401F64D7E600BEE84C /* vania-OpenGL */ = {
 			isa = PBXGroup;
 			children = (
+				60B425541F64DCA300BEE84C /* Engine */,
 				60B425411F64D7E600BEE84C /* main.cpp */,
 			);
 			path = "vania-OpenGL";
@@ -84,6 +88,15 @@
 				60B425491F64D7F800BEE84C /* OpenGL.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		60B425541F64DCA300BEE84C /* Engine */ = {
+			isa = PBXGroup;
+			children = (
+				60B425511F64DC8B00BEE84C /* Engine.cpp */,
+				60B425521F64DC8B00BEE84C /* Engine.hpp */,
+			);
+			name = Engine;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,6 +158,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				60B425421F64D7E600BEE84C /* main.cpp in Sources */,
+				60B425531F64DC8B00BEE84C /* Engine.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,11 +258,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 4M5A36G82A;
+				HEADER_SEARCH_PATHS = /usr/local/include;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/usr/local/Cellar/assimp/3.3.1/lib,
 					/usr/local/Cellar/glfw/3.2.1/lib,
 					/usr/local/Cellar/glew/2.0.0/lib,
+					/usr/local/Cellar/assimp/3.3.1/lib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -258,11 +273,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 4M5A36G82A;
+				HEADER_SEARCH_PATHS = /usr/local/include;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/usr/local/Cellar/assimp/3.3.1/lib,
 					/usr/local/Cellar/glfw/3.2.1/lib,
 					/usr/local/Cellar/glew/2.0.0/lib,
+					/usr/local/Cellar/assimp/3.3.1/lib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
