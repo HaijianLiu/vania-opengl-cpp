@@ -13,6 +13,7 @@
 		60B4254E1F64D8AB00BEE84C /* libglfw.3.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 60B4254D1F64D8AB00BEE84C /* libglfw.3.2.dylib */; };
 		60B425501F64D8B600BEE84C /* libGLEW.2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 60B4254F1F64D8B600BEE84C /* libGLEW.2.0.0.dylib */; };
 		60B425531F64DC8B00BEE84C /* Engine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60B425511F64DC8B00BEE84C /* Engine.cpp */; };
+		60EE18BD1F6616BC000C6F0D /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60EE18BB1F6616BC000C6F0D /* Camera.cpp */; };
 		60F0259E1F64E3AC0022EC73 /* Window.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60F0259C1F64E3AC0022EC73 /* Window.cpp */; };
 		60F025A11F64E7A70022EC73 /* Shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60F0259F1F64E7A70022EC73 /* Shader.cpp */; };
 /* End PBXBuildFile section */
@@ -39,6 +40,8 @@
 		60B425511F64DC8B00BEE84C /* Engine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Engine.cpp; path = Engine/Engine.cpp; sourceTree = "<group>"; };
 		60B425521F64DC8B00BEE84C /* Engine.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Engine.hpp; path = Engine/Engine.hpp; sourceTree = "<group>"; };
 		60EC92771F65DE89006F0902 /* stb_image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = stb_image.h; path = Engine/stb_image.h; sourceTree = "<group>"; };
+		60EE18BB1F6616BC000C6F0D /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Camera.cpp; path = Engine/Camera.cpp; sourceTree = "<group>"; };
+		60EE18BC1F6616BC000C6F0D /* Camera.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Camera.hpp; path = Engine/Camera.hpp; sourceTree = "<group>"; };
 		60F0259C1F64E3AC0022EC73 /* Window.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Window.cpp; path = Engine/Window.cpp; sourceTree = "<group>"; };
 		60F0259D1F64E3AC0022EC73 /* Window.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Window.hpp; path = Engine/Window.hpp; sourceTree = "<group>"; };
 		60F0259F1F64E7A70022EC73 /* Shader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Shader.cpp; path = Engine/Shader.cpp; sourceTree = "<group>"; };
@@ -107,6 +110,8 @@
 				60F0259D1F64E3AC0022EC73 /* Window.hpp */,
 				60F0259F1F64E7A70022EC73 /* Shader.cpp */,
 				60F025A01F64E7A70022EC73 /* Shader.hpp */,
+				60EE18BB1F6616BC000C6F0D /* Camera.cpp */,
+				60EE18BC1F6616BC000C6F0D /* Camera.hpp */,
 			);
 			name = Engine;
 			sourceTree = "<group>";
@@ -171,6 +176,7 @@
 			files = (
 				60B425421F64D7E600BEE84C /* main.cpp in Sources */,
 				60F0259E1F64E3AC0022EC73 /* Window.cpp in Sources */,
+				60EE18BD1F6616BC000C6F0D /* Camera.cpp in Sources */,
 				60F025A11F64E7A70022EC73 /* Shader.cpp in Sources */,
 				60B425531F64DC8B00BEE84C /* Engine.cpp in Sources */,
 			);

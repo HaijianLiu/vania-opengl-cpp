@@ -2,8 +2,6 @@
 #include "Engine.hpp"
 
 
-// Shader* normalSpriteShader = new Shader();
-
 unsigned int quadVAO = 0;
 
 void drawQuad() {
