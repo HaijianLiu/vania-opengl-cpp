@@ -3,12 +3,20 @@
 #define Camera_hpp
 
 class Camera {
-private:
-
 public:
 	Camera();
-	~Camera();
+	void translate(float x, float y, float z);
+	void setUpside(glm::vec3 up);
+	void setField(float degree);
+	void setRatio(float ratio);
+	void setRange(float start, float end);
+	glm::mat4 getMatrixProjection();
+	glm::mat4 getMatrixView();
+	glm::vec3 getPosition();
 
+	void updateInput(GLFWwindow* window, float deltaTime);
+
+private:
 	// Camera Position
 	glm::vec3 position;
 	glm::vec3 cameraFront, cameraUp, cameraRight;
@@ -26,17 +34,7 @@ public:
 	float rangeStart;
 	float rangeEnd;
 
-	void update();
-
-	void translate(float x, float y, float z);
-	void setUpside(glm::vec3 up);
-	void setField(float degree);
-	void setRatio(float ratio);
-	void setRange(float start, float end);
-
-	glm::mat4 getMatrixProjection();
-	glm::mat4 getMatrixView();
-	glm::vec3 getPosition();
+	void updateCameraVectors();
 };
 
 #endif /* Camera_hpp */

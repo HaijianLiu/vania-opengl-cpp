@@ -77,8 +77,32 @@ int main() {
 
 	unsigned int textureID = loadTexture("/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Texture/player_hurt.png");
 
+	Camera camera = Camera();
+
+	shader.use();
+		// matrix
+		glm::mat4 projection = glm::ortho(0.0f, SCREEN_WIDTH, SCREEN_HEIGHT, 0.0f, -1.0f, 1.0f);
+		shader.setMat4("projection", projection);
+		glm::mat4 model = glm::mat4();
+		model = glm::scale(model, glm::vec3(1.0f));
+		model = glm::translate(model, glm::vec3(0.0, 0.0, 0.0));
+		// texture
+		shader.setMat4("model", model);
+		shader.setInt("ourTexture", 0);
+
+
+		// timing
+		float deltaTime = 0.0f;
+		float lastFrame = 0.0f;
+
 	// render loop
 	while (!glfwWindowShouldClose(window)) {
+
+		// per-frame time logic
+		float currentFrame = glfwGetTime();
+		deltaTime = currentFrame - lastFrame;
+		lastFrame = currentFrame;
+
 
 		// input
 		if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS) glfwSetWindowShouldClose(window, true);
@@ -86,8 +110,16 @@ int main() {
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 		shader.use();
+		glm::mat4 view = glm::lookAt(
+			glm::vec3(4,3,-3), // Camera is at (4,3,3), in World Space
+			glm::vec3(0,0,0), // and looks at the origin
+			glm::vec3(0,1,0)  // Head is up (set to 0,-1,0 to look upside-down)
+		);
+		shader.setMat4("view", view);
 		glBindTexture(GL_TEXTURE_2D, textureID);
 		drawQuad();
+
+		camera.updateInput(window, deltaTime);
 
 		glfwSwapBuffers(window);
 		glfwPollEvents();

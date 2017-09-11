@@ -51,7 +51,41 @@ glm::vec3 Camera::getPosition() {
 	return position;
 }
 
-void Camera::update() {
+void Camera::updateInput(GLFWwindow* window, float deltaTime) {
+	if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
+		position += worldFront * moveSpeed * deltaTime;
+	if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
+		position -= worldFront * moveSpeed * deltaTime;
+	if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
+		position -= worldRight * moveSpeed * deltaTime;
+	if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
+		position += worldRight * moveSpeed * deltaTime;
+
+	if (glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS) {
+		pitch += rotateSensitivity * deltaTime;
+		if (pitch > 40.0) {
+			pitch = 40.0;
+		}
+		Camera::updateCameraVectors();
+	}
+	if (glfwGetKey(window, GLFW_KEY_DOWN) == GLFW_PRESS) {
+		pitch -= rotateSensitivity * deltaTime;
+		if (pitch < -40.0) {
+			pitch = -40.0;
+		}
+		Camera::updateCameraVectors();
+	}
+	if (glfwGetKey(window, GLFW_KEY_LEFT) == GLFW_PRESS) {
+		yaw -= rotateSensitivity * deltaTime;
+		Camera::updateCameraVectors();
+	}
+	if (glfwGetKey(window, GLFW_KEY_RIGHT) == GLFW_PRESS) {
+		yaw += rotateSensitivity * deltaTime;
+		Camera::updateCameraVectors();
+	}
+}
+
+void Camera::updateCameraVectors() {
 	// Calculate the new Front vector
 	glm::vec3 front;
 	front.x = cos(glm::radians(yaw)) * cos(glm::radians(pitch));
