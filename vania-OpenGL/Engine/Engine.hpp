@@ -22,6 +22,10 @@
 // Include standard libraries
 #include <iostream>
 #include <random>
+#include <vector>
+#include <string>
+#include <fstream>
+#include <sstream>
 
 // Include GLEW (include before gl.h and glfw.h)
 #include <GL/glew.h>
@@ -31,6 +35,8 @@
 #include <glm/glm.hpp>
 #include <glm/gtx/transform.hpp>
 #include <glm/gtc/matrix_transform.hpp>
+// Include stbi Library
+#include "stb_image.h"
 
 /*------------------------------------------------------------------------------
 < Engine >

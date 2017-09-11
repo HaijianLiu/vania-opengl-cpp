@@ -38,6 +38,7 @@
 		60B4254F1F64D8B600BEE84C /* libGLEW.2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.2.0.0.dylib; path = ../../../../../usr/local/Cellar/glew/2.0.0/lib/libGLEW.2.0.0.dylib; sourceTree = "<group>"; };
 		60B425511F64DC8B00BEE84C /* Engine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Engine.cpp; path = Engine/Engine.cpp; sourceTree = "<group>"; };
 		60B425521F64DC8B00BEE84C /* Engine.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Engine.hpp; path = Engine/Engine.hpp; sourceTree = "<group>"; };
+		60EC92771F65DE89006F0902 /* stb_image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = stb_image.h; path = Engine/stb_image.h; sourceTree = "<group>"; };
 		60F0259C1F64E3AC0022EC73 /* Window.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Window.cpp; path = Engine/Window.cpp; sourceTree = "<group>"; };
 		60F0259D1F64E3AC0022EC73 /* Window.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Window.hpp; path = Engine/Window.hpp; sourceTree = "<group>"; };
 		60F0259F1F64E7A70022EC73 /* Shader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Shader.cpp; path = Engine/Shader.cpp; sourceTree = "<group>"; };
@@ -99,6 +100,7 @@
 		60B425541F64DCA300BEE84C /* Engine */ = {
 			isa = PBXGroup;
 			children = (
+				60EC92771F65DE89006F0902 /* stb_image.h */,
 				60B425511F64DC8B00BEE84C /* Engine.cpp */,
 				60B425521F64DC8B00BEE84C /* Engine.hpp */,
 				60F0259C1F64E3AC0022EC73 /* Window.cpp */,

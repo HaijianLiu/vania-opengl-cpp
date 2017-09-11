@@ -41,7 +41,7 @@ GLFWwindow* createWindow(const char* name, int screenWidth, int screenHeight) {
 
 	// Other Default settings
 	// Dark blue background
-	glClearColor(0.9,0.9,0.9,1.0);
+	glClearColor(0.0,0.0,0.0,1.0);
 	// Set input mode GLFW_STICKY_KEYS
 	glfwSetInputMode(window,GLFW_STICKY_KEYS,GL_TRUE);
 	// Enable depth test
