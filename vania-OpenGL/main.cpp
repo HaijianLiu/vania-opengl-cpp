@@ -7,7 +7,7 @@ Camera* camera = new Camera();
 Quad* quad = new Quad();
 Texture* texture = new Texture("/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Texture/enemy_jumper_jump.png");
 Shader* shader = new Shader("/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Shader/quad.vs.glsl", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Shader/quad.fs.glsl");
-
+Transform* transform = new Transform();
 
 /*------------------------------------------------------------------------------
 < Start >
@@ -25,6 +25,7 @@ void release() {
 	delete quad;
 	delete texture;
 	delete shader;
+	delete transform;
 }
 
 
@@ -71,13 +72,11 @@ int main() {
 
 	shader->use();
 		shader->setInt("texColor", 0);
-		glm::mat4 model = glm::mat4();
-		model = glm::rotate(0.0f,glm::vec3(0,0,1));
-		model = glm::scale(model, glm::vec3(47.0f,32.0f,0.0f));
-		model = glm::translate(model, glm::vec3(0.0f,0.0f,0.0f));
+		transform->scale = glm::vec3(47.0f,32.0f,0.0f);
+		transform->update();
 		shader->setMat4("projection",camera->projection);
 		shader->setMat4("view",camera->view);
-		shader->setMat4("model",model);
+		shader->setMat4("model",transform->model);
 
 		// timing
 		float deltaTime = 0.0f;
@@ -99,15 +98,6 @@ int main() {
 
 		shader->use();
 			glBindTexture(GL_TEXTURE_2D, texture->textureID);
-			model = glm::rotate(0.0f,glm::vec3(0,0,1));
-			model = glm::scale(model, glm::vec3(47.0f,32.0f,0.0f));
-			model = glm::translate(model, glm::vec3(0.0f,0.0f,0.0f));
-			shader->setMat4("model",model);
-			quad->draw();
-			model = glm::rotate(0.0f,glm::vec3(0,0,1));
-			model = glm::scale(model, glm::vec3(47.0f,32.0f,0.0f));
-			model = glm::translate(model, glm::vec3(10.0f,10.0f,0.0f));
-			shader->setMat4("model",model);
 			quad->draw();
 
 		glfwSwapBuffers(window);
