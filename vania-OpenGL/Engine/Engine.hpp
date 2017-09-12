@@ -2,7 +2,6 @@
 #ifndef Engine_hpp
 #define Engine_hpp
 
-
 /*------------------------------------------------------------------------------
 < Macross >
 ------------------------------------------------------------------------------*/
@@ -14,7 +13,6 @@
 #define SCREEN_WIDTH_CENTER (SCREEN_WIDTH / 2)
 #define SCREEN_HEIGHT_CENTER (SCREEN_HEIGHT / 2)
 #define PI (3.141593f)
-
 
 /*------------------------------------------------------------------------------
 < Libraries >
@@ -44,9 +42,10 @@
 #include "Window.hpp"
 #include "Shader.hpp"
 #include "Quad.hpp"
+#include "Texture.hpp"
+#include "Sprite.hpp"
 #include "Transform.hpp"
 #include "Camera.hpp"
-
 
 /*------------------------------------------------------------------------------
 < GameObject >

@@ -8,7 +8,6 @@ Shader::Shader(const char* vertexPath, const char* fragmentPath) {
 	this->programID = loadShader(vertexPath,fragmentPath);
 }
 
-
 /*------------------------------------------------------------------------------
 < Destructor >
 ------------------------------------------------------------------------------*/
@@ -16,16 +15,13 @@ Shader::~Shader() {
 	glDeleteProgram(this->programID);
 }
 
-
 /*------------------------------------------------------------------------------
-< Functions >
+< Set Functions >
 ------------------------------------------------------------------------------*/
-
 // activate the shader
 void Shader::use() {
 	glUseProgram(this->programID);
 }
-
 
 // utility uniform functions
 void Shader::setBool(const char* name, bool value) {
@@ -66,6 +62,9 @@ void Shader::setMat4(const char* name, glm::mat4 mat) {
 }
 
 
+/*------------------------------------------------------------------------------
+< loadShader >
+------------------------------------------------------------------------------*/
 // load Shader
 unsigned int Shader::loadShader(std::string vertexPath, std::string fragmentPath) {
 

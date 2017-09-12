@@ -18,6 +18,8 @@
 		60F0259E1F64E3AC0022EC73 /* Window.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60F0259C1F64E3AC0022EC73 /* Window.cpp */; };
 		60F025A11F64E7A70022EC73 /* Shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60F0259F1F64E7A70022EC73 /* Shader.cpp */; };
 		60F2A7D31F67B4480068C4E7 /* Quad.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60F2A7D11F67B4480068C4E7 /* Quad.cpp */; };
+		60F2A7D61F67C2050068C4E7 /* Sprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60F2A7D41F67C2050068C4E7 /* Sprite.cpp */; };
+		60F2A7D91F67C4C80068C4E7 /* Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60F2A7D71F67C4C80068C4E7 /* Texture.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -52,6 +54,10 @@
 		60F025A01F64E7A70022EC73 /* Shader.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Shader.hpp; path = Engine/Shader.hpp; sourceTree = "<group>"; };
 		60F2A7D11F67B4480068C4E7 /* Quad.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Quad.cpp; path = Engine/Quad.cpp; sourceTree = "<group>"; };
 		60F2A7D21F67B4480068C4E7 /* Quad.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Quad.hpp; path = Engine/Quad.hpp; sourceTree = "<group>"; };
+		60F2A7D41F67C2050068C4E7 /* Sprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Sprite.cpp; path = Engine/Sprite.cpp; sourceTree = "<group>"; };
+		60F2A7D51F67C2050068C4E7 /* Sprite.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Sprite.hpp; path = Engine/Sprite.hpp; sourceTree = "<group>"; };
+		60F2A7D71F67C4C80068C4E7 /* Texture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Texture.cpp; path = Engine/Texture.cpp; sourceTree = "<group>"; };
+		60F2A7D81F67C4C80068C4E7 /* Texture.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Texture.hpp; path = Engine/Texture.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,8 +116,12 @@
 			isa = PBXGroup;
 			children = (
 				60EC92771F65DE89006F0902 /* stb_image.h */,
+				60F2A7D41F67C2050068C4E7 /* Sprite.cpp */,
+				60F2A7D51F67C2050068C4E7 /* Sprite.hpp */,
 				60B425511F64DC8B00BEE84C /* Engine.cpp */,
 				60B425521F64DC8B00BEE84C /* Engine.hpp */,
+				60F2A7D71F67C4C80068C4E7 /* Texture.cpp */,
+				60F2A7D81F67C4C80068C4E7 /* Texture.hpp */,
 				60F2A7D11F67B4480068C4E7 /* Quad.cpp */,
 				60F2A7D21F67B4480068C4E7 /* Quad.hpp */,
 				60F0259C1F64E3AC0022EC73 /* Window.cpp */,
@@ -186,6 +196,8 @@
 			files = (
 				60F2A7D31F67B4480068C4E7 /* Quad.cpp in Sources */,
 				60EE18CC1F6657E8000C6F0D /* Transform.cpp in Sources */,
+				60F2A7D61F67C2050068C4E7 /* Sprite.cpp in Sources */,
+				60F2A7D91F67C4C80068C4E7 /* Texture.cpp in Sources */,
 				60B425421F64D7E600BEE84C /* main.cpp in Sources */,
 				60F0259E1F64E3AC0022EC73 /* Window.cpp in Sources */,
 				60EE18BD1F6616BC000C6F0D /* Camera.cpp in Sources */,
