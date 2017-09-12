@@ -7,7 +7,7 @@ unsigned int quadVAO = 0;
 void drawQuad() {
 	if (quadVAO == 0) {
 		unsigned int quadVBO;
-		
+
 		float quadVertices[] = {
 			// positions        // texture Coords
 			-1.0f,  1.0f, 0.0f, 0.0f, 0.0f, // left top
@@ -75,7 +75,7 @@ int main() {
 
 	GLFWwindow* window = createWindow("vania",SCREEN_WIDTH,SCREEN_HEIGHT);
 
-	Shader shader = Shader("/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Shader/sprite.vs.glsl", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Shader/sprite.fs.glsl");
+	Shader shader = Shader("/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Shader/quad.vs.glsl", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Shader/quad.fs.glsl");
 
 	unsigned int textureID = loadTexture("/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Texture/enemy_jumper_jump.png");
 

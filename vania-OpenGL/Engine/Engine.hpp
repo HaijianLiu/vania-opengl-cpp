@@ -43,6 +43,7 @@
 ------------------------------------------------------------------------------*/
 #include "Window.hpp"
 #include "Shader.hpp"
+#include "Quad.hpp"
 #include "Transform.hpp"
 #include "Camera.hpp"
 
