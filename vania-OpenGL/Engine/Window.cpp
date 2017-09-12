@@ -1,7 +1,28 @@
 
 #include "Engine.hpp"
 
-GLFWwindow* createWindow(const char* name, int screenWidth, int screenHeight) {
+/*------------------------------------------------------------------------------
+< Constructor >
+------------------------------------------------------------------------------*/
+Window::Window(const char* name, int screenWidth, int screenHeight) {
+	this->window = createWindow(name,screenWidth,screenHeight);
+	glfwGetFramebufferSize(this->window, &this->screenWidth, &this->screenHeight);
+	this->retina = this->screenWidth / SCREEN_WIDTH;
+}
+
+
+/*------------------------------------------------------------------------------
+< Destructor >
+------------------------------------------------------------------------------*/
+Window::~Window() {
+
+}
+
+
+/*------------------------------------------------------------------------------
+< createWindow >
+------------------------------------------------------------------------------*/
+GLFWwindow* Window::createWindow(const char* name, int screenWidth, int screenHeight) {
 
 	// Create OpenGL Window
 	GLFWwindow* window;

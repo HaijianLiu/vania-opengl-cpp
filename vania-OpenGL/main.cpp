@@ -2,7 +2,7 @@
 #include "Engine.hpp"
 
 
-GLFWwindow* window = createWindow("vania",SCREEN_WIDTH,SCREEN_HEIGHT);
+Window* window = new Window("vania",SCREEN_WIDTH,SCREEN_HEIGHT);
 Camera* camera = new Camera();
 Quad* quad = new Quad();
 Texture* texture = new Texture("/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Texture/enemy_jumper_jump.png");
@@ -21,6 +21,7 @@ void start() {
 < Delete >
 ------------------------------------------------------------------------------*/
 void release() {
+	delete window;
 	delete camera;
 	delete quad;
 	delete texture;
@@ -48,7 +49,7 @@ void draw() {
 /*------------------------------------------------------------------------------
 < Get Functions >
 ------------------------------------------------------------------------------*/
-GLFWwindow* getWindow() {
+Window* getWindow() {
 	return window;
 }
 Camera* getCamera() {
@@ -83,7 +84,7 @@ int main() {
 		float lastFrame = 0.0f;
 
 	// render loop
-	while (!glfwWindowShouldClose(window)) {
+	while (!glfwWindowShouldClose(window->window)) {
 
 		// per-frame time logic
 		float currentFrame = glfwGetTime();
@@ -92,7 +93,7 @@ int main() {
 
 
 		// input
-		if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS) glfwSetWindowShouldClose(window, true);
+		if (glfwGetKey(window->window, GLFW_KEY_ESCAPE) == GLFW_PRESS) glfwSetWindowShouldClose(window->window, true);
 
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -100,7 +101,7 @@ int main() {
 			glBindTexture(GL_TEXTURE_2D, texture->textureID);
 			quad->draw();
 
-		glfwSwapBuffers(window);
+		glfwSwapBuffers(window->window);
 		glfwPollEvents();
 	}
 

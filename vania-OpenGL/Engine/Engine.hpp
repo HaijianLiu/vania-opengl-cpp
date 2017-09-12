@@ -59,7 +59,7 @@
 < Global Functions >
 ------------------------------------------------------------------------------*/
 // main.cpp
-GLFWwindow* getWindow();
+Window* getWindow();
 Camera* getCamera();
 Shader* getShader();
 

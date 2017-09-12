@@ -4,8 +4,7 @@
 
 class Camera {
 private:
-	GLFWwindow* window;
-	int screenWidth, screenHeight;
+	Window* window;
 
 public:
 	// Camera Position
