@@ -2,36 +2,6 @@
 #include "Engine.hpp"
 
 
-unsigned int quadVAO = 0;
-
-void drawQuad() {
-	if (quadVAO == 0) {
-		unsigned int quadVBO;
-
-		float quadVertices[] = {
-			// positions        // texture Coords
-			-1.0f,  1.0f, 0.0f, 0.0f, 0.0f, // left top
-			-1.0f, -1.0f, 0.0f, 0.0f, 1.0f, // left bottom
-			 1.0f,  1.0f, 0.0f, 1.0f, 0.0f, // right top
-			 1.0f, -1.0f, 0.0f, 1.0f, 1.0f, // right bottom
-		};
-
-		// setup plane VAO
-		glGenVertexArrays(1, &quadVAO);
-		glGenBuffers(1, &quadVBO);
-		glBindVertexArray(quadVAO);
-		glBindBuffer(GL_ARRAY_BUFFER, quadVBO);
-		glBufferData(GL_ARRAY_BUFFER, sizeof(quadVertices), &quadVertices, GL_STATIC_DRAW);
-		glEnableVertexAttribArray(0);
-		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
-		glEnableVertexAttribArray(1);
-		glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
-	}
-	glBindVertexArray(quadVAO);
-	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
-	glBindVertexArray(0);
-}
-
 unsigned int loadTexture(const char* path) {
 	unsigned int textureID;
 	glGenTextures(1, &textureID);
@@ -75,11 +45,13 @@ int main() {
 
 	GLFWwindow* window = createWindow("vania",SCREEN_WIDTH,SCREEN_HEIGHT);
 
+	Quad* quad = new Quad();
+
 	Shader shader = Shader("/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Shader/quad.vs.glsl", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Shader/quad.fs.glsl");
 
 	unsigned int textureID = loadTexture("/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Texture/enemy_jumper_jump.png");
 
-	glm::mat4 projection = glm::ortho(0.0f,2*SCREEN_WIDTH,0.0f,2*SCREEN_HEIGHT,0.0f,100.0f);
+	glm::mat4 projection = glm::ortho(0.0f, 2*SCREEN_WIDTH, 0.0f, 2*SCREEN_HEIGHT, 0.0f, 100.0f);
 
 	glm::mat4 view = glm::lookAt(
 		glm::vec3(-SCREEN_WIDTH/2,-SCREEN_HEIGHT/2,1), // Camera is at (4,3,3), in World Space
@@ -125,7 +97,8 @@ int main() {
 
 		shader.use();
 			glBindTexture(GL_TEXTURE_2D, textureID);
-			drawQuad();
+			quad->draw();
+			// drawQuad();
 
 		glfwSwapBuffers(window);
 		glfwPollEvents();
