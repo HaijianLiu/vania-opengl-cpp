@@ -3,18 +3,12 @@
 
 
 Window* window = new Window("vania",SCREEN_WIDTH,SCREEN_HEIGHT);
+Time* timer = new Time();
 Camera* camera = new Camera();
 Quad* quad = new Quad();
 Texture* texture = new Texture("/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Texture/enemy_jumper_jump.png");
 Shader* shader = new Shader("/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Shader/quad.vs.glsl", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Shader/quad.fs.glsl");
 Transform* transform = new Transform();
-
-/*------------------------------------------------------------------------------
-< Start >
-------------------------------------------------------------------------------*/
-void start() {
-
-}
 
 
 /*------------------------------------------------------------------------------
@@ -22,11 +16,28 @@ void start() {
 ------------------------------------------------------------------------------*/
 void release() {
 	delete window;
+	delete timer;
 	delete camera;
 	delete quad;
 	delete texture;
 	delete shader;
 	delete transform;
+	glfwTerminate(); // glfw: terminate, clearing all previously allocated GLFW resources.
+}
+
+
+/*------------------------------------------------------------------------------
+< Start >
+------------------------------------------------------------------------------*/
+void start() {
+	timer->start();
+	shader->use();
+		shader->setInt("texColor", 0);
+		transform->scale = glm::vec3(47.0f,32.0f,0.0f);
+		transform->update();
+		shader->setMat4("projection",camera->projection);
+		shader->setMat4("view",camera->view);
+		shader->setMat4("model",transform->model);
 }
 
 
@@ -34,7 +45,7 @@ void release() {
 < Update >
 ------------------------------------------------------------------------------*/
 void update() {
-
+	timer->update();
 }
 
 
@@ -42,7 +53,14 @@ void update() {
 < Draw >
 ------------------------------------------------------------------------------*/
 void draw() {
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
+	shader->use();
+		glBindTexture(GL_TEXTURE_2D, texture->textureID);
+		quad->draw();
+
+	glfwSwapBuffers(window->window);
+	glfwPollEvents();
 }
 
 
@@ -67,46 +85,21 @@ Shader* getShader() {
 < main >
 ==============================================================================*/
 int main() {
-
-
+	// Start
 	start();
 
-	shader->use();
-		shader->setInt("texColor", 0);
-		transform->scale = glm::vec3(47.0f,32.0f,0.0f);
-		transform->update();
-		shader->setMat4("projection",camera->projection);
-		shader->setMat4("view",camera->view);
-		shader->setMat4("model",transform->model);
-
-		// timing
-		float deltaTime = 0.0f;
-		float lastFrame = 0.0f;
-
-	// render loop
+	// Game Loop
 	while (!glfwWindowShouldClose(window->window)) {
-
-		// per-frame time logic
-		float currentFrame = glfwGetTime();
-		deltaTime = currentFrame - lastFrame;
-		lastFrame = currentFrame;
-
-
-		// input
 		if (glfwGetKey(window->window, GLFW_KEY_ESCAPE) == GLFW_PRESS) glfwSetWindowShouldClose(window->window, true);
-
-		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-		shader->use();
-			glBindTexture(GL_TEXTURE_2D, texture->textureID);
-			quad->draw();
-
-		glfwSwapBuffers(window->window);
-		glfwPollEvents();
+		// Update
+		// timer->setTime();
+		// if (timer->checkFPS(60)) {
+			update();
+			draw();
+		// }
 	}
 
-	// glfw: terminate, clearing all previously allocated GLFW resources.
-	glfwTerminate();
+	// release
 	release();
 	return 0;
 }
