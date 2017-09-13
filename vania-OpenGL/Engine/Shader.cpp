@@ -8,12 +8,14 @@ Shader::Shader(const char* vertexPath, const char* fragmentPath) {
 	this->programID = loadShader(vertexPath,fragmentPath);
 }
 
+
 /*------------------------------------------------------------------------------
 < Destructor >
 ------------------------------------------------------------------------------*/
 Shader::~Shader() {
 	glDeleteProgram(this->programID);
 }
+
 
 /*------------------------------------------------------------------------------
 < Set Functions >
