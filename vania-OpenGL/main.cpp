@@ -6,21 +6,21 @@ Window* window = new Window("vania",SCREEN_WIDTH,SCREEN_HEIGHT);
 Timer* timer = new Timer();
 Camera* camera = new Camera();
 Quad* quad = new Quad();
-Texture* texture = new Texture("/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Texture/enemy_jumper_jump.png");
-Shader* shader = new Shader("/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Shader/quad.vs.glsl", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Shader/quad.fs.glsl");
+Resources* resources = new Resources();
+
+
 Transform* transform = new Transform();
+
 
 
 /*------------------------------------------------------------------------------
 < Delete >
 ------------------------------------------------------------------------------*/
-void release() {
+void clear() {
 	delete window;
 	delete timer;
 	delete camera;
 	delete quad;
-	delete texture;
-	delete shader;
 	delete transform;
 	glfwTerminate(); // glfw: terminate, clearing all previously allocated GLFW resources.
 }
@@ -31,13 +31,17 @@ void release() {
 ------------------------------------------------------------------------------*/
 void start() {
 	timer->start();
-	shader->use();
-		shader->setInt("texColor", 0);
+
+	resources->loadShader("quad", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Shader/quad.vs.glsl",  "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Shader/quad.fs.glsl");
+	resources->loadTexture("enemy_jumper_jump", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Texture/enemy_jumper_jump.png");
+
+	resources->getShader("quad")->use();
+		resources->getShader("quad")->setInt("texColor", 0);
 		transform->scale = glm::vec3(47.0f,32.0f,0.0f);
 		transform->update();
-		shader->setMat4("projection",camera->projection);
-		shader->setMat4("view",camera->view);
-		shader->setMat4("model",transform->model);
+		resources->getShader("quad")->setMat4("projection",camera->projection);
+		resources->getShader("quad")->setMat4("view",camera->view);
+		resources->getShader("quad")->setMat4("model",transform->model);
 }
 
 
@@ -55,8 +59,8 @@ void update() {
 void draw() {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-	shader->use();
-		glBindTexture(GL_TEXTURE_2D, texture->textureID);
+	resources->getShader("quad")->use();
+		glBindTexture(GL_TEXTURE_2D, resources->getTexture("enemy_jumper_jump")->textureID);
 		quad->draw();
 
 	glfwSwapBuffers(window->window);
@@ -73,12 +77,6 @@ Window* getWindow() {
 Camera* getCamera() {
 	return camera;
 }
-Shader* getShader() {
-	return shader;
-}
-
-
-
 
 
 /*==============================================================================
@@ -99,7 +97,7 @@ int main() {
 		// }
 	}
 
-	// release
-	release();
+	// clear
+	clear();
 	return 0;
 }

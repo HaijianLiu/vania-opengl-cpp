@@ -15,11 +15,11 @@ public:
 	~Resources();
 
 	// Loads (and generates) a shader program from file loading vertex, fragment
-	void loadShader(const char* vertexPath, const char* fragmentPath, const char* name);
+	void loadShader(const char* name, const char* vertexPath, const char* fragmentPath);
 	// Retrieves a stored sader
 	Shader* getShader(const char* name);
 	// Loads (and generates) a texture from file
-	void loadTexture(const char* path, const char* name);
+	void loadTexture(const char* name, const char* path);
 	// Retrieves a stored texture
 	Texture* getTexture(const char* name);
 };
