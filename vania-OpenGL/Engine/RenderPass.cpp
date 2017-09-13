@@ -4,11 +4,7 @@
 /*------------------------------------------------------------------------------
 < Constructor >
 ------------------------------------------------------------------------------*/
-RenderPass::RenderPass(int number) {
-	// getWindow
-	this->window = getWindow();
-	this->resources = getResources();
-
+RenderPass::RenderPass() {
 	// setup plane VAO
 	unsigned int vbo;
 	float vertices[] = {
@@ -27,6 +23,25 @@ RenderPass::RenderPass(int number) {
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
 	glEnableVertexAttribArray(1);
 	glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
+
+}
+
+
+/*------------------------------------------------------------------------------
+< Desstructor >
+------------------------------------------------------------------------------*/
+RenderPass::~RenderPass() {
+
+}
+
+
+/*------------------------------------------------------------------------------
+< start >
+------------------------------------------------------------------------------*/
+void RenderPass::start(int number) {
+	// getWindow
+	this->window = getWindow();
+	this->resources = getResources();
 
 	// configure (floating point) framebuffers
 	glGenFramebuffers(1, &this->fbo);
@@ -72,14 +87,6 @@ RenderPass::RenderPass(int number) {
 	for (unsigned i = 0; i < number; i++) {
 		this->resources->getShader("RenderPass")->setInt(("pass[" + std::to_string(i) + "]").c_str(), i);
 	}
-}
-
-
-/*------------------------------------------------------------------------------
-< Desstructor >
-------------------------------------------------------------------------------*/
-RenderPass::~RenderPass() {
-
 }
 
 

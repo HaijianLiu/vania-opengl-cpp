@@ -5,9 +5,11 @@
 Window* window = new Window("vania",SCREEN_WIDTH,SCREEN_HEIGHT);
 Timer* timer = new Timer();
 Camera* camera = new Camera();
-Quad* quad = new Quad();
 Resources* resources = new Resources();
 
+Quad* quad = new Quad();
+
+RenderPass* renderPass = new RenderPass();
 
 Transform* transform = new Transform();
 
@@ -35,6 +37,8 @@ void start() {
 	resources->loadShader("Quad", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Shader/Quad.vs.glsl",  "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Shader/Quad.fs.glsl");
 	resources->loadShader("RenderPass", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Shader/RenderPass.vs.glsl",  "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Shader/RenderPass.fs.glsl");
 	resources->loadTexture("enemy_jumper_jump", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Texture/enemy_jumper_jump.png");
+
+	renderPass->start(1);
 
 	transform->scale = glm::vec3(47.0f,32.0f,0.0f);
 	transform->update();
@@ -87,9 +91,6 @@ Resources* getResources() {
 int main() {
 	// Start
 	start();
-
-	// init RenderPass object
-	RenderPass* renderPass = new RenderPass(1);
 
 	// Game Loop
 	while (!glfwWindowShouldClose(window->window)) {

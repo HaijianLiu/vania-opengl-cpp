@@ -11,9 +11,10 @@ public:
 	unsigned int fbo, vao;
 	std::vector<unsigned int> pass;
 
-	RenderPass(int number);
+	RenderPass();
 	~RenderPass();
 
+	void start(int number);
 	void use();
 	void finish();
 	void draw();
