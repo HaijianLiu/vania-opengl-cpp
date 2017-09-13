@@ -10,7 +10,6 @@ private:
 public:
 	unsigned int fbo, vao;
 	std::vector<unsigned int> pass;
-	Shader* shader;
 
 	RenderPass(int number);
 	~RenderPass();

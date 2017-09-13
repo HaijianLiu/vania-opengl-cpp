@@ -68,10 +68,9 @@ RenderPass::RenderPass(int number) {
 	glBindFramebuffer(GL_FRAMEBUFFER,0);
 
 	// Set Shader
-	this->shader = new Shader("/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Shader/RenderPass.vs.glsl", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Shader/RenderPass.fs.glsl");
-	this->shader->use();
+	this->resources->getShader("RenderPass")->use();
 	for (unsigned i = 0; i < number; i++) {
-		this->shader->setInt(("pass[" + std::to_string(i) + "]").c_str(), i);
+		this->resources->getShader("RenderPass")->setInt(("pass[" + std::to_string(i) + "]").c_str(), i);
 	}
 }
 
@@ -80,7 +79,7 @@ RenderPass::RenderPass(int number) {
 < Desstructor >
 ------------------------------------------------------------------------------*/
 RenderPass::~RenderPass() {
-	delete this->shader;
+
 }
 
 
@@ -105,7 +104,7 @@ void RenderPass::finish() {
 < draw >
 ------------------------------------------------------------------------------*/
 void RenderPass::draw() {
-	this->shader->use();
+	this->resources->getShader("RenderPass")->use();
 	for (unsigned int i = 0; i < this->pass.size(); i++) {
 		glActiveTexture(GL_TEXTURE0 + i);
 		glBindTexture(GL_TEXTURE_2D, this->pass[i]);
