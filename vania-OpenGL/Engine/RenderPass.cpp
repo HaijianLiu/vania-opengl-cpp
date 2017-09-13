@@ -3,7 +3,27 @@
 
 // RenderPass class
 RenderPass::RenderPass(int number) {
+	// getWindow
 	this->window = getWindow();
+
+	// setup plane VAO
+	unsigned int vbo;
+	float vertices[] = {
+		// vertex             // texCoord
+		-1.0f,  1.0f, 0.0f,   0.0f, 0.0f, // left top
+		-1.0f, -1.0f, 0.0f,   0.0f, 1.0f, // left bottom
+		 1.0f,  1.0f, 0.0f,   1.0f, 0.0f, // right top
+		 1.0f, -1.0f, 0.0f,   1.0f, 1.0f, // right bottom
+	};
+	glGenVertexArrays(1, &this->vao);
+	glGenBuffers(1, &vbo);
+	glBindVertexArray(vbo);
+	glBindBuffer(GL_ARRAY_BUFFER, vbo);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), &vertices, GL_STATIC_DRAW);
+	glEnableVertexAttribArray(0);
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
+	glEnableVertexAttribArray(1);
+	glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
 
 	// configure (floating point) framebuffers
 	glGenFramebuffers(1, &this->fbo);
@@ -45,20 +65,16 @@ RenderPass::RenderPass(int number) {
 	glBindFramebuffer(GL_FRAMEBUFFER,0);
 
 	// Set Shader
-	this->shader = new Shader("/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Shader/renderPass.vs.glsl", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Shader/renderPass.fs.glsl");
+	this->shader = new Shader("/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Shader/RenderPass.vs.glsl", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Shader/RenderPass.fs.glsl");
 	this->shader->use();
 	for (unsigned i = 0; i < number; i++) {
 		this->shader->setInt(("pass[" + std::to_string(i) + "]").c_str(), i);
 	}
-
-	// new Quad
-	this->quad = new Quad();
 }
 
 
 RenderPass::~RenderPass() {
 	delete this->shader;
-	delete this->quad;
 }
 
 
@@ -77,5 +93,7 @@ void RenderPass::draw() {
 		glActiveTexture(GL_TEXTURE0 + i);
 		glBindTexture(GL_TEXTURE_2D, this->pass[i]);
 	}
-	this->quad->draw();
+	glBindVertexArray(this->vao);
+	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
+	glBindVertexArray(0);
 }

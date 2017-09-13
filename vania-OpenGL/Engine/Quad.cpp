@@ -9,10 +9,10 @@ Quad::Quad() {
 	unsigned int vbo;
 	float vertices[] = {
 		// vertex             // texCoord
-		-1.0f,  1.0f, 0.0f,   0.0f, 0.0f, // left top
-		-1.0f, -1.0f, 0.0f,   0.0f, 1.0f, // left bottom
-		 1.0f,  1.0f, 0.0f,   1.0f, 0.0f, // right top
-		 1.0f, -1.0f, 0.0f,   1.0f, 1.0f, // right bottom
+		-1.0f,  1.0f, 0.0f,   0.0f, 1.0f, // left top
+		-1.0f, -1.0f, 0.0f,   0.0f, 0.0f, // left bottom
+		 1.0f,  1.0f, 0.0f,   1.0f, 1.0f, // right top
+		 1.0f, -1.0f, 0.0f,   1.0f, 0.0f, // right bottom
 	};
 	glGenVertexArrays(1, &this->vao);
 	glGenBuffers(1, &vbo);

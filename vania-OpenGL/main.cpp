@@ -32,7 +32,7 @@ void clear() {
 void start() {
 	timer->start();
 
-	resources->loadShader("quad", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Shader/quad.vs.glsl",  "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Shader/quad.fs.glsl");
+	resources->loadShader("quad", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Shader/Quad.vs.glsl",  "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Shader/Quad.fs.glsl");
 	resources->loadTexture("enemy_jumper_jump", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Texture/enemy_jumper_jump.png");
 
 	resources->getShader("quad")->use();
@@ -57,14 +57,11 @@ void update() {
 < Draw >
 ------------------------------------------------------------------------------*/
 void draw() {
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 	resources->getShader("quad")->use();
 		glBindTexture(GL_TEXTURE_2D, resources->getTexture("enemy_jumper_jump")->textureID);
 		quad->draw();
 
-	glfwSwapBuffers(window->window);
-	glfwPollEvents();
 }
 
 
@@ -86,14 +83,23 @@ int main() {
 	// Start
 	start();
 
+	// init RenderPass object
+	RenderPass* renderPass = new RenderPass(1);
+
 	// Game Loop
 	while (!glfwWindowShouldClose(window->window)) {
 		if (glfwGetKey(window->window, GLFW_KEY_ESCAPE) == GLFW_PRESS) glfwSetWindowShouldClose(window->window, true);
 		// Update
 		// timer->setTime();
 		// if (timer->checkFPS(60)) {
+			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+			renderPass->use();
 			update();
 			draw();
+			renderPass->finish();
+			renderPass->draw();
+			glfwSwapBuffers(window->window);
+			glfwPollEvents();
 		// }
 	}
 

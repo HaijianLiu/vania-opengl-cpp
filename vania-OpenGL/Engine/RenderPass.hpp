@@ -8,7 +8,7 @@ private:
 	Quad* quad;
 
 public:
-	unsigned int fbo;
+	unsigned int fbo, vao;
 	std::vector<unsigned int> pass;
 	Shader* shader;
 
