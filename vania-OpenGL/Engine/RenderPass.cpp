@@ -7,6 +7,7 @@
 RenderPass::RenderPass(int number) {
 	// getWindow
 	this->window = getWindow();
+	this->resources = getResources();
 
 	// setup plane VAO
 	unsigned int vbo;

@@ -65,6 +65,6 @@
 // main.cpp
 Window* getWindow();
 Camera* getCamera();
-Shader* getShader();
+Resources* getResources();
 
 #endif /* Engine_hpp */

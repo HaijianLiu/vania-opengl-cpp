@@ -5,7 +5,7 @@
 class RenderPass {
 private:
 	Window* window;
-	Quad* quad;
+	Resources* resources;
 
 public:
 	unsigned int fbo, vao;

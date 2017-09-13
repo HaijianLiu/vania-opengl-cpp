@@ -32,16 +32,17 @@ void clear() {
 void start() {
 	timer->start();
 
-	resources->loadShader("quad", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Shader/Quad.vs.glsl",  "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Shader/Quad.fs.glsl");
+	resources->loadShader("Quad", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Shader/Quad.vs.glsl",  "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Shader/Quad.fs.glsl");
 	resources->loadTexture("enemy_jumper_jump", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Texture/enemy_jumper_jump.png");
 
-	resources->getShader("quad")->use();
-		resources->getShader("quad")->setInt("texColor", 0);
-		transform->scale = glm::vec3(47.0f,32.0f,0.0f);
-		transform->update();
-		resources->getShader("quad")->setMat4("projection",camera->projection);
-		resources->getShader("quad")->setMat4("view",camera->view);
-		resources->getShader("quad")->setMat4("model",transform->model);
+	transform->scale = glm::vec3(47.0f,32.0f,0.0f);
+	transform->update();
+
+	resources->getShader("Quad")->use();
+		resources->getShader("Quad")->setInt("texColor", 0);
+		resources->getShader("Quad")->setMat4("projection",camera->projection);
+		resources->getShader("Quad")->setMat4("view",camera->view);
+		resources->getShader("Quad")->setMat4("model",transform->model);
 }
 
 
@@ -58,7 +59,7 @@ void update() {
 ------------------------------------------------------------------------------*/
 void draw() {
 
-	resources->getShader("quad")->use();
+	resources->getShader("Quad")->use();
 		glBindTexture(GL_TEXTURE_2D, resources->getTexture("enemy_jumper_jump")->textureID);
 		quad->draw();
 
@@ -73,6 +74,9 @@ Window* getWindow() {
 }
 Camera* getCamera() {
 	return camera;
+}
+Resources* getResources() {
+	return resources;
 }
 
 
