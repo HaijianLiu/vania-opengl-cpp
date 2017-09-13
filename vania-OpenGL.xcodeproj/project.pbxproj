@@ -15,6 +15,7 @@
 		60B425531F64DC8B00BEE84C /* Engine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60B425511F64DC8B00BEE84C /* Engine.cpp */; };
 		60EC246D1F68CA30006BFDA6 /* Timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60EC246B1F68CA30006BFDA6 /* Timer.cpp */; };
 		60EC24701F68CF44006BFDA6 /* Resources.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60EC246E1F68CF44006BFDA6 /* Resources.cpp */; };
+		60EC24731F690204006BFDA6 /* RenderPass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60EC24711F690204006BFDA6 /* RenderPass.cpp */; };
 		60EE18BD1F6616BC000C6F0D /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60EE18BB1F6616BC000C6F0D /* Camera.cpp */; };
 		60EE18CC1F6657E8000C6F0D /* Transform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60EE18CA1F6657E8000C6F0D /* Transform.cpp */; };
 		60F0259E1F64E3AC0022EC73 /* Window.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60F0259C1F64E3AC0022EC73 /* Window.cpp */; };
@@ -49,6 +50,8 @@
 		60EC246C1F68CA30006BFDA6 /* Timer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Timer.hpp; path = Engine/Timer.hpp; sourceTree = "<group>"; };
 		60EC246E1F68CF44006BFDA6 /* Resources.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Resources.cpp; path = Engine/Resources.cpp; sourceTree = "<group>"; };
 		60EC246F1F68CF44006BFDA6 /* Resources.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Resources.hpp; path = Engine/Resources.hpp; sourceTree = "<group>"; };
+		60EC24711F690204006BFDA6 /* RenderPass.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RenderPass.cpp; path = Engine/RenderPass.cpp; sourceTree = "<group>"; };
+		60EC24721F690204006BFDA6 /* RenderPass.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = RenderPass.hpp; path = Engine/RenderPass.hpp; sourceTree = "<group>"; };
 		60EC92771F65DE89006F0902 /* stb_image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = stb_image.h; path = Engine/stb_image.h; sourceTree = "<group>"; };
 		60EE18BB1F6616BC000C6F0D /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Camera.cpp; path = Engine/Camera.cpp; sourceTree = "<group>"; };
 		60EE18BC1F6616BC000C6F0D /* Camera.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Camera.hpp; path = Engine/Camera.hpp; sourceTree = "<group>"; };
@@ -142,6 +145,8 @@
 				60EC246C1F68CA30006BFDA6 /* Timer.hpp */,
 				60EC246E1F68CF44006BFDA6 /* Resources.cpp */,
 				60EC246F1F68CF44006BFDA6 /* Resources.hpp */,
+				60EC24711F690204006BFDA6 /* RenderPass.cpp */,
+				60EC24721F690204006BFDA6 /* RenderPass.hpp */,
 			);
 			name = Engine;
 			sourceTree = "<group>";
@@ -210,6 +215,7 @@
 				60F2A7D61F67C2050068C4E7 /* Sprite.cpp in Sources */,
 				60EC246D1F68CA30006BFDA6 /* Timer.cpp in Sources */,
 				60F2A7D91F67C4C80068C4E7 /* Texture.cpp in Sources */,
+				60EC24731F690204006BFDA6 /* RenderPass.cpp in Sources */,
 				60B425421F64D7E600BEE84C /* main.cpp in Sources */,
 				60F0259E1F64E3AC0022EC73 /* Window.cpp in Sources */,
 				60EE18BD1F6616BC000C6F0D /* Camera.cpp in Sources */,

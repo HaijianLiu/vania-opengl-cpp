@@ -33,6 +33,7 @@
 #include <glm/glm.hpp>
 #include <glm/gtx/transform.hpp>
 #include <glm/gtc/matrix_transform.hpp>
+
 // Include stbi Library
 #include "stb_image.h"
 
@@ -45,6 +46,7 @@
 #include "Quad.hpp"
 #include "Texture.hpp"
 #include "Resources.hpp"
+#include "RenderPass.hpp"
 #include "Sprite.hpp"
 #include "Transform.hpp"
 #include "Camera.hpp"
