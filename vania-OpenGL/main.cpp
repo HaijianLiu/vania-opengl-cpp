@@ -3,7 +3,7 @@
 
 
 Window* window = new Window("vania",SCREEN_WIDTH,SCREEN_HEIGHT);
-Time* timer = new Time();
+Timer* timer = new Timer();
 Camera* camera = new Camera();
 Quad* quad = new Quad();
 Texture* texture = new Texture("/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Texture/enemy_jumper_jump.png");

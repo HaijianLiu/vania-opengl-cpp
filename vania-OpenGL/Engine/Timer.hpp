@@ -1,8 +1,8 @@
 
-#ifndef Time_hpp
-#define Time_hpp
+#ifndef Timer_hpp
+#define Timer_hpp
 
-class Time {
+class Timer {
 private:
 	float lastTime = 0;
 
@@ -10,8 +10,8 @@ public:
 	float currentTime = 0;
 	float deltaTime = 0;
 
-	Time();
-	~Time();
+	Timer();
+	~Timer();
 
 	void start();
 	void setTime();

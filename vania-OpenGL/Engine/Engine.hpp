@@ -41,7 +41,7 @@
 ------------------------------------------------------------------------------*/
 #include "Window.hpp"
 #include "Shader.hpp"
-#include "Time.hpp"
+#include "Timer.hpp"
 #include "Quad.hpp"
 #include "Texture.hpp"
 #include "Sprite.hpp"

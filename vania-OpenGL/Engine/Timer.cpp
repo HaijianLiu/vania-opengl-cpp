@@ -1,26 +1,26 @@
 
 #include "Engine.hpp"
 
-Time::Time() {
+Timer::Timer() {
 
 }
 
-Time::~Time() {
+Timer::~Timer() {
 
 }
 
-void Time::start() {
+void Timer::start() {
 	this->lastTime = glfwGetTime();
 }
 
 // in a game loop but not in FPS check loop
-void Time::setTime() {
+void Timer::setTime() {
 	this->currentTime = glfwGetTime();
 }
 
 
 // in FPS check loop
-void Time::update() {
+void Timer::update() {
 
 	// from setTime **** for test
 	this->currentTime = glfwGetTime();
@@ -33,7 +33,7 @@ void Time::update() {
 }
 
 
-bool Time::checkFPS(int frameRate) {
+bool Timer::checkFPS(int frameRate) {
 	if (this->currentTime - this->lastTime >= 1.0f / frameRate) {
 		return true;
 	}
