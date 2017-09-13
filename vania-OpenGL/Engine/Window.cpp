@@ -61,7 +61,7 @@ GLFWwindow* Window::createWindow(const char* name, int screenWidth, int screenHe
 
 
 	// Other Default settings
-	// Dark blue background
+	// background
 	glClearColor(0.0,0.0,0.0,1.0);
 	// Set input mode GLFW_STICKY_KEYS
 	glfwSetInputMode(window,GLFW_STICKY_KEYS,GL_TRUE);
@@ -71,6 +71,9 @@ GLFWwindow* Window::createWindow(const char* name, int screenWidth, int screenHe
 	glDepthFunc(GL_LESS);
 	// Cull triangles which normal is not towards the camera
 	glEnable(GL_CULL_FACE);
+	// Enable alpha channel
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+	glEnable(GL_BLEND);
 
 	return window;
 }
