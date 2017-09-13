@@ -21,7 +21,7 @@
 #include <iostream>
 #include <random>
 #include <vector>
-#include <string>
+#include <map>
 #include <fstream>
 #include <sstream>
 
@@ -44,6 +44,7 @@
 #include "Timer.hpp"
 #include "Quad.hpp"
 #include "Texture.hpp"
+#include "Resources.hpp"
 #include "Sprite.hpp"
 #include "Transform.hpp"
 #include "Camera.hpp"
