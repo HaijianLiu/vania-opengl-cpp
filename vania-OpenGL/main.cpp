@@ -17,7 +17,6 @@ Quad* quad = new Quad();
 
 RenderPass* renderPass = new RenderPass();
 
-
 Player* player = new Player();
 
 
@@ -28,7 +27,9 @@ void clear() {
 	delete window;
 	delete timer;
 	delete camera;
-	delete quad;
+	delete resources;
+	delete renderPass;
+	delete player;
 	glfwTerminate(); // glfw: terminate, clearing all previously allocated GLFW resources.
 }
 
@@ -58,15 +59,6 @@ void update() {
 		gameObjects[i]->update();
 		gameObjects[i]->draw();
 	}
-}
-
-
-/*------------------------------------------------------------------------------
-< Draw >
-------------------------------------------------------------------------------*/
-void draw() {
-
-
 }
 
 
@@ -109,7 +101,6 @@ int main() {
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		renderPass->use();
 			update();
-			draw();
 		renderPass->finish();
 		renderPass->draw();
 		glfwSwapBuffers(window->window);

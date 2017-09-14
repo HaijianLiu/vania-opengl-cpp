@@ -77,9 +77,11 @@ class GameObject;
 // main.cpp
 std::vector<GameObject*>* getGameObjects();
 Window* getWindow();
-Quad* getQuad();
+Timer* getTimer();
 Camera* getCamera();
 Resources* getResources();
-Timer* getTimer();
+
+Quad* getQuad();
+
 
 #endif /* Engine_hpp */
