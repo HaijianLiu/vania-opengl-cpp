@@ -49,8 +49,8 @@
 #include "RenderPass.hpp"
 #include "Sprite.hpp"
 #include "Transform.hpp"
-#include "GameObject.hpp"
 #include "Camera.hpp"
+#include "GameObject.hpp"
 
 /*------------------------------------------------------------------------------
 < GameObject >
@@ -66,6 +66,7 @@
 ------------------------------------------------------------------------------*/
 // main.cpp
 Window* getWindow();
+Quad* getQuad();
 Camera* getCamera();
 Resources* getResources();
 Timer* getTimer();

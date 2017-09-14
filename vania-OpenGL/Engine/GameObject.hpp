@@ -6,10 +6,12 @@ class GameObject {
 private:
 	// List of GameObjects
 	std::vector<GameObject*>* gameObjects;
+	Quad* quad;
 
 public:
 	// Global class
 	Timer* timer;
+	Camera* camera;
 	Resources* resources;
 	// function class
 	Transform* transform;
@@ -24,9 +26,7 @@ public:
 	virtual ~GameObject();
 
 	void preStart();
-	void updateTransform();
 	void draw();
-	void reset();
 
 	virtual void start() = 0;
 	virtual void update() = 0;

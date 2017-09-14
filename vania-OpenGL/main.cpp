@@ -12,12 +12,13 @@ Timer* timer = new Timer();
 Camera* camera = new Camera();
 Resources* resources = new Resources();
 
+
 Quad* quad = new Quad();
 
 RenderPass* renderPass = new RenderPass();
 
-Transform* transform = new Transform();
 
+Player* player = new Player();
 
 
 /*------------------------------------------------------------------------------
@@ -28,7 +29,6 @@ void clear() {
 	delete timer;
 	delete camera;
 	delete quad;
-	delete transform;
 	glfwTerminate(); // glfw: terminate, clearing all previously allocated GLFW resources.
 }
 
@@ -40,16 +40,11 @@ void start() {
 	timer->start();
 	resources->start();
 	renderPass->start(1);
-
-	transform->scale = glm::vec3(47.0f,32.0f,0.0f);
-	transform->position = glm::vec3(0.0f,0.0f,0.0f);
-	transform->update();
-
-	resources->getShader("Quad")->use();
-		resources->getShader("Quad")->setInt("texColor", 0);
-		resources->getShader("Quad")->setMat4("projection",camera->projection);
-		resources->getShader("Quad")->setMat4("view",camera->view);
-		resources->getShader("Quad")->setMat4("model",transform->model);
+	// GameObjects
+	for (unsigned int i = 0; i < gameObjects.size(); i++) {
+		gameObjects[i]->preStart();
+		gameObjects[i]->start();
+	}
 }
 
 
@@ -58,6 +53,11 @@ void start() {
 ------------------------------------------------------------------------------*/
 void update() {
 	timer->update();
+	// GameObjects
+	for (unsigned int i = 0; i < gameObjects.size(); i++) {
+		gameObjects[i]->update();
+		gameObjects[i]->draw();
+	}
 }
 
 
@@ -65,16 +65,8 @@ void update() {
 < Draw >
 ------------------------------------------------------------------------------*/
 void draw() {
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	renderPass->use();
-		resources->getShader("Quad")->use();
-			glActiveTexture(GL_TEXTURE0);
-			glBindTexture(GL_TEXTURE_2D, resources->getTexture("enemy_jumper_jump")->textureID);
-			quad->draw();
-	renderPass->finish();
-	renderPass->draw();
-	glfwSwapBuffers(window->window);
-	glfwPollEvents();
+
+
 }
 
 
@@ -83,6 +75,9 @@ void draw() {
 ------------------------------------------------------------------------------*/
 Window* getWindow() {
 	return window;
+}
+Quad* getQuad() {
+	return quad;
 }
 Camera* getCamera() {
 	return camera;
@@ -111,8 +106,14 @@ int main() {
 		// Update
 		// timer->setTime();
 		// if (timer->checkFPS(60)) {
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+		renderPass->use();
 			update();
 			draw();
+		renderPass->finish();
+		renderPass->draw();
+		glfwSwapBuffers(window->window);
+		glfwPollEvents();
 		// }
 	}
 

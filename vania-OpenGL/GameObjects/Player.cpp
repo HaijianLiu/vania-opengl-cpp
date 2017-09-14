@@ -5,7 +5,7 @@
 < Constructor >
 ------------------------------------------------------------------------------*/
 Player::Player() {
-
+	transform->scale = glm::vec3(47.0f,32.0f,0.0f);
 }
 
 
@@ -29,7 +29,7 @@ void Player::start() {
 < Update >
 ------------------------------------------------------------------------------*/
 void Player::update() {
-
+	transform->position = glm::vec3(0.0f,0.0f,0.0f);
 }
 
 
@@ -45,5 +45,5 @@ void Player::update() {
 < Fixed Update >
 ------------------------------------------------------------------------------*/
 void Player::fixedUpdate() {
-	
+
 }
