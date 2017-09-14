@@ -14,6 +14,8 @@ public:
 	Resources();
 	~Resources();
 
+	void start();
+
 	// Loads (and generates) a shader program from file loading vertex, fragment
 	void loadShader(const char* name, const char* vertexPath, const char* fragmentPath);
 	// Retrieves a stored sader
