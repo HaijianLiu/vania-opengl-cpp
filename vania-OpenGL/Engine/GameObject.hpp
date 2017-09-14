@@ -6,14 +6,14 @@ class GameObject {
 private:
 	// List of GameObjects
 	std::vector<GameObject*>* gameObjects;
-	Quad* quad;
 
 public:
-	// Global class
+	// Global classes
 	Timer* timer;
 	Camera* camera;
 	Resources* resources;
-	// function class
+
+	// GameObject members
 	Transform* transform;
 	Sprite* sprite;
 

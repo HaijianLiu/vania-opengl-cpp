@@ -4,8 +4,12 @@
 
 class Sprite {
 private:
-	Resources* resources;
+	Quad* quad;
+
 public:
+	// this gameObject
+	GameObject* gameObject;
+	// sprite member
 	Shader* shader;
 	Texture* texture;
 
@@ -15,6 +19,7 @@ public:
 	~Sprite();
 
 	void start();
+	void draw();
 };
 
 #endif /* Sprite_hpp */
