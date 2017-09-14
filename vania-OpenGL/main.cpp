@@ -41,6 +41,7 @@ void start() {
 	renderPass->start(1);
 
 	transform->scale = glm::vec3(47.0f,32.0f,0.0f);
+	transform->position = glm::vec3(0.0f,0.0f,0.0f);
 	transform->update();
 
 	resources->getShader("Quad")->use();
@@ -63,11 +64,16 @@ void update() {
 < Draw >
 ------------------------------------------------------------------------------*/
 void draw() {
-
-	resources->getShader("Quad")->use();
-		glBindTexture(GL_TEXTURE_2D, resources->getTexture("enemy_jumper_jump")->textureID);
-		quad->draw();
-
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	renderPass->use();
+		resources->getShader("Quad")->use();
+			glActiveTexture(GL_TEXTURE0);
+			glBindTexture(GL_TEXTURE_2D, resources->getTexture("enemy_jumper_jump")->textureID);
+			quad->draw();
+	renderPass->finish();
+	renderPass->draw();
+	glfwSwapBuffers(window->window);
+	glfwPollEvents();
 }
 
 
@@ -98,14 +104,8 @@ int main() {
 		// Update
 		// timer->setTime();
 		// if (timer->checkFPS(60)) {
-			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-			renderPass->use();
 			update();
 			draw();
-			renderPass->finish();
-			renderPass->draw();
-			glfwSwapBuffers(window->window);
-			glfwPollEvents();
 		// }
 	}
 
