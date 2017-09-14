@@ -50,6 +50,7 @@ void start() {
 ------------------------------------------------------------------------------*/
 void update() {
 	timer->update();
+	camera->update();
 	// GameObjects
 	for (unsigned int i = 0; i < gameObjects.size(); i++) {
 		gameObjects[i]->update();

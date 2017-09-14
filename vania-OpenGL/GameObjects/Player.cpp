@@ -34,7 +34,6 @@ void Player::update() {
 	// if (this->input->getButtonPress(GLFW_KEY_DOWN)) {
 	// 	this->transform->position.y += 1.0f * this->timer->deltaTime;
 	// }
-
 	this->transform->position = glm::vec3(2.0f,1.2f,0.0f);
 }
 
