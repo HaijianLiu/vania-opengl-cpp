@@ -29,12 +29,18 @@ GameObject::~GameObject() {
 
 
 /*------------------------------------------------------------------------------
-< preStart >
+< preStart > before gameObject->start() & after resources->start()
 ------------------------------------------------------------------------------*/
 void GameObject::preStart() {
+	// get birthtime
 	this->birthTime = this->timer->currentTime;
-	this->resources->getShader("Quad")->use();
-	this->resources->getShader("Quad")->setInt("texColor", 0);
+	// sprite get resources
+	this->sprite->shader = this->resources->getShader("Quad");
+	this->sprite->texture = this->resources->getTexture("Default");
+	// sprite default setting
+	this->sprite->shader->use();
+	this->sprite->shader->setMat4("projection",this->camera->projection);
+	this->sprite->shader->setInt("texColor", 0);
 }
 
 
@@ -43,10 +49,9 @@ void GameObject::preStart() {
 ------------------------------------------------------------------------------*/
 void GameObject::draw() {
 	this->transform->update();
-	this->resources->getShader("Quad")->use();
-	this->resources->getShader("Quad")->setMat4("projection",this->camera->projection);
-	this->resources->getShader("Quad")->setMat4("view",this->camera->view);
-	this->resources->getShader("Quad")->setMat4("model",this->transform->model);
+	this->sprite->shader->use();
+	this->sprite->shader->setMat4("view",this->camera->view);
+	this->sprite->shader->setMat4("model",this->transform->model);
 	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, this->resources->getTexture("enemy_jumper_jump")->textureID);
 	this->quad->draw();

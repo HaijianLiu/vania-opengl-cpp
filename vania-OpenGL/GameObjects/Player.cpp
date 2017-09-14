@@ -21,7 +21,8 @@ Player::~Player() {
 < Start >
 ------------------------------------------------------------------------------*/
 void Player::start() {
-
+	// set sprite texture
+	this->sprite->texture = this->resources->getTexture("enemy_jumper_jump");
 }
 
 

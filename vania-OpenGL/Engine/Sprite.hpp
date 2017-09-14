@@ -4,13 +4,17 @@
 
 class Sprite {
 private:
+	Resources* resources;
+public:
+	Shader* shader;
 	Texture* texture;
 
-public:
 	bool flipX = false;
 
 	Sprite();
 	~Sprite();
+
+	void start();
 };
 
 #endif /* Sprite_hpp */
