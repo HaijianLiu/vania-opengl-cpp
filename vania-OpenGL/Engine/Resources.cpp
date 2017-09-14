@@ -5,7 +5,7 @@
 < Constructor >
 ------------------------------------------------------------------------------*/
 Resources::Resources() {
-
+	this->quad = new Quad();
 }
 
 
@@ -13,7 +13,7 @@ Resources::Resources() {
 < Destructor >
 ------------------------------------------------------------------------------*/
 Resources::~Resources() {
-
+	delete this->quad;
 }
 
 void Resources::start() {

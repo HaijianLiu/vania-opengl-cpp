@@ -5,8 +5,7 @@
 < Constructor >
 ------------------------------------------------------------------------------*/
 Sprite::Sprite() {
-	// get Globals
-	this->quad = getQuad();
+	
 }
 
 
@@ -23,6 +22,7 @@ Sprite::~Sprite() {
 ------------------------------------------------------------------------------*/
 void Sprite::start() {
 	// sprite get default resources
+	this->quad = this->gameObject->resources->quad;
 	this->shader = this->gameObject->resources->getShader("Quad");
 	this->texture = this->gameObject->resources->getTexture("Default");
 	// sprite default setting

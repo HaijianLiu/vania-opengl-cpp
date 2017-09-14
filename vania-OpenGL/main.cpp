@@ -13,8 +13,6 @@ Camera* camera = new Camera();
 Resources* resources = new Resources();
 
 
-Quad* quad = new Quad();
-
 RenderPass* renderPass = new RenderPass();
 
 Player* player = new Player();
@@ -68,17 +66,14 @@ void update() {
 Window* getWindow() {
 	return window;
 }
-Quad* getQuad() {
-	return quad;
+Timer* getTimer() {
+	return timer;
 }
 Camera* getCamera() {
 	return camera;
 }
 Resources* getResources() {
 	return resources;
-}
-Timer* getTimer() {
-	return timer;
 }
 std::vector<GameObject*>* getGameObjects() {
 	return &gameObjects;

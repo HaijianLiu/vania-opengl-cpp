@@ -75,13 +75,11 @@ class GameObject;
 < Global Functions >
 ------------------------------------------------------------------------------*/
 // main.cpp
-std::vector<GameObject*>* getGameObjects();
 Window* getWindow();
 Timer* getTimer();
 Camera* getCamera();
 Resources* getResources();
-
-Quad* getQuad();
+std::vector<GameObject*>* getGameObjects();
 
 
 #endif /* Engine_hpp */

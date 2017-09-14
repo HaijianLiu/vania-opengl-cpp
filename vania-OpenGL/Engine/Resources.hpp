@@ -7,6 +7,8 @@ private:
 	/* data */
 
 public:
+	// Quad
+	Quad* quad;
 	// Resource storage
 	std::map<const char*, Shader*> shaders;
 	std::map<const char*, Texture*> textures;
