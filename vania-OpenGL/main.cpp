@@ -11,8 +11,6 @@ Window* window = new Window("vania",SCREEN_WIDTH,SCREEN_HEIGHT);
 Timer* timer = new Timer();
 Camera* camera = new Camera();
 Resources* resources = new Resources();
-
-
 RenderPass* renderPass = new RenderPass();
 
 Player* player = new Player();

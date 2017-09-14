@@ -5,7 +5,7 @@
 < Constructor >
 ------------------------------------------------------------------------------*/
 Input::Input() {
-
+	this->window = getWindow();
 }
 
 
@@ -16,6 +16,7 @@ Input::~Input() {
 
 }
 
-void Input::getButtonPress() {
-
+bool Input::getButtonPress(int button) {
+	if (glfwGetKey(this->window->window, button) == GLFW_PRESS) return true;
+	else return false;
 }

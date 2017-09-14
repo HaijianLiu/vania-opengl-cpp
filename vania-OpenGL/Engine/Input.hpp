@@ -4,13 +4,13 @@
 
 class Input {
 private:
-	/* data */
+	Window* window;
 
 public:
 	Input();
 	~Input();
 
-	void getButtonPress();
+	bool getButtonPress(int button);
 };
 
 #endif /* Input_hpp */

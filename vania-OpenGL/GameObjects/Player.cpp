@@ -5,6 +5,7 @@
 < Constructor >
 ------------------------------------------------------------------------------*/
 Player::Player() {
+	this->input = new Input();
 	transform->scale = glm::vec3(47.0f,32.0f,0.0f);
 }
 
@@ -13,7 +14,7 @@ Player::Player() {
 < Destructor >
 ------------------------------------------------------------------------------*/
 Player::~Player() {
-
+	delete this->input;
 }
 
 
@@ -30,7 +31,11 @@ void Player::start() {
 < Update >
 ------------------------------------------------------------------------------*/
 void Player::update() {
-	transform->position = glm::vec3(0.0f,0.0f,0.0f);
+	if (this->input->getButtonPress(GLFW_KEY_RIGHT)) {
+		this->transform->position.x += 1.0f * this->timer->deltaTime;
+	}
+
+	// transform->position = glm::vec3(0.0f,0.0f,0.0f);
 }
 
 

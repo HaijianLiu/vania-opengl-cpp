@@ -4,9 +4,9 @@
 
 class Player : public GameObject {
 private:
+	Input* input;
 
 public:
-
 	// Constructors
 	Player ();
 	~Player();
