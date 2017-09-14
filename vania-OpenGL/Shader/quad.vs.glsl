@@ -8,8 +8,9 @@ out vec2 texCoord;
 uniform mat4 projection;
 uniform mat4 view;
 uniform mat4 model;
+uniform mat3 slice;
 
 void main() {
 	gl_Position = projection * view * model * vec4(aPosition, 1.0);
-	texCoord = aTexCoord;
+	texCoord = (slice * vec3(aTexCoord, 1.0)).xy;
 }

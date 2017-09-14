@@ -12,6 +12,8 @@ public:
 	// sprite member
 	Shader* shader;
 	Texture* texture;
+	// slice uniform
+	glm::mat3 slice = glm::mat3(1.0f);
 
 	bool flipX = false;
 
@@ -20,6 +22,8 @@ public:
 
 	void start();
 	void draw();
+
+	void setSlice(float offsetX, float offsetY, float sizeX, float sizeY);
 };
 
 #endif /* Sprite_hpp */

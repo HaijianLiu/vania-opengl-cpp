@@ -6,7 +6,7 @@
 ------------------------------------------------------------------------------*/
 Player::Player() {
 	this->input = new Input();
-	this->transform->scale = glm::vec3(47.0f,32.0f,0.0f);
+	this->transform->scale = glm::vec3(80.0f,80.0f,0.0f);
 }
 
 
@@ -23,7 +23,8 @@ Player::~Player() {
 ------------------------------------------------------------------------------*/
 void Player::start() {
 	// set sprite texture
-	this->sprite->texture = this->resources->getTexture("enemy_jumper_jump");
+	this->sprite->texture = this->resources->getTexture("player_run_shoot");
+	this->sprite->setSlice(0.0f,0.0f,80.0f,80.0f);
 }
 
 
