@@ -49,6 +49,7 @@
 #include "RenderPass.hpp"
 #include "Sprite.hpp"
 #include "Transform.hpp"
+#include "GameObject.hpp"
 #include "Camera.hpp"
 
 /*------------------------------------------------------------------------------
@@ -66,5 +67,7 @@
 Window* getWindow();
 Camera* getCamera();
 Resources* getResources();
+Timer* getTimer();
+std::vector<GameObject*>* getGameObjects();
 
 #endif /* Engine_hpp */

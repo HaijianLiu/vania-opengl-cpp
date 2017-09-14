@@ -13,6 +13,7 @@
 		60B4254E1F64D8AB00BEE84C /* libglfw.3.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 60B4254D1F64D8AB00BEE84C /* libglfw.3.2.dylib */; };
 		60B425501F64D8B600BEE84C /* libGLEW.2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 60B4254F1F64D8B600BEE84C /* libGLEW.2.0.0.dylib */; };
 		60B425531F64DC8B00BEE84C /* Engine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60B425511F64DC8B00BEE84C /* Engine.cpp */; };
+		60E00ADA1F6A0C10003CCA29 /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60E00AD81F6A0C10003CCA29 /* GameObject.cpp */; };
 		60EC246D1F68CA30006BFDA6 /* Timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60EC246B1F68CA30006BFDA6 /* Timer.cpp */; };
 		60EC24701F68CF44006BFDA6 /* Resources.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60EC246E1F68CF44006BFDA6 /* Resources.cpp */; };
 		60EC24731F690204006BFDA6 /* RenderPass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60EC24711F690204006BFDA6 /* RenderPass.cpp */; };
@@ -46,6 +47,8 @@
 		60B4254F1F64D8B600BEE84C /* libGLEW.2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.2.0.0.dylib; path = ../../../../../usr/local/Cellar/glew/2.0.0/lib/libGLEW.2.0.0.dylib; sourceTree = "<group>"; };
 		60B425511F64DC8B00BEE84C /* Engine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Engine.cpp; path = Engine/Engine.cpp; sourceTree = "<group>"; };
 		60B425521F64DC8B00BEE84C /* Engine.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Engine.hpp; path = Engine/Engine.hpp; sourceTree = "<group>"; };
+		60E00AD81F6A0C10003CCA29 /* GameObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameObject.cpp; path = Engine/GameObject.cpp; sourceTree = "<group>"; };
+		60E00AD91F6A0C10003CCA29 /* GameObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = GameObject.hpp; path = Engine/GameObject.hpp; sourceTree = "<group>"; };
 		60EC246B1F68CA30006BFDA6 /* Timer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Timer.cpp; path = Engine/Timer.cpp; sourceTree = "<group>"; };
 		60EC246C1F68CA30006BFDA6 /* Timer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Timer.hpp; path = Engine/Timer.hpp; sourceTree = "<group>"; };
 		60EC246E1F68CF44006BFDA6 /* Resources.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Resources.cpp; path = Engine/Resources.cpp; sourceTree = "<group>"; };
@@ -147,6 +150,8 @@
 				60EC246F1F68CF44006BFDA6 /* Resources.hpp */,
 				60EC24711F690204006BFDA6 /* RenderPass.cpp */,
 				60EC24721F690204006BFDA6 /* RenderPass.hpp */,
+				60E00AD81F6A0C10003CCA29 /* GameObject.cpp */,
+				60E00AD91F6A0C10003CCA29 /* GameObject.hpp */,
 			);
 			name = Engine;
 			sourceTree = "<group>";
@@ -211,6 +216,7 @@
 			files = (
 				60F2A7D31F67B4480068C4E7 /* Quad.cpp in Sources */,
 				60EC24701F68CF44006BFDA6 /* Resources.cpp in Sources */,
+				60E00ADA1F6A0C10003CCA29 /* GameObject.cpp in Sources */,
 				60EE18CC1F6657E8000C6F0D /* Transform.cpp in Sources */,
 				60F2A7D61F67C2050068C4E7 /* Sprite.cpp in Sources */,
 				60EC246D1F68CA30006BFDA6 /* Timer.cpp in Sources */,

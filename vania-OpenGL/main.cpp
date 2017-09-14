@@ -1,6 +1,11 @@
 
 #include "Engine.hpp"
 
+/*------------------------------------------------------------------------------
+< List of GetGameObject and Collider >
+------------------------------------------------------------------------------*/
+std::vector<GameObject*> gameObjects;
+
 
 Window* window = new Window("vania",SCREEN_WIDTH,SCREEN_HEIGHT);
 Timer* timer = new Timer();
@@ -88,6 +93,12 @@ Camera* getCamera() {
 }
 Resources* getResources() {
 	return resources;
+}
+Timer* getTimer() {
+	return timer;
+}
+std::vector<GameObject*>* getGameObjects() {
+	return &gameObjects;
 }
 
 
