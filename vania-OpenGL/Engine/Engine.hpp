@@ -49,6 +49,7 @@ class GameObject;
 < Engine >
 ------------------------------------------------------------------------------*/
 #include "Window.hpp"
+#include "Input.hpp"
 #include "Shader.hpp"
 #include "Timer.hpp"
 #include "Quad.hpp"

@@ -15,6 +15,7 @@
 		60B425531F64DC8B00BEE84C /* Engine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60B425511F64DC8B00BEE84C /* Engine.cpp */; };
 		60E00ADA1F6A0C10003CCA29 /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60E00AD81F6A0C10003CCA29 /* GameObject.cpp */; };
 		60E00ADE1F6A1166003CCA29 /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60E00ADC1F6A1166003CCA29 /* Player.cpp */; };
+		60E00AE11F6A5AB1003CCA29 /* Input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60E00ADF1F6A5AB1003CCA29 /* Input.cpp */; };
 		60EC246D1F68CA30006BFDA6 /* Timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60EC246B1F68CA30006BFDA6 /* Timer.cpp */; };
 		60EC24701F68CF44006BFDA6 /* Resources.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60EC246E1F68CF44006BFDA6 /* Resources.cpp */; };
 		60EC24731F690204006BFDA6 /* RenderPass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60EC24711F690204006BFDA6 /* RenderPass.cpp */; };
@@ -52,6 +53,8 @@
 		60E00AD91F6A0C10003CCA29 /* GameObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = GameObject.hpp; path = Engine/GameObject.hpp; sourceTree = "<group>"; };
 		60E00ADC1F6A1166003CCA29 /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Player.cpp; path = GameObjects/Player.cpp; sourceTree = "<group>"; };
 		60E00ADD1F6A1166003CCA29 /* Player.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Player.hpp; path = GameObjects/Player.hpp; sourceTree = "<group>"; };
+		60E00ADF1F6A5AB1003CCA29 /* Input.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Input.cpp; path = Engine/Input.cpp; sourceTree = "<group>"; };
+		60E00AE01F6A5AB1003CCA29 /* Input.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Input.hpp; path = Engine/Input.hpp; sourceTree = "<group>"; };
 		60EC246B1F68CA30006BFDA6 /* Timer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Timer.cpp; path = Engine/Timer.cpp; sourceTree = "<group>"; };
 		60EC246C1F68CA30006BFDA6 /* Timer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Timer.hpp; path = Engine/Timer.hpp; sourceTree = "<group>"; };
 		60EC246E1F68CF44006BFDA6 /* Resources.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Resources.cpp; path = Engine/Resources.cpp; sourceTree = "<group>"; };
@@ -156,6 +159,8 @@
 				60EC24721F690204006BFDA6 /* RenderPass.hpp */,
 				60E00AD81F6A0C10003CCA29 /* GameObject.cpp */,
 				60E00AD91F6A0C10003CCA29 /* GameObject.hpp */,
+				60E00ADF1F6A5AB1003CCA29 /* Input.cpp */,
+				60E00AE01F6A5AB1003CCA29 /* Input.hpp */,
 			);
 			name = Engine;
 			sourceTree = "<group>";
@@ -236,6 +241,7 @@
 				60F2A7D91F67C4C80068C4E7 /* Texture.cpp in Sources */,
 				60EC24731F690204006BFDA6 /* RenderPass.cpp in Sources */,
 				60E00ADE1F6A1166003CCA29 /* Player.cpp in Sources */,
+				60E00AE11F6A5AB1003CCA29 /* Input.cpp in Sources */,
 				60B425421F64D7E600BEE84C /* main.cpp in Sources */,
 				60F0259E1F64E3AC0022EC73 /* Window.cpp in Sources */,
 				60EE18BD1F6616BC000C6F0D /* Camera.cpp in Sources */,
