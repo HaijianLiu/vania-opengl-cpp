@@ -5,7 +5,7 @@
 < Constructor >
 ------------------------------------------------------------------------------*/
 Sprite::Sprite() {
-	
+
 }
 
 
@@ -24,7 +24,7 @@ void Sprite::start() {
 	// sprite get default resources
 	this->quad = this->gameObject->resources->quad;
 	this->shader = this->gameObject->resources->getShader("Quad");
-	this->texture = this->gameObject->resources->getTexture("Default");
+	this->texture = this->gameObject->resources->getTexture("default");
 	// sprite default setting
 	this->shader->use();
 	this->shader->setMat4("projection",this->gameObject->camera->projection);

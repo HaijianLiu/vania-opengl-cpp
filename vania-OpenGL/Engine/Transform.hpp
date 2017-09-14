@@ -4,7 +4,7 @@
 
 class Transform {
 private:
-	/* data */
+	Window* window;
 
 public:
 	// Transform

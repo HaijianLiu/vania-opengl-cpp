@@ -6,7 +6,7 @@
 ------------------------------------------------------------------------------*/
 Player::Player() {
 	this->input = new Input();
-	transform->scale = glm::vec3(47.0f,32.0f,0.0f);
+	this->transform->scale = glm::vec3(47.0f,32.0f,0.0f);
 }
 
 
@@ -31,11 +31,11 @@ void Player::start() {
 < Update >
 ------------------------------------------------------------------------------*/
 void Player::update() {
-	if (this->input->getButtonPress(GLFW_KEY_RIGHT)) {
-		this->transform->position.x += 1.0f * this->timer->deltaTime;
-	}
+	// if (this->input->getButtonPress(GLFW_KEY_DOWN)) {
+	// 	this->transform->position.y += 1.0f * this->timer->deltaTime;
+	// }
 
-	// transform->position = glm::vec3(0.0f,0.0f,0.0f);
+	this->transform->position = glm::vec3(2.0f,1.2f,0.0f);
 }
 
 
