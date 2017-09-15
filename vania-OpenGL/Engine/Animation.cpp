@@ -13,9 +13,6 @@ Animation::Animation(const char* textureName, float divideX, float divideY, floa
 	this->divide.x = divideX;
 	this->divide.y = divideY;
 	this->sampleTime = sampleTime;
-	this->counter = 0;
-	this->currentSlice = 0;
-	this->lastCounterTime = 0.0f;
 }
 
 
@@ -51,21 +48,11 @@ void Animation::start() {
 < update >
 ------------------------------------------------------------------------------*/
 void Animation::update(Sprite* sprite) {
-	// counter ++ per 1/60 seconds
-	if (this->timer->currentTime > 1.0f/60.f + this->lastCounterTime) {
-		this->counter++;
-		// reset counter when currentSlice ++
-		if (this->counter > this->sampleTime - 1) {
-			this->counter = 0;
-		}
-		this->lastCounterTime = this->timer->currentTime;
-	}
-
-	// update currentSlice
-	if(this->counter % (int)this->sampleTime == 0) {
+	// sampleTime per 1/60 seconds
+	if (this->timer->currentTime > this->lastTime + this->sampleTime / 60.f) {
 		this->currentSlice = (this->currentSlice + 1) % this->sliceMax;
+		this->lastTime = this->timer->currentTime;
 	}
-
 	// update sprite
 	sprite->texture = this->texture;
 	sprite->slice = this->slices[this->currentSlice];

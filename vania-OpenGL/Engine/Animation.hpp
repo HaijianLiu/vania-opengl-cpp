@@ -12,11 +12,9 @@ public:
 	std::vector<glm::mat3> slices;
 
 	const char* textureName;
-	glm::vec2 divide;
-	float sampleTime, lastCounterTime;
-
-	glm::vec2 sliceSize;
-	unsigned int sliceMax, counter, currentSlice;
+	glm::vec2 divide, sliceSize;
+	float sampleTime, lastTime = 0;
+	unsigned int sliceMax, currentSlice = 0;
 
 	Animation(const char* textureName, float divideX, float divideY, float sampleTime);
 	~Animation ();
