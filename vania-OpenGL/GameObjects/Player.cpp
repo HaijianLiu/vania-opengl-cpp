@@ -8,7 +8,7 @@ Player::Player() {
 	// new objects
 	this->input = new Input();
 	// scale in real pixel
-	this->transform->scale = glm::vec3(-80.0f,80.0f,-1.0f);
+	this->transform->scale = glm::vec3(80.0f,80.0f,1.0f);
 	// Animation (textureName, divideX, divideY, sampleTime)
 	this->animRun = new Animation("player_run_shoot",10,1,4);
 }
