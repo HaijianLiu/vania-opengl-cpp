@@ -5,6 +5,7 @@
 < List of GetGameObject and Collider >
 ------------------------------------------------------------------------------*/
 std::vector<GameObject*> gameObjects;
+std::vector<BoxCollider*> colliders;
 
 
 /*------------------------------------------------------------------------------
@@ -80,6 +81,9 @@ Resources* getResources() {
 }
 std::vector<GameObject*>* getGameObjects() {
 	return &gameObjects;
+}
+std::vector<BoxCollider*>* getColliders() {
+	return &colliders;
 }
 
 

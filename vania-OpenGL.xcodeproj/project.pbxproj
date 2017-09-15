@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		603C30981F6BDEB700E91948 /* BoxCollider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 603C30961F6BDEB700E91948 /* BoxCollider.cpp */; };
 		60B425421F64D7E600BEE84C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60B425411F64D7E600BEE84C /* main.cpp */; };
 		60B4254A1F64D7F800BEE84C /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60B425491F64D7F800BEE84C /* OpenGL.framework */; };
 		60B4254C1F64D88700BEE84C /* libassimp.3.3.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 60B4254B1F64D88700BEE84C /* libassimp.3.3.1.dylib */; };
@@ -42,6 +43,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		603C30961F6BDEB700E91948 /* BoxCollider.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BoxCollider.cpp; path = Engine/BoxCollider.cpp; sourceTree = "<group>"; };
+		603C30971F6BDEB700E91948 /* BoxCollider.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = BoxCollider.hpp; path = Engine/BoxCollider.hpp; sourceTree = "<group>"; };
 		60B4253E1F64D7E600BEE84C /* vania-OpenGL */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "vania-OpenGL"; sourceTree = BUILT_PRODUCTS_DIR; };
 		60B425411F64D7E600BEE84C /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		60B425491F64D7F800BEE84C /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
@@ -166,6 +169,8 @@
 				60E00AE01F6A5AB1003CCA29 /* Input.hpp */,
 				60F6A3E71F6AC68A005595B2 /* Animation.cpp */,
 				60F6A3E81F6AC68A005595B2 /* Animation.hpp */,
+				603C30961F6BDEB700E91948 /* BoxCollider.cpp */,
+				603C30971F6BDEB700E91948 /* BoxCollider.hpp */,
 			);
 			name = Engine;
 			sourceTree = "<group>";
@@ -240,6 +245,7 @@
 				60F2A7D31F67B4480068C4E7 /* Quad.cpp in Sources */,
 				60EC24701F68CF44006BFDA6 /* Resources.cpp in Sources */,
 				60E00ADA1F6A0C10003CCA29 /* GameObject.cpp in Sources */,
+				603C30981F6BDEB700E91948 /* BoxCollider.cpp in Sources */,
 				60EE18CC1F6657E8000C6F0D /* Transform.cpp in Sources */,
 				60F2A7D61F67C2050068C4E7 /* Sprite.cpp in Sources */,
 				60EC246D1F68CA30006BFDA6 /* Timer.cpp in Sources */,

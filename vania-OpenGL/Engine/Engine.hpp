@@ -59,6 +59,7 @@ class GameObject;
 #include "Transform.hpp"
 #include "Camera.hpp"
 #include "GameObject.hpp"
+#include "BoxCollider.hpp"
 
 
 /*------------------------------------------------------------------------------
@@ -80,6 +81,7 @@ Timer* getTimer();
 Camera* getCamera();
 Resources* getResources();
 std::vector<GameObject*>* getGameObjects();
+std::vector<BoxCollider*>* getColliders();
 
 
 #endif /* Engine_hpp */
