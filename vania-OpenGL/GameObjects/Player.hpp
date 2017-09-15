@@ -14,10 +14,10 @@ public:
 	Animation* animIdle;
 	Animation* animShoot;
 	Animation* animRun;
-	// Animation* animJump;
+	Animation* animJump;
 	Animation* animDuck;
 	Animation* animDuckShoot;
-	// Animation* animHurt;
+	Animation* animHurt;
 
 	// offset Object
 

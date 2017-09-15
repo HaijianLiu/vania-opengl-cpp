@@ -13,8 +13,10 @@ Player::Player() {
 	this->animIdle = new Animation("player_idle", 3,1,15);
 	this->animShoot = new Animation("player_shoot", 3,1,4);
 	this->animRun = new Animation("player_run_shoot", 10,1,4);
+	this->animJump = new Animation("player_jump", 6,1,4);
 	this->animDuck = new Animation("player_duck", 1,1,60);
 	this->animDuckShoot = new Animation("player_duck_shoot", 3,1,4);
+	this->animHurt = new Animation("player_hurt", 1,1,60);
 }
 
 
@@ -26,10 +28,10 @@ Player::~Player() {
 	delete this->animIdle;
 	delete this->animShoot;
 	delete this->animRun;
-	// delete this->animJump;
+	delete this->animJump;
 	delete this->animDuck;
 	delete this->animDuckShoot;
-	// delete this->animHurt;
+	delete this->animHurt;
 }
 
 
@@ -45,8 +47,10 @@ void Player::start() {
 	this->animIdle->start();
 	this->animShoot->start();
 	this->animRun->start();
+	this->animJump->start();
 	this->animDuck->start();
 	this->animDuckShoot->start();
+	this->animHurt->start();
 }
 
 
@@ -157,7 +161,7 @@ void Player::update() {
 	..............................................................................*/
 	if (!this->hurt) {
 		if (this->air) {
-			// this->animJump->update(this->sprite);
+			this->animJump->update(this->sprite);
 		}
 		else {
 			if (this->move) {
@@ -184,7 +188,7 @@ void Player::update() {
 		}
 	}
 	else {
-		// this->animHurt->update(this->sprite);
+		this->animHurt->update(this->sprite);
 	}
 }
 
