@@ -19,6 +19,7 @@ Player::Player() {
 ------------------------------------------------------------------------------*/
 Player::~Player() {
 	delete this->input;
+	delete this->animRun;
 }
 
 
@@ -29,9 +30,9 @@ void Player::start() {
 	this->transform->position = glm::vec3(0.0f,0.0f,0.0f);
 
 	// set sprite texture and slice | Animation start
-	this->sprite->texture = this->resources->getTexture("player_run_shoot");
-	this->sprite->setSlice(0.0f,0.0f,80.0f,80.0f);
-	// this->animRun->start();
+	// this->sprite->texture = this->resources->getTexture("player_run_shoot");
+	// this->sprite->setSlice(0.0f,0.0f,80.0f,80.0f);
+	this->animRun->start();
 }
 
 
@@ -57,7 +58,7 @@ void Player::update() {
 
 
 	// Animation update sprite
-	// this->animRun->update(this->sprite);
+	this->animRun->update(this->sprite);
 }
 
 

@@ -23,7 +23,7 @@ Sprite::~Sprite() {
 void Sprite::start() {
 	// sprite get default resources
 	this->quad = this->gameObject->resources->quad;
-	this->shader = this->gameObject->resources->getShader("Quad");
+	this->shader = this->gameObject->resources->getShader("Sprite");
 	this->texture = this->gameObject->resources->getTexture("default");
 	// sprite default setting
 	this->shader->use();
