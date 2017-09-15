@@ -6,7 +6,7 @@
 ------------------------------------------------------------------------------*/
 Camera::Camera() {
 	this->window = getWindow();
-	this->projection = glm::ortho(0.0f, (float)this->window->screenWidth, 0.0f, (float)this->window->screenHeight, 0.0f, 100.0f);
+	this->projection = glm::ortho(-this->window->screenWidth/2.0f, this->window->screenWidth/2.0f, -this->window->screenHeight/2.0f, this->window->screenHeight/2.0f, 0.0f, 100.0f);
 }
 
 
