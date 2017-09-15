@@ -55,6 +55,7 @@ class GameObject;
 #include "Resources.hpp"
 #include "RenderPass.hpp"
 #include "Sprite.hpp"
+#include "Animation.hpp"
 #include "Transform.hpp"
 #include "Camera.hpp"
 #include "GameObject.hpp"

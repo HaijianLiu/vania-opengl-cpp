@@ -26,6 +26,7 @@
 		60F2A7D31F67B4480068C4E7 /* Quad.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60F2A7D11F67B4480068C4E7 /* Quad.cpp */; };
 		60F2A7D61F67C2050068C4E7 /* Sprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60F2A7D41F67C2050068C4E7 /* Sprite.cpp */; };
 		60F2A7D91F67C4C80068C4E7 /* Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60F2A7D71F67C4C80068C4E7 /* Texture.cpp */; };
+		60F6A3E91F6AC68A005595B2 /* Animation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60F6A3E71F6AC68A005595B2 /* Animation.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -76,6 +77,8 @@
 		60F2A7D51F67C2050068C4E7 /* Sprite.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Sprite.hpp; path = Engine/Sprite.hpp; sourceTree = "<group>"; };
 		60F2A7D71F67C4C80068C4E7 /* Texture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Texture.cpp; path = Engine/Texture.cpp; sourceTree = "<group>"; };
 		60F2A7D81F67C4C80068C4E7 /* Texture.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Texture.hpp; path = Engine/Texture.hpp; sourceTree = "<group>"; };
+		60F6A3E71F6AC68A005595B2 /* Animation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Animation.cpp; path = Engine/Animation.cpp; sourceTree = "<group>"; };
+		60F6A3E81F6AC68A005595B2 /* Animation.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Animation.hpp; path = Engine/Animation.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +164,8 @@
 				60E00AD91F6A0C10003CCA29 /* GameObject.hpp */,
 				60E00ADF1F6A5AB1003CCA29 /* Input.cpp */,
 				60E00AE01F6A5AB1003CCA29 /* Input.hpp */,
+				60F6A3E71F6AC68A005595B2 /* Animation.cpp */,
+				60F6A3E81F6AC68A005595B2 /* Animation.hpp */,
 			);
 			name = Engine;
 			sourceTree = "<group>";
@@ -246,6 +251,7 @@
 				60F0259E1F64E3AC0022EC73 /* Window.cpp in Sources */,
 				60EE18BD1F6616BC000C6F0D /* Camera.cpp in Sources */,
 				60F025A11F64E7A70022EC73 /* Shader.cpp in Sources */,
+				60F6A3E91F6AC68A005595B2 /* Animation.cpp in Sources */,
 				60B425531F64DC8B00BEE84C /* Engine.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

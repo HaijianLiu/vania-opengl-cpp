@@ -7,6 +7,8 @@ private:
 	Input* input;
 
 public:
+	Animation* animRun;
+
 	// Constructors
 	Player ();
 	~Player();
