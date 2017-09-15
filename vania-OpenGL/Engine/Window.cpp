@@ -37,7 +37,7 @@ GLFWwindow* Window::createWindow(const char* name, int screenWidth, int screenHe
 	glfwWindowHint(GLFW_SAMPLES, 4); // 4x antialiasing
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3); // OpenGL 3.3
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-	glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE); // To make MacOS happy; should not be needed
+	glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE); // To make MacOS happy
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE); // don't want the old OpenGL
 
 	// Open a window and create its OpenGL context
@@ -70,7 +70,7 @@ GLFWwindow* Window::createWindow(const char* name, int screenWidth, int screenHe
 	// Accept fragment if it closer to the camera than the former one
 	glDepthFunc(GL_LESS);
 	// Cull triangles which normal is not towards the camera
-	// glEnable(GL_CULL_FACE);
+	glEnable(GL_CULL_FACE);
 	// Enable alpha channel
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	glEnable(GL_BLEND);
