@@ -5,6 +5,11 @@
 class Sprite {
 private:
 	Quad* quad;
+	glm::mat3 matFlipX = {
+		-1.0f,0.0f,0.0f,
+		 0.0f,1.0f,0.0f,
+		 1.0f,0.0f,1.0f,
+	};
 
 public:
 	// this gameObject
@@ -14,7 +19,7 @@ public:
 	Texture* texture;
 	// slice uniform
 	glm::mat3 slice = glm::mat3(1.0f);
-
+	// flip flag
 	bool flipX = false;
 
 	Sprite();

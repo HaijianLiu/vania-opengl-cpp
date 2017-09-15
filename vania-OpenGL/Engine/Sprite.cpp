@@ -36,12 +36,20 @@ void Sprite::start() {
 < draw > in GameObject update()
 ------------------------------------------------------------------------------*/
 void Sprite::draw() {
+	// shader
 	this->shader->use();
-	this->shader->setMat4("view",this->gameObject->camera->view);
-	this->shader->setMat4("model",this->gameObject->transform->model);
-	this->shader->setMat3("slice",this->slice);
+	// transform
+	this->shader->setMat4("view", this->gameObject->camera->view);
+	this->shader->setMat4("model", this->gameObject->transform->model);
+	// slice
+	this->shader->setMat3("slice", this->slice);
+	// flip
+	if (this->flipX) this->shader->setMat3("flip", this->matFlipX);
+	else this->shader->setMat3("flip", glm::mat3(1.0f));
+	// texture
 	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, this->texture->textureID);
+	// draw
 	this->quad->draw();
 }
 

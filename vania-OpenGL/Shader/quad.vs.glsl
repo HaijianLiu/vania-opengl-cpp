@@ -9,8 +9,9 @@ uniform mat4 projection;
 uniform mat4 view;
 uniform mat4 model;
 uniform mat3 slice;
+uniform mat3 flip;
 
 void main() {
 	gl_Position = projection * view * model * vec4(aPosition, 1.0);
-	texCoord = (slice * vec3(aTexCoord, 1.0)).xy;
+	texCoord = (slice * flip * vec3(aTexCoord, 1.0)).xy;
 }

@@ -29,9 +29,9 @@ void Player::start() {
 	this->transform->position = glm::vec3(0.0f,0.0f,0.0f);
 
 	// set sprite texture and slice | Animation start
-	// this->sprite->texture = this->resources->getTexture("player_run_shoot");
-	// this->sprite->setSlice(0.0f,0.0f,80.0f,80.0f);
-	this->animRun->start();
+	this->sprite->texture = this->resources->getTexture("player_run_shoot");
+	this->sprite->setSlice(0.0f,0.0f,80.0f,80.0f);
+	// this->animRun->start();
 }
 
 
@@ -39,13 +39,15 @@ void Player::start() {
 < Update > before gameObject draw()
 ------------------------------------------------------------------------------*/
 void Player::update() {
+	// move
 	if (this->input->getButtonPress(GLFW_KEY_RIGHT)) {
+		this->sprite->flipX = false;
 		this->transform->position.x += this->speed * this->timer->deltaTime;
 	}
 	if (this->input->getButtonPress(GLFW_KEY_LEFT)) {
+		this->sprite->flipX = true;
 		this->transform->position.x -= this->speed * this->timer->deltaTime;
 	}
-
 	if (this->input->getButtonPress(GLFW_KEY_UP)) {
 		this->transform->position.y -= this->speed * this->timer->deltaTime;
 	}
@@ -55,7 +57,7 @@ void Player::update() {
 
 
 	// Animation update sprite
-	this->animRun->update(this->sprite);
+	// this->animRun->update(this->sprite);
 }
 
 
