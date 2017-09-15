@@ -7,17 +7,21 @@
 std::vector<GameObject*> gameObjects;
 
 
-Window* window = new Window("vania",SCREEN_WIDTH,SCREEN_HEIGHT);
+/*------------------------------------------------------------------------------
+< globals >
+------------------------------------------------------------------------------*/
+Window* window = new Window("vania", SCREEN_WIDTH, SCREEN_HEIGHT);
+RenderPass* renderPass = new RenderPass();
+
 Timer* timer = new Timer();
 Camera* camera = new Camera();
 Resources* resources = new Resources();
-RenderPass* renderPass = new RenderPass();
 
 Player* player = new Player();
 
 
 /*------------------------------------------------------------------------------
-< Delete >
+< clear >
 ------------------------------------------------------------------------------*/
 void clear() {
 	delete window;
@@ -31,7 +35,7 @@ void clear() {
 
 
 /*------------------------------------------------------------------------------
-< Start >
+< start >
 ------------------------------------------------------------------------------*/
 void start() {
 	timer->start();
@@ -46,7 +50,7 @@ void start() {
 
 
 /*------------------------------------------------------------------------------
-< Update >
+< update >
 ------------------------------------------------------------------------------*/
 void update() {
 	timer->update();
@@ -60,7 +64,7 @@ void update() {
 
 
 /*------------------------------------------------------------------------------
-< Get Functions >
+< get functions >
 ------------------------------------------------------------------------------*/
 Window* getWindow() {
 	return window;
