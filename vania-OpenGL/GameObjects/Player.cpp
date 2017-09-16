@@ -5,10 +5,21 @@
 < Constructor >
 ------------------------------------------------------------------------------*/
 Player::Player() {
-	// new objects
+	// Input
 	this->input = new Input();
 	// scale in real pixel
 	this->transform->scale = glm::vec3(80.0f,80.0f,1.0f);
+
+	// Collider (this,offsetX,offsetY,sizeX,sizeY) size is in real pixel && Collider is trigger ?
+	this->collGroundCheck = new BoxCollider(this,0.0f,0.21f,8.0f,4.0f);
+	this->collGroundCheck->trigger = true;
+	this->collGroundCheck->tag = "ground_check";
+	this->collCeilingCheck = new BoxCollider(this,0.0f,-0.05f,4.0f,4.0f);
+	this->collCeilingCheck->trigger = true;
+	this->collCeilingCheck->tag = "ceiling_check";
+	this->collHorizonCheck = new BoxCollider(this,0.0f,0.08f,24.0f,28.0f);
+	this->collHorizonCheck->trigger = true;
+	this->collHorizonCheck->tag = "player";
 	// Animation (textureName, divideX, divideY, sampleTime)
 	this->animIdle = new Animation("player_idle", 3,1,15);
 	this->animShoot = new Animation("player_shoot", 3,1,4);
@@ -24,7 +35,13 @@ Player::Player() {
 < Destructor >
 ------------------------------------------------------------------------------*/
 Player::~Player() {
+	// Input
 	delete this->input;
+	// BoxCollider
+	delete this->collGroundCheck;
+	delete this->collCeilingCheck;
+	delete this->collHorizonCheck;
+	// Animation
 	delete this->animIdle;
 	delete this->animShoot;
 	delete this->animRun;
@@ -196,9 +213,9 @@ void Player::update() {
 /*------------------------------------------------------------------------------
 < On Trigger Enter >
 ------------------------------------------------------------------------------*/
-// void Player::onTriggerEnter(BoxCollider* other) {
-//
-// }
+void Player::onTriggerEnter(BoxCollider* other) {
+
+}
 
 
 /*------------------------------------------------------------------------------

@@ -85,6 +85,12 @@ std::vector<GameObject*>* getGameObjects() {
 std::vector<BoxCollider*>* getColliders() {
 	return &colliders;
 }
+std::vector<GameObject*> copyGameObjects() {
+	return gameObjects;
+}
+std::vector<BoxCollider*> copyColliders() {
+	return colliders;
+}
 
 
 /*==============================================================================

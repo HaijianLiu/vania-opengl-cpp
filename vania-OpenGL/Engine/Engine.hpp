@@ -58,8 +58,8 @@ class GameObject;
 #include "Animation.hpp"
 #include "Transform.hpp"
 #include "Camera.hpp"
-#include "GameObject.hpp"
 #include "BoxCollider.hpp"
+#include "GameObject.hpp"
 
 
 /*------------------------------------------------------------------------------
@@ -71,6 +71,8 @@ class GameObject;
 /*------------------------------------------------------------------------------
 < Scene >
 ------------------------------------------------------------------------------*/
+#include "Scene.hpp"
+
 
 /*------------------------------------------------------------------------------
 < Global Functions >
@@ -82,6 +84,8 @@ Camera* getCamera();
 Resources* getResources();
 std::vector<GameObject*>* getGameObjects();
 std::vector<BoxCollider*>* getColliders();
+std::vector<GameObject*> copyGameObjects();
+std::vector<BoxCollider*> copyColliders();
 
 
 #endif /* Engine_hpp */

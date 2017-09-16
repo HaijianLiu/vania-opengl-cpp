@@ -9,6 +9,9 @@ private:
 public:
 
 	// Collider
+	BoxCollider* collGroundCheck;
+	BoxCollider* collCeilingCheck;
+	BoxCollider* collHorizonCheck;
 
 	// Animation
 	Animation* animIdle;
@@ -66,7 +69,7 @@ public:
 	// virtual Functions
 	void start();
 	void update();
-	// void OnTriggerEnter(BoxCollider* other);
+	void onTriggerEnter(BoxCollider* other);
 	void fixedUpdate();
 };
 

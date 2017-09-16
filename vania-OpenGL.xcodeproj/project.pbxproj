@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		603C30981F6BDEB700E91948 /* BoxCollider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 603C30961F6BDEB700E91948 /* BoxCollider.cpp */; };
+		603C309C1F6BF91500E91948 /* Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 603C309A1F6BF91500E91948 /* Scene.cpp */; };
 		60B425421F64D7E600BEE84C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60B425411F64D7E600BEE84C /* main.cpp */; };
 		60B4254A1F64D7F800BEE84C /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60B425491F64D7F800BEE84C /* OpenGL.framework */; };
 		60B4254C1F64D88700BEE84C /* libassimp.3.3.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 60B4254B1F64D88700BEE84C /* libassimp.3.3.1.dylib */; };
@@ -45,6 +46,8 @@
 /* Begin PBXFileReference section */
 		603C30961F6BDEB700E91948 /* BoxCollider.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BoxCollider.cpp; path = Engine/BoxCollider.cpp; sourceTree = "<group>"; };
 		603C30971F6BDEB700E91948 /* BoxCollider.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = BoxCollider.hpp; path = Engine/BoxCollider.hpp; sourceTree = "<group>"; };
+		603C309A1F6BF91500E91948 /* Scene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Scene.cpp; path = Scene/Scene.cpp; sourceTree = "<group>"; };
+		603C309B1F6BF91500E91948 /* Scene.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Scene.hpp; path = Scene/Scene.hpp; sourceTree = "<group>"; };
 		60B4253E1F64D7E600BEE84C /* vania-OpenGL */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "vania-OpenGL"; sourceTree = BUILT_PRODUCTS_DIR; };
 		60B425411F64D7E600BEE84C /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		60B425491F64D7F800BEE84C /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
@@ -99,6 +102,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		603C30991F6BF8BF00E91948 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				603C309A1F6BF91500E91948 /* Scene.cpp */,
+				603C309B1F6BF91500E91948 /* Scene.hpp */,
+			);
+			name = Scene;
+			sourceTree = "<group>";
+		};
 		60B425351F64D7E600BEE84C = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +133,7 @@
 			children = (
 				60B425541F64DCA300BEE84C /* Engine */,
 				60E00ADB1F6A110E003CCA29 /* GameObject */,
+				603C30991F6BF8BF00E91948 /* Scene */,
 				60B425411F64D7E600BEE84C /* main.cpp */,
 			);
 			path = "vania-OpenGL";
@@ -248,6 +261,7 @@
 				603C30981F6BDEB700E91948 /* BoxCollider.cpp in Sources */,
 				60EE18CC1F6657E8000C6F0D /* Transform.cpp in Sources */,
 				60F2A7D61F67C2050068C4E7 /* Sprite.cpp in Sources */,
+				603C309C1F6BF91500E91948 /* Scene.cpp in Sources */,
 				60EC246D1F68CA30006BFDA6 /* Timer.cpp in Sources */,
 				60F2A7D91F67C4C80068C4E7 /* Texture.cpp in Sources */,
 				60EC24731F690204006BFDA6 /* RenderPass.cpp in Sources */,
