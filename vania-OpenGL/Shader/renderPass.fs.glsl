@@ -7,6 +7,6 @@ in vec2 texCoord;
 uniform sampler2D pass[1];
 
 void main() {
-	vec3 colorPass = texture(pass[0],texCoord).rgb;
-	fragColor = vec4(colorPass,1.0);
+	vec4 colorPass = texture(pass[0],texCoord);
+	fragColor = colorPass;
 }

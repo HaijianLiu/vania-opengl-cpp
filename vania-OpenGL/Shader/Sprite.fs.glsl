@@ -7,5 +7,7 @@ in vec2 texCoord;
 uniform sampler2D texColor;
 
 void main() {
-	colorPass = texture(texColor, texCoord);
+	vec4 color = texture(texColor, texCoord);
+	if(color.a == 0) discard;
+	colorPass = color;
 }
