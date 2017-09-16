@@ -19,16 +19,34 @@ Scene::Scene() {
 	this->startCollidersSize = this->gpColliders->size();
 }
 
-void Scene::setScene() {
 
-	Scene::loadMapData("TileObject", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene00-BackGround.csv");
+/*------------------------------------------------------------------------------
+< Destructor >
+------------------------------------------------------------------------------*/
+Scene::~Scene() {
+	// delete Map GameObjects
+}
 
-	// std::vector<GameObject*> objects;
-	// for (unsigned int i = 0; i < this->mapDatas["TileObject"].size(); i++) {
-	// 	objects.push_back(new TileObject());
-	// 	Scene::SetTile(objects.back(), this->mapDatas["TileObject"][i].x, this->mapDatas["TileObject"][i].y);
-	// }
-	// this->sceneGameObjects.insert(std::make_pair("TileObject", objects));
+
+/*------------------------------------------------------------------------------
+< Start >
+
+0			0.16 			0.32			0.48
+0.16
+0.32
+0.48
+------------------------------------------------------------------------------*/
+void Scene::start() {
+	Scene::loadMapData("TileObject", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_test.csv");
+
+	std::vector<GameObject*> objects;
+	for (unsigned int i = 0; i < this->mapDatas["TileObject"].size(); i++) {
+		objects.push_back(new TileObject());
+		objects.back()->preStart();
+		objects.back()->sprite->texture = this->resources->getTexture("tilesets");
+		Scene::setTile(objects.back(), this->mapDatas["TileObject"][i].x, this->mapDatas["TileObject"][i].y);
+	}
+	this->sceneGameObjects.insert(std::make_pair("TileObject", objects));
 
 	// Get GameObject && Get Collider
 	this->gameObjects = copyGameObjects();
@@ -43,34 +61,15 @@ void Scene::setScene() {
 	for (int i = 0; i < size; i++) {
 		this->gpColliders->pop_back();
 	}
-}
 
-
-/*------------------------------------------------------------------------------
-< Reset >
-------------------------------------------------------------------------------*/
-void Scene::reset() {
-	// frameSkip
-	this->frameSkip = true;
-}
-
-
-/*------------------------------------------------------------------------------
-< Destructor >
-------------------------------------------------------------------------------*/
-Scene::~Scene() {
-	// delete Map GameObjects
-}
-
-
-/*------------------------------------------------------------------------------
-< Start >
-------------------------------------------------------------------------------*/
-void Scene::start() {
-
-	for (unsigned int i = 0; i < this->sceneGameObjects["TileObject"].size(); i++) {
-		this->sceneGameObjects["TileObject"][i]->sprite->texture = this->resources->getTexture("tilesets");
+	for (unsigned int i = 0; i < this->gameObjects.size(); i++) {
+		if (this->gameObjects[i]->active) {
+			this->gameObjects[i]->start();
+		}
 	}
+	// for (unsigned int i = 0; i < this->sceneGameObjects["TileObject"].size(); i++) {
+	// 	this->sceneGameObjects["TileObject"][i]->sprite->texture = this->resources->getTexture("tilesets");
+	// }
 
 }
 
@@ -174,13 +173,13 @@ bool Scene::loadMapData(const char* name, const char* path) {
 }
 
 void Scene::setTile(GameObject* gameObject, int mapID, int tileID) {
-	// gameObject->transform->position.x = mapID % this->mapSize.x * PIXEL_TO_UNIT * this->tilePixel;
-	// gameObject->transform->position.y = mapID / this->mapSize.x * PIXEL_TO_UNIT * this->tilePixel;
-	// gameObject->transform->scale = Float2D((float)this->tilePixel + 0.1f, (float)this->tilePixel + 0.1f);
-	// gameObject->sprite->slice = Slice(tileID, tileID % this->tileSize.x * this->tilePixel , tileID / this->tileSize.x * this->tilePixel, this->tilePixel, this->tilePixel);
+	gameObject->transform->position.x = mapID % this->mapSize.x * PIXEL_TO_UNIT * this->tileSize;
+	gameObject->transform->position.y = mapID / this->mapSize.x * PIXEL_TO_UNIT * this->tileSize;
+	gameObject->transform->scale = glm::vec3(this->tileSize, this->tileSize, 1.0f);
+	gameObject->sprite->setSlice(tileID % this->tilesetsSize.x * this->tileSize , tileID / this->tilesetsSize.x * this->tileSize, this->tileSize, this->tileSize);
 }
 
 void Scene::setPosition(GameObject* gameObject, int mapID) {
-	// gameObject->transform->position.x = mapID % this->mapSize.x * PIXEL_TO_UNIT * this->tilePixel;
-	// gameObject->transform->position.y = mapID / this->mapSize.x * PIXEL_TO_UNIT * this->tilePixel;
+	// gameObject->transform->position.x = mapID % this->mapSize.x * PIXEL_TO_UNIT * this->tileSize;
+	// gameObject->transform->position.y = mapID / this->mapSize.x * PIXEL_TO_UNIT * this->tileSize;
 }

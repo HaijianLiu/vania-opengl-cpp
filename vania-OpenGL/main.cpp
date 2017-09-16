@@ -18,7 +18,8 @@ Timer* timer = new Timer();
 Camera* camera = new Camera();
 Resources* resources = new Resources();
 
-Player* player = new Player();
+// Player* player = new Player();
+Scene* scene = new Scene();
 
 
 /*------------------------------------------------------------------------------
@@ -30,7 +31,7 @@ void clear() {
 	delete camera;
 	delete resources;
 	delete renderPass;
-	delete player;
+	// delete player;
 	glfwTerminate(); // glfw: terminate, clearing all previously allocated GLFW resources.
 }
 
@@ -41,12 +42,13 @@ void clear() {
 void start() {
 	timer->start();
 	resources->start();
+	scene->start();
 	renderPass->start(1);
 	// GameObjects
-	for (unsigned int i = 0; i < gameObjects.size(); i++) {
-		gameObjects[i]->preStart();
-		gameObjects[i]->start();
-	}
+	// for (unsigned int i = 0; i < gameObjects.size(); i++) {
+	// 	gameObjects[i]->preStart();
+	// 	gameObjects[i]->start();
+	// }
 }
 
 
@@ -55,12 +57,14 @@ void start() {
 ------------------------------------------------------------------------------*/
 void update() {
 	timer->update();
-	camera->update();
+	// camera->update();
+	scene->update();
+	scene->draw();
 	// GameObjects
-	for (unsigned int i = 0; i < gameObjects.size(); i++) {
-		gameObjects[i]->update();
-		gameObjects[i]->draw();
-	}
+	// for (unsigned int i = 0; i < gameObjects.size(); i++) {
+	// 	gameObjects[i]->update();
+	// 	gameObjects[i]->draw();
+	// }
 }
 
 

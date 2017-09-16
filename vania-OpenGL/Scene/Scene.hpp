@@ -12,8 +12,8 @@ private:
 
 	// tiled map Setting
 	int tileSize = 16;
-	glm::vec2 mapSize = glm::vec2(225,90);
-	glm::vec2 tilesetsSize = glm::vec2(384/16,320/16);
+	glm::i32vec2 mapSize = glm::i32vec2(225,90);
+	glm::i32vec2 tilesetsSize = glm::i32vec2(384/16,320/16);
 
 	// tiled map data
 	std::map<const char*, std::vector<glm::i32vec2>> mapDatas;
@@ -38,9 +38,8 @@ public:
 	Scene();
 	virtual ~Scene();
 
-	virtual void start();
-	void setScene();
-	virtual void update();
+	void start();
+	void update();
 	void draw();
 
 	// Functions
@@ -49,7 +48,6 @@ public:
 	bool loadMapData(const char* name, const char* path);
 	void setTile(GameObject* gameObject, int mapID, int tileID);
 	void setPosition(GameObject* gameObject, int mapID);
-	void reset();
 };
 
 
