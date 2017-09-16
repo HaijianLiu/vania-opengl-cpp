@@ -5,10 +5,7 @@
 < Constructor >
 ------------------------------------------------------------------------------*/
 TileObject::TileObject() {
-	// Transform Size in real pixel (Int2D)
-				// get from scene mapData
-	// Animation (divideX, divideY, sampleTime) || Slice (ID,positionX,positionY,sizeX,sizeY) all in real pixel
-				// get from scene mapData
+	// scale in real pixel
 }
 
 
@@ -24,7 +21,7 @@ TileObject::~TileObject() {
 < start >
 ------------------------------------------------------------------------------*/
 void TileObject::start() {
-	// Animation MakeFrame()
+	// set sprite texture and slice | Animation start
 }
 
 
@@ -32,9 +29,8 @@ void TileObject::start() {
 < update >
 ------------------------------------------------------------------------------*/
 void TileObject::update() {
-
-	// Animation SetTexture() || Sprite SetTexture()
-	// this->sprite->SetTexture();
+	/* Animation update sprite
+	..............................................................................*/
 }
 
 

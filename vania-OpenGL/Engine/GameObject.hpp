@@ -25,7 +25,7 @@ public:
 	GameObject();
 	virtual ~GameObject();
 
-	void preStart();
+	void defaultStart();
 	void draw();
 
 	virtual void start() = 0;

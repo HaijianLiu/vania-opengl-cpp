@@ -16,6 +16,10 @@ Resources::~Resources() {
 	delete this->quad;
 }
 
+
+/*------------------------------------------------------------------------------
+< start > before GameObject defaultStart()
+------------------------------------------------------------------------------*/
 void Resources::start() {
 	// Shader
 	Resources::loadShader("Sprite", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Shader/Sprite.vs.glsl",  "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Shader/Sprite.fs.glsl");

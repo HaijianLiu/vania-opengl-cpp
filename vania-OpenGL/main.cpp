@@ -18,7 +18,8 @@ Timer* timer = new Timer();
 Camera* camera = new Camera();
 Resources* resources = new Resources();
 
-// Player* player = new Player();
+Player* player = new Player();
+
 Scene* scene = new Scene();
 
 
@@ -31,7 +32,7 @@ void clear() {
 	delete camera;
 	delete resources;
 	delete renderPass;
-	// delete player;
+	delete player;
 	glfwTerminate(); // glfw: terminate, clearing all previously allocated GLFW resources.
 }
 
@@ -44,11 +45,6 @@ void start() {
 	resources->start();
 	scene->start();
 	renderPass->start(1);
-	// GameObjects
-	// for (unsigned int i = 0; i < gameObjects.size(); i++) {
-	// 	gameObjects[i]->preStart();
-	// 	gameObjects[i]->start();
-	// }
 }
 
 
@@ -60,11 +56,6 @@ void update() {
 	// camera->update();
 	scene->update();
 	scene->draw();
-	// GameObjects
-	// for (unsigned int i = 0; i < gameObjects.size(); i++) {
-	// 	gameObjects[i]->update();
-	// 	gameObjects[i]->draw();
-	// }
 }
 
 
@@ -108,13 +99,6 @@ int main() {
 	while (!glfwWindowShouldClose(window->window)) {
 		if (glfwGetKey(window->window, GLFW_KEY_ESCAPE) == GLFW_PRESS) glfwSetWindowShouldClose(window->window, true);
 		// Update
-		//  timer->setTime();
-
-		// 	std::stringstream ss;
-		// 	ss << timer->deltaTime;
-		// glfwSetWindowTitle(window->window,ss.str().c_str());
-
-		//  if (timer->checkFPS(60)) {
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		renderPass->use();
 			update();
@@ -122,8 +106,6 @@ int main() {
 		renderPass->draw();
 		glfwSwapBuffers(window->window);
 		glfwPollEvents();
-		//  }
-		// std::this_thread::sleep_for(std::chrono::microseconds(1000));
 	}
 
 	// clear

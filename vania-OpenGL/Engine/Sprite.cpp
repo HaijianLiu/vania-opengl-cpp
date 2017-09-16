@@ -18,7 +18,7 @@ Sprite::~Sprite() {
 
 
 /*------------------------------------------------------------------------------
-< start > in GameObject preStart()
+< start > in GameObject defaultStart()
 ------------------------------------------------------------------------------*/
 void Sprite::start() {
 	// sprite get default resources

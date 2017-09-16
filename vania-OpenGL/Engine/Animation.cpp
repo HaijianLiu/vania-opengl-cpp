@@ -25,7 +25,7 @@ Animation::~Animation() {
 
 
 /*------------------------------------------------------------------------------
-< start >
+< start > in GameObject start()
 ------------------------------------------------------------------------------*/
 void Animation::start() {
 	// load texture
@@ -45,7 +45,7 @@ void Animation::start() {
 
 
 /*------------------------------------------------------------------------------
-< update >
+< update > in GameObject update()
 ------------------------------------------------------------------------------*/
 void Animation::update(Sprite* sprite) {
 	// sampleTime per 1/60 seconds

@@ -54,18 +54,18 @@ Player::~Player() {
 < Start >
 ------------------------------------------------------------------------------*/
 void Player::start() {
-	this->transform->position = glm::vec3(0.0f,0.0f,0.0f);
+	this->transform->position = glm::vec3(0.0f,0.0f,1.0f);
 
 	// set sprite texture and slice | Animation start
-	this->sprite->texture = this->resources->getTexture("player_run_shoot");
-	this->sprite->setSlice(0.0f,0.0f,80.0f,80.0f);
-	// this->animIdle->start();
-	// this->animShoot->start();
-	// this->animRun->start();
-	// this->animJump->start();
-	// this->animDuck->start();
-	// this->animDuckShoot->start();
-	// this->animHurt->start();
+	// this->sprite->texture = this->resources->getTexture("player_run_shoot");
+	// this->sprite->setSlice(0.0f,0.0f,80.0f,80.0f);
+	this->animIdle->start();
+	this->animShoot->start();
+	this->animRun->start();
+	this->animJump->start();
+	this->animDuck->start();
+	this->animDuckShoot->start();
+	this->animHurt->start();
 }
 
 
@@ -74,137 +74,137 @@ void Player::start() {
 ------------------------------------------------------------------------------*/
 void Player::update() {
 
-	// /* transform
-	// ..............................................................................*/
-	// if (!this->hurt) {
-	// 	// move
-	// 	if (this->input->getButtonPress(GLFW_KEY_LEFT) || this->input->getButtonPress(GLFW_KEY_A)) {
-	// 		this->move = true;
-	// 		this->right = false;
-	// 		this->sprite->flipX = !this->right;
-	// 		this->transform->position.x -= this->speed * this->timer->deltaTime;
-	// 	}
-	// 	else if (this->input->getButtonPress(GLFW_KEY_RIGHT) || this->input->getButtonPress(GLFW_KEY_D)) {
-	// 		this->move = true;
-	// 		this->right = true;
-	// 		this->sprite->flipX = !this->right;
-	// 		this->transform->position.x += this->speed * this->timer->deltaTime;
-	// 	}
-	// 	else {
-	// 		this->move = false;
-	// 	}
-	// 	// jump
-	// 	if (this->input->getButtonPress(GLFW_KEY_SPACE) || this->input->getButtonPress(GLFW_KEY_J)) {
-	// 		if (!this->air) {
-	// 			// this->verticalSpeed = this->jumpPower;
-	// 			this->air = true;
-	// 		}
-	// 	}
-	// 	// duck
-	// 	if (this->input->getButtonPress(GLFW_KEY_DOWN) || this->input->getButtonPress(GLFW_KEY_S)) {
-	// 		if (!this->air) {
-	// 			this->duck = true;
-	// 		}
-	// 	}
-	// 	else {
-	// 		this->duck = false;
-	// 	}
-	// }
-	// else {
-	// 	if (this->right) {
-	// 		// this->transform->position.x -= this->backSpeed * this->timer->deltaTime;
-	// 	}
-	// 	else {
-	// 		// this->transform->position.x += this->backSpeed * this->timer->deltaTime;
-	// 	}
-	// }
-	//
-	//
-	// /* shoot
-	// ..............................................................................*/
-	// if (!this->hurt) {
-	// 	if (this->input->getButtonPress(GLFW_KEY_F) || this->input->getButtonPress(GLFW_KEY_K)) {
-	// 		if (this->timer->currentTime > this->lastShoot + this->shootColdDown) {
-	// 			// if (this->status->hp > this->shootEnergy) {
-	// 				this->shoot = true;
-	// 				// this->status->hp -= this->shootEnergy;
-	// 				// for (unsigned int i = 0; i < this->resources->audShoot.size(); i++) {
-	// 				// 	if (!this->resources->audShoot[i]->Playing()) {
-	// 				// 		this->resources->audShoot[i]->Play();
-	// 				// 		break;
-	// 				// 	}
-	// 				// }
-	// 				// for (unsigned int i = 0; i < this->bullets.size(); i++) {
-	// 				// 	if (!this->bullets[i]->active) {
-	// 						this->lastShoot = this->timer->currentTime;
-	// 				// 		this->bullets[i]->birthTime = this->time->currentTime;
-	// 				// 		this->bullets[i]->right = this->right;
-	// 				// 		this->bullets[i]->active = true;
-	// 				// 		if (this->right) {
-	// 				// 			if (this->duck && !this->move && !this->air) {
-	// 				// 				this->bullets[i]->transform->position = this->rightDuckFire->transform->position;
-	// 				// 			}
-	// 				// 			else {
-	// 				// 				this->bullets[i]->transform->position = this->rightFire->transform->position;
-	// 				// 			}
-	// 				// 		}
-	// 				// 		else {
-	// 				// 			if (this->duck && !this->move && !this->air) {
-	// 				// 				this->bullets[i]->transform->position = this->leftDuckFire->transform->position;
-	// 				// 			}
-	// 				// 			else {
-	// 				// 				this->bullets[i]->transform->position = this->leftFire->transform->position;
-	// 				// 			}
-	// 				// 		}
-	// 				// 		break;
-	// 				// 	}
-	// 				// }
-	// 			// }
-	// 			// else {
-	// 			// 	this->resources->audPlayerNoAmmo->Play();
-	// 			// }
-	// 		}
-	// 	}
-	// }
-	// // Shoot Flag
-	// if (this->timer->currentTime > this->lastShoot + this->shootDuration) {
-	// 	this->shoot = false;
-	// }
-	//
-	//
-	// /* Animation update sprite
-	// ..............................................................................*/
-	// if (!this->hurt) {
-	// 	if (this->air) {
-	// 		this->animJump->update(this->sprite);
-	// 	}
-	// 	else {
-	// 		if (this->move) {
-	// 			this->animRun->update(this->sprite);
-	// 		}
-	// 		if (!this->move) {
-	// 			if (this->duck) {
-	// 				if (this->shoot) {
-	// 					this->animDuckShoot->update(this->sprite);
-	// 				}
-	// 				else {
-	// 					this->animDuck->update(this->sprite);
-	// 				}
-	// 			}
-	// 			else {
-	// 				if (this->shoot) {
-	// 					this->animShoot->update(this->sprite);
-	// 				}
-	// 				else{
-	// 					this->animIdle->update(this->sprite);
-	// 				}
-	// 			}
-	// 		}
-	// 	}
-	// }
-	// else {
-	// 	this->animHurt->update(this->sprite);
-	// }
+	/* transform
+	..............................................................................*/
+	if (!this->hurt) {
+		// move
+		if (this->input->getButtonPress(GLFW_KEY_LEFT) || this->input->getButtonPress(GLFW_KEY_A)) {
+			this->move = true;
+			this->right = false;
+			this->sprite->flipX = !this->right;
+			this->transform->position.x -= this->speed * this->timer->deltaTime;
+		}
+		else if (this->input->getButtonPress(GLFW_KEY_RIGHT) || this->input->getButtonPress(GLFW_KEY_D)) {
+			this->move = true;
+			this->right = true;
+			this->sprite->flipX = !this->right;
+			this->transform->position.x += this->speed * this->timer->deltaTime;
+		}
+		else {
+			this->move = false;
+		}
+		// jump
+		if (this->input->getButtonPress(GLFW_KEY_SPACE) || this->input->getButtonPress(GLFW_KEY_J)) {
+			if (!this->air) {
+				// this->verticalSpeed = this->jumpPower;
+				this->air = true;
+			}
+		}
+		// duck
+		if (this->input->getButtonPress(GLFW_KEY_DOWN) || this->input->getButtonPress(GLFW_KEY_S)) {
+			if (!this->air) {
+				this->duck = true;
+			}
+		}
+		else {
+			this->duck = false;
+		}
+	}
+	else {
+		if (this->right) {
+			// this->transform->position.x -= this->backSpeed * this->timer->deltaTime;
+		}
+		else {
+			// this->transform->position.x += this->backSpeed * this->timer->deltaTime;
+		}
+	}
+
+
+	/* shoot
+	..............................................................................*/
+	if (!this->hurt) {
+		if (this->input->getButtonPress(GLFW_KEY_F) || this->input->getButtonPress(GLFW_KEY_K)) {
+			if (this->timer->currentTime > this->lastShoot + this->shootColdDown) {
+				// if (this->status->hp > this->shootEnergy) {
+					this->shoot = true;
+					// this->status->hp -= this->shootEnergy;
+					// for (unsigned int i = 0; i < this->resources->audShoot.size(); i++) {
+					// 	if (!this->resources->audShoot[i]->Playing()) {
+					// 		this->resources->audShoot[i]->Play();
+					// 		break;
+					// 	}
+					// }
+					// for (unsigned int i = 0; i < this->bullets.size(); i++) {
+					// 	if (!this->bullets[i]->active) {
+							this->lastShoot = this->timer->currentTime;
+					// 		this->bullets[i]->birthTime = this->time->currentTime;
+					// 		this->bullets[i]->right = this->right;
+					// 		this->bullets[i]->active = true;
+					// 		if (this->right) {
+					// 			if (this->duck && !this->move && !this->air) {
+					// 				this->bullets[i]->transform->position = this->rightDuckFire->transform->position;
+					// 			}
+					// 			else {
+					// 				this->bullets[i]->transform->position = this->rightFire->transform->position;
+					// 			}
+					// 		}
+					// 		else {
+					// 			if (this->duck && !this->move && !this->air) {
+					// 				this->bullets[i]->transform->position = this->leftDuckFire->transform->position;
+					// 			}
+					// 			else {
+					// 				this->bullets[i]->transform->position = this->leftFire->transform->position;
+					// 			}
+					// 		}
+					// 		break;
+					// 	}
+					// }
+				// }
+				// else {
+				// 	this->resources->audPlayerNoAmmo->Play();
+				// }
+			}
+		}
+	}
+	// Shoot Flag
+	if (this->timer->currentTime > this->lastShoot + this->shootDuration) {
+		this->shoot = false;
+	}
+
+
+	/* Animation update sprite
+	..............................................................................*/
+	if (!this->hurt) {
+		if (this->air) {
+			this->animJump->update(this->sprite);
+		}
+		else {
+			if (this->move) {
+				this->animRun->update(this->sprite);
+			}
+			if (!this->move) {
+				if (this->duck) {
+					if (this->shoot) {
+						this->animDuckShoot->update(this->sprite);
+					}
+					else {
+						this->animDuck->update(this->sprite);
+					}
+				}
+				else {
+					if (this->shoot) {
+						this->animShoot->update(this->sprite);
+					}
+					else{
+						this->animIdle->update(this->sprite);
+					}
+				}
+			}
+		}
+	}
+	else {
+		this->animHurt->update(this->sprite);
+	}
 }
 
 

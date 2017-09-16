@@ -29,22 +29,18 @@ Scene::~Scene() {
 
 
 /*------------------------------------------------------------------------------
-< Start >
-
-0			0.16 			0.32			0.48
-0.16
-0.32
-0.48
+< Start > after Resources start()
 ------------------------------------------------------------------------------*/
 void Scene::start() {
+	/* loadMapData
+	..............................................................................*/
 	Scene::loadMapData("TileObject", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_test.csv");
 
+	/* create gameObjects
+	..............................................................................*/
 	std::vector<GameObject*> objects;
 	for (unsigned int i = 0; i < this->mapDatas["TileObject"].size(); i++) {
 		objects.push_back(new TileObject());
-		objects.back()->preStart();
-		objects.back()->sprite->texture = this->resources->getTexture("tilesets");
-		Scene::setTile(objects.back(), this->mapDatas["TileObject"][i].x, this->mapDatas["TileObject"][i].y);
 	}
 	this->sceneGameObjects.insert(std::make_pair("TileObject", objects));
 
@@ -62,20 +58,26 @@ void Scene::start() {
 		this->gpColliders->pop_back();
 	}
 
+	/* gameObjects preStart() & start()
+	..............................................................................*/
 	for (unsigned int i = 0; i < this->gameObjects.size(); i++) {
 		if (this->gameObjects[i]->active) {
+			this->gameObjects[i]->defaultStart();
 			this->gameObjects[i]->start();
 		}
 	}
-	// for (unsigned int i = 0; i < this->sceneGameObjects["TileObject"].size(); i++) {
-	// 	this->sceneGameObjects["TileObject"][i]->sprite->texture = this->resources->getTexture("tilesets");
-	// }
 
+	/* fixed gameObjects start()
+	..............................................................................*/
+	for (unsigned int i = 0; i < this->sceneGameObjects["TileObject"].size(); i++) {
+		this->sceneGameObjects["TileObject"][i]->sprite->texture = this->resources->getTexture("tilesets");
+		Scene::setTile(this->sceneGameObjects["TileObject"][i], this->mapDatas["TileObject"][i].x, this->mapDatas["TileObject"][i].y);
+	}
 }
 
 
 /*------------------------------------------------------------------------------
-< Update >
+< Update > GameObject update() onTriggerEnter() fixedUpdate()
 ------------------------------------------------------------------------------*/
 void Scene::update() {
 	// Update GameObject && CheckCollider && Update Collider (_DEBUG)
@@ -95,7 +97,7 @@ void Scene::update() {
 
 
 /*------------------------------------------------------------------------------
-< Draw >
+< Draw > GameObject draw()
 ------------------------------------------------------------------------------*/
 void Scene::draw() {
 	// Draw GameObject && Draw Collider (_DEBUG)

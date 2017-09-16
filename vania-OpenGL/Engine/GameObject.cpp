@@ -29,9 +29,9 @@ GameObject::~GameObject() {
 
 
 /*------------------------------------------------------------------------------
-< preStart > before gameObject->start() & after resources->start()
+< preStart > before GameObject start() & after Resources start()
 ------------------------------------------------------------------------------*/
-void GameObject::preStart() {
+void GameObject::defaultStart() {
 	// get birthtime
 	this->birthTime = this->timer->currentTime;
 	// sprite start
