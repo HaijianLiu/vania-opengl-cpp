@@ -104,8 +104,13 @@ int main() {
 	while (!glfwWindowShouldClose(window->window)) {
 		if (glfwGetKey(window->window, GLFW_KEY_ESCAPE) == GLFW_PRESS) glfwSetWindowShouldClose(window->window, true);
 		// Update
-		// timer->setTime();
-		// if (timer->checkFPS(60)) {
+		//  timer->setTime();
+
+		// 	std::stringstream ss;
+		// 	ss << timer->deltaTime;
+		// glfwSetWindowTitle(window->window,ss.str().c_str());
+
+		//  if (timer->checkFPS(60)) {
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		renderPass->use();
 			update();
@@ -113,7 +118,8 @@ int main() {
 		renderPass->draw();
 		glfwSwapBuffers(window->window);
 		glfwPollEvents();
-		// }
+		//  }
+		// std::this_thread::sleep_for(std::chrono::microseconds(1000));
 	}
 
 	// clear

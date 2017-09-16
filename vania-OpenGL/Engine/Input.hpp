@@ -6,10 +6,14 @@ class Input {
 private:
 	Window* window;
 
-public:
 	Input();
 	~Input();
 
+public:
+	static Input* getInstance();
+	void callback(GLFWwindow* window, int key, int scancode, int action, int mods);
+
+	// get button action
 	bool getButtonPress(int button);
 };
 

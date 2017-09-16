@@ -6,7 +6,7 @@
 ------------------------------------------------------------------------------*/
 Player::Player() {
 	// Input
-	this->input = new Input();
+  this->input = Input::getInstance();
 	// scale in real pixel
 	this->transform->scale = glm::vec3(80.0f,80.0f,1.0f);
 
@@ -35,8 +35,6 @@ Player::Player() {
 < Destructor >
 ------------------------------------------------------------------------------*/
 Player::~Player() {
-	// Input
-	delete this->input;
 	// BoxCollider
 	delete this->collGroundCheck;
 	delete this->collCeilingCheck;

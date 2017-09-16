@@ -39,10 +39,7 @@ void Timer::setTime() {
 ------------------------------------------------------------------------------*/
 // in FPS check loop
 void Timer::update() {
-
-	// from setTime **** for test
 	this->currentTime = glfwGetTime();
-
 	this->deltaTime = this->currentTime - this->lastTime;
 	if (this->deltaTime > 0.04f) {
 		this->deltaTime = 0.032f;

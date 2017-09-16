@@ -4,8 +4,9 @@
 
 class Player : public GameObject {
 private:
+	// Input
 	Input* input;
-
+	
 public:
 
 	// Collider
