@@ -56,10 +56,8 @@ void Scene::start() {
 	/* gameObjects preStart() & start()
 	..............................................................................*/
 	for (unsigned int i = 0; i < this->gameObjects.size(); i++) {
-		if (this->gameObjects[i]->active) {
-			this->gameObjects[i]->defaultStart();
-			this->gameObjects[i]->start();
-		}
+		this->gameObjects[i]->defaultStart();
+		this->gameObjects[i]->start();
 	}
 
 	/* set objects position & slice (after given a texture)

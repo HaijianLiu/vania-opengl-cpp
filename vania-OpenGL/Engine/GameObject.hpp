@@ -19,8 +19,8 @@ public:
 	Status* status;
 
 	// setting
-	bool active = true;
-	bool visible = true;
+	bool active = true; // wont update() fixedUpdate() draw() checkCollider()
+	bool visible = true; // wont draw()
 
 	GameObject();
 	virtual ~GameObject();

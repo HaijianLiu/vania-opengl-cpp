@@ -12,6 +12,7 @@
 		607DB6E71F6D2AA40052786F /* TileObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 607DB6E51F6D2AA40052786F /* TileObject.cpp */; };
 		607DB6EA1F6E02D90052786F /* Status.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 607DB6E81F6E02D90052786F /* Status.cpp */; };
 		607DB6ED1F6E08350052786F /* ColliderObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 607DB6EB1F6E08350052786F /* ColliderObject.cpp */; };
+		60AAF12D1F6F3C1A00AE8050 /* NoneObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60AAF12B1F6F3C1A00AE8050 /* NoneObject.cpp */; };
 		60B425421F64D7E600BEE84C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60B425411F64D7E600BEE84C /* main.cpp */; };
 		60B4254A1F64D7F800BEE84C /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60B425491F64D7F800BEE84C /* OpenGL.framework */; };
 		60B4254C1F64D88700BEE84C /* libassimp.3.3.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 60B4254B1F64D88700BEE84C /* libassimp.3.3.1.dylib */; };
@@ -57,6 +58,8 @@
 		607DB6E91F6E02D90052786F /* Status.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Status.hpp; path = Engine/Status.hpp; sourceTree = "<group>"; };
 		607DB6EB1F6E08350052786F /* ColliderObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ColliderObject.cpp; path = GameObjects/ColliderObject.cpp; sourceTree = "<group>"; };
 		607DB6EC1F6E08350052786F /* ColliderObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = ColliderObject.hpp; path = GameObjects/ColliderObject.hpp; sourceTree = "<group>"; };
+		60AAF12B1F6F3C1A00AE8050 /* NoneObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = NoneObject.cpp; path = GameObjects/NoneObject.cpp; sourceTree = "<group>"; };
+		60AAF12C1F6F3C1A00AE8050 /* NoneObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = NoneObject.hpp; path = GameObjects/NoneObject.hpp; sourceTree = "<group>"; };
 		60B4253E1F64D7E600BEE84C /* vania-OpenGL */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "vania-OpenGL"; sourceTree = BUILT_PRODUCTS_DIR; };
 		60B425411F64D7E600BEE84C /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		60B425491F64D7F800BEE84C /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
@@ -208,6 +211,8 @@
 				60E00ADD1F6A1166003CCA29 /* Player.hpp */,
 				607DB6EB1F6E08350052786F /* ColliderObject.cpp */,
 				607DB6EC1F6E08350052786F /* ColliderObject.hpp */,
+				60AAF12B1F6F3C1A00AE8050 /* NoneObject.cpp */,
+				60AAF12C1F6F3C1A00AE8050 /* NoneObject.hpp */,
 			);
 			name = GameObject;
 			sourceTree = "<group>";
@@ -284,6 +289,7 @@
 				60F2A7D91F67C4C80068C4E7 /* Texture.cpp in Sources */,
 				60EC24731F690204006BFDA6 /* RenderPass.cpp in Sources */,
 				60E00ADE1F6A1166003CCA29 /* Player.cpp in Sources */,
+				60AAF12D1F6F3C1A00AE8050 /* NoneObject.cpp in Sources */,
 				60E00AE11F6A5AB1003CCA29 /* Input.cpp in Sources */,
 				60B425421F64D7E600BEE84C /* main.cpp in Sources */,
 				60F0259E1F64E3AC0022EC73 /* Window.cpp in Sources */,
