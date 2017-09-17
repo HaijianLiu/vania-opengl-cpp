@@ -68,6 +68,7 @@ class GameObject;
 < GameObject >
 ------------------------------------------------------------------------------*/
 #include "TileObject.hpp"
+#include "ColliderObject.hpp"
 #include "Player.hpp"
 
 
