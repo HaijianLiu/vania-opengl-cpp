@@ -33,6 +33,7 @@ void clear() {
 	delete resources;
 	delete renderPass;
 	delete player;
+	delete scene;
 	glfwTerminate(); // glfw: terminate, clearing all previously allocated GLFW resources.
 }
 

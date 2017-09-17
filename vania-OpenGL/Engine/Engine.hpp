@@ -91,5 +91,26 @@ std::vector<BoxCollider*>* getColliders();
 std::vector<GameObject*> copyGameObjects();
 std::vector<BoxCollider*> copyColliders();
 
+// Engine.cpp
+template <typename T> void deleteMap(T map) {
+	for (typename T::iterator it = map.begin(); it != map.end(); it++) {
+		delete it->second;
+	}
+	map.clear();
+}
+
+template <typename T> void deleteVector(T vector) {
+	for (unsigned int i = 0; i < vector.size(); i++) {
+		delete vector[i];
+	}
+	vector.shrink_to_fit();
+}
+
+template <typename T> void deleteVectorMap(T map) {
+	for (typename T::iterator it = map.begin(); it != map.end(); it++) {
+		deleteVector(it->second);
+	}
+	map.clear();
+}
 
 #endif /* Engine_hpp */

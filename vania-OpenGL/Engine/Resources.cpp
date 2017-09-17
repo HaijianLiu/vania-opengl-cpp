@@ -14,6 +14,8 @@ Resources::Resources() {
 ------------------------------------------------------------------------------*/
 Resources::~Resources() {
 	delete this->quad;
+	deleteMap(this->textures);
+	deleteMap(this->shaders);
 }
 
 

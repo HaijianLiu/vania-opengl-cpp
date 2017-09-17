@@ -18,6 +18,7 @@ Scene::Scene() {
 ------------------------------------------------------------------------------*/
 Scene::~Scene() {
 	// delete Map GameObjects
+	deleteVectorMap(this->sceneGameObjects);
 }
 
 
