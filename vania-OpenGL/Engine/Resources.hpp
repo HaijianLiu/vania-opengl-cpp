@@ -4,14 +4,13 @@
 
 class Resources {
 private:
-	/* data */
+	// Resource storage
+	std::map<const char*, Shader*> shaders;
+	std::map<const char*, Texture*> textures;
 
 public:
 	// Quad
 	Quad* quad;
-	// Resource storage
-	std::map<const char*, Shader*> shaders;
-	std::map<const char*, Texture*> textures;
 
 	Resources();
 	~Resources();

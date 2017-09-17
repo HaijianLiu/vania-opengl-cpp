@@ -19,7 +19,7 @@ Camera::~Camera() {
 
 
 /*------------------------------------------------------------------------------
-< update >
+< update > after GameObject fixedUpdate() before GameObject draw()
 ------------------------------------------------------------------------------*/
 void Camera::update() {
 	this->view = glm::lookAt(

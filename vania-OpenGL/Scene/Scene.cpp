@@ -87,7 +87,6 @@ void Scene::update() {
 		}
 	}
 	checkCollider();
-	this->camera->update();
 	for (unsigned int i = 0; i < this->gameObjects.size(); i++) {
 		if (this->gameObjects[i]->active) {
 			this->gameObjects[i]->fixedUpdate();

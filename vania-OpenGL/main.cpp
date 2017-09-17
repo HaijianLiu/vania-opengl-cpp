@@ -53,8 +53,8 @@ void start() {
 ------------------------------------------------------------------------------*/
 void update() {
 	timer->update();
-	// camera->update();
 	scene->update();
+	camera->update();
 	scene->draw();
 }
 
