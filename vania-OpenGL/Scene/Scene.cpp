@@ -34,17 +34,18 @@ Scene::~Scene() {
 void Scene::start() {
 	/* loadMapData
 	..............................................................................*/
+	Scene::loadMapData("ColliderObject", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_test2.csv");
 	Scene::loadMapData("TileObject", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_test.csv");
+
 
 	/* create gameObjects
 	..............................................................................*/
-	std::vector<GameObject*> objects;
-	for (unsigned int i = 0; i < this->mapDatas["TileObject"].size(); i++) {
-		objects.push_back(new TileObject());
-	}
-	this->sceneGameObjects.insert(std::make_pair("TileObject", objects));
+	createGameObject("ColliderObject");
+	createGameObject("TileObject");
 
-	// Get GameObject && Get Collider
+
+	/* Get GameObject && Get Collider
+	..............................................................................*/
 	this->gameObjects = copyGameObjects();
 	this->colliders = copyColliders();
 	// reset global gameObjects
@@ -69,10 +70,8 @@ void Scene::start() {
 
 	/* set objects position & slice (after given a texture)
 	..............................................................................*/
-	for (unsigned int i = 0; i < this->sceneGameObjects["TileObject"].size(); i++) {
-		this->sceneGameObjects["TileObject"][i]->sprite->texture = this->resources->getTexture("tilesets");
-		Scene::setTile(this->sceneGameObjects["TileObject"][i], this->mapDatas["TileObject"][i].x, this->mapDatas["TileObject"][i].y);
-	}
+	setGameObject("ColliderObject");
+	setGameObject("TileObject");
 }
 
 
@@ -149,7 +148,7 @@ void Scene::checkCollider() {
 
 
 /*------------------------------------------------------------------------------
-< LoadMapData >
+< loadMapData >
 ------------------------------------------------------------------------------*/
 bool Scene::loadMapData(const char* name, const char* path) {
 	std::vector<glm::i32vec2> data;
@@ -173,6 +172,33 @@ bool Scene::loadMapData(const char* name, const char* path) {
 	return true;
 }
 
+
+/*------------------------------------------------------------------------------
+< create GameObject > createGameObject by name & size by data size
+------------------------------------------------------------------------------*/
+void Scene::createGameObject(const char* name) {
+	std::vector<GameObject*> objects;
+	for (unsigned int i = 0; i < this->mapDatas[name].size(); i++) {
+		if (name == "TileObject") objects.push_back(new TileObject());
+		else if (name == "ColliderObject") objects.push_back(new ColliderObject());
+	}
+	this->sceneGameObjects.insert(std::make_pair(name, objects));
+}
+
+
+/*------------------------------------------------------------------------------
+< set GameObject > use it after GameObject has a texture
+------------------------------------------------------------------------------*/
+void Scene::setGameObject(const char* name) {
+	for (unsigned int i = 0; i < this->sceneGameObjects[name].size(); i++) {
+		Scene::setTile(this->sceneGameObjects[name][i], this->mapDatas[name][i].x, this->mapDatas[name][i].y);
+	}
+}
+
+
+/*------------------------------------------------------------------------------
+< set Tile > use it after GameObject has a texture
+------------------------------------------------------------------------------*/
 void Scene::setTile(GameObject* gameObject, int mapID, int tileID) {
 	gameObject->transform->position.x = mapID % this->mapSize.x * PIXEL_TO_UNIT * this->tileSize;
 	gameObject->transform->position.y = mapID / this->mapSize.x * PIXEL_TO_UNIT * this->tileSize;
