@@ -60,6 +60,7 @@ class GameObject;
 #include "Transform.hpp"
 #include "Camera.hpp"
 #include "BoxCollider.hpp"
+#include "Status.hpp"
 #include "GameObject.hpp"
 
 

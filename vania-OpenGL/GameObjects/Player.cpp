@@ -212,7 +212,84 @@ void Player::update() {
 < On Trigger Enter >
 ------------------------------------------------------------------------------*/
 void Player::onTriggerEnter(BoxCollider* other) {
+	/* Transform if tag = "ground"
+	..............................................................................*/
+	if (other->tag == "ground" || other->tag == "death_wall") {
+		if (this->collGroundCheck->enter == true) {
+			this->transform->position.y = other->gameObject->transform->position.y + other->offset.y - other->halfSize.y * PIXEL_TO_UNIT - this->collGroundCheck->offset.y - this->collGroundCheck->halfSize.y * PIXEL_TO_UNIT;
+			this->air = false;
+			if (this->verticalSpeed <= -0.2f * this->jumpPower) {
+				// this->resources->audLanding->Play();
+			}
+			this->verticalSpeed = 0.0f;
+		}
+		if (this->collHorizonCheck->enter == true) {
+			if (this->transform->position.x > other->gameObject->transform->position.x) {
+				this->transform->position.x = other->gameObject->transform->position.x + other->offset.x + other->halfSize.x * PIXEL_TO_UNIT - this->collHorizonCheck->offset.x + this->collHorizonCheck->halfSize.x * PIXEL_TO_UNIT;
+			}
+			if (this->transform->position.x < other->gameObject->transform->position.x) {
+				this->transform->position.x = other->gameObject->transform->position.x + other->offset.x - other->halfSize.x * PIXEL_TO_UNIT - this->collHorizonCheck->offset.x - this->collHorizonCheck->halfSize.x * PIXEL_TO_UNIT;
+			}
+		}
+		if (this->collCeilingCheck->enter == true) {
+			this->transform->position.y = other->gameObject->transform->position.y + other->offset.y + other->halfSize.y * PIXEL_TO_UNIT - this->collCeilingCheck->offset.y + this->collCeilingCheck->halfSize.y * PIXEL_TO_UNIT;
+			this->verticalSpeed = 0.0f;
+		}
+	}
+	/* Shield if tag = "enemy"
+	..............................................................................*/
+	if (other->tag == "enemy" || other->tag == "death_wall" || other->tag == "ball_enemy") {
+		if (this->status->hp > 0 && this->timer->currentTime > this->lastHurt + this->hurtColdDown) {
+			this->hurt = true;
+			this->lastHurt = this->timer->currentTime;
+			this->freeze = true;
+			this->lastFreeze = this->timer->currentTime;
+			this->status->hp -= other->gameObject->status->damage;
+			if (this->status->hp <= 0) {
+				// this->resources->audPlayerDeath->Play();
+			}
+			else {
+				// this->resources->audPlayerHurt->Play();
+			}
+			if (other->gameObject->transform->position.x > this->transform->position.x) {
+				this->right = true;
+			}
+			else {
+				this->right = false;
+			}
+			this->verticalSpeed = 0.5f * this->jumpPower;
+			// this->sprite->Flash();
+		}
+	}
 
+	/* add score if tag = "orb"
+	..............................................................................*/
+	if (other->tag == "orb") {
+		// this->score->willAdd((unsigned int)other->gameObject->status->hp);
+	}
+	if (other->tag == "my_orb") {
+		// this->score->willAdd((unsigned int)other->gameObject->status->hp);
+		// this->resources->audOrbReturn->Play();
+	}
+	/*  if tag = "item"
+	..............................................................................*/
+	if (other->tag == "item") {
+		if (other->gameObject->status->tag == "dark") {
+			this->energyRegain += 5.0f;
+			this->hurtColdDown += 0.5f;
+			// this->sprite->flashTime = this->hurtColdDown;
+		}
+		if (other->gameObject->status->tag == "gold") {
+			this->energyRegain += 10.0f;
+		}
+		if (other->gameObject->status->tag == "sliver") {
+			this->shootColdDown = 0.05f;
+		}
+		if (other->gameObject->status->tag == "bronze") {
+			this->hurtColdDown += 1.0f;
+			// this->sprite->flashTime = this->hurtColdDown;
+		}
+	}
 }
 
 

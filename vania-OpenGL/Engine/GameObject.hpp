@@ -16,9 +16,9 @@ public:
 	// GameObject members
 	Transform* transform;
 	Sprite* sprite;
+	Status* status;
 
-	// status
-	float birthTime = 0;
+	// setting
 	bool active = true;
 	bool visible = true;
 

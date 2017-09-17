@@ -16,6 +16,7 @@ GameObject::GameObject() {
 	this->transform = new Transform();
 	this->sprite = new Sprite();
 	this->sprite->gameObject = this;
+	this->status = new Status();
 }
 
 
@@ -25,6 +26,7 @@ GameObject::GameObject() {
 GameObject::~GameObject() {
 	delete this->transform;
 	delete this->sprite;
+	delete this->status;
 }
 
 
@@ -33,7 +35,7 @@ GameObject::~GameObject() {
 ------------------------------------------------------------------------------*/
 void GameObject::defaultStart() {
 	// get birthtime
-	this->birthTime = this->timer->currentTime;
+	this->status->birthTime = this->timer->currentTime;
 	// sprite start
 	this->sprite->start();
 }
