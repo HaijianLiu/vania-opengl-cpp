@@ -67,7 +67,7 @@ void Scene::start() {
 		}
 	}
 
-	/* fixed gameObjects start()
+	/* set objects position & slice (after given a texture)
 	..............................................................................*/
 	for (unsigned int i = 0; i < this->sceneGameObjects["TileObject"].size(); i++) {
 		this->sceneGameObjects["TileObject"][i]->sprite->texture = this->resources->getTexture("tilesets");
