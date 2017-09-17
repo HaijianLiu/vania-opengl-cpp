@@ -8,7 +8,7 @@ private:
 
 public:
 	// Camera Position
-	glm::vec3 position = glm::vec3(0.0f,0.0f,0.0f);
+	glm::vec3 position = glm::vec3(0.0f,0.0f,10.0f);
 
 	// matrix uniform
 	glm::mat4 projection, view;

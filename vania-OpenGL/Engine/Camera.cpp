@@ -23,7 +23,7 @@ Camera::~Camera() {
 ------------------------------------------------------------------------------*/
 void Camera::update() {
 	this->view = glm::lookAt(
-		glm::vec3(this->position.x * PIXEL_SCALE * UNIT_TO_PIXEL * this->window->retina ,this->position.y * PIXEL_SCALE * UNIT_TO_PIXEL * this->window->retina , 1), // camera position
+		glm::vec3(this->position.x * PIXEL_SCALE * UNIT_TO_PIXEL * this->window->retina ,this->position.y * PIXEL_SCALE * UNIT_TO_PIXEL * this->window->retina , this->position.z), // camera position
 		glm::vec3(this->position.x * PIXEL_SCALE * UNIT_TO_PIXEL * this->window->retina ,this->position.y * PIXEL_SCALE * UNIT_TO_PIXEL * this->window->retina , 0), // target position
 		glm::vec3(0,1,0)  // up
 	);

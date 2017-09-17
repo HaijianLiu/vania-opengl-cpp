@@ -6,7 +6,7 @@
 ------------------------------------------------------------------------------*/
 ColliderObject::ColliderObject() {
 	// GameObject setting
-	this->transform->position.z = 0.1f;
+	// this->transform->position.z = 1.0f;
 	this->visible = false;
 	// scale in real pixel
 	// ...
