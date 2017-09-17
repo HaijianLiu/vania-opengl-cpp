@@ -96,7 +96,7 @@ void Player::update() {
 		// jump
 		if (this->input->getButtonPress(GLFW_KEY_SPACE) || this->input->getButtonPress(GLFW_KEY_J)) {
 			if (!this->air) {
-				// this->verticalSpeed = this->jumpPower;
+				this->verticalSpeed = this->jumpPower;
 				this->air = true;
 			}
 		}
@@ -112,10 +112,10 @@ void Player::update() {
 	}
 	else {
 		if (this->right) {
-			// this->transform->position.x -= this->backSpeed * this->timer->deltaTime;
+			this->transform->position.x -= this->backSpeed * this->timer->deltaTime;
 		}
 		else {
-			// this->transform->position.x += this->backSpeed * this->timer->deltaTime;
+			this->transform->position.x += this->backSpeed * this->timer->deltaTime;
 		}
 	}
 
@@ -169,6 +169,17 @@ void Player::update() {
 	// Shoot Flag
 	if (this->timer->currentTime > this->lastShoot + this->shootDuration) {
 		this->shoot = false;
+	}
+
+	/* Gravity
+	..............................................................................*/
+	this->verticalSpeed -= this->gravity * this->timer->deltaTime;
+	if (this->verticalSpeed <= - 0.8f * this->jumpPower) {
+		this->verticalSpeed = - 0.8f * this->jumpPower;
+	}
+	this->transform->position.y -= this->verticalSpeed * this->timer->deltaTime;
+	if (this->verticalSpeed < -1.0f) {
+		this->air = true;
 	}
 
 

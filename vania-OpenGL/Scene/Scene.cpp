@@ -5,13 +5,6 @@
 < Constructor >
 ------------------------------------------------------------------------------*/
 Scene::Scene() {
-	// Camera
-	this->camera = getCamera();
-	// Timer
-	this->timer = getTimer();
-
-	this->resources = getResources();
-
 	// get start size
 	this->gpGameObjects = getGameObjects();
 	this->gpColliders = getColliders();

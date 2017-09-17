@@ -23,13 +23,6 @@ public:
 	// Scene GameObjects and Colliders
 	std::vector<GameObject*> gameObjects;
 	std::vector<BoxCollider*> colliders;
-	// SceneManager
-	Resources* resources;
-	// Camera
-	Camera* camera;
-	// Timer
-	Timer* timer;
-	// Audio
 
 	// Frame Delay
 	bool frameSkip = true; // skip the first frame
