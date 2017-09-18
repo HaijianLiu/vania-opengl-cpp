@@ -26,6 +26,8 @@ public:
 	// Camera
 	Camera* camera;
 
+	Player* player;
+
 	// Frame Delay
 	bool frameSkip = true; // skip the first frame
 
@@ -43,7 +45,7 @@ public:
 
 	void setTile(GameObject* gameObject, int mapID, int tileID);
 	void setPosition(GameObject* gameObject, int mapID);
-	
+
 
 	void fixCamera(const char* name);
 

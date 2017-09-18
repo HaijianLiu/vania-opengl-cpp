@@ -12,6 +12,8 @@ Scene::Scene() {
 	this->startCollidersSize = this->gpColliders->size();
 	// Camera
 	this->camera = getCamera();
+
+	this->player = new Player();
 }
 
 
@@ -21,6 +23,7 @@ Scene::Scene() {
 Scene::~Scene() {
 	// delete Map GameObjects
 	deleteVectorMap(this->sceneGameObjects);
+	delete this->player;
 }
 
 
@@ -28,18 +31,21 @@ Scene::~Scene() {
 < Start > after Resources start()
 ------------------------------------------------------------------------------*/
 void Scene::start() {
+	Scene::loadMapData("Player", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene00-Player.csv");
+	Scene::setPosition(this->player, this->mapDatas["Player"][0].x);
+
 	/* loadMapData
 	..............................................................................*/
-	Scene::loadMapData("ColliderObject", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_test2.csv");
-	Scene::loadMapData("TileObject", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_test.csv");
+	Scene::loadMapData("ColliderObject", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene00-Ground.csv");
+	Scene::loadMapData("TileObject", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene00-BackGround.csv");
 	Scene::loadMapData("CameraRange", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene00-Camera.csv");
 
 
 	/* create gameObjects
 	..............................................................................*/
-	createGameObject("ColliderObject");
-	createGameObject("TileObject");
-	createGameObject("CameraRange");
+	Scene::createGameObject("ColliderObject");
+	Scene::createGameObject("TileObject");
+	Scene::createGameObject("CameraRange");
 
 
 	/* Get GameObject && Get Collider
@@ -66,9 +72,9 @@ void Scene::start() {
 
 	/* set objects position & slice (after given a texture)
 	..............................................................................*/
-	setGameObject("ColliderObject");
-	setGameObject("TileObject");
-	setGameObject("CameraRange");
+	Scene::setGameObject("ColliderObject");
+	Scene::setGameObject("TileObject");
+	Scene::setGameObject("CameraRange");
 }
 
 
@@ -82,7 +88,7 @@ void Scene::update() {
 		}
 	}
 
-	checkCollider();
+	Scene::checkCollider();
 
 	for (unsigned int i = 0; i < this->gameObjects.size(); i++) {
 		if (this->gameObjects[i]->active) {
@@ -91,7 +97,7 @@ void Scene::update() {
 	}
 
 	this->camera->updatePosition();
-	fixCamera("CameraRange");
+	Scene::fixCamera("CameraRange");
 	this->camera->updateUniform();
 
 	for (unsigned int i = this->gameObjects.size(); i > 0; i--) {
@@ -231,6 +237,6 @@ void Scene::fixCamera(const char* name) {
 }
 
 void Scene::setPosition(GameObject* gameObject, int mapID) {
-	// gameObject->transform->position.x = mapID % this->mapSize.x * PIXEL_TO_UNIT * this->tileSize;
-	// gameObject->transform->position.y = mapID / this->mapSize.x * PIXEL_TO_UNIT * this->tileSize;
+	gameObject->transform->position.x = mapID % this->mapSize.x * PIXEL_TO_UNIT * this->tileSize;
+	gameObject->transform->position.y = mapID / this->mapSize.x * PIXEL_TO_UNIT * this->tileSize;
 }

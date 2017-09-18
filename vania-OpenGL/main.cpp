@@ -18,8 +18,6 @@ Timer* timer = new Timer();
 Camera* camera = new Camera();
 Resources* resources = new Resources();
 
-Player* player = new Player();
-
 Scene* scene = new Scene();
 
 
@@ -32,7 +30,6 @@ void clear() {
 	delete camera;
 	delete resources;
 	delete renderPass;
-	delete player;
 	delete scene;
 	glfwTerminate(); // glfw: terminate, clearing all previously allocated GLFW resources.
 }
