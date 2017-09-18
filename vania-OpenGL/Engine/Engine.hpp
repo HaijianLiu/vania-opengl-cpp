@@ -63,6 +63,7 @@ class SceneManager;
 #include "BoxCollider.hpp"
 #include "Status.hpp"
 #include "GameObject.hpp"
+#include "Game.hpp"
 
 
 /*------------------------------------------------------------------------------
