@@ -33,6 +33,7 @@ Scene::~Scene() {
 void Scene::start() {
 	Scene::loadMapData("Player", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene00-Player.csv");
 	Scene::setPosition(this->player, this->mapDatas["Player"][0].x);
+	this->camera->target = this->player;
 
 	/* loadMapData
 	..............................................................................*/
