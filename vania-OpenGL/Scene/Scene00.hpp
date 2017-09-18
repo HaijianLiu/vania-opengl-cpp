@@ -7,6 +7,7 @@ private:
 	/* data */
 
 public:
+	// Constructors
 	Scene00();
 	~Scene00();
 };

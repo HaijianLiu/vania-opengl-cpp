@@ -18,7 +18,7 @@ Timer* timer = new Timer();
 Camera* camera = new Camera();
 Resources* resources = new Resources();
 
-Scene* scene = new Scene();
+SceneManager* sceneManager = new SceneManager();
 
 
 /*------------------------------------------------------------------------------
@@ -30,7 +30,8 @@ void clear() {
 	delete camera;
 	delete resources;
 	delete renderPass;
-	delete scene;
+
+	delete sceneManager;
 	glfwTerminate(); // glfw: terminate, clearing all previously allocated GLFW resources.
 }
 
@@ -41,7 +42,7 @@ void clear() {
 void start() {
 	timer->start();
 	resources->start();
-	scene->start();
+	sceneManager->start();
 	renderPass->start(1);
 }
 
@@ -51,7 +52,7 @@ void start() {
 ------------------------------------------------------------------------------*/
 void update() {
 	timer->update();
-	scene->update();
+	sceneManager->update();
 }
 
 
@@ -69,6 +70,9 @@ Camera* getCamera() {
 }
 Resources* getResources() {
 	return resources;
+}
+SceneManager* getSceneManager() {
+	return sceneManager;
 }
 std::vector<GameObject*>* getGameObjects() {
 	return &gameObjects;

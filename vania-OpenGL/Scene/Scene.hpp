@@ -31,7 +31,7 @@ public:
 	// Frame Delay
 	bool frameSkip = true; // skip the first frame
 
-
+	// Constructors
 	Scene();
 	virtual ~Scene();
 

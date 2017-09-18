@@ -42,6 +42,7 @@
 < Core >
 ------------------------------------------------------------------------------*/
 class GameObject;
+class SceneManager;
 
 
 /*------------------------------------------------------------------------------
@@ -89,6 +90,7 @@ Window* getWindow();
 Timer* getTimer();
 Camera* getCamera();
 Resources* getResources();
+SceneManager* getSceneManager();
 std::vector<GameObject*>* getGameObjects();
 std::vector<BoxCollider*>* getColliders();
 std::vector<GameObject*> copyGameObjects();
