@@ -68,6 +68,7 @@ void Scene::start() {
 	..............................................................................*/
 	setGameObject("ColliderObject");
 	setGameObject("TileObject");
+	setGameObject("CameraRange");
 }
 
 
@@ -90,6 +91,7 @@ void Scene::update() {
 	}
 
 	this->camera->updatePosition();
+	fixCamera("CameraRange");
 	this->camera->updateUniform();
 
 	for (unsigned int i = this->gameObjects.size(); i > 0; i--) {
@@ -199,6 +201,33 @@ void Scene::setTile(GameObject* gameObject, int mapID, int tileID) {
 	gameObject->transform->position.y = mapID / this->mapSize.x * PIXEL_TO_UNIT * this->tileSize;
 	gameObject->transform->scale = glm::vec3(this->tileSize, this->tileSize, 1.0f);
 	gameObject->sprite->setSlice(tileID % this->tilesetsSize.x * this->tileSize , tileID / this->tilesetsSize.x * this->tileSize, this->tileSize, this->tileSize);
+}
+
+
+/*------------------------------------------------------------------------------
+< fix Camera > after Camera updatePosition() before Camera updateUniform()
+------------------------------------------------------------------------------*/
+void Scene::fixCamera(const char* name) {
+	if (this->sceneGameObjects.find(name) != this->sceneGameObjects.end()) {
+		if (this->sceneGameObjects[name].size() == 1) {
+				this->camera->position.x = this->sceneGameObjects[name][0]->transform->position.x;
+				this->camera->position.y = this->sceneGameObjects[name][0]->transform->position.y;
+		}
+		if (this->sceneGameObjects[name].size() == 2) {
+			if (this->camera->position.x <= this->sceneGameObjects[name][0]->transform->position.x) {
+				this->camera->position.x = this->sceneGameObjects[name][0]->transform->position.x;
+			}
+			if (this->camera->position.x > this->sceneGameObjects[name][1]->transform->position.x) {
+				this->camera->position.x = this->sceneGameObjects[name][1]->transform->position.x;
+			}
+			if (this->camera->position.y <= this->sceneGameObjects[name][0]->transform->position.y) {
+				this->camera->position.y = this->sceneGameObjects[name][0]->transform->position.y;
+			}
+			if (this->camera->position.y > this->sceneGameObjects[name][1]->transform->position.y) {
+				this->camera->position.y = this->sceneGameObjects[name][1]->transform->position.y;
+			}
+		}
+	}
 }
 
 void Scene::setPosition(GameObject* gameObject, int mapID) {

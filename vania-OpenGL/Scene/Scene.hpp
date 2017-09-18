@@ -37,13 +37,20 @@ public:
 	void update();
 
 	// Functions
-	bool checkCollision(BoxCollider* a, BoxCollider* b);
-	void checkCollider();
 	bool loadMapData(const char* name, const char* path);
 	void createGameObject(const char* name);
 	void setGameObject(const char* name);
+
 	void setTile(GameObject* gameObject, int mapID, int tileID);
 	void setPosition(GameObject* gameObject, int mapID);
+	
+
+	void fixCamera(const char* name);
+
+	bool checkCollision(BoxCollider* a, BoxCollider* b);
+	void checkCollider();
+
+
 };
 
 
