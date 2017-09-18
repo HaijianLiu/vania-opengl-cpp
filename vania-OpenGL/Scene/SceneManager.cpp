@@ -13,7 +13,7 @@ SceneManager::SceneManager() {
 < Destructor >
 ------------------------------------------------------------------------------*/
 SceneManager::~SceneManager() {
-
+	deleteMap(this->scenes);
 }
 
 
@@ -21,7 +21,9 @@ SceneManager::~SceneManager() {
 < start >
 ------------------------------------------------------------------------------*/
 void SceneManager::start() {
-
+	for (std::map<const char*, Scene*>::iterator it = this->scenes.begin(); it != this->scenes.end(); it++) {
+		it->second->start();
+	}
 }
 
 
@@ -29,7 +31,9 @@ void SceneManager::start() {
 < update >
 ------------------------------------------------------------------------------*/
 void SceneManager::update() {
-
+	if (this->scenes.find(activeScene) != this->scenes.end()) {
+		this->scenes[activeScene]->update();
+	}
 }
 
 
