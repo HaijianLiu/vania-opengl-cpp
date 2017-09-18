@@ -97,6 +97,12 @@ std::vector<GameObject*> copyGameObjects();
 std::vector<BoxCollider*> copyColliders();
 
 // Engine.cpp
+template <typename T, typename U> void doMap(T map, void (*function)(U)) {
+	for (typename T::iterator it = map.begin(); it != map.end(); it++) {
+		function(it->first);
+	}
+}
+
 template <typename T> void deleteMap(T map) {
 	for (typename T::iterator it = map.begin(); it != map.end(); it++) {
 		delete it->second;

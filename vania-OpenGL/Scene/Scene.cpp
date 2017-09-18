@@ -31,22 +31,19 @@ Scene::~Scene() {
 < Start > after Resources start()
 ------------------------------------------------------------------------------*/
 void Scene::start() {
+	/* load Scene
+	..............................................................................*/
+	this->loadScene();
+
 	Scene::loadMapData("Player", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene00-Player.csv");
 	Scene::setPosition(this->player, this->mapDatas["Player"][0].x);
 	this->camera->target = this->player;
 
-	/* loadMapData
-	..............................................................................*/
-	Scene::loadMapData("ColliderObject", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene00-Ground.csv");
-	Scene::loadMapData("TileObject", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene00-BackGround.csv");
-	Scene::loadMapData("CameraRange", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene00-Camera.csv");
-
-
 	/* create gameObjects
 	..............................................................................*/
-	Scene::createGameObject("ColliderObject");
-	Scene::createGameObject("TileObject");
-	Scene::createGameObject("CameraRange");
+	for (std::map<const char*, std::vector<glm::i32vec2>>::iterator it = this->mapDatas.begin(); it != this->mapDatas.end(); it++) {
+		Scene::createGameObject(it->first);
+	}
 
 
 	/* Get GameObject && Get Collider
@@ -64,7 +61,7 @@ void Scene::start() {
 		this->gpColliders->pop_back();
 	}
 
-	/* gameObjects preStart() & start()
+	/* gameObjects defaultStart() & start()
 	..............................................................................*/
 	for (unsigned int i = 0; i < this->gameObjects.size(); i++) {
 		this->gameObjects[i]->defaultStart();
@@ -73,9 +70,9 @@ void Scene::start() {
 
 	/* set objects position & slice (after given a texture)
 	..............................................................................*/
-	Scene::setGameObject("ColliderObject");
-	Scene::setGameObject("TileObject");
-	Scene::setGameObject("CameraRange");
+	for (std::map<const char*, std::vector<glm::i32vec2>>::iterator it = this->mapDatas.begin(); it != this->mapDatas.end(); it++) {
+		Scene::setGameObject(it->first);
+	}
 }
 
 

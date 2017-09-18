@@ -38,6 +38,9 @@ public:
 	void start();
 	void update();
 
+	virtual void loadScene() = 0;
+	virtual void endScene() = 0;
+
 	// Functions
 	bool loadMapData(const char* name, const char* path);
 	void createGameObject(const char* name);
@@ -51,7 +54,6 @@ public:
 
 	bool checkCollision(BoxCollider* a, BoxCollider* b);
 	void checkCollider();
-
 
 };
 

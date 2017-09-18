@@ -10,6 +10,10 @@ public:
 	// Constructors
 	Scene00();
 	~Scene00();
+
+	void loadScene();
+	void endScene();
+
 };
 
 #endif /* Scene00_hpp */
