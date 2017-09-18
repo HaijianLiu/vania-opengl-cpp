@@ -6,6 +6,7 @@
 ------------------------------------------------------------------------------*/
 SceneManager::SceneManager() {
 	SceneManager::creatScene("Scene00", new Scene00());
+	this->activeScene = "Scene00";
 }
 
 
