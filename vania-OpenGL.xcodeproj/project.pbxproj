@@ -13,6 +13,8 @@
 		607DB6EA1F6E02D90052786F /* Status.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 607DB6E81F6E02D90052786F /* Status.cpp */; };
 		607DB6ED1F6E08350052786F /* ColliderObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 607DB6EB1F6E08350052786F /* ColliderObject.cpp */; };
 		60AAF12D1F6F3C1A00AE8050 /* NoneObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60AAF12B1F6F3C1A00AE8050 /* NoneObject.cpp */; };
+		60AAF1301F6F78E600AE8050 /* Scene00.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60AAF12E1F6F78E600AE8050 /* Scene00.cpp */; };
+		60AAF1331F6F79CA00AE8050 /* SceneManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60AAF1311F6F79CA00AE8050 /* SceneManager.cpp */; };
 		60B425421F64D7E600BEE84C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60B425411F64D7E600BEE84C /* main.cpp */; };
 		60B4254A1F64D7F800BEE84C /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60B425491F64D7F800BEE84C /* OpenGL.framework */; };
 		60B4254C1F64D88700BEE84C /* libassimp.3.3.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 60B4254B1F64D88700BEE84C /* libassimp.3.3.1.dylib */; };
@@ -60,6 +62,10 @@
 		607DB6EC1F6E08350052786F /* ColliderObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = ColliderObject.hpp; path = GameObjects/ColliderObject.hpp; sourceTree = "<group>"; };
 		60AAF12B1F6F3C1A00AE8050 /* NoneObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = NoneObject.cpp; path = GameObjects/NoneObject.cpp; sourceTree = "<group>"; };
 		60AAF12C1F6F3C1A00AE8050 /* NoneObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = NoneObject.hpp; path = GameObjects/NoneObject.hpp; sourceTree = "<group>"; };
+		60AAF12E1F6F78E600AE8050 /* Scene00.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Scene00.cpp; path = Scene/Scene00.cpp; sourceTree = "<group>"; };
+		60AAF12F1F6F78E600AE8050 /* Scene00.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Scene00.hpp; path = Scene/Scene00.hpp; sourceTree = "<group>"; };
+		60AAF1311F6F79CA00AE8050 /* SceneManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SceneManager.cpp; path = Scene/SceneManager.cpp; sourceTree = "<group>"; };
+		60AAF1321F6F79CA00AE8050 /* SceneManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = SceneManager.hpp; path = Scene/SceneManager.hpp; sourceTree = "<group>"; };
 		60B4253E1F64D7E600BEE84C /* vania-OpenGL */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "vania-OpenGL"; sourceTree = BUILT_PRODUCTS_DIR; };
 		60B425411F64D7E600BEE84C /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		60B425491F64D7F800BEE84C /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
@@ -118,7 +124,11 @@
 			isa = PBXGroup;
 			children = (
 				603C309A1F6BF91500E91948 /* Scene.cpp */,
+				60AAF1311F6F79CA00AE8050 /* SceneManager.cpp */,
+				60AAF1321F6F79CA00AE8050 /* SceneManager.hpp */,
 				603C309B1F6BF91500E91948 /* Scene.hpp */,
+				60AAF12E1F6F78E600AE8050 /* Scene00.cpp */,
+				60AAF12F1F6F78E600AE8050 /* Scene00.hpp */,
 			);
 			name = Scene;
 			sourceTree = "<group>";
@@ -275,7 +285,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60AAF1301F6F78E600AE8050 /* Scene00.cpp in Sources */,
 				60F2A7D31F67B4480068C4E7 /* Quad.cpp in Sources */,
+				60AAF1331F6F79CA00AE8050 /* SceneManager.cpp in Sources */,
 				607DB6E71F6D2AA40052786F /* TileObject.cpp in Sources */,
 				60EC24701F68CF44006BFDA6 /* Resources.cpp in Sources */,
 				607DB6EA1F6E02D90052786F /* Status.cpp in Sources */,
