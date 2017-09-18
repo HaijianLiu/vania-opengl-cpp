@@ -10,6 +10,8 @@ Scene::Scene() {
 	this->gpColliders = getColliders();
 	this->startGameObjectsSize = this->gpGameObjects->size();
 	this->startCollidersSize = this->gpColliders->size();
+	// Camera
+	this->camera = getCamera();
 }
 
 
@@ -30,12 +32,14 @@ void Scene::start() {
 	..............................................................................*/
 	Scene::loadMapData("ColliderObject", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_test2.csv");
 	Scene::loadMapData("TileObject", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_test.csv");
+	Scene::loadMapData("CameraRange", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene00-Camera.csv");
 
 
 	/* create gameObjects
 	..............................................................................*/
 	createGameObject("ColliderObject");
 	createGameObject("TileObject");
+	createGameObject("CameraRange");
 
 
 	/* Get GameObject && Get Collider
@@ -68,34 +72,32 @@ void Scene::start() {
 
 
 /*------------------------------------------------------------------------------
-< Update > GameObject update() onTriggerEnter() fixedUpdate()
+< Update > GameObject update() onTriggerEnter() fixedUpdate() draw()
 ------------------------------------------------------------------------------*/
 void Scene::update() {
-	// Update GameObject && CheckCollider && Update Collider (_DEBUG)
 	for (unsigned int i = 0; i < this->gameObjects.size(); i++) {
 		if (this->gameObjects[i]->active) {
 			this->gameObjects[i]->update();
 		}
 	}
+
 	checkCollider();
+
 	for (unsigned int i = 0; i < this->gameObjects.size(); i++) {
 		if (this->gameObjects[i]->active) {
 			this->gameObjects[i]->fixedUpdate();
 		}
 	}
-}
 
+	this->camera->updatePosition();
+	this->camera->updateUniform();
 
-/*------------------------------------------------------------------------------
-< Draw > GameObject draw()
-------------------------------------------------------------------------------*/
-void Scene::draw() {
-	// Draw GameObject && Draw Collider (_DEBUG)
 	for (unsigned int i = this->gameObjects.size(); i > 0; i--) {
 		if (this->gameObjects[i-1]->active && this->gameObjects[i-1]->visible) {
 			this->gameObjects[i-1]->draw();
 		}
 	}
+
 }
 
 
@@ -173,6 +175,7 @@ void Scene::createGameObject(const char* name) {
 	for (unsigned int i = 0; i < this->mapDatas[name].size(); i++) {
 		if (name == "TileObject") objects.push_back(new TileObject());
 		else if (name == "ColliderObject") objects.push_back(new ColliderObject());
+		else if (name == "CameraRange") objects.push_back(new NoneObject());
 	}
 	this->sceneGameObjects.insert(std::make_pair(name, objects));
 }

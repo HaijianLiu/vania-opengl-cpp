@@ -24,7 +24,6 @@ NoneObject::~NoneObject() {
 ------------------------------------------------------------------------------*/
 void NoneObject::start() {
 	// set sprite texture and slice | Animation start
-	this->sprite->texture = this->resources->getTexture("tilesets");
 }
 
 

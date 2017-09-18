@@ -55,8 +55,6 @@ void start() {
 void update() {
 	timer->update();
 	scene->update();
-	camera->update();
-	scene->draw();
 }
 
 

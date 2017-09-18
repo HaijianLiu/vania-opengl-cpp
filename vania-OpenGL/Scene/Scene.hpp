@@ -23,6 +23,8 @@ public:
 	// Scene GameObjects and Colliders
 	std::vector<GameObject*> gameObjects;
 	std::vector<BoxCollider*> colliders;
+	// Camera
+	Camera* camera;
 
 	// Frame Delay
 	bool frameSkip = true; // skip the first frame
@@ -33,7 +35,6 @@ public:
 
 	void start();
 	void update();
-	void draw();
 
 	// Functions
 	bool checkCollision(BoxCollider* a, BoxCollider* b);
