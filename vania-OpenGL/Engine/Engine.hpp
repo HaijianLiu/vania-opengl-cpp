@@ -55,6 +55,7 @@ class Player;
 #include "Timer.hpp"
 #include "Quad.hpp"
 #include "Texture.hpp"
+#include "TiledMap.hpp"
 #include "Resources.hpp"
 #include "RenderPass.hpp"
 #include "Sprite.hpp"
