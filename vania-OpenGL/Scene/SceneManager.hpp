@@ -9,7 +9,6 @@ private:
 	void creatScene(const char* name, Scene* scene);
 
 public:
-
 	// Constructors
 	SceneManager();
 	~SceneManager();

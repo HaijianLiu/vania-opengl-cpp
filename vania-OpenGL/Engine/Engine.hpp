@@ -43,6 +43,7 @@
 ------------------------------------------------------------------------------*/
 class GameObject;
 class SceneManager;
+class Player;
 
 
 /*------------------------------------------------------------------------------
@@ -88,14 +89,7 @@ class SceneManager;
 ------------------------------------------------------------------------------*/
 // main.cpp
 Window* getWindow();
-Timer* getTimer();
-Camera* getCamera();
-Resources* getResources();
-SceneManager* getSceneManager();
-std::vector<GameObject*>* getGameObjects();
-std::vector<BoxCollider*>* getColliders();
-std::vector<GameObject*> copyGameObjects();
-std::vector<BoxCollider*> copyColliders();
+Game* getGame();
 
 // Engine.cpp
 template <typename T, typename U> void doMap(T map, void (*function)(U)) {

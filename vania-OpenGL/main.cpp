@@ -2,23 +2,11 @@
 #include "Engine.hpp"
 
 /*------------------------------------------------------------------------------
-< List of GetGameObject and Collider >
-------------------------------------------------------------------------------*/
-std::vector<GameObject*> gameObjects;
-std::vector<BoxCollider*> colliders;
-
-
-/*------------------------------------------------------------------------------
 < globals >
 ------------------------------------------------------------------------------*/
 Window* window = new Window("vania", SCREEN_WIDTH, SCREEN_HEIGHT);
 RenderPass* renderPass = new RenderPass();
-
-Timer* timer = new Timer();
-Camera* camera = new Camera();
-Resources* resources = new Resources();
-
-SceneManager* sceneManager = new SceneManager();
+Game* game = new Game();
 
 
 /*------------------------------------------------------------------------------
@@ -26,12 +14,8 @@ SceneManager* sceneManager = new SceneManager();
 ------------------------------------------------------------------------------*/
 void clear() {
 	delete window;
-	delete timer;
-	delete camera;
-	delete resources;
 	delete renderPass;
-
-	delete sceneManager;
+	delete game;
 	glfwTerminate(); // glfw: terminate, clearing all previously allocated GLFW resources.
 }
 
@@ -40,9 +24,7 @@ void clear() {
 < start >
 ------------------------------------------------------------------------------*/
 void start() {
-	timer->start();
-	resources->start();
-	sceneManager->start();
+	game->start();
 	renderPass->start(1);
 }
 
@@ -51,8 +33,7 @@ void start() {
 < update >
 ------------------------------------------------------------------------------*/
 void update() {
-	timer->update();
-	sceneManager->update();
+	game->update();
 }
 
 
@@ -62,29 +43,8 @@ void update() {
 Window* getWindow() {
 	return window;
 }
-Timer* getTimer() {
-	return timer;
-}
-Camera* getCamera() {
-	return camera;
-}
-Resources* getResources() {
-	return resources;
-}
-SceneManager* getSceneManager() {
-	return sceneManager;
-}
-std::vector<GameObject*>* getGameObjects() {
-	return &gameObjects;
-}
-std::vector<BoxCollider*>* getColliders() {
-	return &colliders;
-}
-std::vector<GameObject*> copyGameObjects() {
-	return gameObjects;
-}
-std::vector<BoxCollider*> copyColliders() {
-	return colliders;
+Game* getGame() {
+	return game;
 }
 
 

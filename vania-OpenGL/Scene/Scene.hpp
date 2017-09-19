@@ -15,18 +15,17 @@ private:
 	glm::i32vec2 mapSize = glm::i32vec2(225,90);
 	glm::i32vec2 tilesetsSize = glm::i32vec2(384/16,320/16);
 
-	// tiled map data
-	std::map<const char*, std::vector<glm::i32vec2>> mapDatas;
-	std::map<const char*, std::vector<GameObject*>> sceneGameObjects;
-
 public:
 	// Scene GameObjects and Colliders
 	std::vector<GameObject*> gameObjects;
 	std::vector<BoxCollider*> colliders;
+
+	// tiled map data
+	std::map<const char*, std::vector<glm::i32vec2>> mapDatas;
+	std::map<const char*, std::vector<GameObject*>> sceneGameObjects;
+
 	// Camera
 	Camera* camera;
-
-	Player* player;
 
 	// Frame Delay
 	bool frameSkip = true; // skip the first frame

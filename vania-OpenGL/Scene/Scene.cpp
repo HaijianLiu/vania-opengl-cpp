@@ -6,14 +6,12 @@
 ------------------------------------------------------------------------------*/
 Scene::Scene() {
 	// get start size
-	this->gpGameObjects = getGameObjects();
-	this->gpColliders = getColliders();
+	this->gpGameObjects = getGame()->getGameObjects();
+	this->gpColliders = getGame()->getColliders();
 	this->startGameObjectsSize = this->gpGameObjects->size();
 	this->startCollidersSize = this->gpColliders->size();
 	// Camera
-	this->camera = getCamera();
-
-	this->player = new Player();
+	this->camera = getGame()->camera;
 }
 
 
@@ -23,7 +21,6 @@ Scene::Scene() {
 Scene::~Scene() {
 	// delete Map GameObjects
 	deleteVectorMap(this->sceneGameObjects);
-	delete this->player;
 }
 
 
@@ -35,10 +32,6 @@ void Scene::start() {
 	..............................................................................*/
 	this->loadScene();
 
-	Scene::loadMapData("Player", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene00-Player.csv");
-	Scene::setPosition(this->player, this->mapDatas["Player"][0].x);
-	this->camera->target = this->player;
-
 	/* create gameObjects
 	..............................................................................*/
 	for (std::map<const char*, std::vector<glm::i32vec2>>::iterator it = this->mapDatas.begin(); it != this->mapDatas.end(); it++) {
@@ -48,8 +41,8 @@ void Scene::start() {
 
 	/* Get GameObject && Get Collider
 	..............................................................................*/
-	this->gameObjects = copyGameObjects();
-	this->colliders = copyColliders();
+	this->gameObjects = getGame()->copyGameObjects();
+	this->colliders = getGame()->copyColliders();
 	// reset global gameObjects
 	int size;
 	size = this->gpGameObjects->size() - this->startGameObjectsSize;

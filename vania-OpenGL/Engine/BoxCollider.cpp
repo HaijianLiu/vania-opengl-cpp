@@ -5,7 +5,7 @@
 < Constructor >
 ------------------------------------------------------------------------------*/
 BoxCollider::BoxCollider(GameObject* gameObject, float x, float y, float w, float h) {
-	this->colliders = getColliders();
+	this->colliders = getGame()->getColliders();
 	this->colliders->push_back(this);
 
 	this->gameObject = gameObject;

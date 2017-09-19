@@ -6,12 +6,12 @@
 ------------------------------------------------------------------------------*/
 GameObject::GameObject() {
 	// GetGameObjects and push_back
-	this->gameObjects = getGameObjects();
+	this->gameObjects = getGame()->getGameObjects();
 	this->gameObjects->push_back(this);
 	// get Globals
-	this->timer = getTimer();
-	this->camera = getCamera();
-	this->resources = getResources();
+	this->timer = getGame()->timer;
+	this->camera = getGame()->camera;
+	this->resources = getGame()->resources;
 	// new GameObject members
 	this->transform = new Transform();
 	this->sprite = new Sprite();
