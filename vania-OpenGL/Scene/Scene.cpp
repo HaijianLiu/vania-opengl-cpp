@@ -5,11 +5,6 @@
 < Constructor >
 ------------------------------------------------------------------------------*/
 Scene::Scene() {
-	// get start size
-	this->gpGameObjects = getGame()->getGameObjects();
-	this->gpColliders = getGame()->getColliders();
-	this->startGameObjectsSize = this->gpGameObjects->size();
-	this->startCollidersSize = this->gpColliders->size();
 	// Camera
 	this->camera = getGame()->camera;
 }
@@ -28,9 +23,18 @@ Scene::~Scene() {
 < Start > after Resources start()
 ------------------------------------------------------------------------------*/
 void Scene::start() {
+	/* get GameObjects and Colliders in initial Game
+	..............................................................................*/
+	std::vector<GameObject*>* gpGameObjects = getGame()->getGameObjects();
+	std::vector<BoxCollider*>* gpColliders = getGame()->getColliders();
+	unsigned int startGameObjectsSize = gpGameObjects->size();
+	unsigned int startCollidersSize = gpColliders->size();
+
+
 	/* load Scene
 	..............................................................................*/
 	this->loadScene();
+
 
 	/* create gameObjects
 	..............................................................................*/
@@ -44,15 +48,16 @@ void Scene::start() {
 	this->gameObjects = getGame()->copyGameObjects();
 	this->colliders = getGame()->copyColliders();
 	// reset global gameObjects
-	int size;
-	size = this->gpGameObjects->size() - this->startGameObjectsSize;
+	unsigned int size;
+	size = gpGameObjects->size() - startGameObjectsSize;
 	for (int i = 0; i < size; i++) {
-		this->gpGameObjects->pop_back();
+		gpGameObjects->pop_back();
 	}
-	size = this->gpColliders->size() - this->startCollidersSize;
+	size = gpColliders->size() - startCollidersSize;
 	for (int i = 0; i < size; i++) {
-		this->gpColliders->pop_back();
+		gpColliders->pop_back();
 	}
+
 
 	/* gameObjects defaultStart() & start()
 	..............................................................................*/
@@ -60,6 +65,7 @@ void Scene::start() {
 		this->gameObjects[i]->defaultStart();
 		this->gameObjects[i]->start();
 	}
+
 
 	/* set objects position & slice (after given a texture)
 	..............................................................................*/

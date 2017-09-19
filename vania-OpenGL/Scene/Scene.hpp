@@ -4,12 +4,6 @@
 
 class Scene {
 private:
-	// global GameObjects and Colliders parameter
-	std::vector<GameObject*>* gpGameObjects;
-	std::vector<BoxCollider*>* gpColliders;
-	unsigned int startGameObjectsSize;
-	unsigned int startCollidersSize;
-
 	// tiled map Setting
 	int tileSize = 16;
 	glm::i32vec2 mapSize = glm::i32vec2(225,90);
