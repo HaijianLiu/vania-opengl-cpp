@@ -208,6 +208,15 @@ void Scene::setTile(GameObject* gameObject, int mapID, int tileID) {
 
 
 /*------------------------------------------------------------------------------
+< set position >
+------------------------------------------------------------------------------*/
+void Scene::setPosition(GameObject* gameObject, int mapID) {
+	gameObject->transform->position.x = mapID % this->mapSize.x * PIXEL_TO_UNIT * this->tileSize;
+	gameObject->transform->position.y = mapID / this->mapSize.x * PIXEL_TO_UNIT * this->tileSize;
+}
+
+
+/*------------------------------------------------------------------------------
 < fix Camera > after Camera updatePosition() before Camera updateUniform()
 ------------------------------------------------------------------------------*/
 void Scene::fixCamera(const char* name) {
@@ -231,9 +240,4 @@ void Scene::fixCamera(const char* name) {
 			}
 		}
 	}
-}
-
-void Scene::setPosition(GameObject* gameObject, int mapID) {
-	gameObject->transform->position.x = mapID % this->mapSize.x * PIXEL_TO_UNIT * this->tileSize;
-	gameObject->transform->position.y = mapID / this->mapSize.x * PIXEL_TO_UNIT * this->tileSize;
 }
