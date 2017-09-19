@@ -5,8 +5,7 @@
 < Constructor >
 ------------------------------------------------------------------------------*/
 SceneManager::SceneManager() {
-	SceneManager::creatScene("Scene00", new Scene00());
-	this->activeScene = "Scene00";
+
 }
 
 
@@ -22,6 +21,10 @@ SceneManager::~SceneManager() {
 < start >
 ------------------------------------------------------------------------------*/
 void SceneManager::start() {
+	// create Scenes
+	SceneManager::createScene("Scene00", new Scene00());
+	this->activeScene = "Scene00";
+	// start Scenes
 	for (std::map<const char*, Scene*>::iterator it = this->scenes.begin(); it != this->scenes.end(); it++) {
 		it->second->start();
 	}
@@ -41,6 +44,6 @@ void SceneManager::update() {
 /*------------------------------------------------------------------------------
 < creat Scene >
 ------------------------------------------------------------------------------*/
-void SceneManager::creatScene(const char* name, Scene* scene) {
+void SceneManager::createScene(const char* name, Scene* scene) {
 	this->scenes.insert(std::make_pair(name, scene));
 }

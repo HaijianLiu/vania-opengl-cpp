@@ -9,6 +9,7 @@ Game::Game() {
 	this->timer = new Timer();
 	this->camera = new Camera();
 	this->resources = new Resources();
+	this->sceneManager = new SceneManager();
 }
 
 
@@ -31,8 +32,7 @@ void Game::start() {
 	// create GameObjects
 	this->player = new Player();
 	this->camera->target = this->player;
-	this->sceneManager = new SceneManager();
-
+	// start
 	this->timer->start();
 	this->resources->start();
 	this->sceneManager->start();
