@@ -31,7 +31,7 @@ Game::~Game() {
 void Game::start() {
 	// create GameObjects
 	this->player = new Player();
-	this->camera->target = this->player;
+	this->player->active = false; // temp
 	// start
 	this->timer->start();
 	this->resources->start();

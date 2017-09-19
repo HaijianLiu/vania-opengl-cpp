@@ -23,11 +23,12 @@ SceneManager::~SceneManager() {
 void SceneManager::start() {
 	// create Scenes
 	SceneManager::createScene("Scene00", new Scene00());
-	this->activeScene = "Scene00";
 	// start Scenes
 	for (std::map<const char*, Scene*>::iterator it = this->scenes.begin(); it != this->scenes.end(); it++) {
 		it->second->start();
 	}
+	// set active Scene
+	SceneManager::setActiveScene("Scene00");
 }
 
 
@@ -35,8 +36,8 @@ void SceneManager::start() {
 < update >
 ------------------------------------------------------------------------------*/
 void SceneManager::update() {
-	if (this->scenes.find(activeScene) != this->scenes.end()) {
-		this->scenes[activeScene]->update();
+	if (this->scenes.find(this->activeScene) != this->scenes.end()) {
+		this->scenes[this->activeScene]->update();
 	}
 }
 
@@ -46,4 +47,19 @@ void SceneManager::update() {
 ------------------------------------------------------------------------------*/
 void SceneManager::createScene(const char* name, Scene* scene) {
 	this->scenes.insert(std::make_pair(name, scene));
+}
+
+
+/*------------------------------------------------------------------------------
+< set active Scene >
+------------------------------------------------------------------------------*/
+void SceneManager::setActiveScene(const char* name) {
+	// if (this->scenes[this->activeScene]->bgm != nullptr && this->scenes[this->activeScene]->bgm->Playing()) {
+	// 	this->scenes[this->activeScene]->bgm->Stop();
+	// }
+	this->activeScene = name;
+	this->scenes[this->activeScene]->reset();
+	// if (this->scenes[this->activeScene]->bgm != nullptr) {
+	// 	this->scenes[this->activeScene]->bgm->Play();
+	// }
 }

@@ -31,8 +31,10 @@ public:
 	void start();
 	void update();
 
-	virtual void loadScene() = 0;
-	virtual void endScene() = 0;
+	virtual void load() = 0;
+	virtual void end() = 0;
+	virtual void reset() = 0;
+	virtual void clear() = 0;
 
 	// Functions
 	bool loadMapData(const char* name, const char* path);

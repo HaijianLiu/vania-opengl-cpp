@@ -126,9 +126,9 @@
 		603C30991F6BF8BF00E91948 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				603C309A1F6BF91500E91948 /* Scene.cpp */,
 				60AAF1311F6F79CA00AE8050 /* SceneManager.cpp */,
 				60AAF1321F6F79CA00AE8050 /* SceneManager.hpp */,
+				603C309A1F6BF91500E91948 /* Scene.cpp */,
 				603C309B1F6BF91500E91948 /* Scene.hpp */,
 				60AAF12E1F6F78E600AE8050 /* Scene00.cpp */,
 				60AAF12F1F6F78E600AE8050 /* Scene00.hpp */,

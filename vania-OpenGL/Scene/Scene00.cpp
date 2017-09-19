@@ -18,23 +18,44 @@ Scene00::~Scene00() {
 
 
 /*------------------------------------------------------------------------------
-< start >
+< load > in Scene start()
 ------------------------------------------------------------------------------*/
-void Scene00::loadScene() {
+void Scene00::load() {
 	/* Scene::loadMapData(const char* name, const char* path);
 	..............................................................................*/
 	Scene::loadMapData("ColliderObject", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene00-Ground.csv");
 	Scene::loadMapData("TileObject", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene00-BackGround.csv");
 	Scene::loadMapData("CameraRange", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene00-Camera.csv");
-
 	Scene::loadMapData("Player", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene00-Player.csv");
-	Scene::setPosition(getGame()->player, this->mapDatas["Player"][0].x);
 }
 
 
 /*------------------------------------------------------------------------------
-< update >
+< end >
 ------------------------------------------------------------------------------*/
-void Scene00::endScene() {
+void Scene00::end() {
+
+}
+
+
+/*------------------------------------------------------------------------------
+< reset > in SceneManager setActiveScene()
+------------------------------------------------------------------------------*/
+void Scene00::reset() {
+	// frameDelay
+	this->frameSkip = true;
+	// Player
+	if (this->mapDatas["Player"].size() != 0 && !getGame()->player->active) {
+		Scene::setPosition(getGame()->player, this->mapDatas["Player"][0].x);
+		getGame()->player->active = true;
+		getGame()->camera->target = getGame()->player;
+	}
+}
+
+
+/*------------------------------------------------------------------------------
+< clear >
+------------------------------------------------------------------------------*/
+void Scene00::clear() {
 
 }

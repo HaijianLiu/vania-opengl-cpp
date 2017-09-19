@@ -11,9 +11,10 @@ public:
 	Scene00();
 	~Scene00();
 
-	void loadScene();
-	void endScene();
-
+	void load();
+	void end();
+	void reset();
+	void clear();
 };
 
 #endif /* Scene00_hpp */

@@ -33,7 +33,7 @@ void Scene::start() {
 
 	/* load Scene
 	..............................................................................*/
-	this->loadScene();
+	this->load();
 
 
 	/* create gameObjects
