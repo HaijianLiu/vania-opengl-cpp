@@ -7,12 +7,11 @@ void instantiate(GameObject* gameObject, Transform* transform) {
 	gameObject->transform->position.x = transform->position.x;
 	gameObject->transform->position.y = transform->position.y;
 	gameObject->active = true;
-	// gameObject->Reset();
+	gameObject->reset();
 }
 
 float randomRange(float min, float max) {
-	// return min + (float)(rand()%1000)/999.0f * (max - min);
-  return min;
+	return min + (float)(rand()%1000)/999.0f * (max - min);
 }
 
 void destroy(GameObject* gameObject, float timer) {

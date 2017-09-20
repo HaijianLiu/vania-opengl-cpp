@@ -29,6 +29,8 @@ Game::~Game() {
 < start >
 ------------------------------------------------------------------------------*/
 void Game::start() {
+	// random seed
+	srand((unsigned)this->timer->currentTime);
 	// create GameObjects
 	this->player = new Player();
 	this->player->active = false; // temp
