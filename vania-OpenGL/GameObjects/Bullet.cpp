@@ -55,10 +55,10 @@ void Bullet::update() {
 
 	/* Particle System
 	..............................................................................*/
-	// if (DistancePow(this->lastPosition, this->transform->position) >= pow(1.0f / (float)this->resources->fxTail->rate, 2.0f)) {
-	// 	this->resources->fxTail->Instantiate(this->transform);
-	// 	this->lastPosition = this->transform->position;
-	// }
+	if (distancePow(this->lastPosition, this->transform->position) >= pow(1.0f / (float)getGame()->particleSystems["fx_tail"]->rate, 2.0f)) {
+		getGame()->particleSystems["fx_tail"]->instantiate(this->transform);
+		this->lastPosition = this->transform->position;
+	}
 }
 
 
@@ -68,7 +68,7 @@ void Bullet::update() {
 void Bullet::onTriggerEnter(BoxCollider* other) {
 	if (other->tag != "player" && other->tag != "ai" && other->tag != "orb" && other->tag != "player_orb" && other->tag != "check_point") {
 		this->active = false;
-		// this->resources->fxDestroy->Instantiate(this->transform);
+		getGame()->particleSystems["fx_destroy"]->instantiate(this->transform);
 	}
 }
 
