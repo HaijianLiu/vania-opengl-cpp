@@ -72,11 +72,13 @@ class SceneManager;
 < GameObject >
 ------------------------------------------------------------------------------*/
 #include "NoneObject.hpp"
+#include "OffsetObject.hpp"
 #include "TileObject.hpp"
 #include "ColliderObject.hpp"
+
 #include "Bullet.hpp"
-#include "OffsetObject.hpp"
 #include "Player.hpp"
+#include "Crab.hpp"
 
 
 /*------------------------------------------------------------------------------
@@ -84,8 +86,8 @@ class SceneManager;
 ------------------------------------------------------------------------------*/
 #include "Game.hpp"
 #include "Scene.hpp"
-#include "Scene00.hpp"
 #include "SceneManager.hpp"
+#include "Scene00.hpp"
 
 
 /*------------------------------------------------------------------------------
