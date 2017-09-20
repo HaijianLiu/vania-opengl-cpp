@@ -74,6 +74,7 @@ class Player;
 #include "NoneObject.hpp"
 #include "TileObject.hpp"
 #include "ColliderObject.hpp"
+#include "Bullet.hpp"
 #include "Player.hpp"
 
 
