@@ -77,6 +77,7 @@ class SceneManager;
 #include "ColliderObject.hpp"
 
 #include "Bullet.hpp"
+#include "Orb.hpp"
 #include "Player.hpp"
 #include "Crab.hpp"
 

@@ -84,8 +84,6 @@ Player::~Player() {
 ------------------------------------------------------------------------------*/
 void Player::start() {
 	// set sprite texture and slice | Animation start
-	// this->sprite->texture = this->resources->getTexture("player_run_shoot");
-	// this->sprite->setSlice(0.0f,0.0f,80.0f,80.0f);
 	this->animIdle->start();
 	this->animShoot->start();
 	this->animRun->start();
