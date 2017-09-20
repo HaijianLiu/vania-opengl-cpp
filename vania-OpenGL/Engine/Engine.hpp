@@ -43,7 +43,6 @@
 ------------------------------------------------------------------------------*/
 class GameObject;
 class SceneManager;
-class Player;
 
 
 /*------------------------------------------------------------------------------
@@ -56,16 +55,17 @@ class Player;
 #include "Quad.hpp"
 #include "Texture.hpp"
 #include "TiledMap.hpp"
+#include "Transform.hpp"
 #include "Resources.hpp"
 #include "RenderPass.hpp"
 #include "Sprite.hpp"
 #include "Animation.hpp"
-#include "Transform.hpp"
 #include "Camera.hpp"
 #include "BoxCollider.hpp"
 #include "Status.hpp"
 #include "GameObject.hpp"
-#include "Game.hpp"
+#include "Particle.hpp"
+#include "ParticleSystem.hpp"
 
 
 /*------------------------------------------------------------------------------
@@ -82,6 +82,7 @@ class Player;
 /*------------------------------------------------------------------------------
 < Scene >
 ------------------------------------------------------------------------------*/
+#include "Game.hpp"
 #include "Scene.hpp"
 #include "Scene00.hpp"
 #include "SceneManager.hpp"
