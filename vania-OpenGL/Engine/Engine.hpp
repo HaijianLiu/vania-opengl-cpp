@@ -75,6 +75,7 @@ class SceneManager;
 #include "OffsetObject.hpp"
 #include "TileObject.hpp"
 #include "ColliderObject.hpp"
+#include "AnimationObject.hpp"
 
 #include "Bullet.hpp"
 #include "Orb.hpp"

@@ -7,6 +7,7 @@ void instantiate(GameObject* gameObject, Transform* transform) {
 	gameObject->transform->position.x = transform->position.x;
 	gameObject->transform->position.y = transform->position.y;
 	gameObject->active = true;
+	gameObject->status->birthTime = getGame()->timer->currentTime;
 	gameObject->reset();
 }
 
