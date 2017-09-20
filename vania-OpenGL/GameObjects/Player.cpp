@@ -46,10 +46,9 @@ Player::Player() {
 	// this->uiEnergy = new UIObject(-200.0f + 6.5f + 49.5f, -120.0f + 19.5f,100.0f,1.0f);
 	// this->uiEnergyBG = new UIObject(-144.0f,-104.0f,112.0f,32.0f);
 	// this->score = new Score();
-	// // Orb
-	// this->orb = new Orb();
-	// this->orb->sprite->slice = Slice(0,48,0,16,16);
-	// this->orb->collider->tag = "my orb";
+	// Orb
+	this->orb = new Orb();
+	this->orb->collider->tag = "my_orb";
 }
 
 
@@ -76,6 +75,8 @@ Player::~Player() {
 	delete this->rightDuckShoot;
 	// Bullet
 	deleteVector(this->bullets);
+	// Orb
+	delete this->orb;
 }
 
 
@@ -91,6 +92,7 @@ void Player::start() {
 	this->animDuck->start();
 	this->animDuckShoot->start();
 	this->animHurt->start();
+	this->orb->sprite->setSlice(48.0f,0.0f,16.0f,16.0f);
 }
 
 
@@ -241,7 +243,7 @@ void Player::update() {
 		// this->uiEnergy->active = false;
 		// this->uiEnergyBG->active = false;
 		// this->sceneManager->SetActiveScene(this->sceneManager->gameOverScene);
-		// this->lastGameOver = this->time->currentTime;
+		this->lastGameOver = this->timer->currentTime;
 		// Score
 		// for (unsigned int i = 0; i < this->score->numbers.size(); i++) {
 		// 	this->score->numbers[i]->active = false;
@@ -252,7 +254,7 @@ void Player::update() {
 		// this->orb->status->hp = this->score->score;
 		// this->score->score = 0;
 		// this->score->willAdd = 0;
-		// Instantiate(this->orb, this->transform);
+		instantiate(this->orb, this->transform);
 	}
 
 	/* Gravity

@@ -7,6 +7,7 @@
 Orb::Orb() {
 	// GameObject setting
 	this->status->hp = 150;
+	this->transform->position.z = 1.0f;
 	// scale in real pixel
 	this->transform->scale = glm::vec3(16.0f,16.0f,1.0f);
 	// Collider (this,offsetX,offsetY,sizeX,sizeY) size is in real pixel && Collider is trigger ?
@@ -37,7 +38,7 @@ void Orb::start() {
 < update >
 ------------------------------------------------------------------------------*/
 void Orb::update() {
-	this->transform->position.y += 0.003f * sin(this->timer->currentTime * 2.0f);
+	this->transform->position.y += 0.002f * sin(this->timer->currentTime * 2.0f);
 	getGame()->particleSystems["fx_orb"]->instantiate(this->transform);
 }
 

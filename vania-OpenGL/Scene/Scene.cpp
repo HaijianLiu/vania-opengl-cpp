@@ -61,9 +61,9 @@ void Scene::start() {
 
 	/* gameObjects defaultStart() & start()
 	..............................................................................*/
-	for (unsigned int i = 0; i < this->gameObjects.size(); i++) {
-		this->gameObjects[i]->defaultStart();
-		this->gameObjects[i]->start();
+	for (unsigned int i = this->gameObjects.size(); i > 0; i--) {
+		this->gameObjects[i-1]->defaultStart();
+		this->gameObjects[i-1]->start();
 	}
 
 

@@ -20,8 +20,9 @@ Crab::Crab() {
 	// Animation (textureName, divideX, divideY, sampleTime)
 	this->animWalk = new Animation("enemy_crab_walk", 4,1,15);
 	// GameObject
-	// this->orb = new Orb();
-	// this->orb->status->hp = this->score;
+	this->orb = new Orb();
+	this->orb->active = false;
+	this->orb->status->hp = this->score;
 }
 
 
@@ -35,7 +36,7 @@ Crab::~Crab() {
 	delete this->collGroundCheck;
 	delete this->collHorizonCheck;
 	// GameObject
-	// delete this->orb;
+	delete this->orb;
 }
 
 
@@ -45,6 +46,7 @@ Crab::~Crab() {
 void Crab::start() {
 	// set sprite texture and slice | Animation start
 	this->animWalk->start();
+	this->orb->sprite->setSlice(16.0f,0.0f,16.0f,16.0f);
 }
 
 
@@ -58,7 +60,7 @@ void Crab::update() {
 		this->active = false;
 		// this->resources->audEnemyDestroy->Play();
 		// Instantiate(this->resource->enemyDestroy, this->transform);
-		// Instantiate(this->orb, this->transform);
+		instantiate(this->orb, this->transform);
 	}
 
 	/* Transform

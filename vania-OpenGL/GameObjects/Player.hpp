@@ -27,10 +27,12 @@ public:
 	OffsetObject* rightDuckShoot;
 	// Bullet
 	std::vector<Bullet*> bullets;
-
 	// UIObject
-
+	// UIObject* uiEnergyBG;
+	// UIObject* uiEnergy;
+	// Score* score;
 	// Orb
+	Orb* orb;
 
 	// Parameter
 	float hp = 100.0f;

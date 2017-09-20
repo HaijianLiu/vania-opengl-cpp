@@ -13,7 +13,7 @@ public:
 	Animation* animWalk;
 
 	// GameObject
-	// Orb* orb;
+	Orb* orb;
 	float score = 50.0f;
 
 	// Parameter
