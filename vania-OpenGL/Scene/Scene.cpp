@@ -5,8 +5,8 @@
 < Constructor >
 ------------------------------------------------------------------------------*/
 Scene::Scene() {
-	// Camera
-	this->camera = getGame()->camera;
+	// TiledMap
+	this->tiledMap = new TiledMap();
 }
 
 
@@ -15,7 +15,7 @@ Scene::Scene() {
 ------------------------------------------------------------------------------*/
 Scene::~Scene() {
 	// delete Map GameObjects
-	deleteVectorMap(this->sceneGameObjects);
+	delete this->tiledMap;
 }
 
 
@@ -38,8 +38,8 @@ void Scene::start() {
 
 	/* create gameObjects
 	..............................................................................*/
-	for (std::map<const char*, std::vector<glm::i32vec2>>::iterator it = this->mapDatas.begin(); it != this->mapDatas.end(); it++) {
-		Scene::createGameObject(it->first);
+	for (std::map<const char*, std::vector<glm::i32vec2>>::iterator it = this->tiledMap->mapDatas.begin(); it != this->tiledMap->mapDatas.end(); it++) {
+		this->tiledMap->createGameObject(it->first);
 	}
 
 
@@ -69,8 +69,8 @@ void Scene::start() {
 
 	/* set objects position & slice (after given a texture)
 	..............................................................................*/
-	for (std::map<const char*, std::vector<glm::i32vec2>>::iterator it = this->mapDatas.begin(); it != this->mapDatas.end(); it++) {
-		Scene::setGameObject(it->first);
+	for (std::map<const char*, std::vector<glm::i32vec2>>::iterator it = this->tiledMap->mapDatas.begin(); it != this->tiledMap->mapDatas.end(); it++) {
+		this->tiledMap->setGameObject(it->first);
 	}
 }
 
@@ -93,9 +93,7 @@ void Scene::update() {
 		}
 	}
 
-	this->camera->updatePosition();
 	Scene::fixCamera("CameraRange");
-	this->camera->updateUniform();
 
 	for (unsigned int i = this->gameObjects.size(); i > 0; i--) {
 		if (this->gameObjects[i-1]->active && this->gameObjects[i-1]->visible) {
@@ -146,98 +144,35 @@ void Scene::checkCollider() {
 }
 
 
-/*------------------------------------------------------------------------------
-< loadMapData >
-------------------------------------------------------------------------------*/
-bool Scene::loadMapData(const char* name, const char* path) {
-	std::vector<glm::i32vec2> data;
-
-	FILE* file = fopen(path,"rb");
-	if (file == nullptr) return false;
-	unsigned int counter = 0;
-	int num;
-	while (!feof(file)) {
-		if(fscanf(file, "%d,", &num) == 1){
-			if (num != -1) {
-				data.push_back(glm::i32vec2(counter,num));
-			}
-			counter++;
-		}
-	}
-	fclose(file);
-
-	this->mapDatas.insert(std::make_pair(name, data));
-
-	return true;
-}
-
-
-/*------------------------------------------------------------------------------
-< create GameObject > createGameObject by name & size by data size
-------------------------------------------------------------------------------*/
-void Scene::createGameObject(const char* name) {
-	std::vector<GameObject*> objects;
-	for (unsigned int i = 0; i < this->mapDatas[name].size(); i++) {
-		if (name == "TileObject") objects.push_back(new TileObject());
-		else if (name == "ColliderObject") objects.push_back(new ColliderObject());
-		else if (name == "CameraRange") objects.push_back(new NoneObject());
-	}
-	this->sceneGameObjects.insert(std::make_pair(name, objects));
-}
-
-
-/*------------------------------------------------------------------------------
-< set GameObject > use it after GameObject has a texture
-------------------------------------------------------------------------------*/
-void Scene::setGameObject(const char* name) {
-	for (unsigned int i = 0; i < this->sceneGameObjects[name].size(); i++) {
-		Scene::setTile(this->sceneGameObjects[name][i], this->mapDatas[name][i].x, this->mapDatas[name][i].y);
-	}
-}
-
-
-/*------------------------------------------------------------------------------
-< set Tile > use it after GameObject has a texture
-------------------------------------------------------------------------------*/
-void Scene::setTile(GameObject* gameObject, int mapID, int tileID) {
-	gameObject->transform->position.x = mapID % this->mapSize.x * PIXEL_TO_UNIT * this->tileSize;
-	gameObject->transform->position.y = mapID / this->mapSize.x * PIXEL_TO_UNIT * this->tileSize;
-	gameObject->transform->scale = glm::vec3(this->tileSize, this->tileSize, 1.0f);
-	gameObject->sprite->setSlice(tileID % this->tilesetsSize.x * this->tileSize , tileID / this->tilesetsSize.x * this->tileSize, this->tileSize, this->tileSize);
-}
-
-
-/*------------------------------------------------------------------------------
-< set position >
-------------------------------------------------------------------------------*/
-void Scene::setPosition(GameObject* gameObject, int mapID) {
-	gameObject->transform->position.x = mapID % this->mapSize.x * PIXEL_TO_UNIT * this->tileSize;
-	gameObject->transform->position.y = mapID / this->mapSize.x * PIXEL_TO_UNIT * this->tileSize;
-}
-
 
 /*------------------------------------------------------------------------------
 < fix Camera > after Camera updatePosition() before Camera updateUniform()
 ------------------------------------------------------------------------------*/
 void Scene::fixCamera(const char* name) {
-	if (this->sceneGameObjects.find(name) != this->sceneGameObjects.end()) {
-		if (this->sceneGameObjects[name].size() == 1) {
-				this->camera->position.x = this->sceneGameObjects[name][0]->transform->position.x;
-				this->camera->position.y = this->sceneGameObjects[name][0]->transform->position.y;
+	Camera* camera = getGame()->camera;
+
+	camera->updatePosition();
+
+	if (this->tiledMap->gameObjects.find(name) != this->tiledMap->gameObjects.end()) {
+		if (this->tiledMap->gameObjects[name].size() == 1) {
+			camera->position.x = this->tiledMap->gameObjects[name][0]->transform->position.x;
+			camera->position.y = this->tiledMap->gameObjects[name][0]->transform->position.y;
 		}
-		if (this->sceneGameObjects[name].size() == 2) {
-			if (this->camera->position.x <= this->sceneGameObjects[name][0]->transform->position.x) {
-				this->camera->position.x = this->sceneGameObjects[name][0]->transform->position.x;
+		if (this->tiledMap->gameObjects[name].size() == 2) {
+			if (camera->position.x <= this->tiledMap->gameObjects[name][0]->transform->position.x) {
+				camera->position.x = this->tiledMap->gameObjects[name][0]->transform->position.x;
 			}
-			if (this->camera->position.x > this->sceneGameObjects[name][1]->transform->position.x) {
-				this->camera->position.x = this->sceneGameObjects[name][1]->transform->position.x;
+			if (camera->position.x > this->tiledMap->gameObjects[name][1]->transform->position.x) {
+				camera->position.x = this->tiledMap->gameObjects[name][1]->transform->position.x;
 			}
-			if (this->camera->position.y <= this->sceneGameObjects[name][0]->transform->position.y) {
-				this->camera->position.y = this->sceneGameObjects[name][0]->transform->position.y;
+			if (camera->position.y <= this->tiledMap->gameObjects[name][0]->transform->position.y) {
+				camera->position.y = this->tiledMap->gameObjects[name][0]->transform->position.y;
 			}
-			if (this->camera->position.y > this->sceneGameObjects[name][1]->transform->position.y) {
-				this->camera->position.y = this->sceneGameObjects[name][1]->transform->position.y;
+			if (camera->position.y > this->tiledMap->gameObjects[name][1]->transform->position.y) {
+				camera->position.y = this->tiledMap->gameObjects[name][1]->transform->position.y;
 			}
 		}
 	}
+
+	camera->updateUniform();
 }
