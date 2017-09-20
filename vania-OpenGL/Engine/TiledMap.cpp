@@ -5,7 +5,7 @@
 < Constructor >
 ------------------------------------------------------------------------------*/
 TiledMap::TiledMap() {
-	
+
 }
 
 
@@ -13,7 +13,7 @@ TiledMap::TiledMap() {
 < Destructor >
 ------------------------------------------------------------------------------*/
 TiledMap::~TiledMap() {
-  
+
 }
 
 
@@ -52,6 +52,7 @@ void TiledMap::createGameObject(const char* name) {
 		if (name == "TileObject") objects.push_back(new TileObject());
 		else if (name == "ColliderObject") objects.push_back(new ColliderObject());
 		else if (name == "CameraRange") objects.push_back(new NoneObject());
+		else if (name == "Crab") objects.push_back(new Crab());
 	}
 	this->gameObjects.insert(std::make_pair(name, objects));
 }
@@ -62,7 +63,12 @@ void TiledMap::createGameObject(const char* name) {
 ------------------------------------------------------------------------------*/
 void TiledMap::setGameObject(const char* name) {
 	for (unsigned int i = 0; i < this->gameObjects[name].size(); i++) {
-		TiledMap::setTile(this->gameObjects[name][i], this->mapDatas[name][i].x, this->mapDatas[name][i].y);
+		if (name == "TileObject" || name == "ColliderObject" || name == "CameraRange") {
+			TiledMap::setTile(this->gameObjects[name][i], this->mapDatas[name][i].x, this->mapDatas[name][i].y);
+		}
+		else {
+			TiledMap::setPosition(this->gameObjects[name][i], this->mapDatas[name][i].x);
+		}
 	}
 }
 

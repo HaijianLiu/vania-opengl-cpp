@@ -104,10 +104,12 @@ void Crab::onTriggerEnter(BoxCollider* other) {
 			if (this->transform->position.x > other->gameObject->transform->position.x) {
 				this->transform->position.x = other->gameObject->transform->position.x + other->offset.x + other->halfSize.x * PIXEL_TO_UNIT - this->collHorizonCheck->offset.x + this->collHorizonCheck->halfSize.x * PIXEL_TO_UNIT;
 				this->right = true;
+				this->sprite->flipX = this->right;
 			}
 			if (this->transform->position.x < other->gameObject->transform->position.x) {
 				this->transform->position.x = other->gameObject->transform->position.x + other->offset.x - other->halfSize.x * PIXEL_TO_UNIT - this->collHorizonCheck->offset.x - this->collHorizonCheck->halfSize.x * PIXEL_TO_UNIT;
 				this->right = false;
+				this->sprite->flipX = this->right;
 			}
 		}
 	}

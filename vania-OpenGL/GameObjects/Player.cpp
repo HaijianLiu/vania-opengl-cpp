@@ -100,6 +100,39 @@ void Player::start() {
 < Update > before gameObject draw()
 ------------------------------------------------------------------------------*/
 void Player::update() {
+	/* HP
+	..............................................................................*/
+	if (!this->freeze) {
+		this->status->hp += this->energyRegain * this->timer->deltaTime;
+	}
+	else {
+		if (this->timer->currentTime > this->lastFreeze + this->freezeColdDown * 1000.0f) {
+			this->freeze = false;
+		}
+	}
+	if (this->status->hp < 0) this->status->hp = 0;
+	if (this->status->hp > this->hp) this->status->hp = this->hp;
+
+
+	/* UIObject
+	..............................................................................*/
+	// this->uiEnergy->offset = Float2D(-200.0f + 6.0f + 0.5f * this->status->hp,  -120.0f + 20.0f);
+	// this->uiEnergy->transform->scale = Float2D(this->status->hp * 1.0f, 2.0f);
+	// if (!this->freeze) {
+	// 	if (this->status->hp > 0.6f * this->hp) {
+	// 		this->uiEnergy->sprite->SetColor(0,255,255,255);
+	// 	}
+	// 	else if (this->status->hp > 0.2f * this->hp) {
+	// 		this->uiEnergy->sprite->SetColor(255,192,0,255);
+	// 	}
+	// 	else {
+	// 		this->uiEnergy->sprite->SetColor(255,79,108,255);
+	// 	}
+	// }
+	// else {
+	// 	this->uiEnergy->sprite->SetColor(100,100,100,255);
+	// }
+
 
 	/* transform
 	..............................................................................*/
@@ -193,9 +226,35 @@ void Player::update() {
 			}
 		}
 	}
-	// Shoot Flag
-	if (this->timer->currentTime > this->lastShoot + this->shootDuration) {
-		this->shoot = false;
+
+
+	/* Death
+	..............................................................................*/
+	if (this->status->hp <= 0 && !this->hurt && this->visible) {
+		this->visible = false;
+		// this->resources->audPlayerDestroy->Play();
+		// Instantiate(this->resources->playerDestroy, this->transform);
+	}
+
+	/* GameOver
+	..............................................................................*/
+	if (this->status->hp <= 0 && this->timer->currentTime > this->lastHurt + this->gameOverDelay) {
+		this->active = false;
+		// this->uiEnergy->active = false;
+		// this->uiEnergyBG->active = false;
+		// this->sceneManager->SetActiveScene(this->sceneManager->gameOverScene);
+		// this->lastGameOver = this->time->currentTime;
+		// Score
+		// for (unsigned int i = 0; i < this->score->numbers.size(); i++) {
+		// 	this->score->numbers[i]->active = false;
+		// 	this->score->numbers[i]->sprite->slice = Slice(0,0,0,this->score->size.x,this->score->size.y);
+		// }
+		// this->score->numbers[0]->active = true;
+		//
+		// this->orb->status->hp = this->score->score;
+		// this->score->score = 0;
+		// this->score->willAdd = 0;
+		// Instantiate(this->orb, this->transform);
 	}
 
 	/* Gravity
@@ -207,6 +266,26 @@ void Player::update() {
 	this->transform->position.y -= this->verticalSpeed * this->timer->deltaTime;
 	if (this->verticalSpeed < -1.0f) {
 		this->air = true;
+	}
+
+
+	/* flag
+	..............................................................................*/
+	// shoot flag
+	if (this->timer->currentTime > this->lastShoot + this->shootDuration) {
+		this->shoot = false;
+	}
+
+	// hurt flag
+	if (this->status->hp > 0) {
+		if (this->timer->currentTime > this->lastHurt + this->hurtFreeze) {
+			this->hurt = false;
+		}
+	}
+	else {
+		if (this->timer->currentTime > this->lastHurt + this->deathDelay) {
+			this->hurt = false;
+		}
 	}
 
 
