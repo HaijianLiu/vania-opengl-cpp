@@ -32,7 +32,6 @@ public:
 	virtual void update() = 0;
 	virtual void fixedUpdate() = 0;
 	virtual void onTriggerEnter(BoxCollider* other) = 0;
-
 	virtual void reset();
 };
 

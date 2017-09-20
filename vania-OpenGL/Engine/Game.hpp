@@ -14,6 +14,7 @@ public:
 	SceneManager* sceneManager;
 
 	Player* player;
+	std::map<const char*, GameObject*> publicObjects;
 	std::map<const char*, ParticleSystem*> particleSystems;
 
 	Game();

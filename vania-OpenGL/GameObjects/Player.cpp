@@ -136,53 +136,55 @@ void Player::update() {
 
 	/* transform
 	..............................................................................*/
-	if (!this->hurt) {
-		// move
-		if (this->input->getButtonPress(GLFW_KEY_LEFT) || this->input->getButtonPress(GLFW_KEY_A)) {
-			this->move = true;
-			this->right = false;
-			this->sprite->flipX = !this->right;
-			this->transform->position.x -= this->speed * this->timer->deltaTime;
-		}
-		else if (this->input->getButtonPress(GLFW_KEY_RIGHT) || this->input->getButtonPress(GLFW_KEY_D)) {
-			this->move = true;
-			this->right = true;
-			this->sprite->flipX = !this->right;
-			this->transform->position.x += this->speed * this->timer->deltaTime;
-		}
-		else {
-			this->move = false;
-		}
-		// jump
-		if (this->input->getButtonPress(GLFW_KEY_SPACE) || this->input->getButtonPress(GLFW_KEY_J)) {
-			if (!this->air) {
-				this->verticalSpeed = this->jumpPower;
-				this->air = true;
+	if (!this->dead) {
+		if (!this->hurt) {
+			// move
+			if (this->input->getButtonPress(GLFW_KEY_LEFT) || this->input->getButtonPress(GLFW_KEY_A)) {
+				this->move = true;
+				this->right = false;
+				this->sprite->flipX = !this->right;
+				this->transform->position.x -= this->speed * this->timer->deltaTime;
+			}
+			else if (this->input->getButtonPress(GLFW_KEY_RIGHT) || this->input->getButtonPress(GLFW_KEY_D)) {
+				this->move = true;
+				this->right = true;
+				this->sprite->flipX = !this->right;
+				this->transform->position.x += this->speed * this->timer->deltaTime;
+			}
+			else {
+				this->move = false;
+			}
+			// jump
+			if (this->input->getButtonPress(GLFW_KEY_SPACE) || this->input->getButtonPress(GLFW_KEY_J)) {
+				if (!this->air) {
+					this->verticalSpeed = this->jumpPower;
+					this->air = true;
+				}
+			}
+			// duck
+			if (this->input->getButtonPress(GLFW_KEY_DOWN) || this->input->getButtonPress(GLFW_KEY_S)) {
+				if (!this->air) {
+					this->duck = true;
+				}
+			}
+			else {
+				this->duck = false;
 			}
 		}
-		// duck
-		if (this->input->getButtonPress(GLFW_KEY_DOWN) || this->input->getButtonPress(GLFW_KEY_S)) {
-			if (!this->air) {
-				this->duck = true;
+		else {
+			if (this->right) {
+				this->transform->position.x -= this->backSpeed * this->timer->deltaTime;
 			}
-		}
-		else {
-			this->duck = false;
-		}
-	}
-	else {
-		if (this->right) {
-			this->transform->position.x -= this->backSpeed * this->timer->deltaTime;
-		}
-		else {
-			this->transform->position.x += this->backSpeed * this->timer->deltaTime;
+			else {
+				this->transform->position.x += this->backSpeed * this->timer->deltaTime;
+			}
 		}
 	}
 
 
 	/* shoot
 	..............................................................................*/
-	if (!this->hurt) {
+	if (!this->hurt && !this->dead) {
 		if (this->input->getButtonPress(GLFW_KEY_F) || this->input->getButtonPress(GLFW_KEY_K)) {
 			if (this->timer->currentTime > this->lastShoot + this->shootColdDown) {
 				if (this->status->hp > this->shootEnergy) {
@@ -232,8 +234,9 @@ void Player::update() {
 	..............................................................................*/
 	if (this->status->hp <= 0 && !this->hurt && this->visible) {
 		this->visible = false;
+		this->dead = true;
 		// this->resources->audPlayerDestroy->Play();
-		// Instantiate(this->resources->playerDestroy, this->transform);
+		instantiate(getGame()->publicObjects["player_destroy"], this->transform);
 	}
 
 	/* GameOver
