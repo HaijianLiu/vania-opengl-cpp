@@ -6,6 +6,8 @@
 ------------------------------------------------------------------------------*/
 Player::Player() {
 	// GameObject setting
+	this->active = false;
+	this->status->hp = this->hp;
 	this->transform->position.z = 1.0f;
 	// Input
   this->input = Input::getInstance();
@@ -30,6 +32,24 @@ Player::Player() {
 	this->animDuck = new Animation("player_duck", 1,1,60);
 	this->animDuckShoot = new Animation("player_duck_shoot", 3,1,4);
 	this->animHurt = new Animation("player_hurt", 1,1,60);
+	// OffsetObject
+	this->leftShoot = new OffsetObject(this,-0.2f,-0.015f);
+	this->rightShoot = new OffsetObject(this,0.2f,-0.015f);
+	this->leftDuckShoot = new OffsetObject(this,-0.2f,0.1f);
+	this->rightDuckShoot = new OffsetObject(this,0.2f,0.1f);
+	// Bullet
+	for (int i = 0; i < 16; i++) {
+		this->bullets.push_back(new Bullet());
+		this->bullets.back()->status->damage = this->bulletDamage;
+	}
+	// // UIObject
+	// this->uiEnergy = new UIObject(-200.0f + 6.5f + 49.5f, -120.0f + 19.5f,100.0f,1.0f);
+	// this->uiEnergyBG = new UIObject(-144.0f,-104.0f,112.0f,32.0f);
+	// this->score = new Score();
+	// // Orb
+	// this->orb = new Orb();
+	// this->orb->sprite->slice = Slice(0,48,0,16,16);
+	// this->orb->collider->tag = "my orb";
 }
 
 
@@ -49,6 +69,13 @@ Player::~Player() {
 	delete this->animDuck;
 	delete this->animDuckShoot;
 	delete this->animHurt;
+	// OffsetObject
+	delete this->leftShoot;
+	delete this->rightShoot;
+	delete this->leftDuckShoot;
+	delete this->rightDuckShoot;
+	// Bullet
+	deleteVector(this->bullets);
 }
 
 
@@ -125,7 +152,7 @@ void Player::update() {
 	if (!this->hurt) {
 		if (this->input->getButtonPress(GLFW_KEY_F) || this->input->getButtonPress(GLFW_KEY_K)) {
 			if (this->timer->currentTime > this->lastShoot + this->shootColdDown) {
-				// if (this->status->hp > this->shootEnergy) {
+				if (this->status->hp > this->shootEnergy) {
 					this->shoot = true;
 					// this->status->hp -= this->shootEnergy;
 					// for (unsigned int i = 0; i < this->resources->audShoot.size(); i++) {
@@ -134,35 +161,35 @@ void Player::update() {
 					// 		break;
 					// 	}
 					// }
-					// for (unsigned int i = 0; i < this->bullets.size(); i++) {
-					// 	if (!this->bullets[i]->active) {
+					for (unsigned int i = 0; i < this->bullets.size(); i++) {
+						if (!this->bullets[i]->active) {
 							this->lastShoot = this->timer->currentTime;
-					// 		this->bullets[i]->birthTime = this->time->currentTime;
-					// 		this->bullets[i]->right = this->right;
-					// 		this->bullets[i]->active = true;
-					// 		if (this->right) {
-					// 			if (this->duck && !this->move && !this->air) {
-					// 				this->bullets[i]->transform->position = this->rightDuckFire->transform->position;
-					// 			}
-					// 			else {
-					// 				this->bullets[i]->transform->position = this->rightFire->transform->position;
-					// 			}
-					// 		}
-					// 		else {
-					// 			if (this->duck && !this->move && !this->air) {
-					// 				this->bullets[i]->transform->position = this->leftDuckFire->transform->position;
-					// 			}
-					// 			else {
-					// 				this->bullets[i]->transform->position = this->leftFire->transform->position;
-					// 			}
-					// 		}
-					// 		break;
-					// 	}
-					// }
-				// }
-				// else {
-				// 	this->resources->audPlayerNoAmmo->Play();
-				// }
+							this->bullets[i]->status->birthTime = this->timer->currentTime;
+							this->bullets[i]->right = this->right;
+							this->bullets[i]->active = true;
+							if (this->right) {
+								if (this->duck && !this->move && !this->air) {
+									this->bullets[i]->transform->position = this->rightDuckShoot->transform->position;
+								}
+								else {
+									this->bullets[i]->transform->position = this->rightShoot->transform->position;
+								}
+							}
+							else {
+								if (this->duck && !this->move && !this->air) {
+									this->bullets[i]->transform->position = this->leftDuckShoot->transform->position;
+								}
+								else {
+									this->bullets[i]->transform->position = this->leftShoot->transform->position;
+								}
+							}
+							break;
+						}
+					}
+				}
+				else {
+					// this->resources->audPlayerNoAmmo->Play();
+				}
 			}
 		}
 	}

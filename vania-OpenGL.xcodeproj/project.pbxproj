@@ -10,6 +10,7 @@
 		603C30981F6BDEB700E91948 /* BoxCollider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 603C30961F6BDEB700E91948 /* BoxCollider.cpp */; };
 		603C309C1F6BF91500E91948 /* Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 603C309A1F6BF91500E91948 /* Scene.cpp */; };
 		604677D51F71F6A000EE35F9 /* Bullet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 604677D31F71F6A000EE35F9 /* Bullet.cpp */; };
+		604677D81F71FDF800EE35F9 /* OffsetObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 604677D61F71FDF800EE35F9 /* OffsetObject.cpp */; };
 		607DB6E71F6D2AA40052786F /* TileObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 607DB6E51F6D2AA40052786F /* TileObject.cpp */; };
 		607DB6EA1F6E02D90052786F /* Status.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 607DB6E81F6E02D90052786F /* Status.cpp */; };
 		607DB6ED1F6E08350052786F /* ColliderObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 607DB6EB1F6E08350052786F /* ColliderObject.cpp */; };
@@ -59,6 +60,8 @@
 		603C309B1F6BF91500E91948 /* Scene.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Scene.hpp; path = Scene/Scene.hpp; sourceTree = "<group>"; };
 		604677D31F71F6A000EE35F9 /* Bullet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Bullet.cpp; path = GameObjects/Bullet.cpp; sourceTree = "<group>"; };
 		604677D41F71F6A000EE35F9 /* Bullet.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Bullet.hpp; path = GameObjects/Bullet.hpp; sourceTree = "<group>"; };
+		604677D61F71FDF800EE35F9 /* OffsetObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OffsetObject.cpp; path = GameObjects/OffsetObject.cpp; sourceTree = "<group>"; };
+		604677D71F71FDF800EE35F9 /* OffsetObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = OffsetObject.hpp; path = GameObjects/OffsetObject.hpp; sourceTree = "<group>"; };
 		607DB6E51F6D2AA40052786F /* TileObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TileObject.cpp; path = GameObjects/TileObject.cpp; sourceTree = "<group>"; };
 		607DB6E61F6D2AA40052786F /* TileObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = TileObject.hpp; path = GameObjects/TileObject.hpp; sourceTree = "<group>"; };
 		607DB6E81F6E02D90052786F /* Status.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Status.cpp; path = Engine/Status.cpp; sourceTree = "<group>"; };
@@ -238,6 +241,8 @@
 				60AAF12C1F6F3C1A00AE8050 /* NoneObject.hpp */,
 				604677D31F71F6A000EE35F9 /* Bullet.cpp */,
 				604677D41F71F6A000EE35F9 /* Bullet.hpp */,
+				604677D61F71FDF800EE35F9 /* OffsetObject.cpp */,
+				604677D71F71FDF800EE35F9 /* OffsetObject.hpp */,
 			);
 			name = GameObject;
 			sourceTree = "<group>";
@@ -327,6 +332,7 @@
 				60F025A11F64E7A70022EC73 /* Shader.cpp in Sources */,
 				60F6A3E91F6AC68A005595B2 /* Animation.cpp in Sources */,
 				60B425531F64DC8B00BEE84C /* Engine.cpp in Sources */,
+				604677D81F71FDF800EE35F9 /* OffsetObject.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,14 +6,12 @@ class Player : public GameObject {
 private:
 	// Input
 	Input* input;
-	
-public:
 
+public:
 	// Collider
 	BoxCollider* collGroundCheck;
 	BoxCollider* collCeilingCheck;
 	BoxCollider* collHorizonCheck;
-
 	// Animation
 	Animation* animIdle;
 	Animation* animShoot;
@@ -22,10 +20,13 @@ public:
 	Animation* animDuck;
 	Animation* animDuckShoot;
 	Animation* animHurt;
-
 	// offset Object
-
+	OffsetObject* leftShoot;
+	OffsetObject* rightShoot;
+	OffsetObject* leftDuckShoot;
+	OffsetObject* rightDuckShoot;
 	// Bullet
+	std::vector<Bullet*> bullets;
 
 	// UIObject
 

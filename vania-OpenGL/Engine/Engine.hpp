@@ -75,6 +75,7 @@ class Player;
 #include "TileObject.hpp"
 #include "ColliderObject.hpp"
 #include "Bullet.hpp"
+#include "OffsetObject.hpp"
 #include "Player.hpp"
 
 
@@ -94,6 +95,11 @@ Window* getWindow();
 Game* getGame();
 
 // Engine.cpp
+void instantiate(GameObject* gameObject, Transform* transform);
+float randomRange(float min, float max);
+void destroy(GameObject* gameObject, float time);
+float distancePow(glm::vec3 a, glm::vec3 b);
+
 template <typename T, typename U> void doMap(T map, void (*function)(U)) {
 	for (typename T::iterator it = map.begin(); it != map.end(); it++) {
 		function(it->first);
