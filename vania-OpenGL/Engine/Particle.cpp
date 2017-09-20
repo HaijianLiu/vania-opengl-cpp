@@ -7,6 +7,7 @@
 Particle::Particle() {
 	// GameObject setting
 	this->active = false;
+	this->transform->position.z = 5.0f;
 	// scale in real pixel
 	this->transform->scale = glm::vec3(4.0f,4.0f,1.0f);
 }
@@ -79,7 +80,8 @@ void Particle::fixedUpdate() {
 void Particle::instantiate(Transform* transform) {
 	this->active = true;
 	this->status->birthTime = this->timer->currentTime;
-	this->transform->position = transform->position;
+	this->transform->position.x = transform->position.x;
+	this->transform->position.y = transform->position.y;
 	this->startAngle = randomRange(this->startAngleRange.x, this->startAngleRange.y);
 	this->startLifeTime = randomRange(this->startLifeTimeRange.x, this->startLifeTimeRange.y);
 	this->startSpeed = randomRange(this->startSpeedRange.x, this->startSpeedRange.y);
