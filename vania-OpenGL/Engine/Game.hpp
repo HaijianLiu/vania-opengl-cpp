@@ -12,7 +12,9 @@ public:
 	Camera* camera;
 	Resources* resources;
 	SceneManager* sceneManager;
+
 	Player* player;
+	std::map<const char*, ParticleSystem*> particleSystems;
 
 	Game();
 	~Game();
