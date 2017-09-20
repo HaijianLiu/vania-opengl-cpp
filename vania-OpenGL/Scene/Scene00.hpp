@@ -11,6 +11,7 @@ public:
 	Scene00();
 	~Scene00();
 
+	// virtual Functions
 	void load();
 	void end();
 	void reset();
