@@ -55,8 +55,8 @@ public:
 	bool shoot = false;
 	bool duck = false;
 	bool hurt = false;
-	bool dead = false;
 	bool freeze = false;
+	// bool dead = false;
 	float verticalSpeed = 0.0f;
 	float shootDuration = 0.2f;
 	float deathDelay = 1.0f;

@@ -111,96 +111,132 @@ void Player::update() {
 		this->status->hp += this->energyRegain * this->timer->deltaTime;
 	}
 	else {
-		if (this->timer->currentTime > this->lastFreeze + this->freezeColdDown * 1000.0f) {
+		if (this->timer->currentTime > this->lastFreeze + this->freezeColdDown) {
 			this->freeze = false;
 		}
 	}
 	if (this->status->hp < 0) this->status->hp = 0;
 	if (this->status->hp > this->hp) this->status->hp = this->hp;
 
-
 	/* UIObject
 	..............................................................................*/
-	this->uiEnergy->offset = glm::vec2(-200.0f + 6.0f + 0.5f * this->status->hp,  -120.0f + 20.0f);
-	this->uiEnergy->transform->scale = glm::vec3(this->status->hp * 1.0f, 2.0f, 1.0f);
-	// if (!this->freeze) {
-	// 	if (this->status->hp > 0.6f * this->hp) {
-	// 		this->uiEnergy->sprite->SetColor(0,255,255,255);
-	// 	}
-	// 	else if (this->status->hp > 0.2f * this->hp) {
-	// 		this->uiEnergy->sprite->SetColor(255,192,0,255);
-	// 	}
-	// 	else {
-	// 		this->uiEnergy->sprite->SetColor(255,79,108,255);
-	// 	}
-	// }
-	// else {
-	// 	this->uiEnergy->sprite->SetColor(100,100,100,255);
-	// }
+  this->uiEnergy->offset = glm::vec2(-200.0f + 6.0f + 0.5f * this->status->hp,  -120.0f + 20.0f);
+  this->uiEnergy->transform->scale = glm::vec3(this->status->hp * 1.0f, 2.0f, 1.0f);
+	if (!this->freeze) {
+		if (this->status->hp > 0.6f * this->hp) {
+//			this->uiEnergy->sprite->SetColor(0,255,255,255);
+		}
+		else if (this->status->hp > 0.2f * this->hp) {
+//			this->uiEnergy->sprite->SetColor(255,192,0,255);
+		}
+		else {
+//			this->uiEnergy->sprite->SetColor(255,79,108,255);
+		}
+	}
+	else {
+//		this->uiEnergy->sprite->SetColor(100,100,100,255);
+	}
 
-
-	/* transform
+	/* Transform
 	..............................................................................*/
-	if (!this->dead) {
-		if (!this->hurt) {
-			// move
-			if (this->input->getButtonPress(GLFW_KEY_LEFT) || this->input->getButtonPress(GLFW_KEY_A)) {
-				this->move = true;
-				this->right = false;
-				this->sprite->flipX = !this->right;
-				this->transform->position.x -= this->speed * this->timer->deltaTime;
+	if (!this->hurt) {
+		// move
+		if (this->input->getButtonPress(GLFW_KEY_LEFT) || this->input->getButtonPress(GLFW_KEY_A)) {
+			this->move = true;
+			this->right = false;
+			this->sprite->flipX = !this->right;
+			this->transform->position.x -= this->speed * this->timer->deltaTime;
+		}
+		else if (this->input->getButtonPress(GLFW_KEY_RIGHT) || this->input->getButtonPress(GLFW_KEY_D)) {
+			this->move = true;
+			this->right = true;
+			this->sprite->flipX = !this->right;
+			this->transform->position.x += this->speed * this->timer->deltaTime;
+		}
+		else {
+			this->move = false;
+		}
+		// jump
+		if (this->input->getButtonPress(GLFW_KEY_SPACE) || this->input->getButtonPress(GLFW_KEY_J)) {
+			if (!this->air) {
+				this->verticalSpeed = this->jumpPower;
+				this->air = true;
 			}
-			else if (this->input->getButtonPress(GLFW_KEY_RIGHT) || this->input->getButtonPress(GLFW_KEY_D)) {
-				this->move = true;
-				this->right = true;
-				this->sprite->flipX = !this->right;
-				this->transform->position.x += this->speed * this->timer->deltaTime;
-			}
-			else {
-				this->move = false;
-			}
-			// jump
-			if (this->input->getButtonPress(GLFW_KEY_SPACE) || this->input->getButtonPress(GLFW_KEY_J)) {
-				if (!this->air) {
-					this->verticalSpeed = this->jumpPower;
-					this->air = true;
-				}
-			}
-			// duck
-			if (this->input->getButtonPress(GLFW_KEY_DOWN) || this->input->getButtonPress(GLFW_KEY_S)) {
-				if (!this->air) {
-					this->duck = true;
-				}
-			}
-			else {
-				this->duck = false;
+		}
+		// duck
+		if (this->input->getButtonPress(GLFW_KEY_DOWN) || this->input->getButtonPress(GLFW_KEY_S)) {
+			if (!this->air) {
+				this->duck = true;
 			}
 		}
 		else {
-			if (this->right) {
-				this->transform->position.x -= this->backSpeed * this->timer->deltaTime;
-			}
-			else {
-				this->transform->position.x += this->backSpeed * this->timer->deltaTime;
-			}
+			this->duck = false;
+		}
+	}
+	else {
+		if (this->right) {
+			this->transform->position.x -= this->backSpeed * this->timer->deltaTime;
+		}
+		else {
+			this->transform->position.x += this->backSpeed * this->timer->deltaTime;
 		}
 	}
 
-
-	/* shoot
+	/* Death
 	..............................................................................*/
-	if (!this->hurt && !this->dead) {
+	if (this->status->hp <= 0 && !this->hurt && this->visible) {
+		this->visible = false;
+//		this->resources->audPlayerDestroy->Play();
+		instantiate(getGame()->publicObjects["player_destroy"], this->transform);
+	}
+
+	/* GameOver
+	..............................................................................*/
+	if (this->status->hp <= 0 && this->timer->currentTime > this->lastHurt + this->gameOverDelay) {
+		this->active = false;
+		this->uiEnergy->active = false;
+		this->uiEnergyBG->active = false;
+//		this->sceneManager->SetActiveScene(this->sceneManager->gameOverScene);
+		this->lastGameOver = this->timer->currentTime;
+		// Score
+//		for (unsigned int i = 0; i < this->score->numbers.size(); i++) {
+//			this->score->numbers[i]->active = false;
+//			this->score->numbers[i]->sprite->slice = Slice(0,0,0,this->score->size.x,this->score->size.y);
+//		}
+//		this->score->numbers[0]->active = true;
+//
+//		this->orb->status->hp = this->score->score;
+//		this->score->score = 0;
+//		this->score->willAdd = 0;
+		instantiate(this->orb, this->transform);
+	}
+
+	/* Gravity
+	..............................................................................*/
+	this->verticalSpeed -= this->gravity * this->timer->deltaTime;
+	if (this->verticalSpeed <= - 0.8f * this->jumpPower) {
+		this->verticalSpeed = - 0.8f * this->jumpPower;
+	}
+	this->transform->position.y -= this->verticalSpeed * this->timer->deltaTime;
+	if (this->verticalSpeed < -1.0f) {
+		this->air = true;
+	}
+
+
+	/* Fire
+	..............................................................................*/
+	if (!this->hurt) {
 		if (this->input->getButtonPress(GLFW_KEY_F) || this->input->getButtonPress(GLFW_KEY_K)) {
 			if (this->timer->currentTime > this->lastShoot + this->shootColdDown) {
 				if (this->status->hp > this->shootEnergy) {
 					this->shoot = true;
 					this->status->hp -= this->shootEnergy;
-					// for (unsigned int i = 0; i < this->resources->audShoot.size(); i++) {
-					// 	if (!this->resources->audShoot[i]->Playing()) {
-					// 		this->resources->audShoot[i]->Play();
-					// 		break;
-					// 	}
-					// }
+//					for (unsigned int i = 0; i < this->resources->audShoot.size(); i++) {
+//						if (!this->resources->audShoot[i]->Playing()) {
+//							this->resources->audShoot[i]->Play();
+//							break;
+//						}
+//					}
 					for (unsigned int i = 0; i < this->bullets.size(); i++) {
 						if (!this->bullets[i]->active) {
 							this->lastShoot = this->timer->currentTime;
@@ -228,63 +264,23 @@ void Player::update() {
 					}
 				}
 				else {
-					// this->resources->audPlayerNoAmmo->Play();
+//					this->resources->audPlayerNoAmmo->Play();
 				}
 			}
 		}
 	}
 
 
-	/* Death
+	/* Animation
+	// Animation SetTexture() || Sprite SetTexture()
 	..............................................................................*/
-	if (this->status->hp <= 0 && !this->hurt && this->visible) {
-		this->visible = false;
-		this->dead = true;
-		// this->resources->audPlayerDestroy->Play();
-		instantiate(getGame()->publicObjects["player_destroy"], this->transform);
-	}
 
-	/* GameOver
-	..............................................................................*/
-	if (this->status->hp <= 0 && this->timer->currentTime > this->lastHurt + this->gameOverDelay) {
-		this->active = false;
-		this->uiEnergy->active = false;
-		this->uiEnergyBG->active = false;
-		// this->sceneManager->SetActiveScene(this->sceneManager->gameOverScene);
-		this->lastGameOver = this->timer->currentTime;
-		// Score
-		// for (unsigned int i = 0; i < this->score->numbers.size(); i++) {
-		// 	this->score->numbers[i]->active = false;
-		// 	this->score->numbers[i]->sprite->slice = Slice(0,0,0,this->score->size.x,this->score->size.y);
-		// }
-		// this->score->numbers[0]->active = true;
-		//
-		// this->orb->status->hp = this->score->score;
-		// this->score->score = 0;
-		// this->score->willAdd = 0;
-		instantiate(this->orb, this->transform);
-	}
-
-	/* Gravity
-	..............................................................................*/
-	this->verticalSpeed -= this->gravity * this->timer->deltaTime;
-	if (this->verticalSpeed <= - 0.8f * this->jumpPower) {
-		this->verticalSpeed = - 0.8f * this->jumpPower;
-	}
-	this->transform->position.y -= this->verticalSpeed * this->timer->deltaTime;
-	if (this->verticalSpeed < -1.0f) {
-		this->air = true;
-	}
-
-
-	/* flag
-	..............................................................................*/
-	// shoot flag
+	// Shoot Flag
 	if (this->timer->currentTime > this->lastShoot + this->shootDuration) {
 		this->shoot = false;
 	}
 
-	// hurt flag
+	// Hurt Flag
 	if (this->status->hp > 0) {
 		if (this->timer->currentTime > this->lastHurt + this->hurtFreeze) {
 			this->hurt = false;
