@@ -78,6 +78,7 @@ class SceneManager;
 #include "AnimationObject.hpp"
 
 #include "Bullet.hpp"
+#include "AIObject.hpp"
 #include "Orb.hpp"
 #include "Player.hpp"
 #include "Crab.hpp"

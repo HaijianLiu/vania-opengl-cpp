@@ -54,6 +54,7 @@ void TiledMap::createGameObject(const char* name) {
 		else if (name == "CameraRange") objects.push_back(new NoneObject());
 		else if (name == "Crab") objects.push_back(new Crab());
 		else if (name == "Orb") objects.push_back(new Orb());
+		else if (name == "AI") objects.push_back(new AIObject());
 	}
 	this->gameObjects.insert(std::make_pair(name, objects));
 }
@@ -64,7 +65,7 @@ void TiledMap::createGameObject(const char* name) {
 ------------------------------------------------------------------------------*/
 void TiledMap::setGameObject(const char* name) {
 	for (unsigned int i = 0; i < this->gameObjects[name].size(); i++) {
-		if (name == "TileObject" || name == "ColliderObject" || name == "CameraRange") {
+		if (name == "TileObject" || name == "ColliderObject" || name == "CameraRange" || name == "AI") {
 			TiledMap::setTile(this->gameObjects[name][i], this->mapDatas[name][i].x, this->mapDatas[name][i].y);
 		}
 		else {

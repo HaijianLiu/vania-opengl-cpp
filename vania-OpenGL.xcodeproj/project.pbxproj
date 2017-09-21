@@ -16,6 +16,7 @@
 		604677E11F721C8400EE35F9 /* Crab.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 604677DF1F721C8400EE35F9 /* Crab.cpp */; };
 		604677E41F722B7500EE35F9 /* Orb.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 604677E21F722B7500EE35F9 /* Orb.cpp */; };
 		604677E71F7235E600EE35F9 /* AnimationObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 604677E51F7235E600EE35F9 /* AnimationObject.cpp */; };
+		604677EA1F73473C00EE35F9 /* AIObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 604677E81F73473C00EE35F9 /* AIObject.cpp */; };
 		607DB6E71F6D2AA40052786F /* TileObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 607DB6E51F6D2AA40052786F /* TileObject.cpp */; };
 		607DB6EA1F6E02D90052786F /* Status.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 607DB6E81F6E02D90052786F /* Status.cpp */; };
 		607DB6ED1F6E08350052786F /* ColliderObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 607DB6EB1F6E08350052786F /* ColliderObject.cpp */; };
@@ -77,6 +78,8 @@
 		604677E31F722B7500EE35F9 /* Orb.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Orb.hpp; path = GameObjects/Orb.hpp; sourceTree = "<group>"; };
 		604677E51F7235E600EE35F9 /* AnimationObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AnimationObject.cpp; path = GameObjects/AnimationObject.cpp; sourceTree = "<group>"; };
 		604677E61F7235E600EE35F9 /* AnimationObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = AnimationObject.hpp; path = GameObjects/AnimationObject.hpp; sourceTree = "<group>"; };
+		604677E81F73473C00EE35F9 /* AIObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AIObject.cpp; path = GameObjects/AIObject.cpp; sourceTree = "<group>"; };
+		604677E91F73473C00EE35F9 /* AIObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = AIObject.hpp; path = GameObjects/AIObject.hpp; sourceTree = "<group>"; };
 		607DB6E51F6D2AA40052786F /* TileObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TileObject.cpp; path = GameObjects/TileObject.cpp; sourceTree = "<group>"; };
 		607DB6E61F6D2AA40052786F /* TileObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = TileObject.hpp; path = GameObjects/TileObject.hpp; sourceTree = "<group>"; };
 		607DB6E81F6E02D90052786F /* Status.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Status.cpp; path = Engine/Status.cpp; sourceTree = "<group>"; };
@@ -268,6 +271,8 @@
 				604677E01F721C8400EE35F9 /* Crab.hpp */,
 				604677E21F722B7500EE35F9 /* Orb.cpp */,
 				604677E31F722B7500EE35F9 /* Orb.hpp */,
+				604677E81F73473C00EE35F9 /* AIObject.cpp */,
+				604677E91F73473C00EE35F9 /* AIObject.hpp */,
 			);
 			name = GameObject;
 			sourceTree = "<group>";
@@ -356,6 +361,7 @@
 				60E00AE11F6A5AB1003CCA29 /* Input.cpp in Sources */,
 				60B425421F64D7E600BEE84C /* main.cpp in Sources */,
 				60F0259E1F64E3AC0022EC73 /* Window.cpp in Sources */,
+				604677EA1F73473C00EE35F9 /* AIObject.cpp in Sources */,
 				60EE18BD1F6616BC000C6F0D /* Camera.cpp in Sources */,
 				60F025A11F64E7A70022EC73 /* Shader.cpp in Sources */,
 				604677E41F722B7500EE35F9 /* Orb.cpp in Sources */,
