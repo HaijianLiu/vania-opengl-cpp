@@ -42,7 +42,7 @@ void Bullet::start() {
 void Bullet::update() {
 	/* Destroy
 	..............................................................................*/
-	destroy(this, this->lifeTime);
+	destroyByTime(this, this->lifeTime);
 
 	/* Transform
 	..............................................................................*/

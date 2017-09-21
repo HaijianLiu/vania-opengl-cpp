@@ -77,6 +77,7 @@ class SceneManager;
 #include "ColliderObject.hpp"
 #include "AnimationObject.hpp"
 
+#include "UIObject.hpp"
 #include "Bullet.hpp"
 #include "AIObject.hpp"
 #include "Orb.hpp"
@@ -104,7 +105,7 @@ Game* getGame();
 // Engine.cpp
 void instantiate(GameObject* gameObject, Transform* transform);
 float randomRange(float min, float max);
-void destroy(GameObject* gameObject, float time);
+void destroyByTime(GameObject* gameObject, float time);
 float distancePow(glm::vec3 a, glm::vec3 b);
 
 template <typename T, typename U> void doMap(T map, void (*function)(U)) {

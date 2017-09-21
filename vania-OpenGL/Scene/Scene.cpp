@@ -95,6 +95,12 @@ void Scene::update() {
 
 	Scene::fixCamera("CameraRange");
 
+	for (unsigned int i = 0; i < this->gameObjects.size(); i++) {
+		if (this->gameObjects[i]->active) {
+			this->gameObjects[i]->UIUpdate();
+		}
+	}
+
 	for (unsigned int i = this->gameObjects.size(); i > 0; i--) {
 		if (this->gameObjects[i-1]->active && this->gameObjects[i-1]->visible) {
 			this->gameObjects[i-1]->draw();

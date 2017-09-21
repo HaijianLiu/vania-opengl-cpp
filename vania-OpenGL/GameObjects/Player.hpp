@@ -28,8 +28,8 @@ public:
 	// Bullet
 	std::vector<Bullet*> bullets;
 	// UIObject
-	// UIObject* uiEnergyBG;
-	// UIObject* uiEnergy;
+	UIObject* uiEnergy;
+	UIObject* uiEnergyBG;
 	// Score* score;
 	// Orb
 	Orb* orb;

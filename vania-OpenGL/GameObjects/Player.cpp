@@ -43,8 +43,8 @@ Player::Player() {
 		this->bullets.back()->status->damage = this->bulletDamage;
 	}
 	// // UIObject
-	// this->uiEnergy = new UIObject(-200.0f + 6.5f + 49.5f, -120.0f + 19.5f,100.0f,1.0f);
-	// this->uiEnergyBG = new UIObject(-144.0f,-104.0f,112.0f,32.0f);
+	this->uiEnergy = new UIObject(-200.0f + 6.5f + 49.5f, -120.0f + 19.5f,100.0f,1.0f);
+	this->uiEnergyBG = new UIObject(-144.0f,-104.0f,112.0f,32.0f);
 	// this->score = new Score();
 	// Orb
 	this->orb = new Orb();
@@ -75,6 +75,9 @@ Player::~Player() {
 	delete this->rightDuckShoot;
 	// Bullet
 	deleteVector(this->bullets);
+	// UIObject
+	delete this->uiEnergy;
+	delete this->uiEnergyBG;
 	// Orb
 	delete this->orb;
 }
@@ -92,6 +95,7 @@ void Player::start() {
 	this->animDuck->start();
 	this->animDuckShoot->start();
 	this->animHurt->start();
+	this->uiEnergyBG->sprite->texture = this->resources->getTexture("ui_player_energy");
 	this->orb->sprite->setSlice(48.0f,0.0f,16.0f,16.0f);
 }
 
@@ -116,22 +120,22 @@ void Player::update() {
 
 	/* UIObject
 	..............................................................................*/
-	// this->uiEnergy->offset = Float2D(-200.0f + 6.0f + 0.5f * this->status->hp,  -120.0f + 20.0f);
-	// this->uiEnergy->transform->scale = Float2D(this->status->hp * 1.0f, 2.0f);
-	// if (!this->freeze) {
-	// 	if (this->status->hp > 0.6f * this->hp) {
-	// 		this->uiEnergy->sprite->SetColor(0,255,255,255);
-	// 	}
-	// 	else if (this->status->hp > 0.2f * this->hp) {
-	// 		this->uiEnergy->sprite->SetColor(255,192,0,255);
-	// 	}
-	// 	else {
-	// 		this->uiEnergy->sprite->SetColor(255,79,108,255);
-	// 	}
-	// }
-	// else {
-	// 	this->uiEnergy->sprite->SetColor(100,100,100,255);
-	// }
+	this->uiEnergy->offset = glm::vec2(-200.0f + 6.0f + 0.5f * this->status->hp,  -120.0f + 20.0f);
+	this->uiEnergy->transform->scale = glm::vec3(this->status->hp * 1.0f, 2.0f, 1.0f);
+	if (!this->freeze) {
+		if (this->status->hp > 0.6f * this->hp) {
+			// this->uiEnergy->sprite->SetColor(0,255,255,255);
+		}
+		else if (this->status->hp > 0.2f * this->hp) {
+			// this->uiEnergy->sprite->SetColor(255,192,0,255);
+		}
+		else {
+			// this->uiEnergy->sprite->SetColor(255,79,108,255);
+		}
+	}
+	else {
+		// this->uiEnergy->sprite->SetColor(100,100,100,255);
+	}
 
 
 	/* transform
@@ -189,7 +193,7 @@ void Player::update() {
 			if (this->timer->currentTime > this->lastShoot + this->shootColdDown) {
 				if (this->status->hp > this->shootEnergy) {
 					this->shoot = true;
-					// this->status->hp -= this->shootEnergy;
+					this->status->hp -= this->shootEnergy;
 					// for (unsigned int i = 0; i < this->resources->audShoot.size(); i++) {
 					// 	if (!this->resources->audShoot[i]->Playing()) {
 					// 		this->resources->audShoot[i]->Play();
@@ -243,8 +247,8 @@ void Player::update() {
 	..............................................................................*/
 	if (this->status->hp <= 0 && this->timer->currentTime > this->lastHurt + this->gameOverDelay) {
 		this->active = false;
-		// this->uiEnergy->active = false;
-		// this->uiEnergyBG->active = false;
+		this->uiEnergy->active = false;
+		this->uiEnergyBG->active = false;
 		// this->sceneManager->SetActiveScene(this->sceneManager->gameOverScene);
 		this->lastGameOver = this->timer->currentTime;
 		// Score

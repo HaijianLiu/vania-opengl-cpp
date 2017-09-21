@@ -4,65 +4,64 @@
 /*------------------------------------------------------------------------------
 < Constructor >
 ------------------------------------------------------------------------------*/
-GameObject::GameObject() {
-	// GetGameObjects and push_back
-	this->gameObjects = getGame()->getGameObjects();
-	this->gameObjects->push_back(this);
-	// get Globals
-	this->timer = getGame()->timer;
+UIObject::UIObject(float offsetX, float offsetY, float sizeX, float sizeY) {
+	// GameObject setting
+	this->transform->position.z = 6.0f;
+	// Camera
 	this->camera = getGame()->camera;
-	this->resources = getGame()->resources;
-	// new GameObject members
-	this->transform = new Transform();
-	this->sprite = new Sprite();
-	this->sprite->gameObject = this;
-	this->status = new Status();
+	// offset in real pixel
+	this->offset = glm::vec2(offsetX,offsetY);
+	// scale in real pixel
+	this->transform->scale = glm::vec3(sizeX,sizeY,1.0f);
 }
 
 
 /*------------------------------------------------------------------------------
 < Destructor >
 ------------------------------------------------------------------------------*/
-GameObject::~GameObject() {
-	delete this->transform;
-	delete this->sprite;
-	delete this->status;
+UIObject::~UIObject() {
+
 }
 
 
 /*------------------------------------------------------------------------------
-< preStart > before GameObject start() & after Resources start()
+< start >
 ------------------------------------------------------------------------------*/
-void GameObject::defaultStart() {
-	// get birthtime
-	this->status->birthTime = this->timer->currentTime;
-	// sprite start
-	this->sprite->start();
+void UIObject::start() {
+	// set sprite texture and slice | Animation start
 }
 
 
 /*------------------------------------------------------------------------------
-< draw >
+< update >
 ------------------------------------------------------------------------------*/
-void GameObject::draw() {
-	// transform update
-	this->transform->update();
-	// sprite draw
-	this->sprite->draw();
+void UIObject::update() {
+	if (this->destroy) {
+		destroyByTime(this,3.0f);
+	}
+}
+
+
+/*------------------------------------------------------------------------------
+< onTriggerEnter >
+------------------------------------------------------------------------------*/
+void UIObject::onTriggerEnter(BoxCollider* other) {
+
+}
+
+
+/*------------------------------------------------------------------------------
+< fixedUpdate >
+------------------------------------------------------------------------------*/
+void UIObject::fixedUpdate() {
+
 }
 
 
 /*------------------------------------------------------------------------------
 < UIUpdate >
 ------------------------------------------------------------------------------*/
-void GameObject::UIUpdate() {
-
-}
-
-
-/*------------------------------------------------------------------------------
-< reset >
-------------------------------------------------------------------------------*/
-void GameObject::reset() {
-
+void UIObject::UIUpdate() {
+	this->transform->position.x = this->camera->position.x + this->offset.x * PIXEL_TO_UNIT;
+	this->transform->position.y = this->camera->position.y + this->offset.y * PIXEL_TO_UNIT;
 }

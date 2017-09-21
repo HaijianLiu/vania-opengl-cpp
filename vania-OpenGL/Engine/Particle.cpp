@@ -35,7 +35,7 @@ void Particle::start() {
 void Particle::update() {
 	/* Destroy
 	..............................................................................*/
-	destroy(this, this->startLifeTime);
+	destroyByTime(this, this->startLifeTime);
 
 	/* Transform
 	..............................................................................*/
