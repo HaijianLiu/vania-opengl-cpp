@@ -22,7 +22,7 @@ public:
 	void setStartSizeRange(float min, float max);
 	void setStartAngleRange(float min, float max);
 	void setGravity(float gravity);
-	void setColor(int r, int g, int b, int a);
+	void setColor(float r, float g, float b, float a);
 };
 
 #endif /* ParticleSystem_hpp */

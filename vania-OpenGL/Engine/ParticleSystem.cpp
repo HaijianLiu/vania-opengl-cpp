@@ -85,8 +85,8 @@ void ParticleSystem::setGravity(float gravity) {
 		this->particles[i]->gravity = gravity;
 	}
 }
-void ParticleSystem::setColor(int r, int g, int b, int a) {
+void ParticleSystem::setColor(float r, float g, float b, float a) {
 	for (unsigned int i = 0; i < this->particles.size(); i++) {
-		// .................
+		this->particles[i]->sprite->setColor(r,g,b,a);
 	}
 }
