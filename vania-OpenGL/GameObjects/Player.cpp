@@ -8,7 +8,7 @@ Player::Player() {
 	// GameObject setting
 	this->active = false;
 	this->status->hp = this->hp;
-	this->transform->position.z = 1.0f;
+	this->transform->position.z = 2.0f;
 	// Input
   this->input = Input::getInstance();
 	// scale in real pixel

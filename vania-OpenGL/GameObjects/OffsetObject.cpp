@@ -53,4 +53,5 @@ void OffsetObject::onTriggerEnter(BoxCollider* other) {
 void OffsetObject::fixedUpdate() {
 	this->transform->position.x = this->parent->transform->position.x + this->offset.x;
 	this->transform->position.y = this->parent->transform->position.y + this->offset.y;
+	this->transform->position.z = this->parent->transform->position.z;
 }
