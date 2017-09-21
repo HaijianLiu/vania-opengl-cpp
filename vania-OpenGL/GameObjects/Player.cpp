@@ -271,8 +271,7 @@ void Player::update() {
 	}
 
 
-	/* Animation
-	// Animation SetTexture() || Sprite SetTexture()
+	/* flag
 	..............................................................................*/
 
 	// Shoot Flag
