@@ -46,6 +46,8 @@ void Sprite::draw() {
 	// flip
 	if (this->flipX) this->shader->setMat3("flip", this->matFlipX);
 	else this->shader->setMat3("flip", glm::mat3(1.0f));
+	// color
+	this->shader->setVec4("spriteColor", this->color);
 	// texture
 	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, this->texture->textureID);
@@ -63,4 +65,12 @@ void Sprite::setSlice(float offsetX, float offsetY, float sizeX, float sizeY) {
 		0.0f, sizeY / this->texture->height, 0.0f,
 		offsetX / this->texture->width, offsetY / this->texture->height, 1.0f,
 	};
+}
+
+
+/*------------------------------------------------------------------------------
+< setColor >
+------------------------------------------------------------------------------*/
+void Sprite::setColor(float r, float g, float b, float a) {
+	this->color = glm::vec4(r / 255.0f, g / 255.0f, b / 255.0f, a / 255.0f);
 }

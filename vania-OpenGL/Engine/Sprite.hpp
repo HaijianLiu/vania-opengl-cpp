@@ -5,11 +5,13 @@
 class Sprite {
 private:
 	Quad* quad;
+	// uniform
 	glm::mat3 matFlipX = {
 		-1.0f,0.0f,0.0f,
 		 0.0f,1.0f,0.0f,
 		 1.0f,0.0f,1.0f,
 	};
+	glm::vec4 color = glm::vec4(1.0f);
 
 public:
 	// this gameObject
@@ -17,7 +19,7 @@ public:
 	// sprite member
 	Shader* shader;
 	Texture* texture;
-	// slice uniform
+	// uniform
 	glm::mat3 slice = glm::mat3(1.0f);
 	// flip flag
 	bool flipX = false;
@@ -29,6 +31,7 @@ public:
 	void draw();
 
 	void setSlice(float offsetX, float offsetY, float sizeX, float sizeY);
+	void setColor(float r, float g, float b, float a);
 };
 
 #endif /* Sprite_hpp */

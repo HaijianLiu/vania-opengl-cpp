@@ -124,17 +124,17 @@ void Player::update() {
   this->uiEnergy->transform->scale = glm::vec3(this->status->hp * 1.0f, 2.0f, 1.0f);
 	if (!this->freeze) {
 		if (this->status->hp > 0.6f * this->hp) {
-//			this->uiEnergy->sprite->SetColor(0,255,255,255);
+			this->uiEnergy->sprite->setColor(0,255,255,255);
 		}
 		else if (this->status->hp > 0.2f * this->hp) {
-//			this->uiEnergy->sprite->SetColor(255,192,0,255);
+			this->uiEnergy->sprite->setColor(255,192,0,255);
 		}
 		else {
-//			this->uiEnergy->sprite->SetColor(255,79,108,255);
+			this->uiEnergy->sprite->setColor(255,79,108,255);
 		}
 	}
 	else {
-//		this->uiEnergy->sprite->SetColor(100,100,100,255);
+		this->uiEnergy->sprite->setColor(100,100,100,255);
 	}
 
 	/* Transform
