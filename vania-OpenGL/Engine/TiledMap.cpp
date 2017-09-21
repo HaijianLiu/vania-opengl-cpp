@@ -52,6 +52,7 @@ void TiledMap::createGameObject(const char* name) {
 		if (name == "TileObject") objects.push_back(new TileObject());
 		else if (name == "ColliderObject") objects.push_back(new ColliderObject());
 		else if (name == "CameraRange") objects.push_back(new NoneObject());
+		else if (name == "Block") objects.push_back(new Block());
 		else if (name == "Crab") objects.push_back(new Crab());
 		else if (name == "Orb") objects.push_back(new Orb());
 		else if (name == "AI") objects.push_back(new AIObject());

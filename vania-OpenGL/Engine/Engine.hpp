@@ -80,6 +80,7 @@ class SceneManager;
 #include "Bullet.hpp"
 #include "AIObject.hpp"
 #include "Orb.hpp"
+#include "Block.hpp"
 #include "Player.hpp"
 #include "Crab.hpp"
 
