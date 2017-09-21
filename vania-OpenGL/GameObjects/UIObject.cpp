@@ -7,8 +7,6 @@
 UIObject::UIObject(float offsetX, float offsetY, float sizeX, float sizeY) {
 	// GameObject setting
 	this->transform->position.z = 6.0f;
-	// Camera
-	this->camera = getGame()->camera;
 	// offset in real pixel
 	this->offset = glm::vec2(offsetX,offsetY);
 	// scale in real pixel

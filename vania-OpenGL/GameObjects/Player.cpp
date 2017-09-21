@@ -44,6 +44,7 @@ Player::Player() {
 	}
 	// // UIObject
 	this->uiEnergy = new UIObject(-200.0f + 6.5f + 49.5f, -120.0f + 19.5f,100.0f,1.0f);
+	this->uiEnergy->transform->position.z += 1.0f;
 	this->uiEnergyBG = new UIObject(-144.0f,-104.0f,112.0f,32.0f);
 	// this->score = new Score();
 	// Orb
@@ -122,20 +123,20 @@ void Player::update() {
 	..............................................................................*/
 	this->uiEnergy->offset = glm::vec2(-200.0f + 6.0f + 0.5f * this->status->hp,  -120.0f + 20.0f);
 	this->uiEnergy->transform->scale = glm::vec3(this->status->hp * 1.0f, 2.0f, 1.0f);
-	if (!this->freeze) {
-		if (this->status->hp > 0.6f * this->hp) {
-			// this->uiEnergy->sprite->SetColor(0,255,255,255);
-		}
-		else if (this->status->hp > 0.2f * this->hp) {
-			// this->uiEnergy->sprite->SetColor(255,192,0,255);
-		}
-		else {
-			// this->uiEnergy->sprite->SetColor(255,79,108,255);
-		}
-	}
-	else {
-		// this->uiEnergy->sprite->SetColor(100,100,100,255);
-	}
+	// if (!this->freeze) {
+	// 	if (this->status->hp > 0.6f * this->hp) {
+	// 		this->uiEnergy->sprite->SetColor(0,255,255,255);
+	// 	}
+	// 	else if (this->status->hp > 0.2f * this->hp) {
+	// 		this->uiEnergy->sprite->SetColor(255,192,0,255);
+	// 	}
+	// 	else {
+	// 		this->uiEnergy->sprite->SetColor(255,79,108,255);
+	// 	}
+	// }
+	// else {
+	// 	this->uiEnergy->sprite->SetColor(100,100,100,255);
+	// }
 
 
 	/* transform

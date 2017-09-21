@@ -4,7 +4,6 @@
 
 class UIObject : public GameObject {
 private:
-	Camera* camera;
 
 public:
 	// offset
