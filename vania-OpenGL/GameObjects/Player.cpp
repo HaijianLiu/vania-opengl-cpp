@@ -42,11 +42,11 @@ Player::Player() {
 		this->bullets.push_back(new Bullet());
 		this->bullets.back()->status->damage = this->bulletDamage;
 	}
-	// // UIObject
+	// UIObject
 	this->uiEnergy = new UIObject(-200.0f + 6.5f + 49.5f, -120.0f + 19.5f,100.0f,1.0f);
 	this->uiEnergy->transform->position.z += 1.0f;
 	this->uiEnergyBG = new UIObject(-144.0f,-104.0f,112.0f,32.0f);
-	// this->score = new Score();
+	this->score = new Score();
 	// Orb
 	this->orb = new Orb();
 	this->orb->collider->tag = "my_orb";
@@ -79,6 +79,7 @@ Player::~Player() {
 	// UIObject
 	delete this->uiEnergy;
 	delete this->uiEnergyBG;
+	delete this->score;
 	// Orb
 	delete this->orb;
 }
@@ -199,15 +200,15 @@ void Player::update() {
 //		this->sceneManager->SetActiveScene(this->sceneManager->gameOverScene);
 		this->lastGameOver = this->timer->currentTime;
 		// Score
-//		for (unsigned int i = 0; i < this->score->numbers.size(); i++) {
-//			this->score->numbers[i]->active = false;
-//			this->score->numbers[i]->sprite->slice = Slice(0,0,0,this->score->size.x,this->score->size.y);
-//		}
-//		this->score->numbers[0]->active = true;
-//
-//		this->orb->status->hp = this->score->score;
-//		this->score->score = 0;
-//		this->score->willAdd = 0;
+		for (unsigned int i = 0; i < this->score->numbers.size(); i++) {
+			this->score->numbers[i]->active = false;
+			this->score->numbers[i]->sprite->setSlice(0,0,this->score->size.x,this->score->size.y);
+		}
+		this->score->numbers[0]->active = true;
+
+		this->orb->status->hp = this->score->score;
+		this->score->score = 0;
+		this->score->willAddScore = 0;
 		instantiate(this->orb, this->transform);
 	}
 
@@ -385,10 +386,10 @@ void Player::onTriggerEnter(BoxCollider* other) {
 	/* add score if tag = "orb"
 	..............................................................................*/
 	if (other->tag == "orb") {
-		// this->score->willAdd((unsigned int)other->gameObject->status->hp);
+		this->score->willAdd((unsigned int)other->gameObject->status->hp);
 	}
 	if (other->tag == "my_orb") {
-		// this->score->willAdd((unsigned int)other->gameObject->status->hp);
+		this->score->willAdd((unsigned int)other->gameObject->status->hp);
 		// this->resources->audOrbReturn->Play();
 	}
 	/*  if tag = "item"

@@ -30,7 +30,7 @@ public:
 	// UIObject
 	UIObject* uiEnergy;
 	UIObject* uiEnergyBG;
-	// Score* score;
+	Score* score;
 	// Orb
 	Orb* orb;
 
