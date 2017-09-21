@@ -95,6 +95,14 @@ class SceneManager;
 #include "SceneManager.hpp"
 #include "Scene00.hpp"
 #include "Scene01.hpp"
+#include "Scene02.hpp"
+// #include "Scene01.hpp"
+// #include "Scene01.hpp"
+// #include "Scene01.hpp"
+// #include "Scene01.hpp"
+// #include "Scene01.hpp"
+// #include "Scene01.hpp"
+//
 
 
 /*------------------------------------------------------------------------------

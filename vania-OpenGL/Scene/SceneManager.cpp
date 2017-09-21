@@ -24,7 +24,7 @@ void SceneManager::start() {
 	// create Scenes
 	SceneManager::createScene("Scene00", new Scene00());
 	SceneManager::createScene("Scene01", new Scene01());
-	// SceneManager::createScene("Scene00", new Scene00());
+	SceneManager::createScene("Scene02", new Scene02());
 	// SceneManager::createScene("Scene00", new Scene00());
 	// SceneManager::createScene("Scene00", new Scene00());
 	// SceneManager::createScene("Scene00", new Scene00());

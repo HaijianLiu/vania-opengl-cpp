@@ -1,14 +1,21 @@
-//
-//  Scene02.hpp
-//  vania-OpenGL
-//
-//  Created by haijian on 2017/09/21.
-//  Copyright © 2017年 haijian. All rights reserved.
-//
 
 #ifndef Scene02_hpp
 #define Scene02_hpp
 
-#include <stdio.h>
+class Scene02 : public Scene {
+private:
+	/* data */
+
+public:
+	// Constructors
+	Scene02();
+	~Scene02();
+
+	// virtual Functions
+	void load();
+	void end();
+	void reset();
+	void clear();
+};
 
 #endif /* Scene02_hpp */
