@@ -12,6 +12,10 @@ public:
 	// tiled map
 	TiledMap* tiledMap;
 
+	// BackGround Object
+	UIObject* backGround2nd;
+	UIObject* backGround4th;
+
 	// Frame Delay
 	bool frameSkip = true; // skip the first frame
 
