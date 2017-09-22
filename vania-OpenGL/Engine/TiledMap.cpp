@@ -97,3 +97,12 @@ void TiledMap::setPosition(GameObject* gameObject, int mapID) {
 	gameObject->transform->position.x = mapID % this->mapSize.x * PIXEL_TO_UNIT * this->tileSize;
 	gameObject->transform->position.y = mapID / this->mapSize.x * PIXEL_TO_UNIT * this->tileSize;
 }
+
+
+void TiledMap::reset() {
+	if (this->mapDatas.find("Player") != this->mapDatas.end() && !getGame()->player->active) {
+		TiledMap::setPosition(getGame()->player, this->mapDatas["Player"][0].x);
+		getGame()->player->reset();
+		getGame()->camera->target = getGame()->player;
+	}
+}

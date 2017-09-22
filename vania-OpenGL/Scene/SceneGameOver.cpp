@@ -72,14 +72,7 @@ void SceneGameOver::end() {
 < reset > in SceneManager setActiveScene()
 ------------------------------------------------------------------------------*/
 void SceneGameOver::reset() {
-	// frameDelay
-	this->frameSkip = true;
-	// Player
-	if (this->tiledMap->mapDatas["Player"].size() != 0 && !getGame()->player->active) {
-		this->tiledMap->setPosition(getGame()->player, this->tiledMap->mapDatas["Player"][0].x);
-		getGame()->player->active = true;
-		getGame()->camera->target = getGame()->player;
-	}
+	
 }
 
 

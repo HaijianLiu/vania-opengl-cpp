@@ -415,8 +415,21 @@ void Player::onTriggerEnter(BoxCollider* other) {
 
 
 /*------------------------------------------------------------------------------
-< Fixed Update >
+< fixedUpdate >
 ------------------------------------------------------------------------------*/
 void Player::fixedUpdate() {
 
+}
+
+
+/*------------------------------------------------------------------------------
+< reset >
+------------------------------------------------------------------------------*/
+void Player::reset() {
+	this->status->hp = this->hp;
+	this->active = true;
+	this->visible = true;
+	this->uiEnergy->active = true;
+	this->uiEnergyBG->active = true;
+	this->score->active = true;
 }

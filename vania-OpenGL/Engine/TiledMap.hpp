@@ -22,6 +22,7 @@ public:
 	void setGameObject(const char* name);
 	void setTile(GameObject* gameObject, int mapID, int tileID);
 	void setPosition(GameObject* gameObject, int mapID);
+	void reset();
 };
 
 #endif /* TiledMap_hpp */

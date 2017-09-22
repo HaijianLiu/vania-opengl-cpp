@@ -76,6 +76,8 @@ public:
 	void update();
 	void onTriggerEnter(BoxCollider* other);
 	void fixedUpdate();
+
+	void reset();
 };
 
 #endif /* Player_hpp */
