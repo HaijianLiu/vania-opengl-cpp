@@ -43,6 +43,7 @@ void SceneManager::start() {
 	// SceneManager::createScene("Scene00", new Scene00());
 	// SceneManager::createScene("Scene00", new Scene00());
 	// SceneManager::createScene("Scene00", new Scene00());
+	SceneManager::createScene("SceneGameOver", new SceneGameOver());
 
 	// start Scenes
 	for (std::map<const char*, Scene*>::iterator it = this->scenes.begin(); it != this->scenes.end(); it++) {

@@ -43,6 +43,8 @@ void Scene::start() {
 	// BackGround Object
 	this->backGround4th = new UIObject(0.0f,0.0f,SCREEN_WIDTH,SCREEN_HEIGHT);
 	this->backGround2nd = new UIObject(0.0f,0.0f,SCREEN_WIDTH,SCREEN_HEIGHT);
+	this->backGround4th->active = false;
+	this->backGround2nd->active = false;
 	this->backGround4th->transform->position.z = 0.0f;
 	this->backGround2nd->transform->position.z = 0.0f;
 
@@ -81,11 +83,8 @@ void Scene::start() {
 		this->tiledMap->setGameObject(it->first);
 	}
 
-	// BackGround Object
-	this->backGround2nd->sprite->texture = getGame()->resources->getTexture("background_2nd");
-	this->backGround4th->sprite->texture = getGame()->resources->getTexture("background_4th");
-	this->backGround2nd->sprite->setSlice(0.0f,0.0f,SCREEN_WIDTH,SCREEN_HEIGHT);
-	this->backGround4th->sprite->setSlice(0.0f,0.0f,SCREEN_WIDTH,SCREEN_HEIGHT);
+	this->set();
+
 }
 
 
@@ -116,7 +115,9 @@ void Scene::update() {
 	}
 
 	// backGround2nd && backGround4th
-	this->backGround2nd->sprite->setSlice(0.5f * getGame()->camera->position.x * UNIT_TO_PIXEL, 0.5f * getGame()->camera->position.y * UNIT_TO_PIXEL, SCREEN_WIDTH, SCREEN_HEIGHT);
+	if (this->backGround2nd->active) {
+		this->backGround2nd->sprite->setSlice(0.5f * getGame()->camera->position.x * UNIT_TO_PIXEL, 0.5f * getGame()->camera->position.y * UNIT_TO_PIXEL, SCREEN_WIDTH, SCREEN_HEIGHT);
+	}
 
 	for (unsigned int i = this->gameObjects.size(); i > 0; i--) {
 		if (this->gameObjects[i-1]->active && this->gameObjects[i-1]->visible) {
@@ -198,4 +199,8 @@ void Scene::fixCamera(const char* name) {
 	}
 
 	camera->updateUniform();
+}
+
+void Scene::set() {
+
 }

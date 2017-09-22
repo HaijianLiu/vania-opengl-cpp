@@ -35,7 +35,20 @@ void Scene01::load() {
 	this->tiledMap->loadMapData("AI", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene01-AI.csv");
 	// item
 	this->tiledMap->loadMapData("Orb", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene01-Orb.csv");
+}
 
+
+/*------------------------------------------------------------------------------
+< set > in Scene start()
+------------------------------------------------------------------------------*/
+void Scene01::set() {
+	// BackGround Object
+	this->backGround2nd->sprite->texture = getGame()->resources->getTexture("background_2nd");
+	this->backGround4th->sprite->texture = getGame()->resources->getTexture("background_4th");
+	this->backGround2nd->sprite->setSlice(0.0f,0.0f,SCREEN_WIDTH,SCREEN_HEIGHT);
+	this->backGround4th->sprite->setSlice(0.0f,0.0f,SCREEN_WIDTH,SCREEN_HEIGHT);
+	this->backGround2nd->active = true;
+	this->backGround4th->active = true;
 }
 
 

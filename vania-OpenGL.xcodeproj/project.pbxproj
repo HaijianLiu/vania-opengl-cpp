@@ -23,6 +23,7 @@
 		604677F61F73DE9600EE35F9 /* Scene02.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 604677F41F73DE9600EE35F9 /* Scene02.cpp */; };
 		604677F91F73DEAA00EE35F9 /* Scene01.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 604677F71F73DEAA00EE35F9 /* Scene01.cpp */; };
 		604677FC1F73E66300EE35F9 /* CheckPoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 604677FA1F73E66300EE35F9 /* CheckPoint.cpp */; };
+		604677FF1F74A3DD00EE35F9 /* SceneGameOver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 604677FD1F74A3DD00EE35F9 /* SceneGameOver.cpp */; };
 		607DB6E71F6D2AA40052786F /* TileObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 607DB6E51F6D2AA40052786F /* TileObject.cpp */; };
 		607DB6EA1F6E02D90052786F /* Status.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 607DB6E81F6E02D90052786F /* Status.cpp */; };
 		607DB6ED1F6E08350052786F /* ColliderObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 607DB6EB1F6E08350052786F /* ColliderObject.cpp */; };
@@ -98,6 +99,8 @@
 		604677F81F73DEAA00EE35F9 /* Scene01.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Scene01.hpp; path = Scene/Scene01.hpp; sourceTree = "<group>"; };
 		604677FA1F73E66300EE35F9 /* CheckPoint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CheckPoint.cpp; path = GameObjects/CheckPoint.cpp; sourceTree = "<group>"; };
 		604677FB1F73E66300EE35F9 /* CheckPoint.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = CheckPoint.hpp; path = GameObjects/CheckPoint.hpp; sourceTree = "<group>"; };
+		604677FD1F74A3DD00EE35F9 /* SceneGameOver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SceneGameOver.cpp; path = Scene/SceneGameOver.cpp; sourceTree = "<group>"; };
+		604677FE1F74A3DD00EE35F9 /* SceneGameOver.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = SceneGameOver.hpp; path = Scene/SceneGameOver.hpp; sourceTree = "<group>"; };
 		607DB6E51F6D2AA40052786F /* TileObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TileObject.cpp; path = GameObjects/TileObject.cpp; sourceTree = "<group>"; };
 		607DB6E61F6D2AA40052786F /* TileObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = TileObject.hpp; path = GameObjects/TileObject.hpp; sourceTree = "<group>"; };
 		607DB6E81F6E02D90052786F /* Status.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Status.cpp; path = Engine/Status.cpp; sourceTree = "<group>"; };
@@ -181,6 +184,8 @@
 				604677F81F73DEAA00EE35F9 /* Scene01.hpp */,
 				604677F41F73DE9600EE35F9 /* Scene02.cpp */,
 				604677F51F73DE9600EE35F9 /* Scene02.hpp */,
+				604677FD1F74A3DD00EE35F9 /* SceneGameOver.cpp */,
+				604677FE1F74A3DD00EE35F9 /* SceneGameOver.hpp */,
 			);
 			name = Scene;
 			sourceTree = "<group>";
@@ -398,6 +403,7 @@
 				604677EA1F73473C00EE35F9 /* AIObject.cpp in Sources */,
 				60EE18BD1F6616BC000C6F0D /* Camera.cpp in Sources */,
 				60F025A11F64E7A70022EC73 /* Shader.cpp in Sources */,
+				604677FF1F74A3DD00EE35F9 /* SceneGameOver.cpp in Sources */,
 				604677ED1F73493700EE35F9 /* Block.cpp in Sources */,
 				604677F61F73DE9600EE35F9 /* Scene02.cpp in Sources */,
 				604677E41F722B7500EE35F9 /* Orb.cpp in Sources */,

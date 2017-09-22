@@ -39,6 +39,20 @@ void Scene02::load() {
 
 
 /*------------------------------------------------------------------------------
+< set > in Scene start()
+------------------------------------------------------------------------------*/
+void Scene02::set() {
+	// BackGround Object
+	this->backGround2nd->sprite->texture = getGame()->resources->getTexture("background_2nd");
+	this->backGround4th->sprite->texture = getGame()->resources->getTexture("background_4th");
+	this->backGround2nd->sprite->setSlice(0.0f,0.0f,SCREEN_WIDTH,SCREEN_HEIGHT);
+	this->backGround4th->sprite->setSlice(0.0f,0.0f,SCREEN_WIDTH,SCREEN_HEIGHT);
+	this->backGround2nd->active = true;
+	this->backGround4th->active = true;
+}
+
+
+/*------------------------------------------------------------------------------
 < end > before Scene update()
 ------------------------------------------------------------------------------*/
 void Scene02::end() {

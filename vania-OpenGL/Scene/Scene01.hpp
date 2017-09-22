@@ -13,6 +13,7 @@ public:
 
 	// virtual Functions
 	void load();
+	void set();
 	void end();
 	void reset();
 	void clear();

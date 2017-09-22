@@ -197,7 +197,7 @@ void Player::update() {
 		this->active = false;
 		this->uiEnergy->active = false;
 		this->uiEnergyBG->active = false;
-//		this->sceneManager->SetActiveScene(this->sceneManager->gameOverScene);
+		getGame()->sceneManager->setActiveScene("SceneGameOver");
 		this->lastGameOver = this->timer->currentTime;
 		// Score
 		for (unsigned int i = 0; i < this->score->numbers.size(); i++) {

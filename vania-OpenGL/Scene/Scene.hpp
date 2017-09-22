@@ -27,6 +27,7 @@ public:
 	void update();
 
 	virtual void load() = 0;
+	virtual void set() = 0;
 	virtual void end() = 0;
 	virtual void reset() = 0;
 	virtual void clear() = 0;
