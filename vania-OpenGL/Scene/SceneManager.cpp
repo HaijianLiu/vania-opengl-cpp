@@ -44,13 +44,14 @@ void SceneManager::start() {
 	// SceneManager::createScene("Scene00", new Scene00());
 	// SceneManager::createScene("Scene00", new Scene00());
 	SceneManager::createScene("SceneGameOver", new SceneGameOver());
+	SceneManager::createScene("SceneTitle", new SceneTitle());
 
 	// start Scenes
 	for (std::map<const char*, Scene*>::iterator it = this->scenes.begin(); it != this->scenes.end(); it++) {
 		it->second->start();
 	}
 	// set active Scene
-	SceneManager::setActiveScene("Scene00");
+	SceneManager::setActiveScene("SceneTitle");
 }
 
 

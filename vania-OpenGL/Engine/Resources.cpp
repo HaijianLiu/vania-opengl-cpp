@@ -55,6 +55,13 @@ void Resources::start() {
 	Resources::loadTexture("ui_player_energy", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Texture/ui_player_energy.png");
 	Resources::loadTexture("ui_numbers", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Texture/ui_numbers.png");
 	Resources::loadTexture("ui_game_over_text", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Texture/ui_game_over_text.png");
+	Resources::loadTexture("title_title", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Texture/title_title.png");
+	Resources::loadTexture("title_text", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Texture/title_text.png");
+	Resources::loadTexture("title_star", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Texture/title_star.png");
+	Resources::loadTexture("title_enter", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Texture/title_enter.png");
+	Resources::loadTexture("title_option", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Texture/title_option.png");
+	Resources::loadTexture("title_credits", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Texture/title_credits.png");
+
 }
 
 
