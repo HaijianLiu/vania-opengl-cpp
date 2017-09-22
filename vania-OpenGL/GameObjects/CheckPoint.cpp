@@ -46,18 +46,19 @@ void CheckPoint::update() {
 < onTriggerEnter >
 ------------------------------------------------------------------------------*/
 void CheckPoint::onTriggerEnter(BoxCollider* other) {
-	// if (other->tag == "player" && !this->check) {
-	// 	for (std::map<const char*, Scene*>::iterator it = getGame()->sceneManager->scenes.begin(); it != getGame()->sceneManager->scenes.end(); it++) {
-	// 		if (it->second->tiledMap->gameObjects["CheckPoint"] != it->second->tiledMap->gameObjects.end()) {
-	// 			it->second->tiledMap->gameObjects["CheckPoint"][0]->check = false;
-	// 			it->second->tiledMap->gameObjects["CheckPoint"][0]->sprite->setSlice(32.0f,0.0f,32.0f,32.0f);
-	// 		}
-	// 	}
-	// 	this->check = true;
-	// 	getGame()->sceneManager->checkedScene = getGame()->sceneManager->activeScene;
-	// 	this->sprite->setSlice(0.0f,0.0f,32.0f,32.0f);
-	// 	// this->resources->audCheckPoint->Play();
-	// }
+	if (other->tag == "player" && !this->check) {
+		for (std::map<const char*, Scene*>::iterator it = getGame()->sceneManager->scenes.begin(); it != getGame()->sceneManager->scenes.end(); it++) {
+			if (it->second->tiledMap->gameObjects.find("Player") != it->second->tiledMap->gameObjects.end()) {
+				CheckPoint* otherCheckPoint = dynamic_cast<CheckPoint*>(it->second->tiledMap->gameObjects["Player"][0]);
+				otherCheckPoint->check = false;
+				otherCheckPoint->sprite->setSlice(32.0f,0.0f,32.0f,32.0f);
+			}
+		}
+		this->check = true;
+		getGame()->sceneManager->checkedScene = getGame()->sceneManager->activeScene;
+		this->sprite->setSlice(0.0f,0.0f,32.0f,32.0f);
+		// this->resources->audCheckPoint->Play();
+	}
 }
 
 
