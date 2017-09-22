@@ -58,6 +58,7 @@ void TiledMap::createGameObject(const char* name) {
 		else if (name == "Orb") objects.push_back(new Orb());
 		else if (name == "AI") objects.push_back(new AIObject());
 		else if (name == "Range") objects.push_back(new NoneObject());
+		else if (name == "Player") objects.push_back(new CheckPoint());
 	}
 	this->gameObjects.insert(std::make_pair(name, objects));
 }

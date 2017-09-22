@@ -44,7 +44,7 @@ void Scene02::load() {
 void Scene02::end() {
 	// Check Switch Scene
 	if (getGame()->player->transform->position.x < this->tiledMap->gameObjects["Range"][0]->transform->position.x) {
-		if (distancePow(getGame()->player->transform->position, this->tiledMap->gameObjects["Range"][0]->transform->position) < 10.0f) {
+		if (distancePow(getGame()->player->transform->position, this->tiledMap->gameObjects["Range"][0]->transform->position) < 1.0f) {
 			getGame()->sceneManager->setActiveScene("Scene01");
 		}
 		else {

@@ -37,14 +37,15 @@ void Scene::start() {
 	..............................................................................*/
 	this->load();
 
+
+	/* create gameObjects
+	..............................................................................*/
 	// BackGround Object
 	this->backGround4th = new UIObject(0.0f,0.0f,SCREEN_WIDTH,SCREEN_HEIGHT);
 	this->backGround2nd = new UIObject(0.0f,0.0f,SCREEN_WIDTH,SCREEN_HEIGHT);
 	this->backGround4th->transform->position.z = 0.0f;
 	this->backGround2nd->transform->position.z = 0.0f;
 
-	/* create gameObjects
-	..............................................................................*/
 	for (std::map<const char*, std::vector<glm::i32vec2>>::iterator it = this->tiledMap->mapDatas.begin(); it != this->tiledMap->mapDatas.end(); it++) {
 		this->tiledMap->createGameObject(it->first);
 	}

@@ -4,12 +4,13 @@
 
 class SceneManager {
 private:
-	const char* activeScene;
-	std::map<const char*, Scene*> scenes;
-
 	void createScene(const char* name, Scene* scene);
 
 public:
+	std::map<const char*, Scene*> scenes;
+	const char* activeScene;
+	const char* checkedScene;
+
 	// Constructors
 	SceneManager();
 	~SceneManager();

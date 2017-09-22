@@ -77,6 +77,7 @@ class SceneManager;
 #include "ColliderObject.hpp"
 #include "AnimationObject.hpp"
 
+#include "CheckPoint.hpp"
 #include "UIObject.hpp"
 #include "Bullet.hpp"
 #include "AIObject.hpp"

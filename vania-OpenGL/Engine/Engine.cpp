@@ -22,5 +22,5 @@ void destroyByTime(GameObject* gameObject, float timer) {
 }
 
 float distancePow(glm::vec3 a, glm::vec3 b) {
-	return pow(a.x - b.x, 2.0f) + pow(a.y - b.y, 2.0f) + pow(a.z - b.z, 2.0f);
+	return pow(a.x - b.x, 2.0f) + pow(a.y - b.y, 2.0f);
 }
