@@ -14,6 +14,7 @@ Input* Input::getInstance() {
 }
 
 void Input::callback(GLFWwindow* window, int key, int scancode, int action, int mods) {
+	this->keys[key] = action;
 	if(action == GLFW_REPEAT ) {
 		std::cout << "GLFW_REPEAT" << key << std::endl;
 	} else if (action == GLFW_PRESS) {
@@ -45,6 +46,13 @@ Input::~Input() {
 < get button action >
 ------------------------------------------------------------------------------*/
 bool Input::getButtonPress(int button) {
-	if (glfwGetKey(this->window->window, button) == GLFW_PRESS) return true;
+	if (this->keys[button] == GLFW_PRESS || this->keys[button] == GLFW_REPEAT) return true;
+	else return false;
+}
+
+bool Input::getButtonTrigger(int button) {
+	if (this->keys[button] == GLFW_PRESS) {
+		this->keys[button] = GLFW_REPEAT; return true;
+	}
 	else return false;
 }

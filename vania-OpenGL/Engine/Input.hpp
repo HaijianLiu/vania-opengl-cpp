@@ -6,6 +6,8 @@ class Input {
 private:
 	Window* window;
 
+	int keys[GLFW_KEY_LAST] = {GLFW_RELEASE};
+
 	Input();
 	~Input();
 
@@ -15,6 +17,7 @@ public:
 
 	// get button action
 	bool getButtonPress(int button);
+	bool getButtonTrigger(int button);
 };
 
 #endif /* Input_hpp */

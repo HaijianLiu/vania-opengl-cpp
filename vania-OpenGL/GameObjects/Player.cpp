@@ -158,7 +158,7 @@ void Player::update() {
 			this->move = false;
 		}
 		// jump
-		if (this->input->getButtonPress(GLFW_KEY_SPACE) || this->input->getButtonPress(GLFW_KEY_J)) {
+		if (this->input->getButtonTrigger(GLFW_KEY_SPACE) || this->input->getButtonTrigger(GLFW_KEY_J)) {
 			if (!this->air) {
 				this->verticalSpeed = this->jumpPower;
 				this->air = true;
@@ -227,7 +227,7 @@ void Player::update() {
 	/* Fire
 	..............................................................................*/
 	if (!this->hurt) {
-		if (this->input->getButtonPress(GLFW_KEY_F) || this->input->getButtonPress(GLFW_KEY_K)) {
+		if (this->input->getButtonTrigger(GLFW_KEY_F) || this->input->getButtonTrigger(GLFW_KEY_K)) {
 			if (this->timer->currentTime > this->lastShoot + this->shootColdDown) {
 				if (this->status->hp > this->shootEnergy) {
 					this->shoot = true;
