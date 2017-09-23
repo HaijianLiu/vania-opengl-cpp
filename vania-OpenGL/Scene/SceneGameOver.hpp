@@ -19,7 +19,6 @@ public:
 	void set();
 	void end();
 	void reset();
-	void clear();
 };
 
 #endif /* SceneGameOver_hpp */

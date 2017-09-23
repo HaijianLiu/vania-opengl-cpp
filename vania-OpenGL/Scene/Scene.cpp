@@ -200,7 +200,3 @@ void Scene::fixCamera(const char* name) {
 
 	camera->updateUniform();
 }
-
-void Scene::set() {
-
-}

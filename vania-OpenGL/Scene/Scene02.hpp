@@ -16,7 +16,6 @@ public:
 	void set();
 	void end();
 	void reset();
-	void clear();
 };
 
 #endif /* Scene02_hpp */

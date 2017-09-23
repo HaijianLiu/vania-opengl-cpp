@@ -30,7 +30,6 @@ public:
 	virtual void set() = 0;
 	virtual void end() = 0;
 	virtual void reset() = 0;
-	virtual void clear() = 0;
 
 	void fixCamera(const char* name);
 
