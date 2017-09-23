@@ -45,6 +45,7 @@ void Sprite::draw() {
 	// shader
 	this->shader->use();
 	// transform
+	this->shader->setMat4("projection",this->gameObject->camera->projection);
 	this->shader->setMat4("view", this->gameObject->camera->view);
 	this->shader->setMat4("model", this->gameObject->transform->model);
 	// slice

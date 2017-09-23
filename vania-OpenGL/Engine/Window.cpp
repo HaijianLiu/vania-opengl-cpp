@@ -77,3 +77,11 @@ GLFWwindow* Window::createWindow(const char* name, int screenWidth, int screenHe
 
 	return window;
 }
+
+
+/*------------------------------------------------------------------------------
+< getWindowSize >
+------------------------------------------------------------------------------*/
+void Window::getWindowSize() {
+	glfwGetFramebufferSize(this->window, &this->screenWidth, &this->screenHeight);
+}

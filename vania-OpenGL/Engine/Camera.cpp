@@ -7,6 +7,8 @@
 Camera::Camera() {
 	this->window = getWindow();
 	this->projection = glm::ortho(-this->window->screenWidth/2.0f, this->window->screenWidth/2.0f, -this->window->screenHeight/2.0f, this->window->screenHeight/2.0f, 0.0f, 100.0f);
+	this->startScreenWidth = this->window->screenWidth;
+	this->startScreenHeight = this->window->screenHeight;
 }
 
 
@@ -33,10 +35,12 @@ void Camera::updatePosition() {
 < update > after Camera updatePosition() maybe after Scene fixCamera() before GameObject draw()
 ------------------------------------------------------------------------------*/
 void Camera::updateUniform() {
+  this->window->getWindowSize();
 	// update uniform
+	this->projection = glm::ortho(-this->window->screenWidth/2.0f, this->window->screenWidth/2.0f, -this->window->screenHeight/2.0f, this->window->screenHeight/2.0f, 0.0f, 100.0f);
 	this->view = glm::lookAt(
-		glm::vec3(this->position.x * PIXEL_SCALE * UNIT_TO_PIXEL * this->window->retina ,this->position.y * PIXEL_SCALE * UNIT_TO_PIXEL * this->window->retina , this->position.z), // camera position
-		glm::vec3(this->position.x * PIXEL_SCALE * UNIT_TO_PIXEL * this->window->retina ,this->position.y * PIXEL_SCALE * UNIT_TO_PIXEL * this->window->retina , 0), // target position
+		glm::vec3(this->position.x * PIXEL_SCALE * UNIT_TO_PIXEL * this->window->retina + (this->window->screenWidth - this->startScreenWidth) / 2.0f, this->position.y * PIXEL_SCALE * UNIT_TO_PIXEL * this->window->retina + (this->window->screenHeight - this->startScreenHeight) / 2.0f , this->position.z), // camera position
+		glm::vec3(this->position.x * PIXEL_SCALE * UNIT_TO_PIXEL * this->window->retina + (this->window->screenWidth - this->startScreenWidth) / 2.0f, this->position.y * PIXEL_SCALE * UNIT_TO_PIXEL * this->window->retina + (this->window->screenHeight - this->startScreenHeight) / 2.0f , 0), // target position
 		glm::vec3(0,1,0)  // up
 	);
 }

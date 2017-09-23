@@ -5,7 +5,7 @@
 class Window {
 private:
 	/* data */
-	
+
 public:
 	// GLFWwindow
 	GLFWwindow* window;
@@ -18,6 +18,7 @@ public:
 	~Window();
 
 	GLFWwindow* createWindow(const char* name, int screenWidth, int screenHeight);
+	void getWindowSize();
 };
 
 #endif /* Window_hpp */
