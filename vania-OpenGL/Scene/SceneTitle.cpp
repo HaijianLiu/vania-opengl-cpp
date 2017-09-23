@@ -63,11 +63,6 @@ void SceneTitle::set() {
 	this->uiTitleOption->sprite->setSlice(0,16,64,8);
 	this->uiTitleOption->sprite->setColor(100,100,100,255);
 
-	// this->uiTitleStart->sprite->flashTime = this->enterDelay;
-	// this->uiTitleCredits->sprite->flashTime = this->enterDelay;
-	// this->uiTitleOption->sprite->flashTime = this->enterDelay;
-
-
 	getGame()->player->uiEnergyBG->active = false;
 	getGame()->player->uiEnergy->active = false;
 	getGame()->player->score->active = false;
@@ -105,7 +100,7 @@ void SceneTitle::end() {
 				case 0:
 //					this->sceneManager->resources->audStart->Play();
 					this->lastEnter = getGame()->timer->currentTime;
-//					this->uiTitleStart->sprite->Flash();
+					this->uiTitleStart->sprite->flash(this->enterDelay);
 					break;
 				case 1:
 					this->uiTitleCredits->visible = false;
@@ -129,7 +124,7 @@ void SceneTitle::end() {
 		}
 	}
 	else {
-//		this->uiTitlePress->sprite->Flash();
+		this->uiTitlePress->sprite->flash(this->enterDelay);
 		if (this->selected == 0) {
 			if (getGame()->timer->currentTime > this->lastEnter + this->enterDelay) {
 				switch (this->selected) {

@@ -379,7 +379,7 @@ void Player::onTriggerEnter(BoxCollider* other) {
 				this->right = false;
 			}
 			this->verticalSpeed = 0.5f * this->jumpPower;
-			// this->sprite->Flash();
+			this->sprite->flash(this->hurtColdDown);
 		}
 	}
 
@@ -398,7 +398,6 @@ void Player::onTriggerEnter(BoxCollider* other) {
 		if (other->gameObject->status->tag == "dark") {
 			this->energyRegain += 5.0f;
 			this->hurtColdDown += 0.5f;
-			// this->sprite->flashTime = this->hurtColdDown;
 		}
 		if (other->gameObject->status->tag == "gold") {
 			this->energyRegain += 10.0f;
@@ -408,7 +407,6 @@ void Player::onTriggerEnter(BoxCollider* other) {
 		}
 		if (other->gameObject->status->tag == "bronze") {
 			this->hurtColdDown += 1.0f;
-			// this->sprite->flashTime = this->hurtColdDown;
 		}
 	}
 }

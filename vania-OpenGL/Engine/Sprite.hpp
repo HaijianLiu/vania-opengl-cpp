@@ -13,6 +13,11 @@ private:
 	};
 	glm::vec4 color = glm::vec4(1.0f);
 
+	// effect
+	float startEffect = 0;
+	float flashTime = 0.5f;
+	bool flashing = false;
+
 public:
 	// this gameObject
 	GameObject* gameObject;
@@ -24,6 +29,7 @@ public:
 	// flip flag
 	bool flipX = false;
 
+
 	Sprite();
 	~Sprite();
 
@@ -32,6 +38,8 @@ public:
 
 	void setSlice(float offsetX, float offsetY, float sizeX, float sizeY);
 	void setColor(float r, float g, float b, float a);
+	void effect();
+	void flash(float duration);
 };
 
 #endif /* Sprite_hpp */

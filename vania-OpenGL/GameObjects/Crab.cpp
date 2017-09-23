@@ -118,7 +118,7 @@ void Crab::onTriggerEnter(BoxCollider* other) {
 	/* Damage if tag = "bullet"
 	..............................................................................*/
 	if (other->tag == "bullet") {
-		// this->sprite->Flash();
+		this->sprite->flash(0.5f);
 		this->status->hp -= other->gameObject->status->damage;
 	}
 }
