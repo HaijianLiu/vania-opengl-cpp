@@ -57,7 +57,7 @@ void CheckPoint::onTriggerEnter(BoxCollider* other) {
 		this->check = true;
 		getGame()->sceneManager->checkedScene = getGame()->sceneManager->activeScene;
 		this->sprite->setSlice(0.0f,0.0f,32.0f,32.0f);
-		// this->resources->audCheckPoint->Play();
+		getGame()->resources->getAudio("map_check_point")->play();
 	}
 }
 

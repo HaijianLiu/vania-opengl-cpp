@@ -187,7 +187,7 @@ void Player::update() {
 	..............................................................................*/
 	if (this->status->hp <= 0 && !this->hurt && this->visible) {
 		this->visible = false;
-//		this->resources->audPlayerDestroy->Play();
+		getGame()->resources->getAudio("player_destroy")->play();
 		instantiate(getGame()->publicObjects["player_destroy"], this->transform);
 	}
 
@@ -232,12 +232,7 @@ void Player::update() {
 				if (this->status->hp > this->shootEnergy) {
 					this->shoot = true;
 					this->status->hp -= this->shootEnergy;
-//					for (unsigned int i = 0; i < this->resources->audShoot.size(); i++) {
-//						if (!this->resources->audShoot[i]->Playing()) {
-//							this->resources->audShoot[i]->Play();
-//							break;
-//						}
-//					}
+					getGame()->resources->getAudio("player_shoot")->play();
 					for (unsigned int i = 0; i < this->bullets.size(); i++) {
 						if (!this->bullets[i]->active) {
 							this->lastShoot = this->timer->currentTime;
@@ -265,7 +260,7 @@ void Player::update() {
 					}
 				}
 				else {
-//					this->resources->audPlayerNoAmmo->Play();
+					getGame()->resources->getAudio("player_no_ammo")->play();
 				}
 			}
 		}
@@ -340,7 +335,7 @@ void Player::onTriggerEnter(BoxCollider* other) {
 			this->transform->position.y = other->gameObject->transform->position.y + other->offset.y - other->halfSize.y * PIXEL_TO_UNIT - this->collGroundCheck->offset.y - this->collGroundCheck->halfSize.y * PIXEL_TO_UNIT;
 			this->air = false;
 			if (this->verticalSpeed <= -0.2f * this->jumpPower) {
-				// this->resources->audLanding->Play();
+				getGame()->resources->getAudio("player_landing")->play();
 			}
 			this->verticalSpeed = 0.0f;
 		}
@@ -367,10 +362,10 @@ void Player::onTriggerEnter(BoxCollider* other) {
 			this->lastFreeze = this->timer->currentTime;
 			this->status->hp -= other->gameObject->status->damage;
 			if (this->status->hp <= 0) {
-				// this->resources->audPlayerDeath->Play();
+				getGame()->resources->getAudio("player_dead")->play();
 			}
 			else {
-				// this->resources->audPlayerHurt->Play();
+				getGame()->resources->getAudio("player_hurt")->play();
 			}
 			if (other->gameObject->transform->position.x > this->transform->position.x) {
 				this->right = true;
@@ -390,7 +385,7 @@ void Player::onTriggerEnter(BoxCollider* other) {
 	}
 	if (other->tag == "my_orb") {
 		this->score->willAdd((unsigned int)other->gameObject->status->hp);
-		// this->resources->audOrbReturn->Play();
+		getGame()->resources->getAudio("item_player_orb")->play();
 	}
 	/*  if tag = "item"
 	..............................................................................*/

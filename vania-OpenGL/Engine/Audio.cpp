@@ -30,9 +30,7 @@ void Audio::play() {
 }
 
 bool Audio::playing() {
-	// DWORD status;
-	// this->soundBuffer->GetStatus(&status);
-	// if (status & DSBSTATUS_PLAYING) return true;
+  if (getGame()->resources->iSoundEngine->isCurrentlyPlaying(this->path)) return true;
 	return false;
 }
 

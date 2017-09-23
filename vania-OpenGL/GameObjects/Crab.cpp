@@ -58,7 +58,7 @@ void Crab::update() {
 	..............................................................................*/
 	if (this->status->hp <= 0) {
 		this->active = false;
-		// this->resources->audEnemyDestroy->Play();
+		getGame()->resources->getAudio("enemy_destroy")->play();
 		instantiate(getGame()->publicObjects["enemy_destroy"], this->transform);
 		instantiate(this->orb, this->transform);
 	}

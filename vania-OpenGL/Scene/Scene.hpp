@@ -16,6 +16,9 @@ public:
 	UIObject* backGround2nd;
 	UIObject* backGround4th;
 
+	// Audio
+	Audio* bgm = nullptr;
+
 	// Frame Delay
 	bool frameSkip = true; // skip the first frame
 

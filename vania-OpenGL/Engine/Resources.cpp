@@ -72,10 +72,35 @@ void Resources::start() {
 
 	/* Audio
 	..............................................................................*/
+	// title
 	Resources::loadAudio("title_enter", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Audio/SE/title_enter.wav");
 	Resources::loadAudio("title_select", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Audio/SE/title_select.wav");
 	Resources::loadAudio("title_curser", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Audio/SE/title_curser.wav");
+	// player
+	Resources::loadAudio("player_dead", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Audio/SE/player_dead.wav");
+	Resources::loadAudio("player_destroy", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Audio/SE/player_destroy.wav");
+	Resources::loadAudio("player_hurt", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Audio/SE/player_hurt.wav");
+	Resources::loadAudio("player_no_ammo", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Audio/SE/player_no_ammo.wav");
+	Resources::loadAudio("player_shoot", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Audio/SE/player_shoot.wav");
+	Resources::loadAudio("player_landing", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Audio/SE/player_landing.wav");
+	// enemy
+	Resources::loadAudio("enemy_ball_bounce", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Audio/SE/enemy_ball_bounce.wav");
+	Resources::loadAudio("enemy_destroy", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Audio/SE/enemy_destroy.wav");
+	Resources::loadAudio("enemy_hurt", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Audio/SE/enemy_hurt.wav");
+	// item
+	Resources::loadAudio("item_orb", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Audio/SE/item_orb.wav");
+	Resources::loadAudio("item_player_orb", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Audio/SE/item_player_orb.wav");
+	// map
+	Resources::loadAudio("map_check_point", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Audio/SE/map_check_point.wav");
 
+
+
+
+
+	// BGM
+	Resources::loadAudio("map_basic", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Audio/BGM/map_basic.wav");
+	Resources::loadAudio("map_normal", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Audio/BGM/map_normal.wav");
+	Resources::loadAudio("map_mars", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Audio/BGM/map_mars.wav");
 }
 
 

@@ -49,7 +49,7 @@ void Orb::update() {
 void Orb::onTriggerEnter(BoxCollider* other) {
 	if (other->tag == "player") {
 		this->active = false;
-		// this->resources->audOrbGet->Play();
+		getGame()->resources->getAudio("item_orb")->play();
 	}
 }
 
