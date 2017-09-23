@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		603942D41F764B9F004B3336 /* libirrklang.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 603942D31F764B9F004B3336 /* libirrklang.dylib */; };
+		603942D71F764CCE004B3336 /* Audio.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 603942D51F764CCE004B3336 /* Audio.cpp */; };
 		603C30981F6BDEB700E91948 /* BoxCollider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 603C30961F6BDEB700E91948 /* BoxCollider.cpp */; };
 		603C309C1F6BF91500E91948 /* Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 603C309A1F6BF91500E91948 /* Scene.cpp */; };
 		604677D51F71F6A000EE35F9 /* Bullet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 604677D31F71F6A000EE35F9 /* Bullet.cpp */; };
@@ -68,6 +70,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		603942D31F764B9F004B3336 /* libirrklang.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libirrklang.dylib; path = "vania-OpenGL/Libraries/irrKlang/lib/libirrklang.dylib"; sourceTree = "<group>"; };
+		603942D51F764CCE004B3336 /* Audio.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Audio.cpp; path = Engine/Audio.cpp; sourceTree = "<group>"; };
+		603942D61F764CCE004B3336 /* Audio.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Audio.hpp; path = Engine/Audio.hpp; sourceTree = "<group>"; };
 		603C30961F6BDEB700E91948 /* BoxCollider.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BoxCollider.cpp; path = Engine/BoxCollider.cpp; sourceTree = "<group>"; };
 		603C30971F6BDEB700E91948 /* BoxCollider.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = BoxCollider.hpp; path = Engine/BoxCollider.hpp; sourceTree = "<group>"; };
 		603C309A1F6BF91500E91948 /* Scene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Scene.cpp; path = Scene/Scene.cpp; sourceTree = "<group>"; };
@@ -168,6 +173,7 @@
 				60B425501F64D8B600BEE84C /* libGLEW.2.0.0.dylib in Frameworks */,
 				60B4254E1F64D8AB00BEE84C /* libglfw.3.2.dylib in Frameworks */,
 				60B4254C1F64D88700BEE84C /* libassimp.3.3.1.dylib in Frameworks */,
+				603942D41F764B9F004B3336 /* libirrklang.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,6 +232,7 @@
 		60B425481F64D7F700BEE84C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				603942D31F764B9F004B3336 /* libirrklang.dylib */,
 				60B4254F1F64D8B600BEE84C /* libGLEW.2.0.0.dylib */,
 				60B4254D1F64D8AB00BEE84C /* libglfw.3.2.dylib */,
 				60B4254B1F64D88700BEE84C /* libassimp.3.3.1.dylib */,
@@ -278,6 +285,8 @@
 				604677DA1F72057700EE35F9 /* Particle.hpp */,
 				604677DC1F72059900EE35F9 /* ParticleSystem.cpp */,
 				604677DD1F72059900EE35F9 /* ParticleSystem.hpp */,
+				603942D51F764CCE004B3336 /* Audio.cpp */,
+				603942D61F764CCE004B3336 /* Audio.hpp */,
 			);
 			name = Engine;
 			sourceTree = "<group>";
@@ -407,6 +416,7 @@
 				60F0259E1F64E3AC0022EC73 /* Window.cpp in Sources */,
 				604677EA1F73473C00EE35F9 /* AIObject.cpp in Sources */,
 				60EE18BD1F6616BC000C6F0D /* Camera.cpp in Sources */,
+				603942D71F764CCE004B3336 /* Audio.cpp in Sources */,
 				60F025A11F64E7A70022EC73 /* Shader.cpp in Sources */,
 				604677FF1F74A3DD00EE35F9 /* SceneGameOver.cpp in Sources */,
 				604677ED1F73493700EE35F9 /* Block.cpp in Sources */,
@@ -516,12 +526,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 4M5A36G82A;
-				HEADER_SEARCH_PATHS = /usr/local/include;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include,
+					"$(PROJECT_DIR)/vania-OpenGL/Libraries/irrKlang/include",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/usr/local/Cellar/glfw/3.2.1/lib,
 					/usr/local/Cellar/glew/2.0.0/lib,
 					/usr/local/Cellar/assimp/3.3.1/lib,
+					"$(PROJECT_DIR)/vania-OpenGL/Libraries/irrKlang/lib",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -531,12 +545,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 4M5A36G82A;
-				HEADER_SEARCH_PATHS = /usr/local/include;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include,
+					"$(PROJECT_DIR)/vania-OpenGL/Libraries/irrKlang/include",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/usr/local/Cellar/glfw/3.2.1/lib,
 					/usr/local/Cellar/glew/2.0.0/lib,
 					/usr/local/Cellar/assimp/3.3.1/lib,
+					"$(PROJECT_DIR)/vania-OpenGL/Libraries/irrKlang/lib",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

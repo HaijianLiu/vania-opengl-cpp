@@ -7,10 +7,12 @@ private:
 	// Resource storage
 	std::map<const char*, Shader*> shaders;
 	std::map<const char*, Texture*> textures;
+	std::map<const char*, Audio*> audios;
 
 public:
 	// Quad
 	Quad* quad;
+	irrklang::ISoundEngine* iSoundEngine;
 
 	Resources();
 	~Resources();
@@ -25,6 +27,10 @@ public:
 	void loadTexture(const char* name, const char* path);
 	// Retrieves a stored texture
 	Texture* getTexture(const char* name);
+	// Create a Audio with path
+	void loadAudio(const char* name, const char* path);
+	// Retrieves a stored Audio
+	Audio* getAudio(const char* name);
 };
 
 #endif /* Resources_hpp */

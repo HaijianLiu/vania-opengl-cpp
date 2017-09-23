@@ -36,6 +36,8 @@
 
 // Include stbi Library
 #include "stb_image.h"
+// Include irrKlang Library
+#include <irrKlang.h>
 
 
 /*------------------------------------------------------------------------------
@@ -53,6 +55,7 @@ class SceneManager;
 #include "Shader.hpp"
 #include "Timer.hpp"
 #include "Quad.hpp"
+#include "Audio.hpp"
 #include "Texture.hpp"
 #include "TiledMap.hpp"
 #include "Transform.hpp"

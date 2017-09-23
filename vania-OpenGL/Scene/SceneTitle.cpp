@@ -81,14 +81,14 @@ void SceneTitle::end() {
 	this->uiTitleBG->offset.y += 0.02f * cos(getGame()->timer->currentTime);
 	if (!this->enter) {
 		if (this->input->getButtonTrigger(GLFW_KEY_DOWN)) {
-//			this->sceneManager->resources->audCurser->Play();
+			getGame()->resources->getAudio("title_curser")->play();
 			this->selected ++;
 			if (this->selected > 2) {
 				this->selected = 2;
 			}
 		}
 		if (this->input->getButtonTrigger(GLFW_KEY_UP)) {
-//			this->sceneManager->resources->audCurser->Play();
+			getGame()->resources->getAudio("title_curser")->play();
 			this->selected --;
 			if (this->selected < 0) {
 				this->selected = 0;
@@ -98,7 +98,7 @@ void SceneTitle::end() {
 			this->enter = true;
 			switch (this->selected) {
 				case 0:
-//					this->sceneManager->resources->audStart->Play();
+				getGame()->resources->getAudio("title_enter")->play();
 					this->lastEnter = getGame()->timer->currentTime;
 					this->uiTitleStart->sprite->flash(this->enterDelay);
 					break;
@@ -109,7 +109,7 @@ void SceneTitle::end() {
 					this->uiTitle->visible = false;
 					this->uiTitleCreditsText->visible = true;
 					this->uiTitlePress->visible = true;
-//					this->sceneManager->resources->audSelect->Play();
+					getGame()->resources->getAudio("title_select")->play();
 					break;
 				case 2:
 					this->uiTitleCredits->visible = false;
@@ -118,7 +118,7 @@ void SceneTitle::end() {
 					this->uiTitle->visible = false;
 					this->uiTitleOptionText->visible = true;
 					this->uiTitlePress->visible = true;
-//					this->sceneManager->resources->audSelect->Play();
+					getGame()->resources->getAudio("title_select")->play();
 					break;
 			}
 		}
