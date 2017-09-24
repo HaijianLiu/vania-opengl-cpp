@@ -49,6 +49,9 @@ void Scene02::set() {
 	this->backGround4th->sprite->setSlice(0.0f,0.0f,SCREEN_WIDTH,SCREEN_HEIGHT);
 	this->backGround2nd->active = true;
 	this->backGround4th->active = true;
+	// BGM
+	this->bgm = getGame()->resources->getAudio("map_basic");
+	this->bgm->loop = true;
 }
 
 

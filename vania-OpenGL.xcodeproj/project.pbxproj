@@ -11,6 +11,7 @@
 		603942D71F764CCE004B3336 /* Audio.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 603942D51F764CCE004B3336 /* Audio.cpp */; };
 		603943091F77879B004B3336 /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 603943071F77879B004B3336 /* GameObject.cpp */; };
 		6039430C1F7787B8004B3336 /* TiledMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6039430A1F7787B8004B3336 /* TiledMap.cpp */; };
+		6039430F1F778831004B3336 /* Scene03.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6039430D1F778831004B3336 /* Scene03.cpp */; };
 		603C30981F6BDEB700E91948 /* BoxCollider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 603C30961F6BDEB700E91948 /* BoxCollider.cpp */; };
 		603C309C1F6BF91500E91948 /* Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 603C309A1F6BF91500E91948 /* Scene.cpp */; };
 		604677D51F71F6A000EE35F9 /* Bullet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 604677D31F71F6A000EE35F9 /* Bullet.cpp */; };
@@ -77,6 +78,8 @@
 		603943081F77879B004B3336 /* GameObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = GameObject.hpp; path = GameObjects/GameObject.hpp; sourceTree = "<group>"; };
 		6039430A1F7787B8004B3336 /* TiledMap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TiledMap.cpp; path = Scene/TiledMap.cpp; sourceTree = "<group>"; };
 		6039430B1F7787B8004B3336 /* TiledMap.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = TiledMap.hpp; path = Scene/TiledMap.hpp; sourceTree = "<group>"; };
+		6039430D1F778831004B3336 /* Scene03.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Scene03.cpp; path = Scene/Scene03.cpp; sourceTree = "<group>"; };
+		6039430E1F778831004B3336 /* Scene03.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Scene03.hpp; path = Scene/Scene03.hpp; sourceTree = "<group>"; };
 		603C30961F6BDEB700E91948 /* BoxCollider.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BoxCollider.cpp; path = Engine/BoxCollider.cpp; sourceTree = "<group>"; };
 		603C30971F6BDEB700E91948 /* BoxCollider.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = BoxCollider.hpp; path = Engine/BoxCollider.hpp; sourceTree = "<group>"; };
 		603C309A1F6BF91500E91948 /* Scene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Scene.cpp; path = Scene/Scene.cpp; sourceTree = "<group>"; };
@@ -185,6 +188,8 @@
 			children = (
 				60AAF1311F6F79CA00AE8050 /* SceneManager.cpp */,
 				60AAF1321F6F79CA00AE8050 /* SceneManager.hpp */,
+				6039430A1F7787B8004B3336 /* TiledMap.cpp */,
+				6039430B1F7787B8004B3336 /* TiledMap.hpp */,
 				603C309A1F6BF91500E91948 /* Scene.cpp */,
 				603C309B1F6BF91500E91948 /* Scene.hpp */,
 				60AAF12E1F6F78E600AE8050 /* Scene00.cpp */,
@@ -193,12 +198,12 @@
 				604677F81F73DEAA00EE35F9 /* Scene01.hpp */,
 				604677F41F73DE9600EE35F9 /* Scene02.cpp */,
 				604677F51F73DE9600EE35F9 /* Scene02.hpp */,
+				6039430D1F778831004B3336 /* Scene03.cpp */,
+				6039430E1F778831004B3336 /* Scene03.hpp */,
 				604677FD1F74A3DD00EE35F9 /* SceneGameOver.cpp */,
 				604677FE1F74A3DD00EE35F9 /* SceneGameOver.hpp */,
 				604678001F74C02C00EE35F9 /* SceneTitle.cpp */,
 				604678011F74C02C00EE35F9 /* SceneTitle.hpp */,
-				6039430A1F7787B8004B3336 /* TiledMap.cpp */,
-				6039430B1F7787B8004B3336 /* TiledMap.hpp */,
 			);
 			name = Scene;
 			sourceTree = "<group>";
@@ -401,6 +406,7 @@
 				60AAF1361F6FF2A000AE8050 /* Game.cpp in Sources */,
 				604677D51F71F6A000EE35F9 /* Bullet.cpp in Sources */,
 				607DB6ED1F6E08350052786F /* ColliderObject.cpp in Sources */,
+				6039430F1F778831004B3336 /* Scene03.cpp in Sources */,
 				60F2A7D61F67C2050068C4E7 /* Sprite.cpp in Sources */,
 				604677E11F721C8400EE35F9 /* Crab.cpp in Sources */,
 				603C309C1F6BF91500E91948 /* Scene.cpp in Sources */,

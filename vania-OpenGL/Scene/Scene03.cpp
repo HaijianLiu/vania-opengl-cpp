@@ -4,7 +4,7 @@
 /*------------------------------------------------------------------------------
 < Constructor >
 ------------------------------------------------------------------------------*/
-Scene01::Scene01() {
+Scene03::Scene03() {
 
 }
 
@@ -12,7 +12,7 @@ Scene01::Scene01() {
 /*------------------------------------------------------------------------------
 < Destructor >
 ------------------------------------------------------------------------------*/
-Scene01::~Scene01() {
+Scene03::~Scene03() {
 
 }
 
@@ -20,28 +20,26 @@ Scene01::~Scene01() {
 /*------------------------------------------------------------------------------
 < load > in Scene start()
 ------------------------------------------------------------------------------*/
-void Scene01::load() {
+void Scene03::load() {
 	/* Scene::loadMapData(const char* name, const char* path);
 	..............................................................................*/
 	// map
-	this->tiledMap->loadMapData("TileObject2", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene01-BackGround2.csv");
-	this->tiledMap->loadMapData("TileObject", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene01-BackGround.csv");
-	this->tiledMap->loadMapData("ColliderObject", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene01-Ground.csv");
-	this->tiledMap->loadMapData("CameraRange", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene01-Camera.csv");
-	this->tiledMap->loadMapData("Range", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene01-Range.csv");
+	this->tiledMap->loadMapData("TileObject2", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene03-BackGround2.csv");
+	this->tiledMap->loadMapData("TileObject", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene03-BackGround.csv");
+	this->tiledMap->loadMapData("ColliderObject", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene03-Ground.csv");
+	this->tiledMap->loadMapData("CameraRange", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene03-Camera.csv");
+	this->tiledMap->loadMapData("Range", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene03-Range.csv");
 	// enemy
-	this->tiledMap->loadMapData("Block", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene01-Block.csv");
-	this->tiledMap->loadMapData("Crab", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene01-Crab.csv");
-	this->tiledMap->loadMapData("AI", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene01-AI.csv");
+	// this->tiledMap->loadMapData("Flyer", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene02-Flyer.csv");
 	// item
-	this->tiledMap->loadMapData("Orb", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene01-Orb.csv");
+	// this->tiledMap->loadMapData("Orb", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene03-Orb.csv");
 }
 
 
 /*------------------------------------------------------------------------------
 < set > in Scene start()
 ------------------------------------------------------------------------------*/
-void Scene01::set() {
+void Scene03::set() {
 	// BackGround Object
 	this->backGround2nd->sprite->texture = getGame()->resources->getTexture("background_2nd");
 	this->backGround4th->sprite->texture = getGame()->resources->getTexture("background_4th");
@@ -58,12 +56,12 @@ void Scene01::set() {
 /*------------------------------------------------------------------------------
 < end > before Scene update()
 ------------------------------------------------------------------------------*/
-void Scene01::check() {
+void Scene03::check() {
 	// Check Switch Scene
-	if (getGame()->player->transform->position.x < this->tiledMap->gameObjects["Range"][0]->transform->position.x) {
-		getGame()->sceneManager->setActiveScene("Scene00");
-	}
 	if (getGame()->player->transform->position.x > this->tiledMap->gameObjects["Range"][1]->transform->position.x) {
 		getGame()->sceneManager->setActiveScene("Scene02");
+	}
+	if (getGame()->player->transform->position.x < this->tiledMap->gameObjects["Range"][0]->transform->position.x) {
+		getGame()->sceneManager->setActiveScene("Scene04");
 	}
 }

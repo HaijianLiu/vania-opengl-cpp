@@ -100,15 +100,14 @@ class SceneManager;
 #include "Scene00.hpp"
 #include "Scene01.hpp"
 #include "Scene02.hpp"
+#include "Scene03.hpp"
+// #include "Scene01.hpp"
+// #include "Scene01.hpp"
+// #include "Scene01.hpp"
+// #include "Scene01.hpp"
+// #include "Scene01.hpp"
 #include "SceneGameOver.hpp"
 #include "SceneTitle.hpp"
-// #include "Scene01.hpp"
-// #include "Scene01.hpp"
-// #include "Scene01.hpp"
-// #include "Scene01.hpp"
-// #include "Scene01.hpp"
-// #include "Scene01.hpp"
-//
 
 
 /*------------------------------------------------------------------------------
