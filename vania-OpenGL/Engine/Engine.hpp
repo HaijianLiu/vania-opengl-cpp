@@ -89,6 +89,7 @@ class SceneManager;
 #include "Player.hpp"
 #include "Crab.hpp"
 #include "Flyer.hpp"
+#include "Jumper.hpp"
 
 
 /*------------------------------------------------------------------------------

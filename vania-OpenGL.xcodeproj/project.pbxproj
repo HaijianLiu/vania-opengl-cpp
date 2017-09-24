@@ -33,6 +33,7 @@
 		6039434A1F7794E9004B3336 /* Scene22.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 603943341F7794E9004B3336 /* Scene22.cpp */; };
 		6039434B1F7794E9004B3336 /* Scene23.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 603943361F7794E9004B3336 /* Scene23.cpp */; };
 		6039434E1F77B62E004B3336 /* Flyer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6039434C1F77B62E004B3336 /* Flyer.cpp */; };
+		603943511F77BEA7004B3336 /* Jumper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6039434F1F77BEA7004B3336 /* Jumper.cpp */; };
 		603C30981F6BDEB700E91948 /* BoxCollider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 603C30961F6BDEB700E91948 /* BoxCollider.cpp */; };
 		603C309C1F6BF91500E91948 /* Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 603C309A1F6BF91500E91948 /* Scene.cpp */; };
 		604677D51F71F6A000EE35F9 /* Bullet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 604677D31F71F6A000EE35F9 /* Bullet.cpp */; };
@@ -143,6 +144,8 @@
 		603943371F7794E9004B3336 /* Scene23.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Scene23.hpp; path = Scene/Scene23.hpp; sourceTree = "<group>"; };
 		6039434C1F77B62E004B3336 /* Flyer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Flyer.cpp; path = GameObjects/Flyer.cpp; sourceTree = "<group>"; };
 		6039434D1F77B62E004B3336 /* Flyer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Flyer.hpp; path = GameObjects/Flyer.hpp; sourceTree = "<group>"; };
+		6039434F1F77BEA7004B3336 /* Jumper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Jumper.cpp; path = GameObjects/Jumper.cpp; sourceTree = "<group>"; };
+		603943501F77BEA7004B3336 /* Jumper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Jumper.hpp; path = GameObjects/Jumper.hpp; sourceTree = "<group>"; };
 		603C30961F6BDEB700E91948 /* BoxCollider.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BoxCollider.cpp; path = Engine/BoxCollider.cpp; sourceTree = "<group>"; };
 		603C30971F6BDEB700E91948 /* BoxCollider.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = BoxCollider.hpp; path = Engine/BoxCollider.hpp; sourceTree = "<group>"; };
 		603C309A1F6BF91500E91948 /* Scene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Scene.cpp; path = Scene/Scene.cpp; sourceTree = "<group>"; };
@@ -418,6 +421,8 @@
 				604677E01F721C8400EE35F9 /* Crab.hpp */,
 				6039434C1F77B62E004B3336 /* Flyer.cpp */,
 				6039434D1F77B62E004B3336 /* Flyer.hpp */,
+				6039434F1F77BEA7004B3336 /* Jumper.cpp */,
+				603943501F77BEA7004B3336 /* Jumper.hpp */,
 				604677E21F722B7500EE35F9 /* Orb.cpp */,
 				604677E31F722B7500EE35F9 /* Orb.hpp */,
 				604677E81F73473C00EE35F9 /* AIObject.cpp */,
@@ -494,6 +499,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				603943511F77BEA7004B3336 /* Jumper.cpp in Sources */,
 				603943461F7794E9004B3336 /* Scene18.cpp in Sources */,
 				60AAF1301F6F78E600AE8050 /* Scene00.cpp in Sources */,
 				6039433A1F7794E9004B3336 /* Scene06.cpp in Sources */,
