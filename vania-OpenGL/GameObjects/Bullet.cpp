@@ -31,7 +31,7 @@ Bullet::~Bullet() {
 ------------------------------------------------------------------------------*/
 void Bullet::start() {
 	// set sprite texture and slice | Animation start
-	this->sprite->texture = this->resources->getTexture("player_bullet");
+	this->sprite->texture = getGame()->resources->getTexture("player_bullet");
 	this->sprite->setSlice(0.0f,0.0f,4.0f,4.0f);
 }
 
@@ -47,10 +47,10 @@ void Bullet::update() {
 	/* Transform
 	..............................................................................*/
 	if (this->right) {
-		this->transform->position.x += this->speed * this->timer->deltaTime;
+		this->transform->position.x += this->speed * getGame()->timer->deltaTime;
 	}
 	else {
-		this->transform->position.x -= this->speed * this->timer->deltaTime;
+		this->transform->position.x -= this->speed * getGame()->timer->deltaTime;
 	}
 
 	/* Particle System

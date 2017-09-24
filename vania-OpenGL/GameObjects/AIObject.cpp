@@ -29,7 +29,7 @@ AIObject::~AIObject() {
 ------------------------------------------------------------------------------*/
 void AIObject::start() {
 	// set sprite texture and slice | Animation start
-	this->sprite->texture = this->resources->getTexture("tilesets");
+	this->sprite->texture = getGame()->resources->getTexture("tilesets");
 }
 
 

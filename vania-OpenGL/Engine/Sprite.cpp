@@ -27,12 +27,12 @@ void Sprite::start() {
 	// sprite shader setting
 	this->shader = getGame()->resources->getShader("SpriteFlash");
 	this->shader->use();
-	this->shader->setMat4("projection",this->gameObject->camera->projection);
+	this->shader->setMat4("projection",getGame()->camera->projection);
 	this->shader->setInt("texColor", 0);
 
 	this->shader = getGame()->resources->getShader("Sprite");
 	this->shader->use();
-	this->shader->setMat4("projection",this->gameObject->camera->projection);
+	this->shader->setMat4("projection",getGame()->camera->projection);
 	this->shader->setInt("texColor", 0);
 }
 
@@ -45,8 +45,8 @@ void Sprite::draw() {
 	// shader
 	this->shader->use();
 	// transform
-	this->shader->setMat4("projection",this->gameObject->camera->projection);
-	this->shader->setMat4("view", this->gameObject->camera->view);
+	this->shader->setMat4("projection",getGame()->camera->projection);
+	this->shader->setMat4("view", getGame()->camera->view);
 	this->shader->setMat4("model", this->gameObject->transform->model);
 	// slice
 	this->shader->setMat3("slice", this->slice);

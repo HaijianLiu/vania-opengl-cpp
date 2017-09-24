@@ -8,11 +8,6 @@ private:
 	std::vector<GameObject*>* gameObjects;
 
 public:
-	// Global classes
-	Timer* timer;
-	Camera* camera;
-	Resources* resources;
-
 	// GameObject members
 	Transform* transform;
 	Sprite* sprite;

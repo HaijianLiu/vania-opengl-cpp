@@ -39,21 +39,21 @@ void Particle::update() {
 
 	/* Transform
 	..............................................................................*/
-	this->transform->position.x += cos(this->startAngle) * this->startSpeed * this->timer->deltaTime;
-	this->transform->position.y += sin(this->startAngle) * this->startSpeed * this->timer->deltaTime;
+	this->transform->position.x += cos(this->startAngle) * this->startSpeed * getGame()->timer->deltaTime;
+	this->transform->position.y += sin(this->startAngle) * this->startSpeed * getGame()->timer->deltaTime;
 
 	/* Size Over LifeTime
 	..............................................................................*/
 	if (this->sizeOverLifeTime) {
-		this->transform->scale.x -= this->startSize / this->startLifeTime * this->timer->deltaTime;
-		this->transform->scale.y -= this->startSize / this->startLifeTime * this->timer->deltaTime;
+		this->transform->scale.x -= this->startSize / this->startLifeTime * getGame()->timer->deltaTime;
+		this->transform->scale.y -= this->startSize / this->startLifeTime * getGame()->timer->deltaTime;
 	}
 
 	/* gravity
 	..............................................................................*/
 	if (this->gravity != 0.0f) {
-		this->verticalSpeed -= this->gravity * this->timer->deltaTime;
-		this->transform->position.y -= this->verticalSpeed * this->timer->deltaTime;
+		this->verticalSpeed -= this->gravity * getGame()->timer->deltaTime;
+		this->transform->position.y -= this->verticalSpeed * getGame()->timer->deltaTime;
 	}
 }
 
@@ -71,7 +71,7 @@ void Particle::onTriggerEnter(BoxCollider* other) {
 ------------------------------------------------------------------------------*/
 void Particle::instantiate(Transform* transform) {
 	this->active = true;
-	this->status->birthTime = this->timer->currentTime;
+	this->status->birthTime = getGame()->timer->currentTime;
 	this->transform->position.x = transform->position.x;
 	this->transform->position.y = transform->position.y;
 	this->startAngle = randomRange(this->startAngleRange.x, this->startAngleRange.y);

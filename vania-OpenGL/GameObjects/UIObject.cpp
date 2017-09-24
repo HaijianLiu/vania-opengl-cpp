@@ -52,6 +52,6 @@ void UIObject::onTriggerEnter(BoxCollider* other) {
 < UIUpdate >
 ------------------------------------------------------------------------------*/
 void UIObject::UIUpdate() {
-	this->transform->position.x = this->camera->position.x + this->offset.x * PIXEL_TO_UNIT;
-	this->transform->position.y = this->camera->position.y + this->offset.y * PIXEL_TO_UNIT;
+	this->transform->position.x = getGame()->camera->position.x + this->offset.x * PIXEL_TO_UNIT;
+	this->transform->position.y = getGame()->camera->position.y + this->offset.y * PIXEL_TO_UNIT;
 }

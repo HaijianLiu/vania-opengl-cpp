@@ -29,7 +29,7 @@ Orb::~Orb() {
 ------------------------------------------------------------------------------*/
 void Orb::start() {
 	// set sprite texture and slice | Animation start
-	this->sprite->texture = this->resources->getTexture("item_orb");
+	this->sprite->texture = getGame()->resources->getTexture("item_orb");
 	this->sprite->setSlice(32.0f,0.0f,16.0f,16.0f);
 }
 
@@ -38,7 +38,7 @@ void Orb::start() {
 < update >
 ------------------------------------------------------------------------------*/
 void Orb::update() {
-	this->transform->position.y += 0.002f * sin(this->timer->currentTime * 2.0f);
+	this->transform->position.y += 0.002f * sin(getGame()->timer->currentTime * 2.0f);
 	getGame()->particleSystems["fx_orb"]->instantiate(this->transform);
 }
 

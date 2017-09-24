@@ -15,8 +15,8 @@ float randomRange(float min, float max) {
 	return min + (float)(rand()%1000)/999.0f * (max - min);
 }
 
-void destroyByTime(GameObject* gameObject, float timer) {
-	if ((float)gameObject->timer->currentTime - (float)gameObject->status->birthTime > timer) {
+void destroyByTime(GameObject* gameObject, float duration) {
+	if (getGame()->timer->currentTime - gameObject->status->birthTime > duration) {
 		gameObject->active = false;
 	}
 }

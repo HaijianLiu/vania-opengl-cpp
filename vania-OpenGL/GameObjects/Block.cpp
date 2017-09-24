@@ -29,7 +29,7 @@ Block::~Block() {
 ------------------------------------------------------------------------------*/
 void Block::start() {
 	// set sprite texture and slice | Animation start
-	this->sprite->texture = this->resources->getTexture("map_block");
+	this->sprite->texture = getGame()->resources->getTexture("map_block");
 	this->sprite->setSlice(0.0f,0.0f,16.0f,16.0f);
 }
 
@@ -64,7 +64,7 @@ void Block::onTriggerEnter(BoxCollider* other) {
 		this->status->hp -= 50.0f;
 	}
 	if (other->tag == "ground_check") {
-		this->status->hp -= this->destroySpeed * this->timer->deltaTime;
+		this->status->hp -= this->destroySpeed * getGame()->timer->deltaTime;
 	}
 }
 

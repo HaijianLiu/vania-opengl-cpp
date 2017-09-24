@@ -97,7 +97,7 @@ void Player::start() {
 	this->animDuck->start();
 	this->animDuckShoot->start();
 	this->animHurt->start();
-	this->uiEnergyBG->sprite->texture = this->resources->getTexture("ui_player_energy");
+	this->uiEnergyBG->sprite->texture = getGame()->resources->getTexture("ui_player_energy");
 	this->orb->sprite->setSlice(48.0f,0.0f,16.0f,16.0f);
 }
 
@@ -109,10 +109,10 @@ void Player::update() {
 	/* HP
 	..............................................................................*/
 	if (!this->freeze) {
-		this->status->hp += this->energyRegain * this->timer->deltaTime;
+		this->status->hp += this->energyRegain * getGame()->timer->deltaTime;
 	}
 	else {
-		if (this->timer->currentTime > this->lastFreeze + this->freezeColdDown) {
+		if (getGame()->timer->currentTime > this->lastFreeze + this->freezeColdDown) {
 			this->freeze = false;
 		}
 	}
@@ -146,13 +146,13 @@ void Player::update() {
 			this->move = true;
 			this->right = false;
 			this->sprite->flipX = !this->right;
-			this->transform->position.x -= this->speed * this->timer->deltaTime;
+			this->transform->position.x -= this->speed * getGame()->timer->deltaTime;
 		}
 		else if (this->input->getButtonPress(GLFW_KEY_RIGHT) || this->input->getJoystickPress(JOY_RIGHT)) {
 			this->move = true;
 			this->right = true;
 			this->sprite->flipX = !this->right;
-			this->transform->position.x += this->speed * this->timer->deltaTime;
+			this->transform->position.x += this->speed * getGame()->timer->deltaTime;
 		}
 		else {
 			this->move = false;
@@ -176,10 +176,10 @@ void Player::update() {
 	}
 	else {
 		if (this->right) {
-			this->transform->position.x -= this->backSpeed * this->timer->deltaTime;
+			this->transform->position.x -= this->backSpeed * getGame()->timer->deltaTime;
 		}
 		else {
-			this->transform->position.x += this->backSpeed * this->timer->deltaTime;
+			this->transform->position.x += this->backSpeed * getGame()->timer->deltaTime;
 		}
 	}
 
@@ -193,12 +193,12 @@ void Player::update() {
 
 	/* GameOver
 	..............................................................................*/
-	if (this->status->hp <= 0 && this->timer->currentTime > this->lastHurt + this->gameOverDelay) {
+	if (this->status->hp <= 0 && getGame()->timer->currentTime > this->lastHurt + this->gameOverDelay) {
 		this->active = false;
 		this->uiEnergy->active = false;
 		this->uiEnergyBG->active = false;
 		getGame()->sceneManager->setActiveScene("SceneGameOver");
-		this->lastGameOver = this->timer->currentTime;
+		this->lastGameOver = getGame()->timer->currentTime;
 		// Score
 		for (unsigned int i = 0; i < this->score->numbers.size(); i++) {
 			this->score->numbers[i]->active = false;
@@ -214,11 +214,11 @@ void Player::update() {
 
 	/* Gravity
 	..............................................................................*/
-	this->verticalSpeed -= this->gravity * this->timer->deltaTime;
+	this->verticalSpeed -= this->gravity * getGame()->timer->deltaTime;
 	if (this->verticalSpeed <= - 0.8f * this->jumpPower) {
 		this->verticalSpeed = - 0.8f * this->jumpPower;
 	}
-	this->transform->position.y -= this->verticalSpeed * this->timer->deltaTime;
+	this->transform->position.y -= this->verticalSpeed * getGame()->timer->deltaTime;
 	if (this->verticalSpeed < -1.0f) {
 		this->air = true;
 	}
@@ -228,15 +228,15 @@ void Player::update() {
 	..............................................................................*/
 	if (!this->hurt) {
 		if (this->input->getButtonTrigger(GLFW_KEY_F) || this->input->getJoystickTrigger(JOY_SQUARE)) {
-			if (this->timer->currentTime > this->lastShoot + this->shootColdDown) {
+			if (getGame()->timer->currentTime > this->lastShoot + this->shootColdDown) {
 				if (this->status->hp > this->shootEnergy) {
 					this->shoot = true;
 					this->status->hp -= this->shootEnergy;
 					getGame()->resources->getAudio("player_shoot")->play();
 					for (unsigned int i = 0; i < this->bullets.size(); i++) {
 						if (!this->bullets[i]->active) {
-							this->lastShoot = this->timer->currentTime;
-							this->bullets[i]->status->birthTime = this->timer->currentTime;
+							this->lastShoot = getGame()->timer->currentTime;
+							this->bullets[i]->status->birthTime = getGame()->timer->currentTime;
 							this->bullets[i]->right = this->right;
 							this->bullets[i]->active = true;
 							if (this->right) {
@@ -271,18 +271,18 @@ void Player::update() {
 	..............................................................................*/
 
 	// Shoot Flag
-	if (this->timer->currentTime > this->lastShoot + this->shootDuration) {
+	if (getGame()->timer->currentTime > this->lastShoot + this->shootDuration) {
 		this->shoot = false;
 	}
 
 	// Hurt Flag
 	if (this->status->hp > 0) {
-		if (this->timer->currentTime > this->lastHurt + this->hurtFreeze) {
+		if (getGame()->timer->currentTime > this->lastHurt + this->hurtFreeze) {
 			this->hurt = false;
 		}
 	}
 	else {
-		if (this->timer->currentTime > this->lastHurt + this->deathDelay) {
+		if (getGame()->timer->currentTime > this->lastHurt + this->deathDelay) {
 			this->hurt = false;
 		}
 	}
@@ -355,11 +355,11 @@ void Player::onTriggerEnter(BoxCollider* other) {
 	/* Shield if tag = "enemy"
 	..............................................................................*/
 	if (other->tag == "enemy" || other->tag == "death_wall" || other->tag == "ball_enemy") {
-		if (this->status->hp > 0 && this->timer->currentTime > this->lastHurt + this->hurtColdDown) {
+		if (this->status->hp > 0 && getGame()->timer->currentTime > this->lastHurt + this->hurtColdDown) {
 			this->hurt = true;
-			this->lastHurt = this->timer->currentTime;
+			this->lastHurt = getGame()->timer->currentTime;
 			this->freeze = true;
-			this->lastFreeze = this->timer->currentTime;
+			this->lastFreeze = getGame()->timer->currentTime;
 			this->status->hp -= other->gameObject->status->damage;
 			if (this->status->hp <= 0) {
 				getGame()->resources->getAudio("player_dead")->play();

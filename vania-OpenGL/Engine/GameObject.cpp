@@ -8,10 +8,6 @@ GameObject::GameObject() {
 	// GetGameObjects and push_back
 	this->gameObjects = getGame()->getGameObjects();
 	this->gameObjects->push_back(this);
-	// get Globals
-	this->timer = getGame()->timer;
-	this->camera = getGame()->camera;
-	this->resources = getGame()->resources;
 	// new GameObject members
 	this->transform = new Transform();
 	this->sprite = new Sprite();
@@ -35,7 +31,7 @@ GameObject::~GameObject() {
 ------------------------------------------------------------------------------*/
 void GameObject::defaultStart() {
 	// get birthtime
-	this->status->birthTime = this->timer->currentTime;
+	this->status->birthTime = getGame()->timer->currentTime;
 	// sprite start
 	this->sprite->start();
 }

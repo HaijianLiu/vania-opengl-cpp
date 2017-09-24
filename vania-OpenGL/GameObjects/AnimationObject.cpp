@@ -53,7 +53,7 @@ void AnimationObject::onTriggerEnter(BoxCollider* other) {
 ------------------------------------------------------------------------------*/
 void AnimationObject::fixedUpdate() {
 	if (!this->loop) {
-		if (this->timer->currentTime > this->status->birthTime + this->animation->sliceMax * this->animation->sampleTime / 60.0f) {
+		if (getGame()->timer->currentTime > this->status->birthTime + this->animation->sliceMax * this->animation->sampleTime / 60.0f) {
 			this->active = false;
 			AnimationObject::reset();
 		}

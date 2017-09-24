@@ -67,19 +67,19 @@ void Crab::update() {
 	..............................................................................*/
 	// move
 	if (!this->right) {
-		this->transform->position.x -= this->speed * this->timer->deltaTime;
+		this->transform->position.x -= this->speed * getGame()->timer->deltaTime;
 	}
 	else {
-		this->transform->position.x += this->speed * this->timer->deltaTime;
+		this->transform->position.x += this->speed * getGame()->timer->deltaTime;
 	}
 
 	/* Gravity
 	..............................................................................*/
-	this->verticalSpeed -= this->gravity * this->timer->deltaTime;
+	this->verticalSpeed -= this->gravity * getGame()->timer->deltaTime;
 	if (this->verticalSpeed <= - 0.9f * this->jumpPower) {
 		this->verticalSpeed = - 0.9f * this->jumpPower;
 	}
-	this->transform->position.y -= this->verticalSpeed * this->timer->deltaTime;
+	this->transform->position.y -= this->verticalSpeed * getGame()->timer->deltaTime;
 	if (this->verticalSpeed < -1.0f) {
 		this->air = true;
 	}
