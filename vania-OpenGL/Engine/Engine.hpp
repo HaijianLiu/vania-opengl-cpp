@@ -90,6 +90,7 @@ class SceneManager;
 #include "Crab.hpp"
 #include "Flyer.hpp"
 #include "Jumper.hpp"
+#include "Ghost.hpp"
 
 
 /*------------------------------------------------------------------------------

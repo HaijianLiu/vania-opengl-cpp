@@ -63,6 +63,7 @@ void TiledMap::createGameObject(const char* name) {
 		else if (name == "Crab") objects.push_back(new Crab());
 		else if (name == "Flyer") objects.push_back(new Flyer());
 		else if (name == "Jumper") objects.push_back(new Jumper());
+		else if (name == "Ghost") objects.push_back(new Ghost());
 		else if (name == "AI") objects.push_back(new AIObject());
 	}
 	this->gameObjects.insert(std::make_pair(name, objects));
