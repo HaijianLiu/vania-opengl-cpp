@@ -133,6 +133,9 @@ void Scene::update() {
 		getGame()->resources->iSoundEngine->stopAllSounds();
 		this->bgm->play();
 	}
+	if (this->bgm == nullptr) {
+		getGame()->resources->iSoundEngine->stopAllSounds();
+	}
 }
 
 
