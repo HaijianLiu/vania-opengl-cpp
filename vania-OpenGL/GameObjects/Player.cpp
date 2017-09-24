@@ -15,13 +15,13 @@ Player::Player() {
 	this->transform->scale = glm::vec3(80.0f,80.0f,1.0f);
 
 	// Collider (this,offsetX,offsetY,sizeX,sizeY) size is in real pixel && Collider is trigger ?
-	this->collGroundCheck = new BoxCollider(this,0.0f,0.21f,8.0f,4.0f);
+	this->collGroundCheck = new BoxCollider(this,0.0f,0.21f,4.0f,4.0f);
 	this->collGroundCheck->trigger = true;
 	this->collGroundCheck->tag = "ground_check";
 	this->collCeilingCheck = new BoxCollider(this,0.0f,-0.05f,4.0f,4.0f);
 	this->collCeilingCheck->trigger = true;
 	this->collCeilingCheck->tag = "ceiling_check";
-	this->collHorizonCheck = new BoxCollider(this,0.0f,0.08f,24.0f,28.0f);
+	this->collHorizonCheck = new BoxCollider(this,0.0f,0.08f,16.0f,28.0f);
 	this->collHorizonCheck->trigger = true;
 	this->collHorizonCheck->tag = "player";
 	// Animation (textureName, divideX, divideY, sampleTime)

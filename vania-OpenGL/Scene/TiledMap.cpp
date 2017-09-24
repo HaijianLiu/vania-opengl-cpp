@@ -50,7 +50,10 @@ void TiledMap::createGameObject(const char* name) {
 	std::vector<GameObject*> objects;
 	for (unsigned int i = 0; i < this->mapDatas[name].size(); i++) {
 		if (name == "TileObject") objects.push_back(new TileObject());
-		if (name == "TileObject2") objects.push_back(new TileObject());
+		if (name == "TileObject2") {
+			objects.push_back(new TileObject());
+			objects.back()->transform->position.z = -1.0f;
+		}
 		else if (name == "ColliderObject") objects.push_back(new ColliderObject());
 		else if (name == "CameraRange") objects.push_back(new NoneObject());
 		else if (name == "Range") objects.push_back(new NoneObject());

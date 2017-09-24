@@ -40,10 +40,10 @@ void Scene::start() {
 	/* create gameObjects
 	..............................................................................*/
 	// background GameObjects
-	for (unsigned int i = 0; i < 2; i++) {
+	for (int i = 0; i < 2; i++) {
 		this->backgrounds.push_back(new UIObject(0.0f,0.0f,SCREEN_WIDTH,SCREEN_HEIGHT));
 		this->backgrounds.back()->active = false;
-		this->backgrounds.back()->transform->position.z = 0.0f;
+		this->backgrounds.back()->transform->position.z = -5 + i;
 	}
 	// tiledMap GameObjects
 	for (std::map<const char*, std::vector<glm::i32vec2>>::iterator it = this->tiledMap->mapDatas.begin(); it != this->tiledMap->mapDatas.end(); it++) {
@@ -132,9 +132,6 @@ void Scene::update() {
 	if (this->bgm != nullptr && !this->bgm->playing()) {
 		getGame()->resources->iSoundEngine->stopAllSounds();
 		this->bgm->play();
-	}
-	if (this->bgm == nullptr) {
-		getGame()->resources->iSoundEngine->stopAllSounds();
 	}
 }
 

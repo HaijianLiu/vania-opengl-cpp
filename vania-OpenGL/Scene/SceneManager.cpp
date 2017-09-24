@@ -87,6 +87,9 @@ void SceneManager::setActiveScene(const char* name) {
 	this->activeScene = name;
 	this->scenes[this->activeScene]->tiledMap->reset();
 	this->scenes[this->activeScene]->frameSkip = true;
+	if (this->scenes[this->activeScene]->bgm == nullptr) {
+		getGame()->resources->iSoundEngine->stopAllSounds();
+	}
 	this->scenes[this->activeScene]->reset();
 	// if (this->scenes[this->activeScene]->bgm != nullptr) {
 	// 	this->scenes[this->activeScene]->bgm->Play();

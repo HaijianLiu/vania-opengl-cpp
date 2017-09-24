@@ -46,11 +46,12 @@ void Game::start() {
 	this->particleSystems["fx_tail"]->setStartSizeRange(0.01f,0.02f);
 	this->particleSystems["fx_tail"]->setStartAngleRange(0.0f,2.0f*PI);
 	this->particleSystems["fx_tail"]->setGravity(0.0f);
-	this->particleSystems["fx_tail"]->setColor(63,140,242,255);
+	this->particleSystems["fx_tail"]->setColor(176,210,255,255);
 	this->particleSystems["fx_destroy"]->setStartLifeTimeRange(0.1f,0.4f);
 	this->particleSystems["fx_destroy"]->setStartSpeedRange(0.2f,1.0f);
 	this->particleSystems["fx_destroy"]->setStartSizeRange(0.05f,0.1f);
 	this->particleSystems["fx_destroy"]->setGravity(0.0f);
+	this->particleSystems["fx_destroy"]->setColor(255,208,83,255);
 	this->particleSystems["fx_orb"]->rate = 1;
 	this->particleSystems["fx_orb"]->setStartLifeTimeRange(0.5f,1.0f);
 	this->particleSystems["fx_orb"]->setStartSpeedRange(0.01f,0.2f);
