@@ -142,13 +142,13 @@ void Player::update() {
 	..............................................................................*/
 	if (!this->hurt) {
 		// move
-		if (this->input->getButtonPress(GLFW_KEY_LEFT) || this->input->getButtonPress(GLFW_KEY_A)) {
+		if (this->input->getButtonPress(GLFW_KEY_LEFT) || this->input->getJoystickPress(JOY_LEFT)) {
 			this->move = true;
 			this->right = false;
 			this->sprite->flipX = !this->right;
 			this->transform->position.x -= this->speed * this->timer->deltaTime;
 		}
-		else if (this->input->getButtonPress(GLFW_KEY_RIGHT) || this->input->getButtonPress(GLFW_KEY_D)) {
+		else if (this->input->getButtonPress(GLFW_KEY_RIGHT) || this->input->getJoystickPress(JOY_RIGHT)) {
 			this->move = true;
 			this->right = true;
 			this->sprite->flipX = !this->right;
@@ -158,14 +158,14 @@ void Player::update() {
 			this->move = false;
 		}
 		// jump
-		if (this->input->getButtonTrigger(GLFW_KEY_SPACE) || this->input->getButtonTrigger(GLFW_KEY_J)) {
+		if (this->input->getButtonTrigger(GLFW_KEY_SPACE) || this->input->getJoystickTrigger(JOY_CROSS)) {
 			if (!this->air) {
 				this->verticalSpeed = this->jumpPower;
 				this->air = true;
 			}
 		}
 		// duck
-		if (this->input->getButtonPress(GLFW_KEY_DOWN) || this->input->getButtonPress(GLFW_KEY_S)) {
+		if (this->input->getButtonPress(GLFW_KEY_DOWN) || this->input->getJoystickPress(JOY_DOWN)) {
 			if (!this->air) {
 				this->duck = true;
 			}
@@ -227,7 +227,7 @@ void Player::update() {
 	/* Fire
 	..............................................................................*/
 	if (!this->hurt) {
-		if (this->input->getButtonTrigger(GLFW_KEY_F) || this->input->getButtonTrigger(GLFW_KEY_K)) {
+		if (this->input->getButtonTrigger(GLFW_KEY_F) || this->input->getJoystickTrigger(JOY_SQUARE)) {
 			if (this->timer->currentTime > this->lastShoot + this->shootColdDown) {
 				if (this->status->hp > this->shootEnergy) {
 					this->shoot = true;

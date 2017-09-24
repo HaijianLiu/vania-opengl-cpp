@@ -80,21 +80,21 @@ void SceneTitle::end() {
 	this->uiTitleBG->offset.x += 0.05f * sin(getGame()->timer->currentTime/2);
 	this->uiTitleBG->offset.y += 0.02f * cos(getGame()->timer->currentTime);
 	if (!this->enter) {
-		if (this->input->getButtonTrigger(GLFW_KEY_DOWN)) {
+		if (this->input->getButtonTrigger(GLFW_KEY_DOWN) || this->input->getJoystickTrigger(JOY_DOWN)) {
 			getGame()->resources->getAudio("title_curser")->play();
 			this->selected ++;
 			if (this->selected > 2) {
 				this->selected = 2;
 			}
 		}
-		if (this->input->getButtonTrigger(GLFW_KEY_UP)) {
+		if (this->input->getButtonTrigger(GLFW_KEY_UP) || this->input->getJoystickTrigger(JOY_UP)) {
 			getGame()->resources->getAudio("title_curser")->play();
 			this->selected --;
 			if (this->selected < 0) {
 				this->selected = 0;
 			}
 		}
-		if (this->input->getButtonTrigger(GLFW_KEY_ENTER)) {
+		if (this->input->getButtonTrigger(GLFW_KEY_ENTER) || this->input->getJoystickTrigger(JOY_CIRCLE)) {
 			this->enter = true;
 			switch (this->selected) {
 				case 0:
@@ -139,7 +139,8 @@ void SceneTitle::end() {
 			}
 		}
 		else {
-			if (this->input->getButtonTrigger(GLFW_KEY_ENTER)) {
+			if (this->input->getButtonTrigger(GLFW_KEY_ENTER) || this->input->getJoystickTrigger(JOY_CROSS) || this->input->getJoystickTrigger(JOY_CIRCLE)) {
+				getGame()->resources->getAudio("title_select")->play();
 				this->uiTitleCredits->visible = true;
 				this->uiTitleStart->visible = true;
 				this->uiTitleOption->visible = true;
