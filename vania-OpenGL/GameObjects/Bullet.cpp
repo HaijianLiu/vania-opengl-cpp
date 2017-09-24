@@ -32,7 +32,6 @@ Bullet::~Bullet() {
 void Bullet::start() {
 	// set sprite texture and slice | Animation start
 	this->sprite->texture = getGame()->resources->getTexture("player_bullet");
-	this->sprite->setSlice(0.0f,0.0f,4.0f,4.0f);
 }
 
 

@@ -91,6 +91,7 @@ class SceneManager;
 #include "Flyer.hpp"
 #include "Jumper.hpp"
 #include "Ghost.hpp"
+#include "Ball.hpp"
 
 
 /*------------------------------------------------------------------------------

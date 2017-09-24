@@ -36,7 +36,16 @@ void AnimationObject::start() {
 < update >
 ------------------------------------------------------------------------------*/
 void AnimationObject::update() {
-
+	if (!this->loop) {
+		if (getGame()->timer->currentTime > this->status->birthTime + this->animation->sliceMax * this->animation->sampleTime / 60.0f) {
+			this->active = false;
+		}
+		else {
+			if (this->animation->currentSlice != this->animation->sliceMax - 1) {
+				this->animation->update(this->sprite);
+			}
+		}
+	}
 }
 
 
@@ -49,25 +58,10 @@ void AnimationObject::onTriggerEnter(BoxCollider* other) {
 
 
 /*------------------------------------------------------------------------------
-< fixedUpdate >
-------------------------------------------------------------------------------*/
-void AnimationObject::fixedUpdate() {
-	if (!this->loop) {
-		if (getGame()->timer->currentTime > this->status->birthTime + this->animation->sliceMax * this->animation->sampleTime / 60.0f - 0.02f) {
-			this->active = false;
-			AnimationObject::reset();
-		}
-		else {
-			this->animation->update(this->sprite);
-		}
-	}
-}
-
-
-/*------------------------------------------------------------------------------
 < reset > for instantiate()
 ------------------------------------------------------------------------------*/
 void AnimationObject::reset() {
 	this->animation->currentSlice = 0;
+	this->animation->lastTime = 0;
 	this->animation->update(this->sprite);
 }

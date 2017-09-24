@@ -35,6 +35,7 @@
 		6039434E1F77B62E004B3336 /* Flyer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6039434C1F77B62E004B3336 /* Flyer.cpp */; };
 		603943511F77BEA7004B3336 /* Jumper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6039434F1F77BEA7004B3336 /* Jumper.cpp */; };
 		603943541F77C3FB004B3336 /* Ghost.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 603943521F77C3FB004B3336 /* Ghost.cpp */; };
+		603943571F77C77D004B3336 /* Ball.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 603943551F77C77D004B3336 /* Ball.cpp */; };
 		603C30981F6BDEB700E91948 /* BoxCollider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 603C30961F6BDEB700E91948 /* BoxCollider.cpp */; };
 		603C309C1F6BF91500E91948 /* Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 603C309A1F6BF91500E91948 /* Scene.cpp */; };
 		604677D51F71F6A000EE35F9 /* Bullet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 604677D31F71F6A000EE35F9 /* Bullet.cpp */; };
@@ -149,6 +150,8 @@
 		603943501F77BEA7004B3336 /* Jumper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Jumper.hpp; path = GameObjects/Jumper.hpp; sourceTree = "<group>"; };
 		603943521F77C3FB004B3336 /* Ghost.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Ghost.cpp; path = GameObjects/Ghost.cpp; sourceTree = "<group>"; };
 		603943531F77C3FB004B3336 /* Ghost.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Ghost.hpp; path = GameObjects/Ghost.hpp; sourceTree = "<group>"; };
+		603943551F77C77D004B3336 /* Ball.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Ball.cpp; path = GameObjects/Ball.cpp; sourceTree = "<group>"; };
+		603943561F77C77D004B3336 /* Ball.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Ball.hpp; path = GameObjects/Ball.hpp; sourceTree = "<group>"; };
 		603C30961F6BDEB700E91948 /* BoxCollider.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BoxCollider.cpp; path = Engine/BoxCollider.cpp; sourceTree = "<group>"; };
 		603C30971F6BDEB700E91948 /* BoxCollider.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = BoxCollider.hpp; path = Engine/BoxCollider.hpp; sourceTree = "<group>"; };
 		603C309A1F6BF91500E91948 /* Scene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Scene.cpp; path = Scene/Scene.cpp; sourceTree = "<group>"; };
@@ -428,6 +431,8 @@
 				603943501F77BEA7004B3336 /* Jumper.hpp */,
 				603943521F77C3FB004B3336 /* Ghost.cpp */,
 				603943531F77C3FB004B3336 /* Ghost.hpp */,
+				603943551F77C77D004B3336 /* Ball.cpp */,
+				603943561F77C77D004B3336 /* Ball.hpp */,
 				604677E21F722B7500EE35F9 /* Orb.cpp */,
 				604677E31F722B7500EE35F9 /* Orb.hpp */,
 				604677E81F73473C00EE35F9 /* AIObject.cpp */,
@@ -544,6 +549,7 @@
 				604677E11F721C8400EE35F9 /* Crab.cpp in Sources */,
 				603C309C1F6BF91500E91948 /* Scene.cpp in Sources */,
 				6039430C1F7787B8004B3336 /* TiledMap.cpp in Sources */,
+				603943571F77C77D004B3336 /* Ball.cpp in Sources */,
 				603943091F77879B004B3336 /* GameObject.cpp in Sources */,
 				603943411F7794E9004B3336 /* Scene13.cpp in Sources */,
 				603943481F7794E9004B3336 /* Scene20.cpp in Sources */,
