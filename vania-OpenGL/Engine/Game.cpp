@@ -34,7 +34,7 @@ void Game::start() {
 	// create GameObjects
 	this->player = new Player();
 	this->publicObjects.insert(std::make_pair("player_destroy", new AnimationObject("player_destroy",67.0f,48.0f,5.0f,1.0f,4.0f)));
-	this->publicObjects.insert(std::make_pair("enemy_destroy", new AnimationObject("enemy_destroy",32.0f,32.0f,6.0f,1.0f,4.0f)));
+	this->publicObjects.insert(std::make_pair("enemy_destroy", new AnimationObject("enemy_destroy",64.0f,64.0f,6.0f,1.0f,4.0f)));
 	// ParticleSystem
 	this->particleSystems.insert(std::make_pair("fx_tail", new ParticleSystem(100)));
 	this->particleSystems.insert(std::make_pair("fx_destroy", new ParticleSystem(40)));
