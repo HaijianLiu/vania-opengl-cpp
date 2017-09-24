@@ -75,3 +75,12 @@ void Block::onTriggerEnter(BoxCollider* other) {
 void Block::fixedUpdate() {
 
 }
+
+
+/*------------------------------------------------------------------------------
+< reset >
+------------------------------------------------------------------------------*/
+void Block::reset() {
+	this->active = true;
+	this->status->hp = this->hp;
+}
