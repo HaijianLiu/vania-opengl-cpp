@@ -42,16 +42,9 @@ void Scene02::load() {
 < set > in Scene start()
 ------------------------------------------------------------------------------*/
 void Scene02::set() {
-	// BackGround Object
-	this->backGround2nd->sprite->texture = getGame()->resources->getTexture("background_2nd");
-	this->backGround4th->sprite->texture = getGame()->resources->getTexture("background_4th");
-	this->backGround2nd->sprite->setSlice(0.0f,0.0f,SCREEN_WIDTH,SCREEN_HEIGHT);
-	this->backGround4th->sprite->setSlice(0.0f,0.0f,SCREEN_WIDTH,SCREEN_HEIGHT);
-	this->backGround2nd->active = true;
-	this->backGround4th->active = true;
-	// BGM
-	this->bgm = getGame()->resources->getAudio("map_basic");
-	this->bgm->loop = true;
+	this->setBackground(0, "background_forest_0");
+	this->setBackground(1, "background_forest_2nd");
+	this->setBGM("map_basic");
 }
 
 

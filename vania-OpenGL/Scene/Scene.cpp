@@ -16,8 +16,7 @@ Scene::Scene() {
 Scene::~Scene() {
 	// delete Map GameObjects
 	delete this->tiledMap;
-	delete this->backGround2nd;
-	delete this->backGround4th;
+	deleteVector(this->backgrounds);
 }
 
 
@@ -40,14 +39,13 @@ void Scene::start() {
 
 	/* create gameObjects
 	..............................................................................*/
-	// BackGround Object
-	this->backGround4th = new UIObject(0.0f,0.0f,SCREEN_WIDTH,SCREEN_HEIGHT);
-	this->backGround2nd = new UIObject(0.0f,0.0f,SCREEN_WIDTH,SCREEN_HEIGHT);
-	this->backGround4th->active = false;
-	this->backGround2nd->active = false;
-	this->backGround4th->transform->position.z = 0.0f;
-	this->backGround2nd->transform->position.z = 0.0f;
-
+	// background GameObjects
+	for (unsigned int i = 0; i < 2; i++) {
+		this->backgrounds.push_back(new UIObject(0.0f,0.0f,SCREEN_WIDTH,SCREEN_HEIGHT));
+		this->backgrounds.back()->active = false;
+		this->backgrounds.back()->transform->position.z = 0.0f;
+	}
+	// tiledMap GameObjects
 	for (std::map<const char*, std::vector<glm::i32vec2>>::iterator it = this->tiledMap->mapDatas.begin(); it != this->tiledMap->mapDatas.end(); it++) {
 		this->tiledMap->createGameObject(it->first);
 	}
@@ -114,9 +112,9 @@ void Scene::update() {
 		}
 	}
 
-	// backGround2nd && backGround4th
-	if (this->backGround2nd->active) {
-		this->backGround2nd->sprite->setSlice(0.5f * getGame()->camera->position.x * UNIT_TO_PIXEL, 0.5f * getGame()->camera->position.y * UNIT_TO_PIXEL, SCREEN_WIDTH, SCREEN_HEIGHT);
+	// update backgrounds
+	if (this->backgrounds[1]->active) {
+		this->backgrounds[1]->sprite->setSlice(0.5f * getGame()->camera->position.x * UNIT_TO_PIXEL, 0.5f * getGame()->camera->position.y * UNIT_TO_PIXEL, SCREEN_WIDTH, SCREEN_HEIGHT);
 	}
 
 	if (!this->frameSkip) {
@@ -135,6 +133,25 @@ void Scene::update() {
 		getGame()->resources->iSoundEngine->stopAllSounds();
 		this->bgm->play();
 	}
+}
+
+
+/*------------------------------------------------------------------------------
+< setBackground >
+------------------------------------------------------------------------------*/
+void Scene::setBackground(unsigned int id, const char* textureName) {
+	this->backgrounds[id]->sprite->texture = getGame()->resources->getTexture(textureName);
+	this->backgrounds[id]->sprite->setSlice(0.0f,0.0f,SCREEN_WIDTH,SCREEN_HEIGHT);
+	this->backgrounds[id]->active = true;
+}
+
+
+/*------------------------------------------------------------------------------
+< setBGM >
+------------------------------------------------------------------------------*/
+void Scene::setBGM(const char* name) {
+	this->bgm = getGame()->resources->getAudio(name);
+	this->bgm->loop = true;
 }
 
 

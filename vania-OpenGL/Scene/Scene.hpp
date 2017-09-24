@@ -13,10 +13,8 @@ public:
 	TiledMap* tiledMap;
 
 	// BackGround Object
-	UIObject* backGround2nd;
-	UIObject* backGround4th;
-
-	// Audio
+	std::vector<UIObject*> backgrounds;
+	// BGM
 	Audio* bgm = nullptr;
 
 	// Frame Delay
@@ -33,6 +31,9 @@ public:
 	virtual void set() = 0;
 	virtual void check() = 0;
 	virtual void reset();
+
+	void setBackground(unsigned int id, const char* textureName);
+	void setBGM(const char* name);
 
 	void fixCamera(const char* name);
 	bool checkCollision(BoxCollider* a, BoxCollider* b);
