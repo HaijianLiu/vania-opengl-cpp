@@ -72,7 +72,7 @@ void SceneTitle::set() {
 /*------------------------------------------------------------------------------
 < end > before Scene update()
 ------------------------------------------------------------------------------*/
-void SceneTitle::end() {
+void SceneTitle::check() {
 	this->uiTitleBG->sprite->setColor(this->counter/2,this->counter/2,this->counter/2,255);
 	if (this->counter < 510) {
 		this->counter ++ ;

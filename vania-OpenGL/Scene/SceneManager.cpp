@@ -60,7 +60,7 @@ void SceneManager::start() {
 ------------------------------------------------------------------------------*/
 void SceneManager::update() {
 	if (this->scenes.find(this->activeScene) != this->scenes.end()) {
-		this->scenes[this->activeScene]->end();
+		this->scenes[this->activeScene]->check();
 		this->scenes[this->activeScene]->update();
 	}
 }

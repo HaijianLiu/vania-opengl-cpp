@@ -59,7 +59,7 @@ void SceneGameOver::set() {
 /*------------------------------------------------------------------------------
 < end > before Scene update()
 ------------------------------------------------------------------------------*/
-void SceneGameOver::end() {
+void SceneGameOver::check() {
 	getGame()->camera->target = getGame()->player;
 	// Check Switch Scene
 	if (getGame()->timer->currentTime > getGame()->player->lastGameOver + this->restartDelay) {

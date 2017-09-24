@@ -58,7 +58,7 @@ void Scene01::set() {
 /*------------------------------------------------------------------------------
 < end > before Scene update()
 ------------------------------------------------------------------------------*/
-void Scene01::end() {
+void Scene01::check() {
 	// Check Switch Scene
 	if (getGame()->player->transform->position.x < this->tiledMap->gameObjects["Range"][0]->transform->position.x) {
 		getGame()->sceneManager->setActiveScene("Scene00");
