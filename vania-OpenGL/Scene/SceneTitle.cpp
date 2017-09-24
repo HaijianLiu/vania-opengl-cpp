@@ -172,12 +172,3 @@ void SceneTitle::check() {
 			break;
 	}
 }
-
-
-/*------------------------------------------------------------------------------
-< reset > in SceneManager setActiveScene()
-------------------------------------------------------------------------------*/
-void SceneTitle::reset() {
-	// frameDelay
-	this->frameSkip = true;
-}

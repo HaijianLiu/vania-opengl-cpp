@@ -66,11 +66,3 @@ void SceneGameOver::check() {
 		getGame()->sceneManager->setActiveScene(getGame()->sceneManager->checkedScene);
 	}
 }
-
-
-/*------------------------------------------------------------------------------
-< reset > in SceneManager setActiveScene()
-------------------------------------------------------------------------------*/
-void SceneGameOver::reset() {
-
-}

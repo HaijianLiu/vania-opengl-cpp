@@ -119,10 +119,15 @@ void Scene::update() {
 		this->backGround2nd->sprite->setSlice(0.5f * getGame()->camera->position.x * UNIT_TO_PIXEL, 0.5f * getGame()->camera->position.y * UNIT_TO_PIXEL, SCREEN_WIDTH, SCREEN_HEIGHT);
 	}
 
-	for (unsigned int i = this->gameObjects.size(); i > 0; i--) {
-		if (this->gameObjects[i-1]->active && this->gameObjects[i-1]->visible) {
-			this->gameObjects[i-1]->draw();
+	if (!this->frameSkip) {
+		for (unsigned int i = this->gameObjects.size(); i > 0; i--) {
+			if (this->gameObjects[i-1]->active && this->gameObjects[i-1]->visible) {
+				this->gameObjects[i-1]->draw();
+			}
 		}
+	}
+	else {
+		this->frameSkip = false;
 	}
 
 	// BGM
@@ -204,4 +209,12 @@ void Scene::fixCamera(const char* name) {
 	}
 
 	camera->updateUniform();
+}
+
+
+/*------------------------------------------------------------------------------
+< reset > in sceneManager setActiveScene()
+------------------------------------------------------------------------------*/
+void Scene::reset() {
+
 }

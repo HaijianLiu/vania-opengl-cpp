@@ -67,12 +67,3 @@ void Scene01::check() {
 		getGame()->sceneManager->setActiveScene("Scene02");
 	}
 }
-
-
-/*------------------------------------------------------------------------------
-< reset > in SceneManager setActiveScene()
-------------------------------------------------------------------------------*/
-void Scene01::reset() {
-	// frameDelay
-	this->frameSkip = true;
-}

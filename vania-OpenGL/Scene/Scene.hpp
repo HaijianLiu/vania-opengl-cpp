@@ -32,7 +32,7 @@ public:
 	virtual void load() = 0;
 	virtual void set() = 0;
 	virtual void check() = 0;
-	virtual void reset() = 0;
+	virtual void reset();
 
 	void fixCamera(const char* name);
 

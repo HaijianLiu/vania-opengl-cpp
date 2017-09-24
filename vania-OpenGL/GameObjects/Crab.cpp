@@ -130,3 +130,9 @@ void Crab::onTriggerEnter(BoxCollider* other) {
 void Crab::fixedUpdate() {
 
 }
+
+void Crab::reset() {
+	this->active = true;
+	this->status->hp = this->hp;
+	this->orb->active = false;
+}
