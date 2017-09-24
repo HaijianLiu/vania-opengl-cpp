@@ -35,7 +35,6 @@ public:
 	virtual void reset();
 
 	void fixCamera(const char* name);
-
 	bool checkCollision(BoxCollider* a, BoxCollider* b);
 	void checkCollider();
 };

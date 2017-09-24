@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		603942D41F764B9F004B3336 /* libirrklang.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 603942D31F764B9F004B3336 /* libirrklang.dylib */; };
 		603942D71F764CCE004B3336 /* Audio.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 603942D51F764CCE004B3336 /* Audio.cpp */; };
+		603943091F77879B004B3336 /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 603943071F77879B004B3336 /* GameObject.cpp */; };
+		6039430C1F7787B8004B3336 /* TiledMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6039430A1F7787B8004B3336 /* TiledMap.cpp */; };
 		603C30981F6BDEB700E91948 /* BoxCollider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 603C30961F6BDEB700E91948 /* BoxCollider.cpp */; };
 		603C309C1F6BF91500E91948 /* Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 603C309A1F6BF91500E91948 /* Scene.cpp */; };
 		604677D51F71F6A000EE35F9 /* Bullet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 604677D31F71F6A000EE35F9 /* Bullet.cpp */; };
@@ -40,8 +42,6 @@
 		60B4254E1F64D8AB00BEE84C /* libglfw.3.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 60B4254D1F64D8AB00BEE84C /* libglfw.3.2.dylib */; };
 		60B425501F64D8B600BEE84C /* libGLEW.2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 60B4254F1F64D8B600BEE84C /* libGLEW.2.0.0.dylib */; };
 		60B425531F64DC8B00BEE84C /* Engine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60B425511F64DC8B00BEE84C /* Engine.cpp */; };
-		60D3DD9E1F70E02C00ABD1BF /* TiledMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60D3DD9C1F70E02C00ABD1BF /* TiledMap.cpp */; };
-		60E00ADA1F6A0C10003CCA29 /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60E00AD81F6A0C10003CCA29 /* GameObject.cpp */; };
 		60E00ADE1F6A1166003CCA29 /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60E00ADC1F6A1166003CCA29 /* Player.cpp */; };
 		60E00AE11F6A5AB1003CCA29 /* Input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60E00ADF1F6A5AB1003CCA29 /* Input.cpp */; };
 		60EC246D1F68CA30006BFDA6 /* Timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60EC246B1F68CA30006BFDA6 /* Timer.cpp */; };
@@ -73,6 +73,10 @@
 		603942D31F764B9F004B3336 /* libirrklang.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libirrklang.dylib; path = "vania-OpenGL/Libraries/irrKlang/lib/libirrklang.dylib"; sourceTree = "<group>"; };
 		603942D51F764CCE004B3336 /* Audio.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Audio.cpp; path = Engine/Audio.cpp; sourceTree = "<group>"; };
 		603942D61F764CCE004B3336 /* Audio.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Audio.hpp; path = Engine/Audio.hpp; sourceTree = "<group>"; };
+		603943071F77879B004B3336 /* GameObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameObject.cpp; path = GameObjects/GameObject.cpp; sourceTree = "<group>"; };
+		603943081F77879B004B3336 /* GameObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = GameObject.hpp; path = GameObjects/GameObject.hpp; sourceTree = "<group>"; };
+		6039430A1F7787B8004B3336 /* TiledMap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TiledMap.cpp; path = Scene/TiledMap.cpp; sourceTree = "<group>"; };
+		6039430B1F7787B8004B3336 /* TiledMap.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = TiledMap.hpp; path = Scene/TiledMap.hpp; sourceTree = "<group>"; };
 		603C30961F6BDEB700E91948 /* BoxCollider.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BoxCollider.cpp; path = Engine/BoxCollider.cpp; sourceTree = "<group>"; };
 		603C30971F6BDEB700E91948 /* BoxCollider.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = BoxCollider.hpp; path = Engine/BoxCollider.hpp; sourceTree = "<group>"; };
 		603C309A1F6BF91500E91948 /* Scene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Scene.cpp; path = Scene/Scene.cpp; sourceTree = "<group>"; };
@@ -131,10 +135,6 @@
 		60B4254F1F64D8B600BEE84C /* libGLEW.2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.2.0.0.dylib; path = ../../../../../usr/local/Cellar/glew/2.0.0/lib/libGLEW.2.0.0.dylib; sourceTree = "<group>"; };
 		60B425511F64DC8B00BEE84C /* Engine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Engine.cpp; path = Engine/Engine.cpp; sourceTree = "<group>"; };
 		60B425521F64DC8B00BEE84C /* Engine.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Engine.hpp; path = Engine/Engine.hpp; sourceTree = "<group>"; };
-		60D3DD9C1F70E02C00ABD1BF /* TiledMap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TiledMap.cpp; path = Engine/TiledMap.cpp; sourceTree = "<group>"; };
-		60D3DD9D1F70E02C00ABD1BF /* TiledMap.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = TiledMap.hpp; path = Engine/TiledMap.hpp; sourceTree = "<group>"; };
-		60E00AD81F6A0C10003CCA29 /* GameObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameObject.cpp; path = Engine/GameObject.cpp; sourceTree = "<group>"; };
-		60E00AD91F6A0C10003CCA29 /* GameObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = GameObject.hpp; path = Engine/GameObject.hpp; sourceTree = "<group>"; };
 		60E00ADC1F6A1166003CCA29 /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Player.cpp; path = GameObjects/Player.cpp; sourceTree = "<group>"; };
 		60E00ADD1F6A1166003CCA29 /* Player.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Player.hpp; path = GameObjects/Player.hpp; sourceTree = "<group>"; };
 		60E00ADF1F6A5AB1003CCA29 /* Input.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Input.cpp; path = Engine/Input.cpp; sourceTree = "<group>"; };
@@ -197,6 +197,8 @@
 				604677FE1F74A3DD00EE35F9 /* SceneGameOver.hpp */,
 				604678001F74C02C00EE35F9 /* SceneTitle.cpp */,
 				604678011F74C02C00EE35F9 /* SceneTitle.hpp */,
+				6039430A1F7787B8004B3336 /* TiledMap.cpp */,
+				6039430B1F7787B8004B3336 /* TiledMap.hpp */,
 			);
 			name = Scene;
 			sourceTree = "<group>";
@@ -267,8 +269,6 @@
 				60EC246F1F68CF44006BFDA6 /* Resources.hpp */,
 				60EC24711F690204006BFDA6 /* RenderPass.cpp */,
 				60EC24721F690204006BFDA6 /* RenderPass.hpp */,
-				60E00AD81F6A0C10003CCA29 /* GameObject.cpp */,
-				60E00AD91F6A0C10003CCA29 /* GameObject.hpp */,
 				60E00ADF1F6A5AB1003CCA29 /* Input.cpp */,
 				60E00AE01F6A5AB1003CCA29 /* Input.hpp */,
 				60F6A3E71F6AC68A005595B2 /* Animation.cpp */,
@@ -279,8 +279,6 @@
 				607DB6E91F6E02D90052786F /* Status.hpp */,
 				60AAF1341F6FF2A000AE8050 /* Game.cpp */,
 				60AAF1351F6FF2A000AE8050 /* Game.hpp */,
-				60D3DD9C1F70E02C00ABD1BF /* TiledMap.cpp */,
-				60D3DD9D1F70E02C00ABD1BF /* TiledMap.hpp */,
 				604677D91F72057700EE35F9 /* Particle.cpp */,
 				604677DA1F72057700EE35F9 /* Particle.hpp */,
 				604677DC1F72059900EE35F9 /* ParticleSystem.cpp */,
@@ -322,6 +320,8 @@
 				604677F21F73AB2300EE35F9 /* Score.hpp */,
 				604677FA1F73E66300EE35F9 /* CheckPoint.cpp */,
 				604677FB1F73E66300EE35F9 /* CheckPoint.hpp */,
+				603943071F77879B004B3336 /* GameObject.cpp */,
+				603943081F77879B004B3336 /* GameObject.hpp */,
 			);
 			name = GameObject;
 			sourceTree = "<group>";
@@ -394,7 +394,6 @@
 				604677FC1F73E66300EE35F9 /* CheckPoint.cpp in Sources */,
 				607DB6EA1F6E02D90052786F /* Status.cpp in Sources */,
 				604677F31F73AB2300EE35F9 /* Score.cpp in Sources */,
-				60E00ADA1F6A0C10003CCA29 /* GameObject.cpp in Sources */,
 				603C30981F6BDEB700E91948 /* BoxCollider.cpp in Sources */,
 				604677DE1F72059900EE35F9 /* ParticleSystem.cpp in Sources */,
 				604677F01F73513B00EE35F9 /* UIObject.cpp in Sources */,
@@ -402,10 +401,11 @@
 				60AAF1361F6FF2A000AE8050 /* Game.cpp in Sources */,
 				604677D51F71F6A000EE35F9 /* Bullet.cpp in Sources */,
 				607DB6ED1F6E08350052786F /* ColliderObject.cpp in Sources */,
-				60D3DD9E1F70E02C00ABD1BF /* TiledMap.cpp in Sources */,
 				60F2A7D61F67C2050068C4E7 /* Sprite.cpp in Sources */,
 				604677E11F721C8400EE35F9 /* Crab.cpp in Sources */,
 				603C309C1F6BF91500E91948 /* Scene.cpp in Sources */,
+				6039430C1F7787B8004B3336 /* TiledMap.cpp in Sources */,
+				603943091F77879B004B3336 /* GameObject.cpp in Sources */,
 				60EC246D1F68CA30006BFDA6 /* Timer.cpp in Sources */,
 				60F2A7D91F67C4C80068C4E7 /* Texture.cpp in Sources */,
 				60EC24731F690204006BFDA6 /* RenderPass.cpp in Sources */,
