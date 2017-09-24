@@ -25,7 +25,7 @@ SceneTitle::~SceneTitle() {
 
 
 /*------------------------------------------------------------------------------
-< load > in Scene start()
+< load > in Scene start() before GameObject start()
 ------------------------------------------------------------------------------*/
 void SceneTitle::load() {
 	// UIObject
@@ -44,7 +44,7 @@ void SceneTitle::load() {
 
 
 /*------------------------------------------------------------------------------
-< set > in Scene start()
+< set > in Scene start() after GameObject start()
 ------------------------------------------------------------------------------*/
 void SceneTitle::set() {
 	this->uiTitle->sprite->texture = getGame()->resources->getTexture("title_title");
@@ -70,7 +70,7 @@ void SceneTitle::set() {
 
 
 /*------------------------------------------------------------------------------
-< end > before Scene update()
+< check > in SceneManager update() before Scene update()
 ------------------------------------------------------------------------------*/
 void SceneTitle::check() {
 	this->uiTitleBG->sprite->setColor(this->counter/2,this->counter/2,this->counter/2,255);

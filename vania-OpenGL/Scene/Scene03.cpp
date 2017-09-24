@@ -18,7 +18,7 @@ Scene03::~Scene03() {
 
 
 /*------------------------------------------------------------------------------
-< load > in Scene start()
+< load > in Scene start() before GameObject start()
 ------------------------------------------------------------------------------*/
 void Scene03::load() {
 	/* Scene::loadMapData(const char* name, const char* path);
@@ -29,15 +29,11 @@ void Scene03::load() {
 	this->tiledMap->loadMapData("ColliderObject", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene03-Ground.csv");
 	this->tiledMap->loadMapData("CameraRange", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene03-Camera.csv");
 	this->tiledMap->loadMapData("Range", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene03-Range.csv");
-	// enemy
-	// this->tiledMap->loadMapData("Flyer", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene02-Flyer.csv");
-	// item
-	// this->tiledMap->loadMapData("Orb", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene03-Orb.csv");
 }
 
 
 /*------------------------------------------------------------------------------
-< set > in Scene start()
+< set > in Scene start() after GameObject start()
 ------------------------------------------------------------------------------*/
 void Scene03::set() {
 	this->setBackground(0, "background_forest_0");
@@ -47,7 +43,7 @@ void Scene03::set() {
 
 
 /*------------------------------------------------------------------------------
-< end > before Scene update()
+< check > in SceneManager update() before Scene update()
 ------------------------------------------------------------------------------*/
 void Scene03::check() {
 	// Check Switch Scene

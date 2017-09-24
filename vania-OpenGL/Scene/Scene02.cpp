@@ -18,7 +18,7 @@ Scene02::~Scene02() {
 
 
 /*------------------------------------------------------------------------------
-< load > in Scene start()
+< load > in Scene start() before GameObject start()
 ------------------------------------------------------------------------------*/
 void Scene02::load() {
 	/* Scene::loadMapData(const char* name, const char* path);
@@ -39,7 +39,7 @@ void Scene02::load() {
 
 
 /*------------------------------------------------------------------------------
-< set > in Scene start()
+< set > in Scene start() after GameObject start()
 ------------------------------------------------------------------------------*/
 void Scene02::set() {
 	this->setBackground(0, "background_forest_0");
@@ -49,7 +49,7 @@ void Scene02::set() {
 
 
 /*------------------------------------------------------------------------------
-< end > before Scene update()
+< check > in SceneManager update() before Scene update()
 ------------------------------------------------------------------------------*/
 void Scene02::check() {
 	// Check Switch Scene

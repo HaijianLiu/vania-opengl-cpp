@@ -18,7 +18,7 @@ SceneGameOver::~SceneGameOver() {
 
 
 /*------------------------------------------------------------------------------
-< load > in Scene start()
+< load > in Scene start() before GameObject start()
 ------------------------------------------------------------------------------*/
 void SceneGameOver::load() {
 	// UIObject
@@ -27,7 +27,7 @@ void SceneGameOver::load() {
 
 
 /*------------------------------------------------------------------------------
-< set > in Scene start()
+< set > in Scene start() after GameObject start()
 ------------------------------------------------------------------------------*/
 void SceneGameOver::set() {
 	this->uiGameOverText->sprite->texture = getGame()->resources->getTexture("ui_game_over_text");
@@ -57,7 +57,7 @@ void SceneGameOver::set() {
 // }
 
 /*------------------------------------------------------------------------------
-< end > before Scene update()
+< check > in SceneManager update() before Scene update()
 ------------------------------------------------------------------------------*/
 void SceneGameOver::check() {
 	getGame()->camera->target = getGame()->player;
