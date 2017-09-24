@@ -48,11 +48,3 @@ void AIObject::update() {
 void AIObject::onTriggerEnter(BoxCollider* other) {
 
 }
-
-
-/*------------------------------------------------------------------------------
-< fixedUpdate >
-------------------------------------------------------------------------------*/
-void AIObject::fixedUpdate() {
-
-}

@@ -48,11 +48,3 @@ void ColliderObject::update() {
 void ColliderObject::onTriggerEnter(BoxCollider* other) {
 
 }
-
-
-/*------------------------------------------------------------------------------
-< fixedUpdate >
-------------------------------------------------------------------------------*/
-void ColliderObject::fixedUpdate() {
-
-}

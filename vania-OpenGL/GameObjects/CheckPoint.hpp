@@ -20,7 +20,6 @@ public:
 	void start();
 	void update();
 	void onTriggerEnter(BoxCollider* other);
-	void fixedUpdate();
 };
 
 #endif /* CheckPoint_hpp */

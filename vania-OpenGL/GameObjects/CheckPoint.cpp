@@ -60,13 +60,3 @@ void CheckPoint::onTriggerEnter(BoxCollider* other) {
 		getGame()->resources->getAudio("map_check_point")->play();
 	}
 }
-
-
-
-
-/*------------------------------------------------------------------------------
-< fixedUpdate >
-------------------------------------------------------------------------------*/
-void CheckPoint::fixedUpdate() {
-
-}

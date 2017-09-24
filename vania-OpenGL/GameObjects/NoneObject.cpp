@@ -42,11 +42,3 @@ void NoneObject::update() {
 void NoneObject::onTriggerEnter(BoxCollider* other) {
 
 }
-
-
-/*------------------------------------------------------------------------------
-< fixedUpdate >
-------------------------------------------------------------------------------*/
-void NoneObject::fixedUpdate() {
-
-}

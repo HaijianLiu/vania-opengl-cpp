@@ -26,7 +26,6 @@ public:
 	void start();
 	void update();
 	void onTriggerEnter(BoxCollider* other);
-	void fixedUpdate();
 
 	void addOne(unsigned int i);
 	void willAdd(unsigned int i);

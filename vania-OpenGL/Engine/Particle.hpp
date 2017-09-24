@@ -29,7 +29,6 @@ public:
 	void start();
 	void update();
 	void onTriggerEnter(BoxCollider* other);
-	void fixedUpdate();
 
 	// Functions
 	void instantiate(Transform* transform);

@@ -75,11 +75,3 @@ void Score::willAdd(unsigned int i) {
 void Score::onTriggerEnter(BoxCollider* other) {
 
 }
-
-
-/*------------------------------------------------------------------------------
-< fixedUpdate >
-------------------------------------------------------------------------------*/
-void Score::fixedUpdate() {
-
-}

@@ -41,11 +41,3 @@ void TileObject::update() {
 void TileObject::onTriggerEnter(BoxCollider* other) {
 
 }
-
-
-/*------------------------------------------------------------------------------
-< fixedUpdate >
-------------------------------------------------------------------------------*/
-void TileObject::fixedUpdate() {
-
-}

@@ -52,11 +52,3 @@ void Orb::onTriggerEnter(BoxCollider* other) {
 		getGame()->resources->getAudio("item_orb")->play();
 	}
 }
-
-
-/*------------------------------------------------------------------------------
-< Fixed Update >
-------------------------------------------------------------------------------*/
-void Orb::fixedUpdate() {
-
-}

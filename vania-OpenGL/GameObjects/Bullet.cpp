@@ -71,11 +71,3 @@ void Bullet::onTriggerEnter(BoxCollider* other) {
 		getGame()->particleSystems["fx_destroy"]->instantiate(this->transform);
 	}
 }
-
-
-/*------------------------------------------------------------------------------
-< fixedUpdate >
-------------------------------------------------------------------------------*/
-void Bullet::fixedUpdate() {
-
-}
