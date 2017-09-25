@@ -26,10 +26,32 @@ Camera::~Camera() {
 void Camera::updatePosition() {
 	// Camera position
 	if (this->target != nullptr) {
-		this->position.x = this->target->transform->position.x;
-		this->position.y = this->target->transform->position.y;
+		if (!this->switching) {
+			this->position.x = this->target->transform->position.x;
+			this->position.y = this->target->transform->position.y;
+		}
+		else {
+			if (this->position.x != this->target->transform->position.x) {
+				if (this->position.x > this->target->transform->position.x) {
+					this->position.x -= this->switchSpeed * getGame()->timer->deltaTime;
+					if (this->position.x < this->target->transform->position.x) {
+						this->position.x = this->target->transform->position.x;
+					}
+				}
+				else {
+					this->position.x += this->switchSpeed * getGame()->timer->deltaTime;
+					if (this->position.x > this->target->transform->position.x) {
+						this->position.x = this->target->transform->position.x;
+					}
+				}
+			}
+			if (this->position.x == this->target->transform->position.x) {
+				this->switching = false;
+			}
+		}
 	}
 }
+
 
 /*------------------------------------------------------------------------------
 < update > after Camera updatePosition() maybe after Scene fixCamera() before GameObject draw()
@@ -44,6 +66,18 @@ void Camera::updateUniform() {
 		glm::vec3(0,1,0)  // up
 	);
 }
+
+
+/*------------------------------------------------------------------------------
+< switchTarget >
+------------------------------------------------------------------------------*/
+void Camera::switchTarget(GameObject* target) {
+	if (!this->switching) {
+		this->switching = true;
+		this->target = target;
+	}
+}
+
 
 
 	// // Scene Camera Range

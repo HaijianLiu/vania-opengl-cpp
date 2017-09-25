@@ -92,6 +92,13 @@ class SceneManager;
 #include "Jumper.hpp"
 #include "Ghost.hpp"
 #include "Ball.hpp"
+#include "BossBullet.hpp"
+#include "BossCore.hpp"
+#include "BossDeathBite.hpp"
+#include "BossDeathWall.hpp"
+#include "Boss.hpp"
+
+
 
 
 /*------------------------------------------------------------------------------

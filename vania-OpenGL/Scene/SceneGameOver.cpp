@@ -31,6 +31,7 @@ void SceneGameOver::load() {
 ------------------------------------------------------------------------------*/
 void SceneGameOver::set() {
 	this->uiGameOverText->sprite->texture = getGame()->resources->getTexture("ui_game_over_text");
+	this->setBGM("map_silence");
 }
 
 
@@ -60,6 +61,7 @@ void SceneGameOver::set() {
 < check > in SceneManager update() before Scene update()
 ------------------------------------------------------------------------------*/
 void SceneGameOver::check() {
+	// Boss
 	getGame()->camera->target = getGame()->player;
 	// Check Switch Scene
 	if (getGame()->timer->currentTime > getGame()->player->lastGameOver + this->restartDelay) {

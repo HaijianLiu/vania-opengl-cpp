@@ -62,11 +62,20 @@ void Resources::start() {
 	Resources::loadTexture("enemy_jumper_idle", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Texture/enemy_jumper_idle.png");
 	Resources::loadTexture("enemy_ghost", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Texture/enemy_ghost.png");
 	Resources::loadTexture("enemy_ball", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Texture/enemy_ball.png");
+	// boss
+	Resources::loadTexture("boss_body", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Texture/boss_body.png");
+	Resources::loadTexture("boss_bullet", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Texture/boss_bullet.png");
+	Resources::loadTexture("boss_death_bite_appear", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Texture/boss_death_bite_appear.png");
+	Resources::loadTexture("boss_death_bite_bite", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Texture/boss_death_bite_bite.png");
+	Resources::loadTexture("boss_death_bite_disappear", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Texture/boss_death_bite_disappear.png");
+	Resources::loadTexture("boss_death_wall", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Texture/boss_death_wall.png");
+	Resources::loadTexture("boss_eye", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Texture/boss_eye.png");
 	// destroy
 	Resources::loadTexture("player_destroy", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Texture/player_destroy.png");
 	Resources::loadTexture("enemy_destroy", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Texture/enemy_destroy.png");
 	// UI
 	Resources::loadTexture("ui_player_energy", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Texture/ui_player_energy.png");
+	Resources::loadTexture("ui_boss_energy", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Texture/ui_boss_energy.png");
 	Resources::loadTexture("ui_numbers", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Texture/ui_numbers.png");
 	Resources::loadTexture("ui_game_over_text", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Texture/ui_game_over_text.png");
 	Resources::loadTexture("title_title", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Texture/title_title.png");
@@ -93,17 +102,18 @@ void Resources::start() {
 	Resources::loadAudio("enemy_ball_bounce", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Audio/SE/enemy_ball_bounce.wav");
 	Resources::loadAudio("enemy_destroy", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Audio/SE/enemy_destroy.wav");
 	Resources::loadAudio("enemy_hurt", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Audio/SE/enemy_hurt.wav");
+	// boss
+	Resources::loadAudio("boss_intro", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Audio/BGM/boss_intro.wav");
+	Resources::loadAudio("boss_main", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Audio/BGM/boss_main.wav");
+	Resources::loadAudio("boss_destroy", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Audio/SE/boss_destroy.wav");
+	Resources::loadAudio("boss_win", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Audio/SE/boss_win.wav");
 	// item
 	Resources::loadAudio("item_orb", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Audio/SE/item_orb.wav");
 	Resources::loadAudio("item_player_orb", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Audio/SE/item_player_orb.wav");
 	// map
 	Resources::loadAudio("map_check_point", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Audio/SE/map_check_point.wav");
-
-
-
-
-
 	// BGM
+	Resources::loadAudio("map_silence", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Audio/BGM/map_silence.wav");
 	Resources::loadAudio("map_basic", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Audio/BGM/map_basic.wav");
 	Resources::loadAudio("map_normal", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Audio/BGM/map_normal.wav");
 	Resources::loadAudio("map_mars", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Audio/BGM/map_mars.wav");

@@ -28,6 +28,8 @@ void Scene11::load() {
 	this->tiledMap->loadMapData("ColliderObject", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene11-Ground.csv");
 	this->tiledMap->loadMapData("CameraRange", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene11-Camera.csv");
 	this->tiledMap->loadMapData("Range", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene11-Range.csv");
+	// boss
+	this->tiledMap->loadMapData("Boss", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene11-Boss.csv");
 	// item
 	this->tiledMap->loadMapData("Orb", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene11-Orb.csv");
 }
@@ -57,4 +59,8 @@ void Scene11::check() {
 	// 	this->sceneManager->SetActiveScene(8);
 	// }
 
+}
+
+void Scene11::reset() {
+	this->tiledMap->gameObjects["Boss"][0]->reset();
 }
