@@ -12,6 +12,7 @@
 		60302AF81F789254005A9951 /* BossCore.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60302AF61F789254005A9951 /* BossCore.cpp */; };
 		60302AFB1F789277005A9951 /* BossDeathBite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60302AF91F789277005A9951 /* BossDeathBite.cpp */; };
 		60302AFE1F78928C005A9951 /* BossDeathWall.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60302AFC1F78928C005A9951 /* BossDeathWall.cpp */; };
+		60302B011F78C2A5005A9951 /* Item.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60302AFF1F78C2A5005A9951 /* Item.cpp */; };
 		603942D41F764B9F004B3336 /* libirrklang.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 603942D31F764B9F004B3336 /* libirrklang.dylib */; };
 		603942D71F764CCE004B3336 /* Audio.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 603942D51F764CCE004B3336 /* Audio.cpp */; };
 		603943091F77879B004B3336 /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 603943071F77879B004B3336 /* GameObject.cpp */; };
@@ -110,6 +111,8 @@
 		60302AFA1F789277005A9951 /* BossDeathBite.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = BossDeathBite.hpp; path = GameObjects/BossDeathBite.hpp; sourceTree = "<group>"; };
 		60302AFC1F78928C005A9951 /* BossDeathWall.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BossDeathWall.cpp; path = GameObjects/BossDeathWall.cpp; sourceTree = "<group>"; };
 		60302AFD1F78928C005A9951 /* BossDeathWall.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = BossDeathWall.hpp; path = GameObjects/BossDeathWall.hpp; sourceTree = "<group>"; };
+		60302AFF1F78C2A5005A9951 /* Item.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Item.cpp; path = GameObjects/Item.cpp; sourceTree = "<group>"; };
+		60302B001F78C2A5005A9951 /* Item.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Item.hpp; path = GameObjects/Item.hpp; sourceTree = "<group>"; };
 		603942D31F764B9F004B3336 /* libirrklang.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libirrklang.dylib; path = "vania-OpenGL/Libraries/irrKlang/lib/libirrklang.dylib"; sourceTree = "<group>"; };
 		603942D51F764CCE004B3336 /* Audio.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Audio.cpp; path = Engine/Audio.cpp; sourceTree = "<group>"; };
 		603942D61F764CCE004B3336 /* Audio.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Audio.hpp; path = Engine/Audio.hpp; sourceTree = "<group>"; };
@@ -460,6 +463,8 @@
 				60302AFD1F78928C005A9951 /* BossDeathWall.hpp */,
 				604677E21F722B7500EE35F9 /* Orb.cpp */,
 				604677E31F722B7500EE35F9 /* Orb.hpp */,
+				60302AFF1F78C2A5005A9951 /* Item.cpp */,
+				60302B001F78C2A5005A9951 /* Item.hpp */,
 				604677E81F73473C00EE35F9 /* AIObject.cpp */,
 				604677E91F73473C00EE35F9 /* AIObject.hpp */,
 				604677EB1F73493700EE35F9 /* Block.cpp */,
@@ -564,6 +569,7 @@
 				604677F31F73AB2300EE35F9 /* Score.cpp in Sources */,
 				603C30981F6BDEB700E91948 /* BoxCollider.cpp in Sources */,
 				604677DE1F72059900EE35F9 /* ParticleSystem.cpp in Sources */,
+				60302B011F78C2A5005A9951 /* Item.cpp in Sources */,
 				604677F01F73513B00EE35F9 /* UIObject.cpp in Sources */,
 				60EE18CC1F6657E8000C6F0D /* Transform.cpp in Sources */,
 				60302AF81F789254005A9951 /* BossCore.cpp in Sources */,

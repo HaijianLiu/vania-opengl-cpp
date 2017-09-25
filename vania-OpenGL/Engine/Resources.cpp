@@ -41,6 +41,11 @@ void Resources::start() {
 	Resources::loadTexture("tilesets", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Texture/tilesets.png");
 	Resources::loadTexture("map_block", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Texture/map_block.png");
 	Resources::loadTexture("item_orb", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Texture/item_orb.png");
+	Resources::loadTexture("item_icon", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Texture/item_icon.png");
+	Resources::loadTexture("item_info_bronze", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Texture/item_info_bronze.png");
+	Resources::loadTexture("item_info_dark", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Texture/item_info_dark.png");
+	Resources::loadTexture("item_info_gold", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Texture/item_info_gold.png");
+	Resources::loadTexture("item_info_sliver", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Texture/item_info_sliver.png");
 	Resources::loadTexture("map_check_point", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Texture/map_check_point.png");
 	Resources::loadTexture("background_forest_0", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Texture/background_forest_0.png");
 	Resources::loadTexture("background_forest_2nd", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Assets/Texture/background_forest_2nd.png");

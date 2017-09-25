@@ -92,13 +92,3 @@ void BossDeathBite::appear() {
 		this->lastAppear = getGame()->timer->currentTime;
 	}
 }
-
-
-/*------------------------------------------------------------------------------
-< reset >
-------------------------------------------------------------------------------*/
-void BossDeathBite::reset() {
-	// this->active = true;
-	// this->status->hp = this->hp;
-	// this->orb->active = false;
-}

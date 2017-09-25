@@ -103,13 +103,3 @@ void BossDeathWall::deathArea(bool right) {
 		}
 	}
 }
-
-
-/*------------------------------------------------------------------------------
-< reset >
-------------------------------------------------------------------------------*/
-void BossDeathWall::reset() {
-	// this->active = true;
-	// this->status->hp = this->hp;
-	// this->orb->active = false;
-}

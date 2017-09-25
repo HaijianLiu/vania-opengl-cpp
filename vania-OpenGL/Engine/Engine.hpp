@@ -84,6 +84,7 @@ class SceneManager;
 #include "Bullet.hpp"
 #include "AIObject.hpp"
 #include "Orb.hpp"
+#include "Item.hpp"
 #include "Score.hpp"
 #include "Block.hpp"
 #include "Player.hpp"

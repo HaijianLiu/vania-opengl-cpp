@@ -22,7 +22,6 @@ public:
 	void start();
 	void update();
 	void onTriggerEnter(BoxCollider* other);
-	void reset();
 
 	// Functions
 	void followTarget();

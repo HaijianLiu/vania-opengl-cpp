@@ -89,13 +89,3 @@ void BossBullet::onTriggerEnter(BoxCollider* other) {
 		instantiate(getGame()->publicObjects["enemy_destroy"], this->transform);
 	}
 }
-
-
-/*------------------------------------------------------------------------------
-< reset >
-------------------------------------------------------------------------------*/
-void BossBullet::reset() {
-	// this->active = true;
-	// this->status->hp = this->hp;
-	// this->orb->active = false;
-}
