@@ -77,6 +77,7 @@ class SceneManager;
 #include "NoneObject.hpp"
 #include "OffsetObject.hpp"
 #include "TileObject.hpp"
+#include "DamageZone.hpp"
 #include "ColliderObject.hpp"
 #include "AnimationObject.hpp"
 #include "CheckPoint.hpp"

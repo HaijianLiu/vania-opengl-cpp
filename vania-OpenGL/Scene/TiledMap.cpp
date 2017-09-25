@@ -55,8 +55,10 @@ void TiledMap::createGameObject(const char* name) {
 			objects.back()->transform->position.z = -1.0f;
 		}
 		else if (name == "ColliderObject") objects.push_back(new ColliderObject());
+		else if (name == "DamageZone") objects.push_back(new DamageZone());
 		else if (name == "CameraRange") objects.push_back(new NoneObject());
 		else if (name == "Range") objects.push_back(new NoneObject());
+		else if (name == "AI") objects.push_back(new AIObject());
 		else if (name == "Player") objects.push_back(new CheckPoint());
 		else if (name == "Orb") objects.push_back(new Orb());
 		else if (name == "Block") objects.push_back(new Block());
@@ -66,7 +68,6 @@ void TiledMap::createGameObject(const char* name) {
 		else if (name == "Ghost") objects.push_back(new Ghost());
 		else if (name == "Ball") objects.push_back(new Ball());
 		else if (name == "Boss") objects.push_back(new Boss());
-		else if (name == "AI") objects.push_back(new AIObject());
 		else if (name == "Item") objects.push_back(new Item());
 	}
 	this->gameObjects.insert(std::make_pair(name, objects));
@@ -78,7 +79,7 @@ void TiledMap::createGameObject(const char* name) {
 ------------------------------------------------------------------------------*/
 void TiledMap::setGameObject(const char* name) {
 	for (unsigned int i = 0; i < this->gameObjects[name].size(); i++) {
-		if (name == "TileObject" || name == "TileObject2" || name == "ColliderObject" || name == "CameraRange" || name == "Range" || name == "AI") {
+		if (name == "TileObject" || name == "TileObject2" || name == "ColliderObject" || name == "DamageZone" || name == "CameraRange" || name == "Range" || name == "AI") {
 			TiledMap::setTile(this->gameObjects[name][i], this->mapDatas[name][i].x, this->mapDatas[name][i].y);
 		}
 		else {
@@ -117,7 +118,7 @@ void TiledMap::reset() {
 		getGame()->camera->target = getGame()->player;
 	}
 	for (std::map<const char*, std::vector<GameObject*>>::iterator it = this->gameObjects.begin(); it != this->gameObjects.end(); it++) {
-		if (it->first != "TileObject" && it->first != "TileObject2" && it->first != "ColliderObject" && it->first != "CameraRange" && it->first != "Range" && it->first != "Player"  && it->first != "AI" && it->first != "Orb" && it->first != "Item") {
+		if (it->first == "Block" || it->first == "Crab" || it->first == "Flyer" || it->first == "Jumper" || it->first == "Ghost" || it->first == "Ball") {
 			for (unsigned int i = 0; i < it->second.size(); i++) {
 				TiledMap::setPosition(it->second[i], this->mapDatas[it->first][i].x);
 				it->second[i]->reset();
