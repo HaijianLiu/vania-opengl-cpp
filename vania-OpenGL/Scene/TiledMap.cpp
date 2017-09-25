@@ -94,6 +94,7 @@ void TiledMap::setTile(GameObject* gameObject, int mapID, int tileID) {
 	gameObject->transform->position.x = mapID % this->mapSize.x * PIXEL_TO_UNIT * this->tileSize;
 	gameObject->transform->position.y = mapID / this->mapSize.x * PIXEL_TO_UNIT * this->tileSize;
 	gameObject->transform->scale = glm::vec3(this->tileSize + 1.0f, this->tileSize + 1.0f, 1.0f);
+	gameObject->sprite->texture = getGame()->resources->getTexture("tilesets");
 	gameObject->sprite->setSlice(tileID % this->tilesetsSize.x * this->tileSize , tileID / this->tilesetsSize.x * this->tileSize, this->tileSize, this->tileSize);
 }
 

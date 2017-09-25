@@ -22,7 +22,6 @@ TileObject::~TileObject() {
 ------------------------------------------------------------------------------*/
 void TileObject::start() {
 	// set sprite texture and slice | Animation start
-	this->sprite->texture = getGame()->resources->getTexture("tilesets");
 }
 
 

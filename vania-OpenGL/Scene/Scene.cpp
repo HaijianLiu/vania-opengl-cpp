@@ -71,7 +71,6 @@ void Scene::start() {
 	..............................................................................*/
 	for (unsigned int i = this->gameObjects.size(); i > 0; i--) {
 		this->gameObjects[i-1]->defaultStart();
-		this->gameObjects[i-1]->start();
 	}
 
 
@@ -79,6 +78,12 @@ void Scene::start() {
 	..............................................................................*/
 	for (std::map<const char*, std::vector<glm::i32vec2>>::iterator it = this->tiledMap->mapDatas.begin(); it != this->tiledMap->mapDatas.end(); it++) {
 		this->tiledMap->setGameObject(it->first);
+	}
+
+	/* gameObjects defaultStart() & start()
+	..............................................................................*/
+	for (unsigned int i = this->gameObjects.size(); i > 0; i--) {
+		this->gameObjects[i-1]->start();
 	}
 
 	this->set();
