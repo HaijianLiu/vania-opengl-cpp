@@ -125,5 +125,7 @@ void Ball::onTriggerEnter(BoxCollider* other) {
 void Ball::reset() {
 	this->active = true;
 	this->status->hp = this->hp;
+	this->up = false;
+	this->right = false;
 	this->orb->active = false;
 }

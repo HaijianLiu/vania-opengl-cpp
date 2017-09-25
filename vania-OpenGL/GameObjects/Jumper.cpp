@@ -159,5 +159,9 @@ void Jumper::onTriggerEnter(BoxCollider* other) {
 void Jumper::reset() {
 	this->active = true;
 	this->status->hp = this->hp;
+	this->right = false;
+	this->air = true;
+	this->verticalSpeed = 0.0f;
+	this->lastJump = 0;
 	this->orb->active = false;
 }

@@ -130,5 +130,8 @@ void Crab::onTriggerEnter(BoxCollider* other) {
 void Crab::reset() {
 	this->active = true;
 	this->status->hp = this->hp;
+	this->right = false;
+	this->sprite->flipX = this->right;
+	this->air = true;
 	this->orb->active = false;
 }

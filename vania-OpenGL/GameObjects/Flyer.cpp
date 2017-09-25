@@ -111,5 +111,8 @@ void Flyer::onTriggerEnter(BoxCollider* other) {
 void Flyer::reset() {
 	this->active = true;
 	this->status->hp = this->hp;
+	this->right = false;
+	this->sprite->flipX = this->right;
+	this->air = true;
 	this->orb->active = false;
 }
