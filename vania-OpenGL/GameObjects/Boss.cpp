@@ -226,9 +226,10 @@ void Boss::update() {
 		else {
 			this->visible = false;
 			this->alive = false;
+			// getGame()->resources->getAudio("boss_main")->stop();
+			getGame()->resources->iSoundEngine->stopAllSounds();
 			getGame()->resources->getAudio("boss_destroy")->play();
 			instantiate(getGame()->publicObjects["enemy_destroy"], this->transform);
-			getGame()->resources->getAudio("boss_main")->stop();
 			getGame()->camera->switchTarget(this->target);
 		}
 	}

@@ -130,6 +130,8 @@ void SceneTitle::check() {
 				switch (this->selected) {
 					case 0:
 						getGame()->sceneManager->setActiveScene("Scene00");
+						getGame()->player->reset();
+						getGame()->sceneManager->scenes["Scene00"]->tiledMap->setPosition(getGame()->player,getGame()->sceneManager->scenes["Scene00"]->tiledMap->mapDatas["Player"][0].x);
 						break;
 					case 1:
 						break;
@@ -171,4 +173,19 @@ void SceneTitle::check() {
 			this->uiTitleOption->sprite->setColor(255,255,255,255);
 			break;
 	}
+}
+
+void SceneTitle::reset() {
+	this->enter = false;
+	this->selected = 0;
+	this->lastEnter = 0.0f;
+	this->counter = 0;
+	this->uiTitleStart->sprite->setSlice(0,0,64,8);
+	this->uiTitleCredits->sprite->setSlice(0,8,64,8);
+	this->uiTitleCredits->sprite->setColor(100,100,100,255);
+	this->uiTitleOption->sprite->setSlice(0,16,64,8);
+	this->uiTitleOption->sprite->setColor(100,100,100,255);
+	getGame()->player->uiEnergyBG->active = false;
+	getGame()->player->uiEnergy->active = false;
+	getGame()->player->score->active = false;
 }

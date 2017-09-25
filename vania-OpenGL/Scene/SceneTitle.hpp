@@ -32,6 +32,7 @@ public:
 	void load();
 	void set();
 	void check();
+	void reset();
 };
 
 #endif /* SceneTitle_hpp */

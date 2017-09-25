@@ -51,13 +51,10 @@ void Scene11::check() {
 	if (getGame()->player->transform->position.x < this->tiledMap->gameObjects["Range"][0]->transform->position.x) {
 		getGame()->sceneManager->setActiveScene("Scene10");
 	}
-	// if (!this->bosses[0]->active && !this->sceneManager->resources->audBossDead->Playing() && !this->sceneManager->resources->audClear->Playing()) {
-	// 	this->sceneManager->SetActiveScene(this->sceneManager->titleScene);
-	// }
-	// if (this->sceneManager->player->transform->position.x > this->range[0]->transform->position.x) {
-	// 	this->sceneManager->SetActiveScene(8);
-	// }
-
+	if (!this->tiledMap->gameObjects["Boss"][0]->active && !getGame()->resources->getAudio("boss_destroy")->playing() && !getGame()->resources->getAudio("boss_win")->playing()) {
+		getGame()->sceneManager->setActiveScene("SceneTitle");
+		this->tiledMap->gameObjects["Boss"][0]->reset();
+	}
 }
 
 void Scene11::reset() {
