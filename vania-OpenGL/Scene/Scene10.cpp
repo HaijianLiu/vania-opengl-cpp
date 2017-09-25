@@ -38,8 +38,7 @@ void Scene10::load() {
 < set > in Scene start() after GameObject start()
 ------------------------------------------------------------------------------*/
 void Scene10::set() {
-	this->setBackground(0, "background_forest_0");
-	this->setBackground(1, "background_forest_2nd");
+	this->setBackground(1, "background_ship_2nd");
 	this->setBGM("map_mars");
 }
 

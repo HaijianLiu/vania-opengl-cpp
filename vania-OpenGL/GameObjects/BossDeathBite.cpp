@@ -7,7 +7,7 @@
 BossDeathBite::BossDeathBite() {
 	// GameObject setting
 	this->active = false;
-	this->transform->position.z = 1.0f;
+	this->transform->position.z = 1.5f;
 	this->status->damage = 30.0f;
 	// scale in real pixel
 	this->transform->scale = glm::vec3(64.0f,64.0f,1.0f);

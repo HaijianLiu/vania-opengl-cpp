@@ -39,8 +39,7 @@ void Scene11::load() {
 < set > in Scene start() after GameObject start()
 ------------------------------------------------------------------------------*/
 void Scene11::set() {
-	this->setBackground(0, "background_forest_0");
-	this->setBackground(1, "background_forest_2nd");
+	this->setBackground(1, "background_tissue_2nd");
 }
 
 

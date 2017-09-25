@@ -35,8 +35,7 @@ void Scene09::load() {
 < set > in Scene start() after GameObject start()
 ------------------------------------------------------------------------------*/
 void Scene09::set() {
-	this->setBackground(0, "background_forest_0");
-	this->setBackground(1, "background_forest_2nd");
+	this->setBackground(1, "background_ship_2nd");
 }
 
 
