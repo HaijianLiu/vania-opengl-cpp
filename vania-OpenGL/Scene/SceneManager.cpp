@@ -54,8 +54,8 @@ void SceneManager::start() {
 		it->second->start();
 	}
 	// set active Scene
-	// SceneManager::setActiveScene("SceneTitle");
-	SceneManager::setActiveScene("Scene05");
+	SceneManager::setActiveScene("SceneTitle");
+	// SceneManager::setActiveScene("Scene05");
 }
 
 

@@ -28,6 +28,8 @@ void Scene09::load() {
 	this->tiledMap->loadMapData("ColliderObject", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene09-Ground.csv");
 	this->tiledMap->loadMapData("CameraRange", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene09-Camera.csv");
 	this->tiledMap->loadMapData("Range", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene09-Range.csv");
+	// item
+	this->tiledMap->loadMapData("Item", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene09-Item.csv");
 }
 
 
@@ -36,6 +38,7 @@ void Scene09::load() {
 ------------------------------------------------------------------------------*/
 void Scene09::set() {
 	this->setBackground(1, "background_ship_2nd");
+	this->tiledMap->gameObjects["Item"][0]->status->tag = "sliver";
 }
 
 

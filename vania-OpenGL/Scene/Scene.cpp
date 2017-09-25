@@ -80,14 +80,13 @@ void Scene::start() {
 		this->tiledMap->setGameObject(it->first);
 	}
 
+	this->set();
+
 	/* gameObjects defaultStart() & start()
 	..............................................................................*/
 	for (unsigned int i = this->gameObjects.size(); i > 0; i--) {
 		this->gameObjects[i-1]->start();
 	}
-
-	this->set();
-
 }
 
 

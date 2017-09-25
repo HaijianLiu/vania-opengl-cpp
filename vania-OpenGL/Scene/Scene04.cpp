@@ -33,6 +33,8 @@ void Scene04::load() {
 	this->tiledMap->loadMapData("Flyer", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene04-Flyer.csv");
 	this->tiledMap->loadMapData("Jumper", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene04-Jumper.csv");
 	this->tiledMap->loadMapData("Block", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene04-Block.csv");
+	// item
+	this->tiledMap->loadMapData("Item", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene04-Item.csv");
 }
 
 
@@ -43,6 +45,7 @@ void Scene04::set() {
 	this->setBackground(0, "background_forest_0");
 	this->setBackground(1, "background_forest_2nd");
 	this->setBGM("map_basic");
+	this->tiledMap->gameObjects["Item"][0]->status->tag = "gold";
 }
 
 

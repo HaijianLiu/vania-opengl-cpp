@@ -33,6 +33,7 @@ void Scene16::load() {
 	this->tiledMap->loadMapData("Crab", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene16-Crab.csv");
 	this->tiledMap->loadMapData("Ghost", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene16-Ghost.csv");
 	this->tiledMap->loadMapData("AI", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene16-AI.csv");
+	this->tiledMap->loadMapData("Item", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene16-Item.csv");
 }
 
 
@@ -42,6 +43,7 @@ void Scene16::load() {
 void Scene16::set() {
 	this->setBackground(1, "background_tissue_2nd");
 	this->setBGM("map_mars");
+	this->tiledMap->gameObjects["Item"][0]->status->tag = "dark";
 }
 
 

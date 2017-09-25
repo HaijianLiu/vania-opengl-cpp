@@ -35,15 +35,19 @@ void Item::start() {
 	this->sprite->texture = getGame()->resources->getTexture("item_icon");
 	if (this->status->tag == "dark") {
 		this->sprite->setSlice(0,0,16,16);
+		this->info->sprite->texture = getGame()->resources->getTexture("item_info_dark");
 	}
 	if (this->status->tag == "gold") {
 		this->sprite->setSlice(32,0,16,16);
+		this->info->sprite->texture = getGame()->resources->getTexture("item_info_gold");
 	}
 	if (this->status->tag == "sliver") {
 		this->sprite->setSlice(48,0,16,16);
+		this->info->sprite->texture = getGame()->resources->getTexture("item_info_sliver");
 	}
 	if (this->status->tag == "bronze") {
 		this->sprite->setSlice(16,0,16,16);
+		this->info->sprite->texture = getGame()->resources->getTexture("item_info_bronze");
 	}
 }
 

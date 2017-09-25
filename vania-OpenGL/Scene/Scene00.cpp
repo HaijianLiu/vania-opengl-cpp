@@ -37,7 +37,7 @@ void Scene00::load() {
 	this->tiledMap->loadMapData("AI", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene00-AI.csv");
 	// item
 	this->tiledMap->loadMapData("Orb", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene00-Orb.csv");
-
+	// this->tiledMap->loadMapData("Item", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene00-Item.csv");
 }
 
 
@@ -48,6 +48,10 @@ void Scene00::set() {
 	this->setBackground(0, "background_forest_0");
 	this->setBackground(1, "background_forest_2nd");
 	this->setBGM("map_basic");
+	// this->tiledMap->gameObjects["Item"][0]->status->tag = "gold";
+	// this->tiledMap->gameObjects["Item"][1]->status->tag = "sliver";
+	// this->tiledMap->gameObjects["Item"][2]->status->tag = "bronze";
+	// this->tiledMap->gameObjects["Item"][3]->status->tag = "dark";
 }
 
 
