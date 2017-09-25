@@ -145,13 +145,11 @@ void Player::update() {
 		if (this->input->getButtonPress(GLFW_KEY_LEFT) || this->input->getJoystickPress(JOY_LEFT)) {
 			this->move = true;
 			this->right = false;
-			this->sprite->flipX = !this->right;
 			this->transform->position.x -= this->speed * getGame()->timer->deltaTime;
 		}
 		else if (this->input->getButtonPress(GLFW_KEY_RIGHT) || this->input->getJoystickPress(JOY_RIGHT)) {
 			this->move = true;
 			this->right = true;
-			this->sprite->flipX = !this->right;
 			this->transform->position.x += this->speed * getGame()->timer->deltaTime;
 		}
 		else {
@@ -290,6 +288,8 @@ void Player::update() {
 
 	/* Animation update sprite
 	..............................................................................*/
+	this->sprite->flipX = !this->right;
+
 	if (!this->hurt) {
 		if (this->air) {
 			this->animJump->update(this->sprite);
@@ -398,7 +398,7 @@ void Player::onTriggerEnter(BoxCollider* other) {
 			this->energyRegain += 10.0f;
 		}
 		if (other->gameObject->status->tag == "sliver") {
-			this->shootColdDown = 0.05f;
+			this->shootColdDown -= 0.1f;
 		}
 		if (other->gameObject->status->tag == "bronze") {
 			this->hurtColdDown += 1.0f;

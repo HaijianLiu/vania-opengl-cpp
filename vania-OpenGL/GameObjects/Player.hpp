@@ -39,7 +39,7 @@ public:
 	float gravity = 9.8f;
 	float speed = 1.0f;
 	float jumpPower = 4.0f;
-	float shootColdDown = 0.1f;
+	float shootColdDown = 0.2f;
 	float hurtColdDown = 1.0f;
 	float hurtFreeze = 0.3f;
 	float freezeColdDown = 5.0f;
