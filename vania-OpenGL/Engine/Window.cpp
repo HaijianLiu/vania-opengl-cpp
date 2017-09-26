@@ -65,6 +65,7 @@ GLFWwindow* Window::createWindow(const char* name, int screenWidth, int screenHe
 	glClearColor(0.0,0.0,0.0,1.0);
 	// Set input mode GLFW_STICKY_KEYS
 	glfwSetInputMode(window,GLFW_STICKY_KEYS,GL_TRUE);
+	glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_HIDDEN);
 	// Enable depth test
 	glEnable(GL_DEPTH_TEST);
 	// Accept fragment if it closer to the camera than the former one
