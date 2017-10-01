@@ -24,17 +24,17 @@ void Scene02::load() {
 	/* Scene::loadMapData(const char* name, const char* path);
 	..............................................................................*/
 	// map
-	this->tiledMap->loadMapData("TileObject2", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene02-BackGround2.csv");
-	this->tiledMap->loadMapData("TileObject", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene02-BackGround.csv");
-	this->tiledMap->loadMapData("ColliderObject", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene02-Ground.csv");
-	this->tiledMap->loadMapData("CameraRange", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene02-Camera.csv");
-	this->tiledMap->loadMapData("Range", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene02-Range.csv");
+	this->tiledMap->loadMapData("TileObject2", "./Maps/scene_Scene02-BackGround2.csv");
+	this->tiledMap->loadMapData("TileObject", "./Maps/scene_Scene02-BackGround.csv");
+	this->tiledMap->loadMapData("ColliderObject", "./Maps/scene_Scene02-Ground.csv");
+	this->tiledMap->loadMapData("CameraRange", "./Maps/scene_Scene02-Camera.csv");
+	this->tiledMap->loadMapData("Range", "./Maps/scene_Scene02-Range.csv");
 	// check point
-	this->tiledMap->loadMapData("Player", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene02-Player.csv");
+	this->tiledMap->loadMapData("Player", "./Maps/scene_Scene02-Player.csv");
 	// enemy
-	this->tiledMap->loadMapData("Flyer", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene02-Flyer.csv");
+	this->tiledMap->loadMapData("Flyer", "./Maps/scene_Scene02-Flyer.csv");
 	// item
-	this->tiledMap->loadMapData("Orb", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene02-Orb.csv");
+	this->tiledMap->loadMapData("Orb", "./Maps/scene_Scene02-Orb.csv");
 }
 
 

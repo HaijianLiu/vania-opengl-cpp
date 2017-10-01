@@ -24,16 +24,16 @@ void Scene08::load() {
 	/* Scene::loadMapData(const char* name, const char* path);
 	..............................................................................*/
 	// map
-	this->tiledMap->loadMapData("TileObject2", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene08-BackGround2.csv");
-	this->tiledMap->loadMapData("TileObject", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene08-BackGround.csv");
-	this->tiledMap->loadMapData("ColliderObject", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene08-Ground.csv");
-	this->tiledMap->loadMapData("CameraRange", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene08-Camera.csv");
-	this->tiledMap->loadMapData("Range", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene08-Range.csv");
+	this->tiledMap->loadMapData("TileObject2", "./Maps/scene_Scene08-BackGround2.csv");
+	this->tiledMap->loadMapData("TileObject", "./Maps/scene_Scene08-BackGround.csv");
+	this->tiledMap->loadMapData("ColliderObject", "./Maps/scene_Scene08-Ground.csv");
+	this->tiledMap->loadMapData("CameraRange", "./Maps/scene_Scene08-Camera.csv");
+	this->tiledMap->loadMapData("Range", "./Maps/scene_Scene08-Range.csv");
 	// enemy
-	this->tiledMap->loadMapData("Flyer", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene08-Flyer.csv");
-	this->tiledMap->loadMapData("Jumper", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene08-Jumper.csv");
-	this->tiledMap->loadMapData("DamageZone", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene08-DamageZone.csv");
-	this->tiledMap->loadMapData("Block", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene08-Block.csv");
+	this->tiledMap->loadMapData("Flyer", "./Maps/scene_Scene08-Flyer.csv");
+	this->tiledMap->loadMapData("Jumper", "./Maps/scene_Scene08-Jumper.csv");
+	this->tiledMap->loadMapData("DamageZone", "./Maps/scene_Scene08-DamageZone.csv");
+	this->tiledMap->loadMapData("Block", "./Maps/scene_Scene08-Block.csv");
 }
 
 

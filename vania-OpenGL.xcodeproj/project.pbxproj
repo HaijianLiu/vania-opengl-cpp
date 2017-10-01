@@ -7,97 +7,104 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		60302AF21F788D1D005A9951 /* Boss.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60302AF01F788D1D005A9951 /* Boss.cpp */; };
-		60302AF51F789240005A9951 /* BossBullet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60302AF31F789240005A9951 /* BossBullet.cpp */; };
-		60302AF81F789254005A9951 /* BossCore.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60302AF61F789254005A9951 /* BossCore.cpp */; };
-		60302AFB1F789277005A9951 /* BossDeathBite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60302AF91F789277005A9951 /* BossDeathBite.cpp */; };
-		60302AFE1F78928C005A9951 /* BossDeathWall.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60302AFC1F78928C005A9951 /* BossDeathWall.cpp */; };
-		60302B011F78C2A5005A9951 /* Item.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60302AFF1F78C2A5005A9951 /* Item.cpp */; };
-		603942D41F764B9F004B3336 /* libirrklang.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 603942D31F764B9F004B3336 /* libirrklang.dylib */; };
-		603942D71F764CCE004B3336 /* Audio.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 603942D51F764CCE004B3336 /* Audio.cpp */; };
-		603943091F77879B004B3336 /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 603943071F77879B004B3336 /* GameObject.cpp */; };
-		6039430C1F7787B8004B3336 /* TiledMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6039430A1F7787B8004B3336 /* TiledMap.cpp */; };
-		6039430F1F778831004B3336 /* Scene03.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6039430D1F778831004B3336 /* Scene03.cpp */; };
-		603943381F7794E9004B3336 /* Scene04.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 603943101F7794E9004B3336 /* Scene04.cpp */; };
-		603943391F7794E9004B3336 /* Scene05.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 603943121F7794E9004B3336 /* Scene05.cpp */; };
-		6039433A1F7794E9004B3336 /* Scene06.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 603943141F7794E9004B3336 /* Scene06.cpp */; };
-		6039433B1F7794E9004B3336 /* Scene07.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 603943161F7794E9004B3336 /* Scene07.cpp */; };
-		6039433C1F7794E9004B3336 /* Scene08.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 603943181F7794E9004B3336 /* Scene08.cpp */; };
-		6039433D1F7794E9004B3336 /* Scene09.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6039431A1F7794E9004B3336 /* Scene09.cpp */; };
-		6039433E1F7794E9004B3336 /* Scene10.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6039431C1F7794E9004B3336 /* Scene10.cpp */; };
-		6039433F1F7794E9004B3336 /* Scene11.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6039431E1F7794E9004B3336 /* Scene11.cpp */; };
-		603943401F7794E9004B3336 /* Scene12.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 603943201F7794E9004B3336 /* Scene12.cpp */; };
-		603943411F7794E9004B3336 /* Scene13.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 603943221F7794E9004B3336 /* Scene13.cpp */; };
-		603943421F7794E9004B3336 /* Scene14.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 603943241F7794E9004B3336 /* Scene14.cpp */; };
-		603943431F7794E9004B3336 /* Scene15.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 603943261F7794E9004B3336 /* Scene15.cpp */; };
-		603943441F7794E9004B3336 /* Scene16.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 603943281F7794E9004B3336 /* Scene16.cpp */; };
-		603943451F7794E9004B3336 /* Scene17.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6039432A1F7794E9004B3336 /* Scene17.cpp */; };
-		603943461F7794E9004B3336 /* Scene18.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6039432C1F7794E9004B3336 /* Scene18.cpp */; };
-		603943471F7794E9004B3336 /* Scene19.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6039432E1F7794E9004B3336 /* Scene19.cpp */; };
-		603943481F7794E9004B3336 /* Scene20.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 603943301F7794E9004B3336 /* Scene20.cpp */; };
-		603943491F7794E9004B3336 /* Scene21.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 603943321F7794E9004B3336 /* Scene21.cpp */; };
-		6039434A1F7794E9004B3336 /* Scene22.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 603943341F7794E9004B3336 /* Scene22.cpp */; };
-		6039434B1F7794E9004B3336 /* Scene23.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 603943361F7794E9004B3336 /* Scene23.cpp */; };
-		6039434E1F77B62E004B3336 /* Flyer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6039434C1F77B62E004B3336 /* Flyer.cpp */; };
-		603943511F77BEA7004B3336 /* Jumper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6039434F1F77BEA7004B3336 /* Jumper.cpp */; };
-		603943541F77C3FB004B3336 /* Ghost.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 603943521F77C3FB004B3336 /* Ghost.cpp */; };
-		603943571F77C77D004B3336 /* Ball.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 603943551F77C77D004B3336 /* Ball.cpp */; };
-		603C30981F6BDEB700E91948 /* BoxCollider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 603C30961F6BDEB700E91948 /* BoxCollider.cpp */; };
-		603C309C1F6BF91500E91948 /* Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 603C309A1F6BF91500E91948 /* Scene.cpp */; };
-		604677D51F71F6A000EE35F9 /* Bullet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 604677D31F71F6A000EE35F9 /* Bullet.cpp */; };
-		604677D81F71FDF800EE35F9 /* OffsetObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 604677D61F71FDF800EE35F9 /* OffsetObject.cpp */; };
-		604677DB1F72057700EE35F9 /* Particle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 604677D91F72057700EE35F9 /* Particle.cpp */; };
-		604677DE1F72059900EE35F9 /* ParticleSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 604677DC1F72059900EE35F9 /* ParticleSystem.cpp */; };
-		604677E11F721C8400EE35F9 /* Crab.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 604677DF1F721C8400EE35F9 /* Crab.cpp */; };
-		604677E41F722B7500EE35F9 /* Orb.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 604677E21F722B7500EE35F9 /* Orb.cpp */; };
-		604677E71F7235E600EE35F9 /* AnimationObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 604677E51F7235E600EE35F9 /* AnimationObject.cpp */; };
-		604677EA1F73473C00EE35F9 /* AIObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 604677E81F73473C00EE35F9 /* AIObject.cpp */; };
-		604677ED1F73493700EE35F9 /* Block.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 604677EB1F73493700EE35F9 /* Block.cpp */; };
-		604677F01F73513B00EE35F9 /* UIObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 604677EE1F73513B00EE35F9 /* UIObject.cpp */; };
-		604677F31F73AB2300EE35F9 /* Score.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 604677F11F73AB2300EE35F9 /* Score.cpp */; };
-		604677F61F73DE9600EE35F9 /* Scene02.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 604677F41F73DE9600EE35F9 /* Scene02.cpp */; };
-		604677F91F73DEAA00EE35F9 /* Scene01.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 604677F71F73DEAA00EE35F9 /* Scene01.cpp */; };
-		604677FC1F73E66300EE35F9 /* CheckPoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 604677FA1F73E66300EE35F9 /* CheckPoint.cpp */; };
-		604677FF1F74A3DD00EE35F9 /* SceneGameOver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 604677FD1F74A3DD00EE35F9 /* SceneGameOver.cpp */; };
-		604678021F74C02C00EE35F9 /* SceneTitle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 604678001F74C02C00EE35F9 /* SceneTitle.cpp */; };
-		607DB6E71F6D2AA40052786F /* TileObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 607DB6E51F6D2AA40052786F /* TileObject.cpp */; };
-		607DB6EA1F6E02D90052786F /* Status.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 607DB6E81F6E02D90052786F /* Status.cpp */; };
-		607DB6ED1F6E08350052786F /* ColliderObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 607DB6EB1F6E08350052786F /* ColliderObject.cpp */; };
-		607F754D1F7911AB00D5A891 /* DamageZone.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 607F754B1F7911AB00D5A891 /* DamageZone.cpp */; };
-		60AAF12D1F6F3C1A00AE8050 /* NoneObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60AAF12B1F6F3C1A00AE8050 /* NoneObject.cpp */; };
-		60AAF1301F6F78E600AE8050 /* Scene00.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60AAF12E1F6F78E600AE8050 /* Scene00.cpp */; };
-		60AAF1331F6F79CA00AE8050 /* SceneManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60AAF1311F6F79CA00AE8050 /* SceneManager.cpp */; };
-		60AAF1361F6FF2A000AE8050 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60AAF1341F6FF2A000AE8050 /* Game.cpp */; };
-		60B425421F64D7E600BEE84C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60B425411F64D7E600BEE84C /* main.cpp */; };
-		60B4254A1F64D7F800BEE84C /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60B425491F64D7F800BEE84C /* OpenGL.framework */; };
-		60B4254C1F64D88700BEE84C /* libassimp.3.3.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 60B4254B1F64D88700BEE84C /* libassimp.3.3.1.dylib */; };
-		60B4254E1F64D8AB00BEE84C /* libglfw.3.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 60B4254D1F64D8AB00BEE84C /* libglfw.3.2.dylib */; };
-		60B425501F64D8B600BEE84C /* libGLEW.2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 60B4254F1F64D8B600BEE84C /* libGLEW.2.0.0.dylib */; };
-		60B425531F64DC8B00BEE84C /* Engine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60B425511F64DC8B00BEE84C /* Engine.cpp */; };
-		60E00ADE1F6A1166003CCA29 /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60E00ADC1F6A1166003CCA29 /* Player.cpp */; };
-		60E00AE11F6A5AB1003CCA29 /* Input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60E00ADF1F6A5AB1003CCA29 /* Input.cpp */; };
-		60EC246D1F68CA30006BFDA6 /* Timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60EC246B1F68CA30006BFDA6 /* Timer.cpp */; };
-		60EC24701F68CF44006BFDA6 /* Resources.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60EC246E1F68CF44006BFDA6 /* Resources.cpp */; };
-		60EC24731F690204006BFDA6 /* RenderPass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60EC24711F690204006BFDA6 /* RenderPass.cpp */; };
-		60EE18BD1F6616BC000C6F0D /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60EE18BB1F6616BC000C6F0D /* Camera.cpp */; };
-		60EE18CC1F6657E8000C6F0D /* Transform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60EE18CA1F6657E8000C6F0D /* Transform.cpp */; };
-		60F0259E1F64E3AC0022EC73 /* Window.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60F0259C1F64E3AC0022EC73 /* Window.cpp */; };
-		60F025A11F64E7A70022EC73 /* Shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60F0259F1F64E7A70022EC73 /* Shader.cpp */; };
-		60F2A7D31F67B4480068C4E7 /* Quad.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60F2A7D11F67B4480068C4E7 /* Quad.cpp */; };
-		60F2A7D61F67C2050068C4E7 /* Sprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60F2A7D41F67C2050068C4E7 /* Sprite.cpp */; };
-		60F2A7D91F67C4C80068C4E7 /* Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60F2A7D71F67C4C80068C4E7 /* Texture.cpp */; };
-		60F6A3E91F6AC68A005595B2 /* Animation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60F6A3E71F6AC68A005595B2 /* Animation.cpp */; };
+		6098E5F31F80850B00FECFA5 /* Sprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60F2A7D41F67C2050068C4E7 /* Sprite.cpp */; };
+		6098E5F41F80850B00FECFA5 /* Engine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60B425511F64DC8B00BEE84C /* Engine.cpp */; };
+		6098E5F51F80850B00FECFA5 /* Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60F2A7D71F67C4C80068C4E7 /* Texture.cpp */; };
+		6098E5F61F80850B00FECFA5 /* Quad.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60F2A7D11F67B4480068C4E7 /* Quad.cpp */; };
+		6098E5F71F80850B00FECFA5 /* Window.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60F0259C1F64E3AC0022EC73 /* Window.cpp */; };
+		6098E5F81F80850B00FECFA5 /* Shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60F0259F1F64E7A70022EC73 /* Shader.cpp */; };
+		6098E5F91F80850B00FECFA5 /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60EE18BB1F6616BC000C6F0D /* Camera.cpp */; };
+		6098E5FA1F80850B00FECFA5 /* Transform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60EE18CA1F6657E8000C6F0D /* Transform.cpp */; };
+		6098E5FB1F80850B00FECFA5 /* Timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60EC246B1F68CA30006BFDA6 /* Timer.cpp */; };
+		6098E5FC1F80850B00FECFA5 /* Resources.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60EC246E1F68CF44006BFDA6 /* Resources.cpp */; };
+		6098E5FD1F80850B00FECFA5 /* RenderPass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60EC24711F690204006BFDA6 /* RenderPass.cpp */; };
+		6098E5FE1F80850B00FECFA5 /* Input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60E00ADF1F6A5AB1003CCA29 /* Input.cpp */; };
+		6098E5FF1F80850B00FECFA5 /* Animation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60F6A3E71F6AC68A005595B2 /* Animation.cpp */; };
+		6098E6001F80850B00FECFA5 /* BoxCollider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 603C30961F6BDEB700E91948 /* BoxCollider.cpp */; };
+		6098E6011F80850B00FECFA5 /* Status.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 607DB6E81F6E02D90052786F /* Status.cpp */; };
+		6098E6021F80850B00FECFA5 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60AAF1341F6FF2A000AE8050 /* Game.cpp */; };
+		6098E6031F80850B00FECFA5 /* Particle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 604677D91F72057700EE35F9 /* Particle.cpp */; };
+		6098E6041F80850B00FECFA5 /* ParticleSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 604677DC1F72059900EE35F9 /* ParticleSystem.cpp */; };
+		6098E6051F80850B00FECFA5 /* Audio.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 603942D51F764CCE004B3336 /* Audio.cpp */; };
+		6098E6061F80850B00FECFA5 /* TileObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 607DB6E51F6D2AA40052786F /* TileObject.cpp */; };
+		6098E6071F80850B00FECFA5 /* ColliderObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 607DB6EB1F6E08350052786F /* ColliderObject.cpp */; };
+		6098E6081F80850B00FECFA5 /* DamageZone.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 607F754B1F7911AB00D5A891 /* DamageZone.cpp */; };
+		6098E6091F80850B00FECFA5 /* NoneObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60AAF12B1F6F3C1A00AE8050 /* NoneObject.cpp */; };
+		6098E60A1F80850B00FECFA5 /* OffsetObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 604677D61F71FDF800EE35F9 /* OffsetObject.cpp */; };
+		6098E60B1F80850B00FECFA5 /* AnimationObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 604677E51F7235E600EE35F9 /* AnimationObject.cpp */; };
+		6098E60C1F80850B00FECFA5 /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60E00ADC1F6A1166003CCA29 /* Player.cpp */; };
+		6098E60D1F80850B00FECFA5 /* Bullet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 604677D31F71F6A000EE35F9 /* Bullet.cpp */; };
+		6098E60E1F80850B00FECFA5 /* Crab.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 604677DF1F721C8400EE35F9 /* Crab.cpp */; };
+		6098E60F1F80850B00FECFA5 /* Flyer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6039434C1F77B62E004B3336 /* Flyer.cpp */; };
+		6098E6101F80850B00FECFA5 /* Jumper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6039434F1F77BEA7004B3336 /* Jumper.cpp */; };
+		6098E6111F80850B00FECFA5 /* Ghost.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 603943521F77C3FB004B3336 /* Ghost.cpp */; };
+		6098E6121F80850B00FECFA5 /* Ball.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 603943551F77C77D004B3336 /* Ball.cpp */; };
+		6098E6131F80850B00FECFA5 /* Boss.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60302AF01F788D1D005A9951 /* Boss.cpp */; };
+		6098E6141F80850B00FECFA5 /* BossBullet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60302AF31F789240005A9951 /* BossBullet.cpp */; };
+		6098E6151F80850B00FECFA5 /* BossCore.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60302AF61F789254005A9951 /* BossCore.cpp */; };
+		6098E6161F80850B00FECFA5 /* BossDeathBite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60302AF91F789277005A9951 /* BossDeathBite.cpp */; };
+		6098E6171F80850B00FECFA5 /* BossDeathWall.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60302AFC1F78928C005A9951 /* BossDeathWall.cpp */; };
+		6098E6181F80850B00FECFA5 /* Orb.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 604677E21F722B7500EE35F9 /* Orb.cpp */; };
+		6098E6191F80850B00FECFA5 /* Item.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60302AFF1F78C2A5005A9951 /* Item.cpp */; };
+		6098E61A1F80850B00FECFA5 /* AIObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 604677E81F73473C00EE35F9 /* AIObject.cpp */; };
+		6098E61B1F80850B00FECFA5 /* Block.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 604677EB1F73493700EE35F9 /* Block.cpp */; };
+		6098E61C1F80850B00FECFA5 /* UIObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 604677EE1F73513B00EE35F9 /* UIObject.cpp */; };
+		6098E61D1F80850B00FECFA5 /* Score.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 604677F11F73AB2300EE35F9 /* Score.cpp */; };
+		6098E61E1F80850B00FECFA5 /* CheckPoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 604677FA1F73E66300EE35F9 /* CheckPoint.cpp */; };
+		6098E61F1F80850B00FECFA5 /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 603943071F77879B004B3336 /* GameObject.cpp */; };
+		6098E6201F80850B00FECFA5 /* SceneManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60AAF1311F6F79CA00AE8050 /* SceneManager.cpp */; };
+		6098E6211F80850B00FECFA5 /* TiledMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6039430A1F7787B8004B3336 /* TiledMap.cpp */; };
+		6098E6221F80850B00FECFA5 /* Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 603C309A1F6BF91500E91948 /* Scene.cpp */; };
+		6098E6231F80850B00FECFA5 /* Scene00.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60AAF12E1F6F78E600AE8050 /* Scene00.cpp */; };
+		6098E6241F80850B00FECFA5 /* Scene01.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 604677F71F73DEAA00EE35F9 /* Scene01.cpp */; };
+		6098E6251F80850B00FECFA5 /* Scene02.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 604677F41F73DE9600EE35F9 /* Scene02.cpp */; };
+		6098E6261F80850B00FECFA5 /* Scene03.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6039430D1F778831004B3336 /* Scene03.cpp */; };
+		6098E6271F80850B00FECFA5 /* Scene04.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 603943101F7794E9004B3336 /* Scene04.cpp */; };
+		6098E6281F80850B00FECFA5 /* Scene05.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 603943121F7794E9004B3336 /* Scene05.cpp */; };
+		6098E6291F80850B00FECFA5 /* Scene06.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 603943141F7794E9004B3336 /* Scene06.cpp */; };
+		6098E62A1F80850B00FECFA5 /* Scene07.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 603943161F7794E9004B3336 /* Scene07.cpp */; };
+		6098E62B1F80850B00FECFA5 /* Scene08.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 603943181F7794E9004B3336 /* Scene08.cpp */; };
+		6098E62C1F80850B00FECFA5 /* Scene09.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6039431A1F7794E9004B3336 /* Scene09.cpp */; };
+		6098E62D1F80850B00FECFA5 /* Scene10.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6039431C1F7794E9004B3336 /* Scene10.cpp */; };
+		6098E62E1F80850B00FECFA5 /* Scene11.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6039431E1F7794E9004B3336 /* Scene11.cpp */; };
+		6098E62F1F80850B00FECFA5 /* Scene12.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 603943201F7794E9004B3336 /* Scene12.cpp */; };
+		6098E6301F80850B00FECFA5 /* Scene13.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 603943221F7794E9004B3336 /* Scene13.cpp */; };
+		6098E6311F80850B00FECFA5 /* Scene14.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 603943241F7794E9004B3336 /* Scene14.cpp */; };
+		6098E6321F80850B00FECFA5 /* Scene15.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 603943261F7794E9004B3336 /* Scene15.cpp */; };
+		6098E6331F80850B00FECFA5 /* Scene16.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 603943281F7794E9004B3336 /* Scene16.cpp */; };
+		6098E6341F80850B00FECFA5 /* Scene17.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6039432A1F7794E9004B3336 /* Scene17.cpp */; };
+		6098E6351F80850B00FECFA5 /* Scene18.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6039432C1F7794E9004B3336 /* Scene18.cpp */; };
+		6098E6361F80850B00FECFA5 /* Scene19.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6039432E1F7794E9004B3336 /* Scene19.cpp */; };
+		6098E6371F80850B00FECFA5 /* Scene20.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 603943301F7794E9004B3336 /* Scene20.cpp */; };
+		6098E6381F80850B00FECFA5 /* Scene21.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 603943321F7794E9004B3336 /* Scene21.cpp */; };
+		6098E6391F80850B00FECFA5 /* Scene22.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 603943341F7794E9004B3336 /* Scene22.cpp */; };
+		6098E63A1F80850B00FECFA5 /* Scene23.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 603943361F7794E9004B3336 /* Scene23.cpp */; };
+		6098E63B1F80850B00FECFA5 /* SceneGameOver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 604677FD1F74A3DD00EE35F9 /* SceneGameOver.cpp */; };
+		6098E63C1F80850B00FECFA5 /* SceneTitle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 604678001F74C02C00EE35F9 /* SceneTitle.cpp */; };
+		6098E63D1F80850B00FECFA5 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60B425411F64D7E600BEE84C /* main.cpp */; };
+		6098E6401F8085BE00FECFA5 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60B425491F64D7F800BEE84C /* OpenGL.framework */; };
+		6098E6451F8087AA00FECFA5 /* Assets in Resources */ = {isa = PBXBuildFile; fileRef = 6098E6441F80875400FECFA5 /* Assets */; };
+		6098E6471F8087AA00FECFA5 /* Maps in Resources */ = {isa = PBXBuildFile; fileRef = 6098E6421F80875400FECFA5 /* Maps */; };
+		6098E6511F80889400FECFA5 /* Shader in Resources */ = {isa = PBXBuildFile; fileRef = 6098E6501F80888700FECFA5 /* Shader */; };
+		6098E65E1F809C1200FECFA5 /* libirrklang.dylib in Copy Files */ = {isa = PBXBuildFile; fileRef = 6098E65D1F809C1200FECFA5 /* libirrklang.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		6098E6661F80A1D700FECFA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6098E6611F809E5500FECFA5 /* Assets.xcassets */; };
+		6098E6791F80ABEA00FECFA5 /* libGLEW.2.0.0.dylib in Copy Files */ = {isa = PBXBuildFile; fileRef = 6098E6751F80ABBF00FECFA5 /* libGLEW.2.0.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		6098E67A1F80ABEA00FECFA5 /* libglfw.3.2.dylib in Copy Files */ = {isa = PBXBuildFile; fileRef = 6098E6761F80ABC000FECFA5 /* libglfw.3.2.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		60B4253C1F64D7E600BEE84C /* CopyFiles */ = {
+		6098E6481F8087C800FECFA5 /* Copy Files */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
+			dstPath = "";
+			dstSubfolderSpec = 10;
 			files = (
+				6098E6791F80ABEA00FECFA5 /* libGLEW.2.0.0.dylib in Copy Files */,
+				6098E67A1F80ABEA00FECFA5 /* libglfw.3.2.dylib in Copy Files */,
+				6098E65E1F809C1200FECFA5 /* libirrklang.dylib in Copy Files */,
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			name = "Copy Files";
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -114,7 +121,6 @@
 		60302AFD1F78928C005A9951 /* BossDeathWall.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = BossDeathWall.hpp; path = GameObjects/BossDeathWall.hpp; sourceTree = "<group>"; };
 		60302AFF1F78C2A5005A9951 /* Item.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Item.cpp; path = GameObjects/Item.cpp; sourceTree = "<group>"; };
 		60302B001F78C2A5005A9951 /* Item.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Item.hpp; path = GameObjects/Item.hpp; sourceTree = "<group>"; };
-		603942D31F764B9F004B3336 /* libirrklang.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libirrklang.dylib; path = "vania-OpenGL/Libraries/irrKlang/lib/libirrklang.dylib"; sourceTree = "<group>"; };
 		603942D51F764CCE004B3336 /* Audio.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Audio.cpp; path = Engine/Audio.cpp; sourceTree = "<group>"; };
 		603942D61F764CCE004B3336 /* Audio.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Audio.hpp; path = Engine/Audio.hpp; sourceTree = "<group>"; };
 		603943071F77879B004B3336 /* GameObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameObject.cpp; path = GameObjects/GameObject.cpp; sourceTree = "<group>"; };
@@ -215,6 +221,18 @@
 		607DB6EC1F6E08350052786F /* ColliderObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = ColliderObject.hpp; path = GameObjects/ColliderObject.hpp; sourceTree = "<group>"; };
 		607F754B1F7911AB00D5A891 /* DamageZone.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DamageZone.cpp; path = GameObjects/DamageZone.cpp; sourceTree = "<group>"; };
 		607F754C1F7911AB00D5A891 /* DamageZone.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = DamageZone.hpp; path = GameObjects/DamageZone.hpp; sourceTree = "<group>"; };
+		6098E5E51F8084D100FECFA5 /* Last Planet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Last Planet.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6098E6421F80875400FECFA5 /* Maps */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Maps; sourceTree = "<group>"; };
+		6098E6441F80875400FECFA5 /* Assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Assets; sourceTree = "<group>"; };
+		6098E6501F80888700FECFA5 /* Shader */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Shader; sourceTree = "<group>"; };
+		6098E65D1F809C1200FECFA5 /* libirrklang.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libirrklang.dylib; path = "vania-OpenGL/Libraries/irrKlang/lib/libirrklang.dylib"; sourceTree = "<group>"; };
+		6098E6601F809E5500FECFA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6098E6611F809E5500FECFA5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6098E6631F809E5500FECFA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		6098E6641F809E5500FECFA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6098E6651F809E5500FECFA5 /* Last_Planet.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Last_Planet.entitlements; sourceTree = "<group>"; };
+		6098E6751F80ABBF00FECFA5 /* libGLEW.2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.2.0.0.dylib; path = "vania-OpenGL/Libraries/OpenGL/libGLEW.2.0.0.dylib"; sourceTree = "<group>"; };
+		6098E6761F80ABC000FECFA5 /* libglfw.3.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.2.dylib; path = "vania-OpenGL/Libraries/OpenGL/libglfw.3.2.dylib"; sourceTree = "<group>"; };
 		60AAF12B1F6F3C1A00AE8050 /* NoneObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = NoneObject.cpp; path = GameObjects/NoneObject.cpp; sourceTree = "<group>"; };
 		60AAF12C1F6F3C1A00AE8050 /* NoneObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = NoneObject.hpp; path = GameObjects/NoneObject.hpp; sourceTree = "<group>"; };
 		60AAF12E1F6F78E600AE8050 /* Scene00.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Scene00.cpp; path = Scene/Scene00.cpp; sourceTree = "<group>"; };
@@ -223,12 +241,8 @@
 		60AAF1321F6F79CA00AE8050 /* SceneManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = SceneManager.hpp; path = Scene/SceneManager.hpp; sourceTree = "<group>"; };
 		60AAF1341F6FF2A000AE8050 /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Game.cpp; path = Engine/Game.cpp; sourceTree = "<group>"; };
 		60AAF1351F6FF2A000AE8050 /* Game.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Game.hpp; path = Engine/Game.hpp; sourceTree = "<group>"; };
-		60B4253E1F64D7E600BEE84C /* vania-OpenGL */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "vania-OpenGL"; sourceTree = BUILT_PRODUCTS_DIR; };
 		60B425411F64D7E600BEE84C /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		60B425491F64D7F800BEE84C /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
-		60B4254B1F64D88700BEE84C /* libassimp.3.3.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libassimp.3.3.1.dylib; path = ../../../../../usr/local/Cellar/assimp/3.3.1/lib/libassimp.3.3.1.dylib; sourceTree = "<group>"; };
-		60B4254D1F64D8AB00BEE84C /* libglfw.3.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.2.dylib; path = ../../../../../usr/local/Cellar/glfw/3.2.1/lib/libglfw.3.2.dylib; sourceTree = "<group>"; };
-		60B4254F1F64D8B600BEE84C /* libGLEW.2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.2.0.0.dylib; path = ../../../../../usr/local/Cellar/glew/2.0.0/lib/libGLEW.2.0.0.dylib; sourceTree = "<group>"; };
 		60B425511F64DC8B00BEE84C /* Engine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Engine.cpp; path = Engine/Engine.cpp; sourceTree = "<group>"; };
 		60B425521F64DC8B00BEE84C /* Engine.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Engine.hpp; path = Engine/Engine.hpp; sourceTree = "<group>"; };
 		60E00ADC1F6A1166003CCA29 /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Player.cpp; path = GameObjects/Player.cpp; sourceTree = "<group>"; };
@@ -261,15 +275,11 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		60B4253B1F64D7E600BEE84C /* Frameworks */ = {
+		6098E5E21F8084D100FECFA5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				60B4254A1F64D7F800BEE84C /* OpenGL.framework in Frameworks */,
-				60B425501F64D8B600BEE84C /* libGLEW.2.0.0.dylib in Frameworks */,
-				60B4254E1F64D8AB00BEE84C /* libglfw.3.2.dylib in Frameworks */,
-				60B4254C1F64D88700BEE84C /* libassimp.3.3.1.dylib in Frameworks */,
-				603942D41F764B9F004B3336 /* libirrklang.dylib in Frameworks */,
+				6098E6401F8085BE00FECFA5 /* OpenGL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,9 +351,25 @@
 			name = Scene;
 			sourceTree = "<group>";
 		};
+		6098E65F1F809E5500FECFA5 /* Last Planet */ = {
+			isa = PBXGroup;
+			children = (
+				6098E6601F809E5500FECFA5 /* AppDelegate.swift */,
+				6098E6611F809E5500FECFA5 /* Assets.xcassets */,
+				6098E6621F809E5500FECFA5 /* MainMenu.xib */,
+				6098E6641F809E5500FECFA5 /* Info.plist */,
+				6098E6651F809E5500FECFA5 /* Last_Planet.entitlements */,
+			);
+			path = "Last Planet";
+			sourceTree = "<group>";
+		};
 		60B425351F64D7E600BEE84C = {
 			isa = PBXGroup;
 			children = (
+				6098E6501F80888700FECFA5 /* Shader */,
+				6098E6441F80875400FECFA5 /* Assets */,
+				6098E6421F80875400FECFA5 /* Maps */,
+				6098E65F1F809E5500FECFA5 /* Last Planet */,
 				60B425401F64D7E600BEE84C /* vania-OpenGL */,
 				60B4253F1F64D7E600BEE84C /* Products */,
 				60B425481F64D7F700BEE84C /* Frameworks */,
@@ -353,7 +379,7 @@
 		60B4253F1F64D7E600BEE84C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				60B4253E1F64D7E600BEE84C /* vania-OpenGL */,
+				6098E5E51F8084D100FECFA5 /* Last Planet.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -372,10 +398,9 @@
 		60B425481F64D7F700BEE84C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				603942D31F764B9F004B3336 /* libirrklang.dylib */,
-				60B4254F1F64D8B600BEE84C /* libGLEW.2.0.0.dylib */,
-				60B4254D1F64D8AB00BEE84C /* libglfw.3.2.dylib */,
-				60B4254B1F64D88700BEE84C /* libassimp.3.3.1.dylib */,
+				6098E6751F80ABBF00FECFA5 /* libGLEW.2.0.0.dylib */,
+				6098E6761F80ABC000FECFA5 /* libglfw.3.2.dylib */,
+				6098E65D1F809C1200FECFA5 /* libirrklang.dylib */,
 				60B425491F64D7F800BEE84C /* OpenGL.framework */,
 			);
 			name = Frameworks;
@@ -489,22 +514,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		60B4253D1F64D7E600BEE84C /* vania-OpenGL */ = {
+		6098E5E41F8084D100FECFA5 /* Last Planet */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 60B425451F64D7E600BEE84C /* Build configuration list for PBXNativeTarget "vania-OpenGL" */;
+			buildConfigurationList = 6098E5F21F8084D100FECFA5 /* Build configuration list for PBXNativeTarget "Last Planet" */;
 			buildPhases = (
-				60B4253A1F64D7E600BEE84C /* Sources */,
-				60B4253B1F64D7E600BEE84C /* Frameworks */,
-				60B4253C1F64D7E600BEE84C /* CopyFiles */,
+				6098E5E11F8084D100FECFA5 /* Sources */,
+				6098E5E21F8084D100FECFA5 /* Frameworks */,
+				6098E6481F8087C800FECFA5 /* Copy Files */,
+				6098E5E31F8084D100FECFA5 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "vania-OpenGL";
-			productName = "vania-OpenGL";
-			productReference = 60B4253E1F64D7E600BEE84C /* vania-OpenGL */;
-			productType = "com.apple.product-type.tool";
+			name = "Last Planet";
+			productName = "Last Planet";
+			productReference = 6098E5E51F8084D100FECFA5 /* Last Planet.app */;
+			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
@@ -512,11 +538,12 @@
 		60B425361F64D7E600BEE84C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0900;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = haijian;
 				TargetAttributes = {
-					60B4253D1F64D7E600BEE84C = {
-						CreatedOnToolsVersion = 8.3.3;
+					6098E5E41F8084D100FECFA5 = {
+						CreatedOnToolsVersion = 9.0;
 						DevelopmentTeam = 4M5A36G82A;
 						ProvisioningStyle = Automatic;
 					};
@@ -528,103 +555,218 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 60B425351F64D7E600BEE84C;
 			productRefGroup = 60B4253F1F64D7E600BEE84C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				60B4253D1F64D7E600BEE84C /* vania-OpenGL */,
+				6098E5E41F8084D100FECFA5 /* Last Planet */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		6098E5E31F8084D100FECFA5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6098E6511F80889400FECFA5 /* Shader in Resources */,
+				6098E6451F8087AA00FECFA5 /* Assets in Resources */,
+				6098E6661F80A1D700FECFA5 /* Assets.xcassets in Resources */,
+				6098E6471F8087AA00FECFA5 /* Maps in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		60B4253A1F64D7E600BEE84C /* Sources */ = {
+		6098E5E11F8084D100FECFA5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				60302AF21F788D1D005A9951 /* Boss.cpp in Sources */,
-				603943511F77BEA7004B3336 /* Jumper.cpp in Sources */,
-				603943461F7794E9004B3336 /* Scene18.cpp in Sources */,
-				60AAF1301F6F78E600AE8050 /* Scene00.cpp in Sources */,
-				6039433A1F7794E9004B3336 /* Scene06.cpp in Sources */,
-				6039434E1F77B62E004B3336 /* Flyer.cpp in Sources */,
-				604677E71F7235E600EE35F9 /* AnimationObject.cpp in Sources */,
-				604677F91F73DEAA00EE35F9 /* Scene01.cpp in Sources */,
-				60F2A7D31F67B4480068C4E7 /* Quad.cpp in Sources */,
-				60AAF1331F6F79CA00AE8050 /* SceneManager.cpp in Sources */,
-				607DB6E71F6D2AA40052786F /* TileObject.cpp in Sources */,
-				60302AFB1F789277005A9951 /* BossDeathBite.cpp in Sources */,
-				60EC24701F68CF44006BFDA6 /* Resources.cpp in Sources */,
-				603943441F7794E9004B3336 /* Scene16.cpp in Sources */,
-				6039433F1F7794E9004B3336 /* Scene11.cpp in Sources */,
-				603943401F7794E9004B3336 /* Scene12.cpp in Sources */,
-				6039433E1F7794E9004B3336 /* Scene10.cpp in Sources */,
-				603943391F7794E9004B3336 /* Scene05.cpp in Sources */,
-				604677FC1F73E66300EE35F9 /* CheckPoint.cpp in Sources */,
-				6039434B1F7794E9004B3336 /* Scene23.cpp in Sources */,
-				6039433C1F7794E9004B3336 /* Scene08.cpp in Sources */,
-				603943381F7794E9004B3336 /* Scene04.cpp in Sources */,
-				607DB6EA1F6E02D90052786F /* Status.cpp in Sources */,
-				60302AF51F789240005A9951 /* BossBullet.cpp in Sources */,
-				603943431F7794E9004B3336 /* Scene15.cpp in Sources */,
-				603943541F77C3FB004B3336 /* Ghost.cpp in Sources */,
-				6039433D1F7794E9004B3336 /* Scene09.cpp in Sources */,
-				604677F31F73AB2300EE35F9 /* Score.cpp in Sources */,
-				603C30981F6BDEB700E91948 /* BoxCollider.cpp in Sources */,
-				604677DE1F72059900EE35F9 /* ParticleSystem.cpp in Sources */,
-				60302B011F78C2A5005A9951 /* Item.cpp in Sources */,
-				604677F01F73513B00EE35F9 /* UIObject.cpp in Sources */,
-				60EE18CC1F6657E8000C6F0D /* Transform.cpp in Sources */,
-				60302AF81F789254005A9951 /* BossCore.cpp in Sources */,
-				6039433B1F7794E9004B3336 /* Scene07.cpp in Sources */,
-				60AAF1361F6FF2A000AE8050 /* Game.cpp in Sources */,
-				604677D51F71F6A000EE35F9 /* Bullet.cpp in Sources */,
-				607DB6ED1F6E08350052786F /* ColliderObject.cpp in Sources */,
-				6039434A1F7794E9004B3336 /* Scene22.cpp in Sources */,
-				6039430F1F778831004B3336 /* Scene03.cpp in Sources */,
-				60F2A7D61F67C2050068C4E7 /* Sprite.cpp in Sources */,
-				603943491F7794E9004B3336 /* Scene21.cpp in Sources */,
-				604677E11F721C8400EE35F9 /* Crab.cpp in Sources */,
-				603C309C1F6BF91500E91948 /* Scene.cpp in Sources */,
-				6039430C1F7787B8004B3336 /* TiledMap.cpp in Sources */,
-				603943571F77C77D004B3336 /* Ball.cpp in Sources */,
-				60302AFE1F78928C005A9951 /* BossDeathWall.cpp in Sources */,
-				603943091F77879B004B3336 /* GameObject.cpp in Sources */,
-				603943411F7794E9004B3336 /* Scene13.cpp in Sources */,
-				603943481F7794E9004B3336 /* Scene20.cpp in Sources */,
-				60EC246D1F68CA30006BFDA6 /* Timer.cpp in Sources */,
-				60F2A7D91F67C4C80068C4E7 /* Texture.cpp in Sources */,
-				60EC24731F690204006BFDA6 /* RenderPass.cpp in Sources */,
-				60E00ADE1F6A1166003CCA29 /* Player.cpp in Sources */,
-				60AAF12D1F6F3C1A00AE8050 /* NoneObject.cpp in Sources */,
-				60E00AE11F6A5AB1003CCA29 /* Input.cpp in Sources */,
-				60B425421F64D7E600BEE84C /* main.cpp in Sources */,
-				60F0259E1F64E3AC0022EC73 /* Window.cpp in Sources */,
-				604677EA1F73473C00EE35F9 /* AIObject.cpp in Sources */,
-				60EE18BD1F6616BC000C6F0D /* Camera.cpp in Sources */,
-				603942D71F764CCE004B3336 /* Audio.cpp in Sources */,
-				60F025A11F64E7A70022EC73 /* Shader.cpp in Sources */,
-				604677FF1F74A3DD00EE35F9 /* SceneGameOver.cpp in Sources */,
-				604677ED1F73493700EE35F9 /* Block.cpp in Sources */,
-				604677F61F73DE9600EE35F9 /* Scene02.cpp in Sources */,
-				604677E41F722B7500EE35F9 /* Orb.cpp in Sources */,
-				60F6A3E91F6AC68A005595B2 /* Animation.cpp in Sources */,
-				603943451F7794E9004B3336 /* Scene17.cpp in Sources */,
-				60B425531F64DC8B00BEE84C /* Engine.cpp in Sources */,
-				607F754D1F7911AB00D5A891 /* DamageZone.cpp in Sources */,
-				603943421F7794E9004B3336 /* Scene14.cpp in Sources */,
-				603943471F7794E9004B3336 /* Scene19.cpp in Sources */,
-				604678021F74C02C00EE35F9 /* SceneTitle.cpp in Sources */,
-				604677DB1F72057700EE35F9 /* Particle.cpp in Sources */,
-				604677D81F71FDF800EE35F9 /* OffsetObject.cpp in Sources */,
+				6098E5F31F80850B00FECFA5 /* Sprite.cpp in Sources */,
+				6098E5F41F80850B00FECFA5 /* Engine.cpp in Sources */,
+				6098E5F51F80850B00FECFA5 /* Texture.cpp in Sources */,
+				6098E5F61F80850B00FECFA5 /* Quad.cpp in Sources */,
+				6098E5F71F80850B00FECFA5 /* Window.cpp in Sources */,
+				6098E5F81F80850B00FECFA5 /* Shader.cpp in Sources */,
+				6098E5F91F80850B00FECFA5 /* Camera.cpp in Sources */,
+				6098E5FA1F80850B00FECFA5 /* Transform.cpp in Sources */,
+				6098E5FB1F80850B00FECFA5 /* Timer.cpp in Sources */,
+				6098E5FC1F80850B00FECFA5 /* Resources.cpp in Sources */,
+				6098E5FD1F80850B00FECFA5 /* RenderPass.cpp in Sources */,
+				6098E5FE1F80850B00FECFA5 /* Input.cpp in Sources */,
+				6098E5FF1F80850B00FECFA5 /* Animation.cpp in Sources */,
+				6098E6001F80850B00FECFA5 /* BoxCollider.cpp in Sources */,
+				6098E6011F80850B00FECFA5 /* Status.cpp in Sources */,
+				6098E6021F80850B00FECFA5 /* Game.cpp in Sources */,
+				6098E6031F80850B00FECFA5 /* Particle.cpp in Sources */,
+				6098E6041F80850B00FECFA5 /* ParticleSystem.cpp in Sources */,
+				6098E6051F80850B00FECFA5 /* Audio.cpp in Sources */,
+				6098E6061F80850B00FECFA5 /* TileObject.cpp in Sources */,
+				6098E6071F80850B00FECFA5 /* ColliderObject.cpp in Sources */,
+				6098E6081F80850B00FECFA5 /* DamageZone.cpp in Sources */,
+				6098E6091F80850B00FECFA5 /* NoneObject.cpp in Sources */,
+				6098E60A1F80850B00FECFA5 /* OffsetObject.cpp in Sources */,
+				6098E60B1F80850B00FECFA5 /* AnimationObject.cpp in Sources */,
+				6098E60C1F80850B00FECFA5 /* Player.cpp in Sources */,
+				6098E60D1F80850B00FECFA5 /* Bullet.cpp in Sources */,
+				6098E60E1F80850B00FECFA5 /* Crab.cpp in Sources */,
+				6098E60F1F80850B00FECFA5 /* Flyer.cpp in Sources */,
+				6098E6101F80850B00FECFA5 /* Jumper.cpp in Sources */,
+				6098E6111F80850B00FECFA5 /* Ghost.cpp in Sources */,
+				6098E6121F80850B00FECFA5 /* Ball.cpp in Sources */,
+				6098E6131F80850B00FECFA5 /* Boss.cpp in Sources */,
+				6098E6141F80850B00FECFA5 /* BossBullet.cpp in Sources */,
+				6098E6151F80850B00FECFA5 /* BossCore.cpp in Sources */,
+				6098E6161F80850B00FECFA5 /* BossDeathBite.cpp in Sources */,
+				6098E6171F80850B00FECFA5 /* BossDeathWall.cpp in Sources */,
+				6098E6181F80850B00FECFA5 /* Orb.cpp in Sources */,
+				6098E6191F80850B00FECFA5 /* Item.cpp in Sources */,
+				6098E61A1F80850B00FECFA5 /* AIObject.cpp in Sources */,
+				6098E61B1F80850B00FECFA5 /* Block.cpp in Sources */,
+				6098E61C1F80850B00FECFA5 /* UIObject.cpp in Sources */,
+				6098E61D1F80850B00FECFA5 /* Score.cpp in Sources */,
+				6098E61E1F80850B00FECFA5 /* CheckPoint.cpp in Sources */,
+				6098E61F1F80850B00FECFA5 /* GameObject.cpp in Sources */,
+				6098E6201F80850B00FECFA5 /* SceneManager.cpp in Sources */,
+				6098E6211F80850B00FECFA5 /* TiledMap.cpp in Sources */,
+				6098E6221F80850B00FECFA5 /* Scene.cpp in Sources */,
+				6098E6231F80850B00FECFA5 /* Scene00.cpp in Sources */,
+				6098E6241F80850B00FECFA5 /* Scene01.cpp in Sources */,
+				6098E6251F80850B00FECFA5 /* Scene02.cpp in Sources */,
+				6098E6261F80850B00FECFA5 /* Scene03.cpp in Sources */,
+				6098E6271F80850B00FECFA5 /* Scene04.cpp in Sources */,
+				6098E6281F80850B00FECFA5 /* Scene05.cpp in Sources */,
+				6098E6291F80850B00FECFA5 /* Scene06.cpp in Sources */,
+				6098E62A1F80850B00FECFA5 /* Scene07.cpp in Sources */,
+				6098E62B1F80850B00FECFA5 /* Scene08.cpp in Sources */,
+				6098E62C1F80850B00FECFA5 /* Scene09.cpp in Sources */,
+				6098E62D1F80850B00FECFA5 /* Scene10.cpp in Sources */,
+				6098E62E1F80850B00FECFA5 /* Scene11.cpp in Sources */,
+				6098E62F1F80850B00FECFA5 /* Scene12.cpp in Sources */,
+				6098E6301F80850B00FECFA5 /* Scene13.cpp in Sources */,
+				6098E6311F80850B00FECFA5 /* Scene14.cpp in Sources */,
+				6098E6321F80850B00FECFA5 /* Scene15.cpp in Sources */,
+				6098E6331F80850B00FECFA5 /* Scene16.cpp in Sources */,
+				6098E6341F80850B00FECFA5 /* Scene17.cpp in Sources */,
+				6098E6351F80850B00FECFA5 /* Scene18.cpp in Sources */,
+				6098E6361F80850B00FECFA5 /* Scene19.cpp in Sources */,
+				6098E6371F80850B00FECFA5 /* Scene20.cpp in Sources */,
+				6098E6381F80850B00FECFA5 /* Scene21.cpp in Sources */,
+				6098E6391F80850B00FECFA5 /* Scene22.cpp in Sources */,
+				6098E63A1F80850B00FECFA5 /* Scene23.cpp in Sources */,
+				6098E63B1F80850B00FECFA5 /* SceneGameOver.cpp in Sources */,
+				6098E63C1F80850B00FECFA5 /* SceneTitle.cpp in Sources */,
+				6098E63D1F80850B00FECFA5 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		6098E6621F809E5500FECFA5 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6098E6631F809E5500FECFA5 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		6098E5F01F8084D100FECFA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = "Last Planet/Last_Planet.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 4M5A36G82A;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include,
+					"$(PROJECT_DIR)/vania-OpenGL/Libraries/irrKlang/include",
+				);
+				INFOPLIST_FILE = "Last Planet/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks/";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/glew/2.0.0/lib,
+					/usr/local/Cellar/glfw/3.2.1/lib,
+					"$(PROJECT_DIR)/vania-OpenGL/Libraries/irrKlang/lib",
+					"$(PROJECT_DIR)/vania-OpenGL/Libraries/OpenGL",
+				);
+				OTHER_LDFLAGS = (
+					"./vania-OpenGL/Libraries/irrKlang/lib/libirrklang.dylib",
+					"./vania-OpenGL/Libraries/OpenGL/libGLEW.2.0.0.dylib",
+					"./vania-OpenGL/Libraries/OpenGL/libglfw.3.2.dylib",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "haijian.Last-Planet";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		6098E5F11F8084D100FECFA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = "Last Planet/Last_Planet.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 4M5A36G82A;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include,
+					"$(PROJECT_DIR)/vania-OpenGL/Libraries/irrKlang/include",
+				);
+				INFOPLIST_FILE = "Last Planet/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks/";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/glew/2.0.0/lib,
+					/usr/local/Cellar/glfw/3.2.1/lib,
+					"$(PROJECT_DIR)/vania-OpenGL/Libraries/irrKlang/lib",
+					"$(PROJECT_DIR)/vania-OpenGL/Libraries/OpenGL",
+				);
+				OTHER_LDFLAGS = (
+					"./vania-OpenGL/Libraries/irrKlang/lib/libirrklang.dylib",
+					"./vania-OpenGL/Libraries/OpenGL/libGLEW.2.0.0.dylib",
+					"./vania-OpenGL/Libraries/OpenGL/libglfw.3.2.dylib",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "haijian.Last-Planet";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
 		60B425431F64D7E600BEE84C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -714,61 +856,23 @@
 			};
 			name = Release;
 		};
-		60B425461F64D7E600BEE84C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DEVELOPMENT_TEAM = 4M5A36G82A;
-				HEADER_SEARCH_PATHS = (
-					/usr/local/include,
-					"$(PROJECT_DIR)/vania-OpenGL/Libraries/irrKlang/include",
-				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					/usr/local/Cellar/glfw/3.2.1/lib,
-					/usr/local/Cellar/glew/2.0.0/lib,
-					/usr/local/Cellar/assimp/3.3.1/lib,
-					"$(PROJECT_DIR)/vania-OpenGL/Libraries/irrKlang/lib",
-				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		60B425471F64D7E600BEE84C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DEVELOPMENT_TEAM = 4M5A36G82A;
-				HEADER_SEARCH_PATHS = (
-					/usr/local/include,
-					"$(PROJECT_DIR)/vania-OpenGL/Libraries/irrKlang/include",
-				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					/usr/local/Cellar/glfw/3.2.1/lib,
-					/usr/local/Cellar/glew/2.0.0/lib,
-					/usr/local/Cellar/assimp/3.3.1/lib,
-					"$(PROJECT_DIR)/vania-OpenGL/Libraries/irrKlang/lib",
-				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		6098E5F21F8084D100FECFA5 /* Build configuration list for PBXNativeTarget "Last Planet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6098E5F01F8084D100FECFA5 /* Debug */,
+				6098E5F11F8084D100FECFA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		60B425391F64D7E600BEE84C /* Build configuration list for PBXProject "vania-OpenGL" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				60B425431F64D7E600BEE84C /* Debug */,
 				60B425441F64D7E600BEE84C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		60B425451F64D7E600BEE84C /* Build configuration list for PBXNativeTarget "vania-OpenGL" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				60B425461F64D7E600BEE84C /* Debug */,
-				60B425471F64D7E600BEE84C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

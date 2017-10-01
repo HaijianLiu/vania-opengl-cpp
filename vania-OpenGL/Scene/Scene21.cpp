@@ -24,10 +24,10 @@ void Scene21::load() {
 	/* Scene::loadMapData(const char* name, const char* path);
 	..............................................................................*/
 	// map
-	this->tiledMap->loadMapData("TileObject", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene21-BackGround.csv");
-	this->tiledMap->loadMapData("ColliderObject", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene21-Ground.csv");
-	this->tiledMap->loadMapData("CameraRange", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene21-Camera.csv");
-	this->tiledMap->loadMapData("Range", "/Users/haijian/Documents/OpenGL/vania-OpenGL/vania-OpenGL/Maps/scene_Scene21-Range.csv");
+	this->tiledMap->loadMapData("TileObject", "./Maps/scene_Scene21-BackGround.csv");
+	this->tiledMap->loadMapData("ColliderObject", "./Maps/scene_Scene21-Ground.csv");
+	this->tiledMap->loadMapData("CameraRange", "./Maps/scene_Scene21-Camera.csv");
+	this->tiledMap->loadMapData("Range", "./Maps/scene_Scene21-Range.csv");
 }
 
 
