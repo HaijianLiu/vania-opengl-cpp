@@ -5,8 +5,6 @@
 class Camera {
 private:
 	Window* window;
-	int startScreenWidth, startScreenHeight;
-
 
 public:
 	// matrix uniform
