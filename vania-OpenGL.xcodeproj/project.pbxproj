@@ -717,12 +717,13 @@
 					"$(PROJECT_DIR)/vania-OpenGL/Libraries/irrKlang/lib",
 					"$(PROJECT_DIR)/vania-OpenGL/Libraries/OpenGL",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				OTHER_LDFLAGS = (
 					"./vania-OpenGL/Libraries/irrKlang/lib/libirrklang.dylib",
 					"./vania-OpenGL/Libraries/OpenGL/libGLEW.2.0.0.dylib",
 					"./vania-OpenGL/Libraries/OpenGL/libglfw.3.2.dylib",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "haijian.Last-Planet";
+				PRODUCT_BUNDLE_IDENTIFIER = haijian.lastplanet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -762,12 +763,13 @@
 					"$(PROJECT_DIR)/vania-OpenGL/Libraries/irrKlang/lib",
 					"$(PROJECT_DIR)/vania-OpenGL/Libraries/OpenGL",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				OTHER_LDFLAGS = (
 					"./vania-OpenGL/Libraries/irrKlang/lib/libirrklang.dylib",
 					"./vania-OpenGL/Libraries/OpenGL/libGLEW.2.0.0.dylib",
 					"./vania-OpenGL/Libraries/OpenGL/libglfw.3.2.dylib",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "haijian.Last-Planet";
+				PRODUCT_BUNDLE_IDENTIFIER = haijian.lastplanet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.0;
