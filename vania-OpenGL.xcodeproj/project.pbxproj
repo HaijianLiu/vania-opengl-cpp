@@ -384,7 +384,8 @@
 				6098E5E51F8084D100FECFA5 /* Last Planet.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
+			path = "/Users/haijian/Documents/OpenGL/vania-OpenGL";
+			sourceTree = "<absolute>";
 		};
 		60B425401F64D7E600BEE84C /* vania-OpenGL */ = {
 			isa = PBXGroup;
