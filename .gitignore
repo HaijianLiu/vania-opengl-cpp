@@ -23,7 +23,7 @@ xcuserdata/
 *.xcscmblueprint
 .DS_Store
 
-Assets/
+Audio/
+Texture/
 Maps/
 Libraries/
-Last Planet.app.zip
