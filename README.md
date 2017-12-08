@@ -2,7 +2,7 @@
 
 An Metroidvania game I created for both MacOS and Windows. Feel free to download and play. :earth_asia:
 
-<img src="https://github.com/haijianliu/dungeon-tease/blob/master/Assets/Textures/dungeon_screen%402x.png" width="600">
+<img src="https://github.com/haijianliu/vania-opengl-cpp/blob/master/Assets/last_planet_title%402x.png" width="600">
 
 
 ## Features
@@ -27,14 +27,14 @@ MacOS and Windows version have some different features:
 - `OSX` [download](https://drive.google.com/file/d/1jl62Y4fG_GoKigkrgYL0_BoOQTFsst7Q/view?usp=sharing) :sparkles:  (OSX 10.13 or later).
 - `Win` [download](https://drive.google.com/file/d/1VW0WIWiZeIKFCj_9DUfNVG17S8xXHbXK/view?usp=sharing).
 
-<img src="https://github.com/haijianliu/dungeon-tease/blob/master/Assets/Textures/dungeon_screen%402x.png" width="600">
+<img src="https://github.com/haijianliu/vania-opengl-cpp/blob/master/Assets/last_planet%402x.png" width="600">
 
 
 ## Tiled Map Editor
 
 All levels were created with Tiled Map Editor by [Thorbjørn](https://thorbjorn.itch.io), including enemies, items, checkpoints, colliders, camera behavior, event triggers.
 
-<img src="https://github.com/haijianliu/dungeon-tease/blob/master/Assets/Textures/dungeon_screen%402x.png" width="600">
+<img src="https://github.com/haijianliu/vania-opengl-cpp/blob/master/Assets/tiled_map_editor%402x.png" width="600">
 
 
 ## Frameworks
