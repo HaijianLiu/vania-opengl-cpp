@@ -24,8 +24,8 @@ MacOS and Windows version have some different features:
 
 ## Download
 
-- `OSX` [download](https://drive.google.com/file/d/1jl62Y4fG_GoKigkrgYL0_BoOQTFsst7Q/view?usp=sharing) :sparkles:  (OSX 10.13 or later).
-- `Win` [download](https://drive.google.com/file/d/1VW0WIWiZeIKFCj_9DUfNVG17S8xXHbXK/view?usp=sharing).
+- `OSX` [download](https://drive.google.com/file/d/1BoMI938O3L1ZRnvUED7IXxvYIc6osHxn/view?usp=sharing) :sparkles:  (OSX 10.13 or later).
+- `Win` [download](https://drive.google.com/file/d/1quQ_V_do9t3M2WUbaYGuB0SdyehrlhnP/view?usp=sharing).
 
 <img src="https://github.com/haijianliu/vania-opengl-cpp/blob/master/Assets/last_planet%402x.png" width="600">
 
