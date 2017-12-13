@@ -44,8 +44,9 @@ All levels were created with Tiled Map Editor by [Thorbjørn](https://thorbjorn.
 - `irrKlang` Cross platform sound library for C++, C# and all .NET languages by [Ambiera](https://www.ambiera.com/irrklang/).
 - `DirectX 9` For Windows.
 
-## Assets
+## Credits
 
-- Character and animation from [Luis Zuno](http://ansimuz.com).
+- Design and Code by [Haijian Liu](https://haijianliu.github.io).
+- Character and Animation by [Luis Zuno](http://ansimuz.com).
 - BGM by SketchyLogic from [OpenGameArt](https://opengameart.org).
 - SE by Juhani Junkala from [OpenGameArt](https://opengameart.org).
